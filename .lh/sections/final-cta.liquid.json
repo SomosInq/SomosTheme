@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/final-cta.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240051458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n Final CTA Section - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"final-cta section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"final-cta__container\">\n     <h2>Ready to refresh your wardrobe?</h2>\n     <a href=\"/collections/all\" class=\"button button-primary\">Shop Now</a>\n"
+                }
+            ],
+            "date": 1764240051458,
+            "name": "Commit-0",
+            "content": "{% comment %}\nFinal CTA Section - Fashion Store\n{% endcomment %}\n<section class=\"final-cta section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"final-cta__container\">\n    <h2>Ready to refresh your wardrobe?</h2>\n    <a href=\"/collections/all\" class=\"button button-primary\">Shop Now</a>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"Final CTA\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"Final CTA\" } ]\n}{% endschema %}"
+        }
+    ]
+}

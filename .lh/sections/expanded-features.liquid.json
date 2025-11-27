@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/expanded-features.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240039243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n Expanded Features - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"expanded-features section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"expanded-features__container\">\n     <h3>Why Choose Somos?</h3>\n     <ul>\n"
+                }
+            ],
+            "date": 1764240039243,
+            "name": "Commit-0",
+            "content": "{% comment %}\nExpanded Features - Fashion Store\n{% endcomment %}\n<section class=\"expanded-features section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"expanded-features__container\">\n    <h3>Why Choose Somos?</h3>\n    <ul>\n      <li>On-trend seasonal drops</li>\n      <li>Exclusive member offers</li>\n      <li>Personal styling advice</li>\n      <li>Conscious production</li>\n    </ul>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"Expanded Features\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"Expanded Features\" } ]\n}{% endschema %}"
+        }
+    ]
+}

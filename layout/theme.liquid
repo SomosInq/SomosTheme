@@ -4,6 +4,8 @@
   lang="{{ request.locale.iso_code }}"
 >
   <head>
+    <!-- Inter font for clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     {%- if settings.favicon != blank -%}
       <link
         rel="icon"
@@ -25,7 +27,11 @@
     {%- render 'fonts' -%}
     {%- render 'scripts' -%}
     {%- render 'theme-styles-variables' -%}
+    {%- render 'theme-animations-config' -%}
+    {%- render 'global-section-spacing-variables' -%}
     {%- render 'color-schemes' -%}
+
+    {{ 'homepage-sections.css' | asset_url | stylesheet_tag }}
 
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}

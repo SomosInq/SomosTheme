@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/benefits-grid.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240034787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n Key Benefits Grid - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"benefits-grid section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"benefits-grid__container\">\n     <div class=\"benefits-grid__item\"><strong>Premium Fabrics</strong><br>Feel the difference in every piece</div>\n     <div class=\"benefits-grid__item\"><strong>Inclusive Sizing</strong><br>Styles for every body</div>\n"
+                }
+            ],
+            "date": 1764240034787,
+            "name": "Commit-0",
+            "content": "{% comment %}\nKey Benefits Grid - Fashion Store\n{% endcomment %}\n<section class=\"benefits-grid section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"benefits-grid__container\">\n    <div class=\"benefits-grid__item\"><strong>Premium Fabrics</strong><br>Feel the difference in every piece</div>\n    <div class=\"benefits-grid__item\"><strong>Inclusive Sizing</strong><br>Styles for every body</div>\n    <div class=\"benefits-grid__item\"><strong>Fast Dispatch</strong><br>Next-day shipping available</div>\n    <div class=\"benefits-grid__item\"><strong>Eco Packaging</strong><br>100% recyclable materials</div>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"Benefits Grid\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"Benefits Grid\" } ]\n}{% endschema %}"
+        }
+    ]
+}

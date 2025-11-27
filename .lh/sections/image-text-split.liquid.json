@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/image-text-split.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240037412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n Image/Text Split Section - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"image-text-split section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"image-text-split__container\">\n     <div class=\"image-text-split__image\">\n       <img src=\"https://placehold.co/600x800\" alt=\"Fashion Look\" />\n"
+                }
+            ],
+            "date": 1764240037412,
+            "name": "Commit-0",
+            "content": "{% comment %}\nImage/Text Split Section - Fashion Store\n{% endcomment %}\n<section class=\"image-text-split section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"image-text-split__container\">\n    <div class=\"image-text-split__image\">\n      <img src=\"https://placehold.co/600x800\" alt=\"Fashion Look\" />\n    </div>\n    <div class=\"image-text-split__text\">\n      <h3>Effortless Style</h3>\n      <p>Discover our latest collection, designed for comfort and confidence—wherever life takes you.</p>\n    </div>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"Image/Text Split\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"Image/Text Split\" } ]\n}{% endschema %}"
+        }
+    ]
+}

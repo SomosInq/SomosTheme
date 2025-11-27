@@ -1,0 +1,18 @@
+{
+    "sourceFile": "snippets/global-section-spacing-variables.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764242396455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764242396455,
+            "name": "Commit-0",
+            "content": "{%- comment -%}\nExposes global section spacing settings as CSS variables for use in all sections.\n{%- endcomment -%}\n<style id=\"global-section-spacing-variables\">\n  :root {\n    --section-padding-top: {{ settings.section_padding_top | default: 40 }}px;\n    --section-padding-bottom: {{ settings.section_padding_bottom | default: 40 }}px;\n    --section-margin-top: {{ settings.section_margin_top | default: 0 }}px;\n    --section-margin-bottom: {{ settings.section_margin_bottom | default: 64 }}px;\n  }\n</style>\n"
+        }
+    ]
+}

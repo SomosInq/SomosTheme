@@ -1,0 +1,18 @@
+{
+    "sourceFile": "assets/gsap-animations.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764238206942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764238206942,
+            "name": "Commit-0",
+            "content": "// gsap-animations.js\n// Requires: gsap-loader.js, theme-animations-config.liquid\n\nimport './gsap-loader.js';\n\n(function () {\n  if (!window.gsap || !window.themeAnimations) return;\n  const gsap = window.gsap;\n  const ScrollTrigger = window.gsap.ScrollTrigger;\n  const config = window.themeAnimations;\n\n  if (!config.enabled) return;\n  if (config.respectReducedMotion && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;\n\n  // Animation style map\n  const animationVariants = {\n    'fade-in': { opacity: 0, y: 0 },\n    'fade-up': { opacity: 0, y: 40 },\n    'slide-in-left': { opacity: 0, x: -40 },\n    'slide-in-right': { opacity: 0, x: 40 },\n    'zoom-in': { opacity: 0, scale: 0.8 },\n    'none': {}\n  };\n\n  // Helper to get trigger position\n  function getStart(trigger) {\n    switch (config.scrollTrigger) {\n      case 'center': return 'top center';\n      case 'visible': return 'top bottom';\n      default: return 'top 80%';\n    }\n  }\n\n  // Animate all elements with [data-animate]\n  document.querySelectorAll('[data-animate]').forEach((el, i) => {\n    const style = el.dataset.animate || config.defaultStyle;\n    const duration = parseFloat(el.dataset.animateDuration) || config.defaultDuration;\n    const delay = parseFloat(el.dataset.animateDelay) || config.defaultDelay;\n    const stagger = parseFloat(el.dataset.animateStagger) || config.defaultStagger;\n    const ease = el.dataset.animateEase || config.defaultEase;\n    const once = (el.dataset.animateRepeat || config.repeat) === 'once';\n    const vars = animationVariants[style] || animationVariants[config.defaultStyle];\n\n    gsap.from(el, {\n      ...vars,\n      opacity: vars.opacity !== undefined ? vars.opacity : 0,\n      duration,\n      delay,\n      ease,\n      stagger,\n      scrollTrigger: {\n        trigger: el,\n        start: getStart(config.scrollTrigger),\n        toggleActions: once ? 'play none none none' : 'play none none reset',\n        once: once\n      }\n    });\n  });\n})();\n"
+        }
+    ]
+}

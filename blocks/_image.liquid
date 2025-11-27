@@ -19,6 +19,10 @@
   assign widths = '240, 352, 832, 1200, 1600, 1920, 2560'
 %}
 
+{% assign custom_height_style = '' %}
+{% if block.settings.custom_height and block.settings.custom_height > 0 %}
+  {% assign custom_height_style = 'height:' | append: block.settings.custom_height | append: 'px;max-height:' | append: block.settings.custom_height | append: 'px;' %}
+{% endif %}
 {% if image %}
   <image-block
     ratio="{{ block_settings.ratio }}"
@@ -29,7 +33,7 @@
     {{
       image
       | image_url: width: 2560
-      | image_tag: width: width, widths: widths, sizes: sizes, loading: loading, alt: alt
+      | image_tag: width: width, widths: widths, sizes: sizes, loading: loading, alt: alt, style: custom_height_style
     }}
   </image-block>
 {% else %}
@@ -39,7 +43,7 @@
     style="--border-radius: {{ block_settings.border_radius }}px;"
     {{ block.shopify_attributes }}
   >
-    {{ placeholder | default: 'hero-apparel-2' | placeholder_svg_tag: 'hero__image' }}
+    {{ placeholder | default: 'hero-apparel-2' | placeholder_svg_tag: 'hero__image', style: custom_height_style }}
   </image-block>
 {% endif %}
 
@@ -103,6 +107,9 @@
       height: auto;
       aspect-ratio: var(--ratio);
       border-radius: var(--border-radius);
+        {% if block.settings.custom_height and block.settings.custom_height > 0 %}
+          /* height and max-height moved to inline style */
+        {% endif %}
     }
   }
 {% endstylesheet %}
@@ -155,6 +162,17 @@
         }
       ],
       "default": "portrait"
+    },
+    {
+      "type": "range",
+      "id": "custom_height",
+      "label": "Custom image height (px)",
+      "min": 0,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 0,
+      "info": "Overrides preset height for collection card images if set."
     },
     {
       "type": "range",

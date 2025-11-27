@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/intro-story.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240033155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n Short Intro Story - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"intro-story section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"intro-story__container\">\n     <h2>Our Story</h2>\n     <p>Founded in London, Somos brings you timeless fashion with a modern twist. Our mission is to empower self-expression through style, quality, and sustainability.</p>\n"
+                }
+            ],
+            "date": 1764240033155,
+            "name": "Commit-0",
+            "content": "{% comment %}\nShort Intro Story - Fashion Store\n{% endcomment %}\n<section class=\"intro-story section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"intro-story__container\">\n    <h2>Our Story</h2>\n    <p>Founded in London, Somos brings you timeless fashion with a modern twist. Our mission is to empower self-expression through style, quality, and sustainability.</p>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"Intro Story\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"Intro Story\" } ]\n}{% endschema %}"
+        }
+    ]
+}

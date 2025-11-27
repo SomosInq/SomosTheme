@@ -1,0 +1,18 @@
+{
+    "sourceFile": "snippets/theme-animations-config.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764237899536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764237899536,
+            "name": "Commit-0",
+            "content": "{%- comment -%}\nTheme animation settings as JS config for GSAP\n{%- endcomment -%}\n<script id=\"theme-animations-config\">\n  window.themeAnimations = {\n    enabled: {{ settings.animations_enabled | default: true | json }},\n    respectReducedMotion: {{ settings.animations_respect_reduced_motion | default: true | json }},\n    defaultStyle: {{ settings.animations_default_style | default: 'fade-in' | json }},\n    defaultDuration: {{ settings.animations_default_duration | default: 0.6 | json }},\n    defaultDelay: {{ settings.animations_default_delay | default: 0 | json }},\n    defaultStagger: {{ settings.animations_default_stagger | default: 0.05 | json }},\n    defaultEase: {{ settings.animations_default_ease | default: 'power2.out' | json }},\n    scrollTrigger: {{ settings.animations_scroll_trigger | default: 'enter' | json }},\n    repeat: {{ settings.animations_repeat | default: 'once' | json }}\n  };\n</script>\n"
+        }
+    ]
+}

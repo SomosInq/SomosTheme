@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/comparison-table.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240041927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n Comparison Table - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"comparison-table section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"comparison-table__container\">\n     <table>\n       <thead>\n"
+                }
+            ],
+            "date": 1764240041927,
+            "name": "Commit-0",
+            "content": "{% comment %}\nComparison Table - Fashion Store\n{% endcomment %}\n<section class=\"comparison-table section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"comparison-table__container\">\n    <table>\n      <thead>\n        <tr><th></th><th>Somos</th><th>Other Brands</th></tr>\n      </thead>\n      <tbody>\n        <tr><td>Ethical Sourcing</td><td>✔️</td><td>❌</td></tr>\n        <tr><td>Inclusive Sizing</td><td>✔️</td><td>❌</td></tr>\n        <tr><td>Fast Dispatch</td><td>✔️</td><td>❌</td></tr>\n        <tr><td>Eco Packaging</td><td>✔️</td><td>❌</td></tr>\n      </tbody>\n    </table>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"Comparison Table\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"Comparison Table\" } ]\n}{% endschema %}"
+        }
+    ]
+}

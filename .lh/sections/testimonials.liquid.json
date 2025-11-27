@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/testimonials.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240045944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n Testimonials - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"testimonials section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"testimonials__container\">\n     <h3>What our customers say</h3>\n     <blockquote>“Absolutely love my new dress! The fit is perfect and the quality is amazing.”<br><cite>– Emily R.</cite></blockquote>\n"
+                }
+            ],
+            "date": 1764240045944,
+            "name": "Commit-0",
+            "content": "{% comment %}\nTestimonials - Fashion Store\n{% endcomment %}\n<section class=\"testimonials section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"testimonials__container\">\n    <h3>What our customers say</h3>\n    <blockquote>“Absolutely love my new dress! The fit is perfect and the quality is amazing.”<br><cite>– Emily R.</cite></blockquote>\n    <blockquote>“Fast delivery and beautiful packaging. Will shop again!”<br><cite>– Alex T.</cite></blockquote>\n    <blockquote>“Finally a brand that gets inclusive sizing right.”<br><cite>– Samira K.</cite></blockquote>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"Testimonials\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"Testimonials\" } ]\n}{% endschema %}"
+        }
+    ]
+}

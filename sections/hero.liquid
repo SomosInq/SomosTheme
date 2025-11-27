@@ -421,8 +421,9 @@
   {% endcomment %}
 
   <div
-    class="hero__container spacing-style section section--full-width"
+    class="hero__container spacing-style section section--full-width{% if section.settings.parallax_bg %} hero--parallax{% endif %}"
     style="{% render 'spacing-style', settings: section.settings %}"
+    {% if section.settings.parallax_bg %}data-parallax="true"{% endif %}
   >
     {%- if section.settings.link != blank -%}
       <a
@@ -438,12 +439,28 @@
       style="--hero-media-count: {{ media_count }};--hero-media-count-mobile: {{ media_count_mobile }};{%- if section.settings.image_1 != blank -%} --hero-media-aspect-ratio: {{ section.settings.image_1.aspect_ratio }};{% endif %}"
       data-testid="hero-media-wrapper"
     >
+      {% if section.settings.parallax_bg and section.settings.image_1 != blank %}
+        <div class="hero__parallax-bg" style="background-image:url('{{ section.settings.image_1 | image_url: width: 2000 }}');"></div>
+      {% endif %}
       {% liquid
         if section.settings.toggle_overlay
           render 'overlay', settings: section.settings
         endif
       %}
       {{ media }}
+    {% if section.settings.parallax_bg %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var parallax = document.querySelector('.hero--parallax .hero__parallax-bg');
+        if (!parallax) return;
+        window.addEventListener('scroll', function() {
+          var scrolled = window.scrollY;
+          parallax.style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
+        });
+      });
+    </script>
+    {% endif %}
+
     </div>
     <div
       class="
@@ -465,6 +482,18 @@
 {% stylesheet %}
   .hero-wrapper {
     --hero-height-offset: 0px;
+  }
+
+  .hero__parallax-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+    transition: transform 0.2s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
   }
 
   /* Being extra specific in the selector for performance reasons */
@@ -1123,6 +1152,12 @@
       "default": "to top",
       "visible_if": "{{ section.settings.toggle_overlay and section.settings.overlay_style == 'gradient' }}"
     },
+      {
+        "type": "checkbox",
+        "id": "parallax_bg",
+        "label": "t:settings.parallax_background",
+        "default": false
+      },
     {
       "type": "checkbox",
       "id": "blurred_reflection",

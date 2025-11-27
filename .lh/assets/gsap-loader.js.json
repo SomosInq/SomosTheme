@@ -1,0 +1,18 @@
+{
+    "sourceFile": "assets/gsap-loader.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764237560201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764237560201,
+            "name": "Commit-0",
+            "content": "// GSAP core CDN (can be replaced with npm build if needed)\n// Place this in your theme.liquid or main layout file for production use\n// For now, this is a local asset for development\nimport 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';\nimport 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';\n\n// Export GSAP for use in other scripts\nexport const { gsap } = window;\nexport const { ScrollTrigger } = window.gsap || {};\n"
+        }
+    ]
+}

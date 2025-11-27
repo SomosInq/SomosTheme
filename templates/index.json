@@ -6,9 +6,11 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+ 
+ {
   "sections": {
-    "hero_jVaWmY": {
+    "hero": {
       "type": "hero",
       "blocks": {
         "text_YLPk4p": {
@@ -84,203 +86,361 @@
         "padding-block-end": 72
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 4,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
-        }
-      },
-      "name": "Featured collection",
+    "mini_usp_strip": {
+      "type": "mini-usp-strip",
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "usp_items": [
+          {
+            "icon": "shipping",
+            "text": "Free shipping on orders over $50"
+          },
+          {
+            "icon": "money",
+            "text": "Money-back guarantee"
+          },
+          {
+            "icon": "support",
+            "text": "24/7 customer support"
+          }
+        ],
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "featured_collection": {
+      "type": "collection-list",
+      "settings": {
+        "title": "Featured Collection",
+        "collection_handle": "frontpage",
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_view_all_button": true,
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "social_proof": {
+      "type": "social-proof",
+      "settings": {
+        "show_reviews": true,
+        "show_sales": true,
+        "show_visitors": true,
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "intro_story": {
+      "type": "intro-story",
+      "settings": {
+        "title": "Welcome to Our Fashion Store",
+        "content": "<p>Discover the latest trends and timeless classics in our curated collections.</p>",
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "1rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "benefits_grid": {
+      "type": "benefits-grid",
+      "settings": {
+        "benefits": [
+          {
+            "icon": "check",
+            "text": "Quality materials"
+          },
+          {
+            "icon": "check",
+            "text": "Sustainable practices"
+          },
+          {
+            "icon": "check",
+            "text": "Ethically sourced"
+          }
+        ],
+        "columns": 3,
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "image_text_split": {
+      "type": "image-text-split",
+      "settings": {
+        "image": "shopify://path_to_image",
+        "image_position": "left",
+        "text": "<p>Explore our exclusive range of products that blend style and comfort.</p>",
+        "alignment": "left",
+        "font": "var(--font-body--family)",
+        "font_size": "1rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "expanded_features": {
+      "type": "expanded-features",
+      "settings": {
+        "features": [
+          {
+            "icon": "star",
+            "text": "Premium quality guarantee"
+          },
+          {
+            "icon": "leaf",
+            "text": "Eco-friendly materials"
+          },
+          {
+            "icon": "heart",
+            "text": "Charity support"
+          }
+        ],
+        "columns": 3,
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "comparison_table": {
+      "type": "comparison-table",
+      "settings": {
+        "products": [
+          {
+            "title": "Basic Tee",
+            "price": "$19.99",
+            "features": [
+              "100% cotton",
+              "Available in 5 colors",
+              "Sizes S-XL"
+            ]
+          },
+          {
+            "title": "Premium Tee",
+            "price": "$29.99",
+            "features": [
+              "100% organic cotton",
+              "Available in 10 colors",
+              "Sizes XS-XXL",
+              "Free shipping"
+            ]
+          }
+        ],
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "ugc_influencer": {
+      "type": "ugc-influencer",
+      "settings": {
+        "influencers": [
+          {
+            "name": "Fashionista1",
+            "image": "shopify://path_to_image",
+            "url": "https://instagram.com/fashionista1"
+          },
+          {
+            "name": "Trendsetter2",
+            "image": "shopify://path_to_image",
+            "url": "https://instagram.com/trendsetter2"
+          }
+        ],
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "testimonials": [
+          {
+            "quote": "This is the best store ever!",
+            "author": "Happy Customer"
+          },
+          {
+            "quote": "Amazing quality and great service.",
+            "author": "Satisfied Client"
+          }
+        ],
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "faqs": [
+          {
+            "question": "What is your return policy?",
+            "answer": "We offer a 30-day money-back guarantee."
+          },
+          {
+            "question": "Do you offer international shipping?",
+            "answer": "Yes, we ship worldwide."
+          }
+        ],
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "final_cta": {
+      "type": "final-cta",
+      "settings": {
+        "title": "Ready to Elevate Your Style?",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "alignment": "center",
+        "font": "var(--font-body--family)",
+        "font_size": "1rem",
+        "line_height": "normal",
+        "letter_spacing": "normal",
+        "case": "none",
+        "color": "var(--color-foreground)",
+        "background": false,
+        "background_color": "#00000026",
+        "corner_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
       }
     }
   },
   "order": [
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "hero",
+    "mini_usp_strip",
+    "featured_collection",
+    "social_proof",
+    "intro_story",
+    "benefits_grid",
+    "image_text_split",
+    "expanded_features",
+    "comparison_table",
+    "ugc_influencer",
+    "testimonials",
+    "faq",
+    "final_cta"
   ]
 }

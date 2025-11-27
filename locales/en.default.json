@@ -52,6 +52,9 @@
     "unit_price": "Unit price",
     "find_country": "Find country"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     // Quick add button on product cards, shortened version of add to cart
     "add": "Add",

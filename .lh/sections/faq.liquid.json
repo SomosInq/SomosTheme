@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/faq.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240051458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n FAQ - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"faq section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"faq__container\">\n     <h3>Frequently Asked Questions</h3>\n     <details>\n"
+                }
+            ],
+            "date": 1764240051458,
+            "name": "Commit-0",
+            "content": "{% comment %}\nFAQ - Fashion Store\n{% endcomment %}\n<section class=\"faq section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"faq__container\">\n    <h3>Frequently Asked Questions</h3>\n    <details>\n      <summary>What is your return policy?</summary>\n      <p>We offer easy 30-day returns on all orders.</p>\n    </details>\n    <details>\n      <summary>How long does shipping take?</summary>\n      <p>Standard UK shipping is 2-3 business days. Next-day options available.</p>\n    </details>\n    <details>\n      <summary>Are your products ethically made?</summary>\n      <p>Yes, all our products are ethically sourced and produced.</p>\n    </details>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"FAQ\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"FAQ\" } ]\n}{% endschema %}"
+        }
+    ]
+}

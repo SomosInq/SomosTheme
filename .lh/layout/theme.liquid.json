@@ -1,0 +1,30 @@
+{
+    "sourceFile": "layout/theme.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1764237899536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240483520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,10 @@\n     {%- render 'theme-styles-variables' -%}\n     {%- render 'theme-animations-config' -%}\n     {%- render 'color-schemes' -%}\n \n+    {{ 'homepage-sections.css' | asset_url | stylesheet_tag }}\n+\n     {% if request.design_mode %}\n       {%- render 'theme-editor' -%}\n     {% endif %}\n \n"
+                },
+                {
+                    "date": 1764241915301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n   class=\"no-js{% if request.design_mode %} shopify-design-mode{% endif %}\"\n   lang=\"{{ request.locale.iso_code }}\"\n >\n   <head>\n+    <!-- Inter font for clean, modern look -->\n+    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap\" rel=\"stylesheet\">\n     {%- if settings.favicon != blank -%}\n       <link\n         rel=\"icon\"\n         type=\"image/png\"\n"
+                },
+                {
+                    "date": 1764242396458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n     {%- render 'fonts' -%}\n     {%- render 'scripts' -%}\n     {%- render 'theme-styles-variables' -%}\n     {%- render 'theme-animations-config' -%}\n+    {%- render 'global-section-spacing-variables' -%}\n     {%- render 'color-schemes' -%}\n \n     {{ 'homepage-sections.css' | asset_url | stylesheet_tag }}\n \n"
+                }
+            ],
+            "date": 1764237899536,
+            "name": "Commit-0",
+            "content": "<!doctype html>\n<html\n  class=\"no-js{% if request.design_mode %} shopify-design-mode{% endif %}\"\n  lang=\"{{ request.locale.iso_code }}\"\n>\n  <head>\n    {%- if settings.favicon != blank -%}\n      <link\n        rel=\"icon\"\n        type=\"image/png\"\n        href=\"{{ settings.favicon | image_url: width: 32, height: 32 }}\"\n      >\n    {%- endif -%}\n\n    {% comment %} This a way to wait for main content to load when navigating to a new page so that the view transitions can work consistently {% endcomment %}\n    <link\n      rel=\"expect\"\n      href=\"#MainContent\"\n      blocking=\"render\"\n      id=\"view-transition-render-blocker\"\n    >\n\n    {%- render 'meta-tags' -%}\n    {%- render 'stylesheets' -%}\n    {%- render 'fonts' -%}\n    {%- render 'scripts' -%}\n    {%- render 'theme-styles-variables' -%}\n    {%- render 'theme-animations-config' -%}\n    {%- render 'color-schemes' -%}\n\n    {% if request.design_mode %}\n      {%- render 'theme-editor' -%}\n    {% endif %}\n\n    {{ content_for_header }}\n  </head>\n\n  <body class=\"page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}\">\n    {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}\n    <div id=\"header-group\">\n      {% sections 'header-group' %}\n    </div>\n\n    <script\n      src=\"{{ 'critical.js' | asset_url }}\"\n      type=\"module\"\n      async\n      blocking=\"render\"\n    ></script>\n\n    <main\n      id=\"MainContent\"\n      class=\"content-for-layout\"\n      role=\"main\"\n      data-page-transition-enabled=\"{{ settings.page_transition_enabled }}\"\n      data-product-transition=\"{{ settings.transition_to_main_product }}\"\n      data-template=\"{{ template }}\"\n    >\n      {{ content_for_layout }}\n    </main>\n\n    {% sections 'footer-group' %}\n\n    {% render 'search-modal' %}\n\n    {% if settings.quick_add or settings.mobile_quick_add %}\n      {% render 'quick-add-modal' %}\n    {% endif %}\n  </body>\n</html>\n"
+        }
+    ]
+}

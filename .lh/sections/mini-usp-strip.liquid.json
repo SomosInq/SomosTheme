@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sections/mini-usp-strip.liquid",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764240030813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764240870925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {% comment %}\n Mini USP Strip - Fashion Store\n {% endcomment %}\n+{% render 'theme-animations-config' %}\n <section class=\"mini-usp-strip section spacing-style color-{{ section.settings.color_scheme }}\">\n   <div class=\"mini-usp-strip__container\">\n     <ul class=\"mini-usp-strip__list\">\n       <li>Free UK Shipping</li>\n"
+                }
+            ],
+            "date": 1764240030813,
+            "name": "Commit-0",
+            "content": "{% comment %}\nMini USP Strip - Fashion Store\n{% endcomment %}\n<section class=\"mini-usp-strip section spacing-style color-{{ section.settings.color_scheme }}\">\n  <div class=\"mini-usp-strip__container\">\n    <ul class=\"mini-usp-strip__list\">\n      <li>Free UK Shipping</li>\n      <li>Easy 30-Day Returns</li>\n      <li>Ethically Sourced</li>\n    </ul>\n  </div>\n</section>\n{% schema %}{\n  \"name\": \"Mini USP Strip\",\n  \"settings\": [\n    { \"type\": \"color_scheme\", \"id\": \"color_scheme\", \"label\": \"Color scheme\", \"default\": \"scheme-1\" }\n  ],\n  \"presets\": [ { \"name\": \"Mini USP Strip\" } ]\n}{% endschema %}"
+        }
+    ]
+}
