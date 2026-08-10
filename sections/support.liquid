@@ -1,0 +1,49 @@
+<section class="section support-section page-width">
+  <h1>{{ page.title }}</h1>
+
+  <div class="support-columns">
+    <div class="support-faq">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <div class="faq-item">
+            <button class="faq-question">{{ block.settings.question }}</button>
+            <div class="faq-answer">{{ block.settings.answer }}</div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>Add Q&amp;A blocks in the section settings.</p>
+      {% endif %}
+    </div>
+
+    <div class="support-contact">
+      <h2>Contact support</h2>
+      <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
+        <input type="hidden" name="form_type" value="contact">
+        <label>Name<input type="text" name="contact[name]"></label>
+        <label>Email<input type="email" name="contact[email]"></label>
+        <label>Message<textarea name="contact[body]"></textarea></label>
+        <button type="submit">Send</button>
+      </form>
+
+      {% if section.settings.enable_chat %}
+        <div class="support-chat">
+          {{ section.settings.chat_snippet }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Support",
+    "settings": [
+      { "type": "checkbox", "id": "enable_chat", "label": "Enable chat snippet", "default": false },
+      { "type": "textarea", "id": "chat_snippet", "label": "Chat snippet (HTML/JS)", "info":"Paste provider snippet here" }
+    ],
+    "blocks": [
+      { "type": "faq", "name": "Q&A", "settings": [ { "id":"question","type":"text","label":"Question" }, { "id":"answer","type":"textarea","label":"Answer" } ] }
+    ],
+    "presets": [{ "name": "Support" }]
+  }
+  {% endschema %}
+</section>

@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "store-locator",
+      "settings": {
+        "stores": "Downtown Flagship | 123 Main Street, Seattle, WA 98101\nWestside Studio | 55 Pine Avenue, Portland, OR 97204"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
+
+
+

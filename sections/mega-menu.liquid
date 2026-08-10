@@ -1,0 +1,56 @@
+<section class="section mega-menu-section">
+  <div class="mega-menu page-width">
+    <div class="mega-left">
+      {% if section.settings.menu != blank %}
+        {% assign menu_items = linklists[section.settings.menu].links %}
+        <ul class="mega-tabs">
+          {% for item in menu_items %}
+            <li data-index="{{ forloop.index0 }}"><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>Select a menu in the section settings.</p>
+      {% endif %}
+    </div>
+    <div class="mega-right">
+      {% if section.settings.menu != blank %}
+        {% for item in linklists[section.settings.menu].links %}
+          <div class="mega-panel" data-index="{{ forloop.index0 }}">
+            <h3>{{ item.title }}</h3>
+            {% if item.links.size > 0 %}
+              <ul>
+                {% for sub in item.links %}
+                  <li><a href="{{ sub.url }}">{{ sub.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const tabs = document.querySelectorAll('.mega-tabs li');
+      const panels = document.querySelectorAll('.mega-panel');
+      if(!tabs.length) return;
+      tabs.forEach(t=>t.addEventListener('mouseenter', function(){
+        const i = this.getAttribute('data-index');
+        panels.forEach(p=>p.style.display='none');
+        const panel = document.querySelector('.mega-panel[data-index="'+i+'"]');
+        if(panel) panel.style.display='block';
+      }));
+    })();
+  </script>
+
+  {% schema %}
+  {
+    "name": "Mega menu",
+    "settings": [
+      { "type":"link_list", "id":"menu", "label":"Menu to use" }
+    ],
+    "presets": [{ "name": "Mega menu" }]
+  }
+  {% endschema %}
+</section>

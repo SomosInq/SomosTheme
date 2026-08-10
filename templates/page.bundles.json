@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "bundles",
+      "settings": {
+        "collection": "frontpage"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "comparison",
+      "settings": {
+        "product_handles": "example-product-1,example-product-2"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

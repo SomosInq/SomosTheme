@@ -1,0 +1,26 @@
+<section class="section sales-section page-width">
+  <h1>{{ page.title }}</h1>
+  {% if section.settings.collection != blank %}
+    {% assign coll = collections[section.settings.collection] %}
+    <div class="sale-products">
+      {% for product in coll.products %}
+        {% if product.compare_at_price > product.price %}
+          <article class="sale-item">
+            <a href="{{ product.url }}">{{ product.title }}</a>
+            <div class="price">Sale: {{ product.price | money }} <span class="compare">{{ product.compare_at_price | money }}</span></div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Select a collection in the section settings to show sale items.</p>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Sales",
+    "settings": [ { "type":"collection", "id":"collection", "label":"Collection to check for sales" } ],
+    "presets": [{ "name": "Sales" }]
+  }
+  {% endschema %}
+</section>

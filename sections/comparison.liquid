@@ -1,0 +1,41 @@
+<section class="section comparison-section page-width">
+  <h1>{{ page.title }}</h1>
+  <p>Use the section settings to compare products side by side.</p>
+
+  {% if section.settings.product_handles != blank %}
+    {% assign handles = section.settings.product_handles | split: "," %}
+    <div class="comparison-table">
+      {% for handle in handles %}
+        {% assign handle_stripped = handle | strip %}
+        {% if handle_stripped != blank %}
+          {% assign product = all_products[handle_stripped] %}
+          {% if product %}
+            <div class="comparison-item">
+              <h2>{{ product.title }}</h2>
+              <p>{{ product.price | money }}</p>
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Product Comparison",
+    "settings": [
+      {
+        "type": "text",
+        "id": "product_handles",
+        "label": "Product handles (comma separated)",
+        "default": "example-product-1, example-product-2"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Comparison"
+      }
+    ]
+  }
+  {% endschema %}
+</section>

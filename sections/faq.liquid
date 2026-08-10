@@ -1,28 +1,33 @@
-{% comment %}
-FAQ - Fashion Store
-{% endcomment %}
-{% render 'theme-animations-config' %}
-<section class="faq section spacing-style color-{{ section.settings.color_scheme }}">
-  <div class="faq__container">
-    <h3>Frequently Asked Questions</h3>
-    <details>
-      <summary>What is your return policy?</summary>
-      <p>We offer easy 30-day returns on all orders.</p>
-    </details>
-    <details>
-      <summary>How long does shipping take?</summary>
-      <p>Standard UK shipping is 2-3 business days. Next-day options available.</p>
-    </details>
-    <details>
-      <summary>Are your products ethically made?</summary>
-      <p>Yes, all our products are ethically sourced and produced.</p>
-    </details>
+<section class="section faq-section page-width">
+  <h1>{{ page.title }}</h1>
+  <div class="faq-list">
+    {% for block in section.blocks %}
+      <div class="faq-item">
+        <button class="faq-question">{{ block.settings.question }}</button>
+        <div class="faq-answer">{{ block.settings.answer }}</div>
+      </div>
+    {% endfor %}
   </div>
+
+  <script>
+    (function(){
+      document.querySelectorAll('.faq-question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          this.classList.toggle('open');
+          const a = this.nextElementSibling;
+          if(a.style.display === 'block') a.style.display = 'none'; else a.style.display = 'block';
+        });
+      });
+    })();
+  </script>
+
+  {% schema %}
+  {
+    "name": "FAQ",
+    "blocks": [
+      { "type":"faq", "name":"Q&A", "settings":[ {"id":"question","type":"text","label":"Question"}, {"id":"answer","type":"textarea","label":"Answer"} ] }
+    ],
+    "presets": [{ "name": "FAQ" }]
+  }
+  {% endschema %}
 </section>
-{% schema %}{
-  "name": "FAQ",
-  "settings": [
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
-  ],
-  "presets": [ { "name": "FAQ" } ]
-}{% endschema %}

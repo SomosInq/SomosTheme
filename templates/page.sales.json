@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "sales",
+      "settings": {
+        "collection": "frontpage"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "rewards",
+      "settings": {
+        "content": "Join our rewards program to earn points on every purchase, unlock exclusive offers, and get early access to new drops.",
+        "signup_url": "/account/register"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

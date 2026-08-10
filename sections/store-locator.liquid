@@ -1,0 +1,30 @@
+<section class="section store-locator-section page-width">
+  <h1>{{ page.title }}</h1>
+  {% if section.settings.stores != blank %}
+    {% assign entries = section.settings.stores | split: "\n" %}
+    <ul class="store-list">
+      {% for entry in entries %}
+        {% assign parts = entry | split: "|" %}
+        {% assign name = parts[0] | strip %}
+        {% assign address = parts[1] | strip %}
+        <li>
+          <strong>{{ name }}</strong><br>
+          <span>{{ address }}</span><br>
+          <a href="https://maps.google.com/?q={{ address | url_encode }}" target="_blank">Open in maps</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Enter stores as one per line in the format: <em>Name | Address</em> in section settings.</p>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Store Locator",
+    "settings": [
+      { "type":"textarea", "id":"stores", "label":"Stores (one per line: Name | Address)", "default":"" }
+    ],
+    "presets": [{ "name": "Store locator" }]
+  }
+  {% endschema %}
+</section>
