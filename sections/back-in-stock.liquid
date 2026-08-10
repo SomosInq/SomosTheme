@@ -1,0 +1,32 @@
+<section class="section page-shell back-in-stock-section">
+  <div class="page-width-content">
+    <div class="page-hero page-hero--split">
+      <div>
+        <span class="page-pill page-pill--accent">Back in stock</span>
+        <h1>{{ section.settings.title | default: page.title }}</h1>
+        <p>{{ section.settings.description }}</p>
+      </div>
+
+      <div class="page-card">
+        <form class="js-back-in-stock-form page-stack--compact">
+          <input class="page-field" type="email" name="email" placeholder="Your email" required>
+          <input class="page-field" type="text" name="product" value="{{ section.settings.product_name }}" placeholder="Product name" required>
+          <button class="button" type="submit">Notify me</button>
+        </form>
+        <p class="page-status" data-back-in-stock-status role="status">We will send a notification as soon as the item is available again.</p>
+      </div>
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Back in stock",
+    "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Get notified when it returns" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Let shoppers request an alert for sold-out products they want to buy again." },
+      { "type": "text", "id": "product_name", "label": "Default product name", "default": "Featured product" }
+    ],
+    "presets": [{ "name": "Back in stock" }]
+  }
+  {% endschema %}
+</section>

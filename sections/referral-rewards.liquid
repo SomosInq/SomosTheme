@@ -1,0 +1,36 @@
+<section class="section page-shell referral-rewards-section">
+  <div class="page-width-content">
+    <div class="page-hero page-hero--split">
+      <div>
+        <span class="page-pill page-pill--accent">Refer a friend</span>
+        <h1>{{ section.settings.title | default: page.title }}</h1>
+        <p>{{ section.settings.description }}</p>
+      </div>
+
+      <div class="page-card" data-referral-widget data-referral-link="{{ section.settings.referral_link }}">
+        <form class="js-referral-form page-stack--compact">
+          <label class="page-field-label" for="referral-email">Friend email</label>
+          <input class="page-field" id="referral-email" name="email" type="email" placeholder="friend@example.com" required>
+          <button class="button" type="submit">Send invite</button>
+        </form>
+        <div class="page-actions">
+          <button class="button button-secondary" type="button" data-copy-link>Copy invite link</button>
+        </div>
+        <p class="page-status" data-referral-status role="status">Your referrals earn points and unlock rewards.</p>
+        <p class="page-status"><strong>Points earned:</strong> <span data-referral-count>0</span></p>
+      </div>
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Referral rewards",
+    "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Bring a friend and earn rewards" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Reward customers for sharing your brand with friends and family." },
+      { "type": "text", "id": "referral_link", "label": "Referral link", "default": "/account/register" }
+    ],
+    "presets": [{ "name": "Referral rewards" }]
+  }
+  {% endschema %}
+</section>

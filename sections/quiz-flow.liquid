@@ -1,0 +1,54 @@
+<section class="section page-shell quiz-flow-section">
+  <div class="page-width-content">
+    <div class="page-hero">
+      <span class="page-pill page-pill--accent">Product finder</span>
+      <h1>{{ section.settings.title | default: page.title }}</h1>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <form class="page-card js-quiz-form">
+      <div class="page-stack">
+        <div class="page-card page-card--compact">
+          <h2>What matters most?</h2>
+          <div class="page-form-grid">
+            <label class="page-choice"><input type="radio" name="goal" value="routine" data-recommendation="routine"> I want a simple routine</label>
+            <label class="page-choice"><input type="radio" name="goal" value="gift" data-recommendation="gifting"> I need gift ideas</label>
+            <label class="page-choice"><input type="radio" name="goal" value="premium" data-recommendation="premium"> I want a premium experience</label>
+            <label class="page-choice"><input type="radio" name="goal" value="quick" data-recommendation="essentials"> I want the quickest recommendation</label>
+          </div>
+        </div>
+
+        <div class="page-card page-card--compact">
+          <h2>How do you shop?</h2>
+          <div class="page-form-grid">
+            <label class="page-choice"><input type="radio" name="shopping" value="guided" data-recommendation="routine"> I like guided suggestions</label>
+            <label class="page-choice"><input type="radio" name="shopping" value="editorial" data-recommendation="premium"> I like storytelling and visuals</label>
+            <label class="page-choice"><input type="radio" name="shopping" value="gifted" data-recommendation="gifting"> I shop by occasion</label>
+            <label class="page-choice"><input type="radio" name="shopping" value="fast" data-recommendation="essentials"> I want a fast answer</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-actions">
+        <button type="submit" class="button">See recommendation</button>
+      </div>
+    </form>
+
+    <div class="page-card js-quiz-result" hidden>
+      <h2 data-result-title>Recommendation</h2>
+      <p data-result-body></p>
+      <a class="button button-secondary" href="/collections/all" data-result-link>Open the matching page</a>
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Quiz flow",
+    "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Find the right product" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Answer a couple of quick questions and we will guide you to the right experience." }
+    ],
+    "presets": [{ "name": "Quiz flow" }]
+  }
+  {% endschema %}
+</section>

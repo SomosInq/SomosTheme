@@ -1,0 +1,35 @@
+<section class="section page-shell subscription-landing-section">
+  <div class="page-width-content">
+    <div class="page-hero page-hero--split">
+      <div>
+        <span class="page-pill page-pill--accent">Subscription</span>
+        <h1>{{ section.settings.title | default: page.title }}</h1>
+        <p>{{ section.settings.description }}</p>
+      </div>
+
+      <div class="page-card">
+        <form class="js-subscription-form page-stack--compact">
+          <label class="page-field-label" for="subscription-plan">Choose your plan</label>
+          <select class="page-field" id="subscription-plan" name="plan">
+            <option value="monthly">Monthly delivery</option>
+            <option value="quarterly">Quarterly delivery</option>
+            <option value="annual">Annual delivery</option>
+          </select>
+          <button class="button" type="submit">Continue to checkout</button>
+        </form>
+        <p class="page-status" data-subscription-status role="status">Choose a delivery plan and keep your favorites stocked automatically.</p>
+      </div>
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Subscription landing",
+    "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Subscribe and save" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Offer recurring replenishment with flexible delivery options and better rates." }
+    ],
+    "presets": [{ "name": "Subscription landing" }]
+  }
+  {% endschema %}
+</section>

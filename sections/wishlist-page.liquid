@@ -1,0 +1,28 @@
+<section class="section page-shell wishlist-page-section">
+  <div class="page-width-content">
+    <div class="page-hero">
+      <span class="page-pill">Wishlist</span>
+      <h1>{{ section.settings.title | default: page.title }}</h1>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <div class="page-card">
+      <div class="page-actions">
+        <button class="button button-secondary" type="button" data-wishlist-clear>Clear saved list</button>
+      </div>
+      <div class="page-grid" data-wishlist-list></div>
+      <p data-wishlist-empty>No saved items yet. Visit a product page and tap the save button to build your wishlist.</p>
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Wishlist page",
+    "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Your wishlist" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Save products for later and pick up where you left off." }
+    ],
+    "presets": [{ "name": "Wishlist page" }]
+  }
+  {% endschema %}
+</section>

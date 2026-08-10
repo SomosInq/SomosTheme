@@ -22,6 +22,12 @@
       </div>
     </div>
 
+    {% if section.settings.hero_image_url != blank %}
+      <div class="feature-landing-media">
+        <img src="{{ section.settings.hero_image_url }}" alt="{{ product.title | default: page.title | escape }}" loading="lazy">
+      </div>
+    {% endif %}
+
     <div class="page-grid page-grid--support">
       <article class="page-card">
         <h2>Product details</h2>
@@ -36,5 +42,55 @@
         <p>Add bundle offers, size guidance, and subscriptions to create a complete commerce story.</p>
       </article>
     </div>
+
+    {% if section.settings.secondary_title != blank or section.settings.secondary_description != blank %}
+      <div class="feature-landing-split">
+        <article class="page-card">
+          {% if section.settings.secondary_title != blank %}
+            <h2>{{ section.settings.secondary_title }}</h2>
+          {% endif %}
+          {% if section.settings.secondary_description != blank %}
+            <p>{{ section.settings.secondary_description }}</p>
+          {% endif %}
+        </article>
+
+        {% if section.settings.secondary_image_url != blank %}
+          <div class="page-card feature-landing-media-card">
+            <img src="{{ section.settings.secondary_image_url }}" alt="{{ section.settings.secondary_title | escape }}" loading="lazy">
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Advanced product page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_image_url",
+      "label": "Hero image URL"
+    },
+    {
+      "type": "text",
+      "id": "secondary_title",
+      "label": "Secondary title",
+      "default": "Why shoppers choose this product"
+    },
+    {
+      "type": "textarea",
+      "id": "secondary_description",
+      "label": "Secondary description",
+      "default": "Use this area to highlight value props, inclusions, customer proof, or a premium product story."
+    },
+    {
+      "type": "text",
+      "id": "secondary_image_url",
+      "label": "Secondary image URL"
+    }
+  ],
+  "presets": [{ "name": "Advanced product page" }]
+}
+{% endschema %}

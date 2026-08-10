@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "quiz-flow",
+      "settings": {
+        "title": "Find the right fit",
+        "description": "Answer a few quick questions to discover the best product experience for your needs."
+      }
+    }
+  },
+  "order": ["main"]
+}

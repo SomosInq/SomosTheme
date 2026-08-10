@@ -1,0 +1,26 @@
+<section class="section page-shell store-locator-data-section">
+  <div class="page-width-content">
+    <div class="page-hero">
+      <span class="page-pill page-pill--accent">Store locator</span>
+      <h1>{{ section.settings.title | default: page.title }}</h1>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <div class="page-card" data-store-locator data-store-locator-data="{{ section.settings.data_source }}">
+      <input class="page-field" type="search" data-store-search placeholder="Search by city or store name">
+      <div class="page-grid" data-store-results></div>
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Store locator data",
+    "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Find a nearby store" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Search by city, region, or store name to find the nearest location." },
+      { "type": "text", "id": "data_source", "label": "Data source URL", "default": "/apps/store-locator/stores" }
+    ],
+    "presets": [{ "name": "Store locator data" }]
+  }
+  {% endschema %}
+</section>

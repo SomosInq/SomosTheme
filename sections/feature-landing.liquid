@@ -30,6 +30,12 @@
       </div>
     </div>
 
+    {% if section.settings.hero_image_url != blank %}
+      <div class="feature-landing-media">
+        <img src="{{ section.settings.hero_image_url }}" alt="{{ section.settings.title | default: page.title | escape }}" loading="lazy">
+      </div>
+    {% endif %}
+
     {% assign cards = section.settings.cards | split: '||' %}
     {% if cards.size > 0 %}
       <div class="page-grid page-grid--support">
@@ -50,6 +56,30 @@
         {% endfor %}
       </div>
     {% endif %}
+
+    {% if section.settings.secondary_title != blank or section.settings.secondary_description != blank %}
+      <div class="feature-landing-split">
+        <article class="page-card">
+          {% if section.settings.secondary_title != blank %}
+            <h2>{{ section.settings.secondary_title }}</h2>
+          {% endif %}
+          {% if section.settings.secondary_description != blank %}
+            <p>{{ section.settings.secondary_description }}</p>
+          {% endif %}
+          {% if section.settings.secondary_cta_label != blank and section.settings.secondary_cta_url != blank %}
+            <div class="page-actions">
+              <a href="{{ section.settings.secondary_cta_url }}" class="button button-secondary">{{ section.settings.secondary_cta_label }}</a>
+            </div>
+          {% endif %}
+        </article>
+
+        {% if section.settings.secondary_image_url != blank %}
+          <div class="page-card feature-landing-media-card">
+            <img src="{{ section.settings.secondary_image_url }}" alt="{{ section.settings.secondary_title | escape }}" loading="lazy">
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 
   {% schema %}
@@ -62,6 +92,12 @@
       { "type": "text", "id": "highlight_heading", "label": "Highlights heading", "default": "What this page includes" },
       { "type": "textarea", "id": "bullets", "label": "Highlights (one per line)" },
       { "type": "textarea", "id": "cards", "label": "Cards (Title | Body || Title | Body)" },
+      { "type": "text", "id": "hero_image_url", "label": "Hero image URL" },
+      { "type": "text", "id": "secondary_title", "label": "Secondary title" },
+      { "type": "textarea", "id": "secondary_description", "label": "Secondary description" },
+      { "type": "text", "id": "secondary_image_url", "label": "Secondary image URL" },
+      { "type": "text", "id": "secondary_cta_label", "label": "Secondary CTA label" },
+      { "type": "url", "id": "secondary_cta_url", "label": "Secondary CTA URL" },
       { "type": "text", "id": "cta_label", "label": "CTA label" },
       { "type": "url", "id": "cta_url", "label": "CTA URL" }
     ],
