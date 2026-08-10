@@ -5,10 +5,16 @@
       "settings": {
         "eyebrow": "Bundle builder",
         "title": "Build your perfect bundle",
-        "description": "Create an interactive bundle builder experience for routines, gift sets, or curated product combinations.",
+        "description": "Create an interactive bundle builder experience for routines, gift sets, or curated product combinations that feels premium and easy to shop.",
         "highlight_heading": "What it supports",
         "bullets": "Choose 3 or build-a-box flows\nRoutine or bundle recommendations\nUpsell and cross-sell opportunities",
         "cards": "Flexible selection | Let shoppers choose from complementary products. ||Higher AOV | Encourage larger baskets with curated combinations. ||Great for gift sets | Support routines, bundles, and seasonal collections.",
+        "hero_image_url": "https://images.unsplash.com/photo-1526397751294-331021109fbd?auto=format&fit=crop&w=1400&q=80",
+        "secondary_title": "Turn selection into a story",
+        "secondary_description": "Bundle pages encourage customers to explore more and buy with confidence when the combinations feel curated rather than random.",
+        "secondary_image_url": "https://images.unsplash.com/photo-1517394409934-1b74d8cf8d0b?auto=format&fit=crop&w=1400&q=80",
+        "secondary_cta_label": "See featured sets",
+        "secondary_cta_url": "/collections/all",
         "cta_label": "Browse bundles",
         "cta_url": "/collections/all"
       }

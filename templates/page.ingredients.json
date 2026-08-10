@@ -5,10 +5,16 @@
       "settings": {
         "eyebrow": "Ingredients",
         "title": "Ingredients and materials",
-        "description": "Use this page to explain the ingredients, materials, sourcing, or formulations behind your products in a more educational format.",
+        "description": "Use this page to explain the ingredients, materials, sourcing, or formulations behind your products in a more educational, trust-building format.",
         "highlight_heading": "Great for",
         "bullets": "Beauty and wellness products\nFood and supplements\nFashion and home goods",
         "cards": "Ingredient highlights | Explain what matters most to your customers. ||Materials and sourcing | Share your standards, origins, and quality. ||Transparency | Build trust through clear, structured content.",
+        "hero_image_url": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1400&q=80",
+        "secondary_title": "Education drives confidence",
+        "secondary_description": "Shoppers want to feel informed, especially when the product story is a key part of the purchase decision.",
+        "secondary_image_url": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1400&q=80",
+        "secondary_cta_label": "See featured products",
+        "secondary_cta_url": "/collections/all",
         "cta_label": "Explore products",
         "cta_url": "/collections/all"
       }

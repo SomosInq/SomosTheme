@@ -37,44 +37,32 @@ function initQuizFlow() {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const recommendationMap = {
-      routine: {
-        title: 'Best fit: routine builder',
-        body: 'A curated routine builder is the best match for shoppers who want guidance and convenience.',
-        link: '/pages/bundle-builder'
-      },
-      gifting: {
-        title: 'Best fit: gift guide',
-        body: 'A gift guide experience will help customers shop by recipient, budget, and occasion.',
-        link: '/pages/gift-guide'
-      },
-      premium: {
-        title: 'Best fit: premium product experience',
-        body: 'An editorial product page is ideal for premium products that need storytelling and proof.',
-        link: '/pages/advanced-product'
-      },
-      essentials: {
-        title: 'Best fit: product finder',
-        body: 'A focused product finder experience works best for shoppers who want quick recommendations.',
-        link: '/pages/product-finder'
-      }
-    };
-
     const selections = Array.from(form.querySelectorAll('input[type="radio"]:checked'));
     const score = selections.reduce((accumulator, input) => {
-      const key = input.dataset.recommendation;
-      if (key) accumulator[key] = (accumulator[key] || 0) + 1;
+      const key = input.dataset.resultTitle + '::' + input.dataset.resultBody + '::' + input.dataset.resultLink;
+      if (!accumulator[key]) {
+        accumulator[key] = {
+          title: input.dataset.resultTitle || 'Recommendation',
+          body: input.dataset.resultBody || 'We found the best fit for your needs.',
+          link: input.dataset.resultLink || '/collections/all',
+          count: 0
+        };
+      }
+      accumulator[key].count += 1;
       return accumulator;
     }, {});
 
-    const topKey = Object.entries(score).sort((a, b) => b[1] - a[1])[0]?.[0] || 'essentials';
-    const recommendation = recommendationMap[topKey] || recommendationMap.essentials;
+    const topRecommendation = Object.values(score).sort((a, b) => b.count - a.count)[0] || {
+      title: 'Recommendation ready',
+      body: 'Add some answer options in the theme editor to create tailored recommendations.',
+      link: '/collections/all'
+    };
 
-    if (resultTitle) resultTitle.textContent = recommendation.title;
-    if (resultBody) resultBody.textContent = recommendation.body;
+    if (resultTitle) resultTitle.textContent = topRecommendation.title;
+    if (resultBody) resultBody.textContent = topRecommendation.body;
     if (resultLink) {
-      resultLink.href = recommendation.link;
-      resultLink.textContent = 'Open the matching page';
+      resultLink.href = topRecommendation.link;
+      resultLink.textContent = topRecommendation.link === '/collections/all' ? 'Browse the collection' : 'Open the matching page';
     }
 
     result.hidden = false;

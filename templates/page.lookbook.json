@@ -5,10 +5,16 @@
       "settings": {
         "eyebrow": "Lookbook",
         "title": "Discover the collection",
-        "description": "Create an editorial lookbook page that blends storytelling, styling, and easy product shopping.",
+        "description": "Create an editorial lookbook page that blends storytelling, styling, and easy product shopping in a fashion-forward layout.",
         "highlight_heading": "Best for",
         "bullets": "Fashion and home brands\nSeasonal campaigns\nEditorial product discovery",
         "cards": "Style-first storytelling | Present products in a curated, immersive way. ||Strong visual merchandising | Use imagery to guide shoppers to products. ||Conversion-friendly | Link each story to products and collections.",
+        "hero_image_url": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1400&q=80",
+        "secondary_title": "Make styling feel aspirational",
+        "secondary_description": "Editorial pages help shoppers see the products in context and imagine them in their own world.",
+        "secondary_image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
+        "secondary_cta_label": "Shop the collection",
+        "secondary_cta_url": "/collections/all",
         "cta_label": "Explore the lookbook",
         "cta_url": "/collections/all"
       }

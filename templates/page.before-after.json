@@ -5,10 +5,16 @@
       "settings": {
         "eyebrow": "Before & after",
         "title": "See the transformation",
-        "description": "Highlight before and after imagery for beauty, wellness, fitness, or home transformations.",
+        "description": "Highlight before and after imagery for beauty, wellness, fitness, or home transformations in a proof-driven layout.",
         "highlight_heading": "Ideal for",
         "bullets": "Beauty and skincare\nWellness and supplements\nFitness and home transformations",
         "cards": "Visual proof | Let customers see the impact clearly. ||Higher confidence | Improve trust before they buy. ||Great for conversion | Pair with product details and reviews.",
+        "hero_image_url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=80",
+        "secondary_title": "Build confidence with proof",
+        "secondary_description": "Customers trust what they can see, especially for products that promise visible results.",
+        "secondary_image_url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=80",
+        "secondary_cta_label": "Explore results",
+        "secondary_cta_url": "/collections/all",
         "cta_label": "Explore transformations",
         "cta_url": "/collections/all"
       }

@@ -5,10 +5,16 @@
       "settings": {
         "eyebrow": "Back in stock",
         "title": "Notify me when it returns",
-        "description": "Capture demand when items go out of stock and let customers opt in for a restock alert.",
+        "description": "Capture demand when items go out of stock and let customers opt in for a restock alert so you can recover missed sales.",
         "highlight_heading": "What to include",
         "bullets": "Restock signup form\nClear messaging around waitlist value\nRecovery for high-demand items",
         "cards": "Recover demand | Turn missed sales into future conversions. ||Build anticipation | Let customers know they will be first to hear when stock returns. ||Integrate with apps | Connect this feature with inventory or email apps for better automation.",
+        "hero_image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
+        "secondary_title": "Turn sell-outs into future revenue",
+        "secondary_description": "High-demand products become a second chance to convert when customers can opt in for the next arrival.",
+        "secondary_image_url": "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=1400&q=80",
+        "secondary_cta_label": "See best sellers",
+        "secondary_cta_url": "/collections/all",
         "cta_label": "View popular items",
         "cta_url": "/collections/all"
       }

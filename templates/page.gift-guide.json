@@ -5,10 +5,16 @@
       "settings": {
         "eyebrow": "Gift guide",
         "title": "Find the perfect gift",
-        "description": "Help shoppers discover thoughtful gift ideas by recipient, budget, or occasion.",
+        "description": "Help shoppers discover thoughtful gift ideas by recipient, budget, or occasion with a polished guide that feels curated and holiday-ready.",
         "highlight_heading": "Great for",
         "bullets": "Holiday shopping\nRecipient-based discovery\nSeasonal merchandising",
         "cards": "Filter by recipient | Make it easy to shop for moms, dads, partners, and more. ||Filter by budget | Help customers find gifts that fit their spending range. ||Filter by occasion | Highlight items for birthdays, anniversaries, and celebrations.",
+        "hero_image_url": "https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1400&q=80",
+        "secondary_title": "Make gifting feel effortless",
+        "secondary_description": "Shoppers are more likely to convert when they can quickly find a thoughtful option that matches the moment.",
+        "secondary_image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
+        "secondary_cta_label": "Explore gift ideas",
+        "secondary_cta_url": "/collections/all",
         "cta_label": "Browse gift ideas",
         "cta_url": "/collections/all"
       }

@@ -5,10 +5,16 @@
       "settings": {
         "eyebrow": "Rewards and loyalty",
         "title": "Loyalty that keeps customers coming back",
-        "description": "Explain points, tiers, referrals, and member benefits in a dedicated loyalty landing page.",
+        "description": "Explain points, tiers, referrals, and member benefits in a dedicated loyalty landing page that feels rewarding and easy to understand.",
         "highlight_heading": "Members can earn",
         "bullets": "Points on purchases\nTier unlocks and perks\nReferral rewards and early access",
         "cards": "Simple education | Help customers understand exactly how the program works. ||Strong retention | Encourage repeat purchases and deeper engagement. ||Useful for email and CRM | Pair with loyalty app flows and campaigns.",
+        "hero_image_url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80",
+        "secondary_title": "Reward repeat visits",
+        "secondary_description": "A clear loyalty message makes customers feel recognized and gives them a reason to return again and again.",
+        "secondary_image_url": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1400&q=80",
+        "secondary_cta_label": "Join the club",
+        "secondary_cta_url": "/account/register",
         "cta_label": "Join now",
         "cta_url": "/account/register"
       }

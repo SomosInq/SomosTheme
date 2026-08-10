@@ -4,11 +4,17 @@
       "type": "feature-landing",
       "settings": {
         "eyebrow": "About us",
-        "title": "Our story",
-        "description": "Use a more editorial page to tell your brand story, values, and the people behind the products.",
-        "highlight_heading": "This page can include",
+        "title": "Our story, values, and point of view",
+        "description": "Use a more editorial page to tell your brand story, values, and the people behind the products in a way that feels premium and human.",
+        "highlight_heading": "What this page can include",
         "bullets": "Brand story and mission\nFounder or team highlights\nValues, community, and press mention",
         "cards": "Story-led content | Create a memorable brand experience. ||Editorial feel | Move beyond generic content pages. ||Trust builder | Make your brand feel more human and credible.",
+        "hero_image_url": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80",
+        "secondary_title": "Why a story-led page matters",
+        "secondary_description": "Customers are more likely to buy when they understand the people, values, and craftsmanship behind the brand.",
+        "secondary_image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
+        "secondary_cta_label": "Explore the collection",
+        "secondary_cta_url": "/collections/all",
         "cta_label": "Discover more",
         "cta_url": "/collections/all"
       }

@@ -6,33 +6,49 @@
       <p>{{ section.settings.description }}</p>
     </div>
 
-    <form class="page-card js-quiz-form">
-      <div class="page-stack">
-        <div class="page-card page-card--compact">
-          <h2>What matters most?</h2>
-          <div class="page-form-grid">
-            <label class="page-choice"><input type="radio" name="goal" value="routine" data-recommendation="routine"> I want a simple routine</label>
-            <label class="page-choice"><input type="radio" name="goal" value="gift" data-recommendation="gifting"> I need gift ideas</label>
-            <label class="page-choice"><input type="radio" name="goal" value="premium" data-recommendation="premium"> I want a premium experience</label>
-            <label class="page-choice"><input type="radio" name="goal" value="quick" data-recommendation="essentials"> I want the quickest recommendation</label>
-          </div>
+    {% if section.blocks.size > 0 %}
+      <form class="page-card js-quiz-form" data-quiz-form>
+        <div class="page-stack">
+          {% for block in section.blocks %}
+            <div class="page-card page-card--compact" {{ block.shopify_attributes }}>
+              <h2>{{ block.settings.question | default: 'Question' }}</h2>
+              <div class="page-form-grid">
+                {% assign option_lines = block.settings.options | split: '\n' %}
+                {% for option_line in option_lines %}
+                  {% assign parts = option_line | split: '|' %}
+                  {% assign option_label = parts[0] | strip %}
+                  {% assign option_title = parts[1] | strip %}
+                  {% assign option_body = parts[2] | strip %}
+                  {% assign option_link = parts[3] | strip %}
+
+                  {% if option_label != blank %}
+                    <label class="page-choice">
+                      <input
+                        type="radio"
+                        name="question-{{ forloop.parentloop.index0 }}"
+                        value="{{ option_label | escape }}"
+                        data-result-title="{{ option_title | escape }}"
+                        data-result-body="{{ option_body | escape }}"
+                        data-result-link="{{ option_link | escape }}"
+                      >
+                      <span>{{ option_label }}</span>
+                    </label>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
         </div>
 
-        <div class="page-card page-card--compact">
-          <h2>How do you shop?</h2>
-          <div class="page-form-grid">
-            <label class="page-choice"><input type="radio" name="shopping" value="guided" data-recommendation="routine"> I like guided suggestions</label>
-            <label class="page-choice"><input type="radio" name="shopping" value="editorial" data-recommendation="premium"> I like storytelling and visuals</label>
-            <label class="page-choice"><input type="radio" name="shopping" value="gifted" data-recommendation="gifting"> I shop by occasion</label>
-            <label class="page-choice"><input type="radio" name="shopping" value="fast" data-recommendation="essentials"> I want a fast answer</label>
-          </div>
+        <div class="page-actions">
+          <button type="submit" class="button">See recommendation</button>
         </div>
+      </form>
+    {% else %}
+      <div class="page-card">
+        <p>Add quiz questions in the theme editor and define answer options with recommendation text and links.</p>
       </div>
-
-      <div class="page-actions">
-        <button type="submit" class="button">See recommendation</button>
-      </div>
-    </form>
+    {% endif %}
 
     <div class="page-card js-quiz-result" hidden>
       <h2 data-result-title>Recommendation</h2>
@@ -47,6 +63,16 @@
     "settings": [
       { "type": "text", "id": "title", "label": "Title", "default": "Find the right product" },
       { "type": "textarea", "id": "description", "label": "Description", "default": "Answer a couple of quick questions and we will guide you to the right experience." }
+    ],
+    "blocks": [
+      {
+        "type": "quiz_question",
+        "name": "Question",
+        "settings": [
+          { "type": "text", "id": "question", "label": "Question" },
+          { "type": "textarea", "id": "options", "label": "Answer options", "info": "Format each line as: Option label | Recommendation title | Recommendation body | Recommendation URL" }
+        ]
+      }
     ],
     "presets": [{ "name": "Quiz flow" }]
   }
