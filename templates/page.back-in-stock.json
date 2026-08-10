@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Back in stock",
+        "title": "Notify me when it returns",
+        "description": "Capture demand when items go out of stock and let customers opt in for a restock alert.",
+        "highlight_heading": "What to include",
+        "bullets": "Restock signup form\nClear messaging around waitlist value\nRecovery for high-demand items",
+        "cards": "Recover demand | Turn missed sales into future conversions. ||Build anticipation | Let customers know they will be first to hear when stock returns. ||Integrate with apps | Connect this feature with inventory or email apps for better automation.",
+        "cta_label": "View popular items",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

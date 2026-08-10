@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Lookbook",
+        "title": "Discover the collection",
+        "description": "Create an editorial lookbook page that blends storytelling, styling, and easy product shopping.",
+        "highlight_heading": "Best for",
+        "bullets": "Fashion and home brands\nSeasonal campaigns\nEditorial product discovery",
+        "cards": "Style-first storytelling | Present products in a curated, immersive way. ||Strong visual merchandising | Use imagery to guide shoppers to products. ||Conversion-friendly | Link each story to products and collections.",
+        "cta_label": "Explore the lookbook",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

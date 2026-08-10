@@ -1,36 +1,150 @@
-<section class="section comparison-section page-width">
-  <h1>{{ page.title }}</h1>
-  <p>Use the section settings to compare products side by side.</p>
-
-  {% if section.settings.product_handles != blank %}
-    {% assign handles = section.settings.product_handles | split: "," %}
-    <div class="comparison-table">
-      {% for handle in handles %}
-        {% assign handle_stripped = handle | strip %}
-        {% if handle_stripped != blank %}
-          {% assign product = all_products[handle_stripped] %}
-          {% if product %}
-            <div class="comparison-item">
-              <h2>{{ product.title }}</h2>
-              <p>{{ product.price | money }}</p>
-            </div>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
+<section class="section page-shell comparison-section">
+  <div class="page-width-content">
+    <div class="page-hero">
+      <span class="page-pill">Compare products</span>
+      <h1>{{ page.title }}</h1>
+      <p>Choose up to four products from the selectors below and compare the details in real time.</p>
     </div>
-  {% endif %}
+
+    <div class="page-card">
+      <h2>Select products to compare</h2>
+      <div class="page-grid page-grid--selectors">
+        {% for i in (1..4) %}
+          <label class="page-form__label">
+            <span>Product {{ i }}</span>
+            <select class="comparison-selector" data-index="{{ i }}">
+              <option value="">Select a product</option>
+              {% for product in collections.all.products %}
+                <option value="{{ product.handle }}">{{ product.title }}</option>
+              {% endfor %}
+            </select>
+          </label>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div id="comparison-results">
+      <div id="comparison-product-cards" class="page-grid page-grid--comparison"></div>
+      <div id="comparison-product-table" class="page-card page-card--comparison-table"></div>
+    </div>
+  </div>
+
+  <script id="comparison-product-data" type="application/json">
+  {
+    "products": [
+      {% for product in collections.all.products %}
+        {
+          "handle": {{ product.handle | json }},
+          "title": {{ product.title | json }},
+          "description": {{ product.description | strip_html | json }},
+          "price": {{ product.price | money | json }},
+          "vendor": {{ product.vendor | default: '—' | json }},
+          "type": {{ product.type | default: 'Product' | json }},
+          "available": {{ product.available | json }},
+          "url": {{ product.url | json }},
+          "image": {{ product.featured_image | image_url: width: 800 | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+  </script>
+
+  <script>
+    (function () {
+      const dataEl = document.getElementById('comparison-product-data');
+      const cardsEl = document.getElementById('comparison-product-cards');
+      const tableEl = document.getElementById('comparison-product-table');
+
+      if (!dataEl || !cardsEl || !tableEl) return;
+
+      const products = JSON.parse(dataEl.textContent || '{"products":[]}').products || [];
+
+      const escapeHtml = (value) =>
+        String(value ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+
+      function getSelectedProducts() {
+        return Array.from(document.querySelectorAll('.comparison-selector'))
+          .map((select) => select.value)
+          .filter(Boolean)
+          .map((handle) => products.find((product) => product.handle === handle))
+          .filter(Boolean);
+      }
+
+      function renderComparison() {
+        const selectedProducts = getSelectedProducts();
+
+        if (!selectedProducts.length) {
+          cardsEl.innerHTML = '<div class="page-card"><p>Select one or more products to see your comparison.</p></div>';
+          tableEl.innerHTML = '';
+          return;
+        }
+
+        cardsEl.innerHTML = selectedProducts
+          .map(
+            (product) => `
+              <article class="page-card page-card--product">
+                ${product.image ? `<a href="${product.url}" class="page-card__image-link"><img src="${product.image}" alt="${escapeHtml(product.title)}" loading="lazy"></a>` : ''}
+                <div class="page-card__body">
+                  <span class="page-card__eyebrow">${escapeHtml(product.type || 'Product')}</span>
+                  <h2><a href="${product.url}">${escapeHtml(product.title)}</a></h2>
+                  <p>${escapeHtml((product.description || '').slice(0, 140))}</p>
+                </div>
+                <div class="page-card__footer">
+                  <span class="page-price">${escapeHtml(product.price || '—')}</span>
+                  <a href="${product.url}" class="button button-secondary">View product</a>
+                </div>
+              </article>
+            `
+          )
+          .join('');
+
+        tableEl.innerHTML = `
+          <div class="page-comparison-table">
+            <div class="page-comparison-row page-comparison-row--heading">
+              <span class="page-comparison-label">Details</span>
+              ${selectedProducts.map((product) => `<span class="page-comparison-value">${escapeHtml(product.title)}</span>`).join('')}
+            </div>
+            <div class="page-comparison-row">
+              <span class="page-comparison-label">Price</span>
+              ${selectedProducts.map((product) => `<span class="page-comparison-value">${escapeHtml(product.price || '—')}</span>`).join('')}
+            </div>
+            <div class="page-comparison-row">
+              <span class="page-comparison-label">Availability</span>
+              ${selectedProducts.map((product) => `<span class="page-comparison-value">${product.available ? 'In stock' : 'Out of stock'}</span>`).join('')}
+            </div>
+            <div class="page-comparison-row">
+              <span class="page-comparison-label">Vendor</span>
+              ${selectedProducts.map((product) => `<span class="page-comparison-value">${escapeHtml(product.vendor || '—')}</span>`).join('')}
+            </div>
+            <div class="page-comparison-row">
+              <span class="page-comparison-label">Product type</span>
+              ${selectedProducts.map((product) => `<span class="page-comparison-value">${escapeHtml(product.type || '—')}</span>`).join('')}
+            </div>
+            <div class="page-comparison-row">
+              <span class="page-comparison-label">Description</span>
+              ${selectedProducts.map((product) => `<span class="page-comparison-value">${escapeHtml((product.description || '').slice(0, 120))}</span>`).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      document.querySelectorAll('.comparison-selector').forEach((select) => {
+        select.addEventListener('change', renderComparison);
+      });
+
+      renderComparison();
+    })();
+  </script>
 
   {% schema %}
   {
     "name": "Product Comparison",
-    "settings": [
-      {
-        "type": "text",
-        "id": "product_handles",
-        "label": "Product handles (comma separated)",
-        "default": "example-product-1, example-product-2"
-      }
-    ],
+    "settings": [],
     "presets": [
       {
         "name": "Comparison"

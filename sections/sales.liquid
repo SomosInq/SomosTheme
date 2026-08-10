@@ -1,20 +1,44 @@
-<section class="section sales-section page-width">
-  <h1>{{ page.title }}</h1>
-  {% if section.settings.collection != blank %}
-    {% assign coll = collections[section.settings.collection] %}
-    <div class="sale-products">
-      {% for product in coll.products %}
-        {% if product.compare_at_price > product.price %}
-          <article class="sale-item">
-            <a href="{{ product.url }}">{{ product.title }}</a>
-            <div class="price">Sale: {{ product.price | money }} <span class="compare">{{ product.compare_at_price | money }}</span></div>
-          </article>
-        {% endif %}
-      {% endfor %}
+<section class="section page-shell sales-section">
+  <div class="page-width-content">
+    <div class="page-hero">
+      <span class="page-pill page-pill--accent">Limited-time offers</span>
+      <h1>{{ page.title }}</h1>
+      <p>Browse the items currently discounted and save while they last.</p>
     </div>
-  {% else %}
-    <p>Select a collection in the section settings to show sale items.</p>
-  {% endif %}
+
+    {% if section.settings.collection != blank %}
+      {% assign coll = collections[section.settings.collection] %}
+      {% assign sale_products = coll.products | where: 'compare_at_price', '>' %}
+      {% if sale_products.size > 0 %}
+        <div class="page-grid">
+          {% for product in coll.products %}
+            {% if product.compare_at_price > product.price %}
+              <article class="page-card page-card--sale">
+                <span class="page-card__eyebrow">On sale</span>
+                <h2><a href="{{ product.url }}">{{ product.title }}</a></h2>
+                <p>{{ product.description | strip_html | truncate: 120 }}</p>
+                <div class="page-card__footer">
+                  <div>
+                    <span class="page-price">{{ product.price | money }}</span>
+                    <span class="page-price page-price--muted">{{ product.compare_at_price | money }}</span>
+                  </div>
+                  <a href="{{ product.url }}" class="button">Shop now</a>
+                </div>
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="page-card">
+          <p>No discounted products were found in the selected collection right now.</p>
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="page-card">
+        <p>Select a collection in the section settings to show sale items.</p>
+      </div>
+    {% endif %}
+  </div>
 
   {% schema %}
   {

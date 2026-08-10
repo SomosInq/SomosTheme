@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Sustainability",
+        "title": "Sustainability and impact",
+        "description": "Share your sourcing practices, certifications, and sustainability commitments in a dedicated page.",
+        "highlight_heading": "Content ideas",
+        "bullets": "Materials and sourcing\nCertifications and standards\nImpact highlights and progress",
+        "cards": "Transparency | Show the story behind your materials and choices. ||Trust and credibility | Reinforce your values with proof points. ||Better conversion | Help values-led shoppers feel confident in their purchase.",
+        "cta_label": "Explore the collection",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

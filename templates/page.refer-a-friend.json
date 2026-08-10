@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Refer a friend",
+        "title": "Bring a friend along",
+        "description": "Design a referral experience that rewards existing customers and helps friends discover your brand.",
+        "highlight_heading": "Why it works",
+        "bullets": "Reward both referrer and friend\nEasy sharing links\nLoyalty ecosystem support",
+        "cards": "Shareable rewards | Make it simple for customers to invite others. ||Build advocacy | Turn existing customers into advocates. ||Grow your community | Combine with loyalty and email campaigns.",
+        "cta_label": "Start sharing",
+        "cta_url": "/account/register"
+      }
+    }
+  },
+  "order": ["main"]
+}

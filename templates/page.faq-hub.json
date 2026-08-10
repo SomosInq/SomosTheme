@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main": {
+      "type": "faq",
+      "settings": {},
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I place an order?",
+            "answer": "You can browse the store, add products to your cart, and complete checkout in just a few steps."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer shipping internationally?",
+            "answer": "Shipping availability depends on your location and the products you choose."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I change or cancel my order?",
+            "answer": "Please contact support as soon as possible if you need to make changes to an order."
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3"]
+    }
+  },
+  "order": ["main"]
+}

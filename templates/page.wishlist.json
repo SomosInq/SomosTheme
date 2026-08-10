@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Wishlist",
+        "title": "Save your favorites",
+        "description": "Create a dedicated wishlist experience that helps shoppers save products for later and return when they are ready to buy.",
+        "highlight_heading": "Why it matters",
+        "bullets": "Higher intent to purchase\nBetter merchandising opportunities\nHelpful for repeat visits",
+        "cards": "Save products | Let shoppers keep track of items they want to revisit. ||Drive return visits | Encourage customers to come back when they are ready. ||Support app integrations | Connect with wishlist or marketing apps for richer functionality.",
+        "cta_label": "Explore products",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

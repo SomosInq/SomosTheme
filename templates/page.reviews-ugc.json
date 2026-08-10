@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Reviews and UGC",
+        "title": "See what customers are saying",
+        "description": "Create a dedicated hub for reviews, social proof, customer photos, and community-generated content.",
+        "highlight_heading": "Content to feature",
+        "bullets": "Star ratings and testimonials\nCustomer photos and videos\nSocial content and UGC galleries",
+        "cards": "Social proof | Build trust with real customer experiences. ||UGC showcase | Highlight authentic content that feels native to the brand. ||Conversion booster | Pair this with product pages and homepage modules.",
+        "cta_label": "Read reviews",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

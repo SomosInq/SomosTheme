@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Specifications",
+        "title": "Technical specifications",
+        "description": "Present product details in a structured, easy-to-scan format using metafields or curated content blocks.",
+        "highlight_heading": "Ideal for",
+        "bullets": "Electronics and gadgets\nFurniture and home decor\nTechnical or premium products",
+        "cards": "Structured data | Organize product information with a clear hierarchy. ||Metafield support | Connect this page to product-specific metadata. ||Easy comparison | Help shoppers quickly evaluate key details.",
+        "cta_label": "See featured products",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

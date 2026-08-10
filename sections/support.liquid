@@ -1,35 +1,58 @@
-<section class="section support-section page-width">
-  <h1>{{ page.title }}</h1>
-
-  <div class="support-columns">
-    <div class="support-faq">
-      {% if section.blocks.size > 0 %}
-        {% for block in section.blocks %}
-          <div class="faq-item">
-            <button class="faq-question">{{ block.settings.question }}</button>
-            <div class="faq-answer">{{ block.settings.answer }}</div>
-          </div>
-        {% endfor %}
-      {% else %}
-        <p>Add Q&amp;A blocks in the section settings.</p>
-      {% endif %}
+<section class="section page-shell support-section">
+  <div class="page-width-content">
+    <div class="page-hero">
+      <span class="page-pill">Help center</span>
+      <h1>{{ page.title }}</h1>
+      <p>Need a hand? Start with the answers below or send us a note and we’ll follow up soon.</p>
     </div>
 
-    <div class="support-contact">
-      <h2>Contact support</h2>
-      <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
-        <input type="hidden" name="form_type" value="contact">
-        <label>Name<input type="text" name="contact[name]"></label>
-        <label>Email<input type="email" name="contact[email]"></label>
-        <label>Message<textarea name="contact[body]"></textarea></label>
-        <button type="submit">Send</button>
-      </form>
+    <div class="page-grid page-grid--support">
+      <div class="page-card">
+        <h2>Common questions</h2>
+        {% if section.blocks.size > 0 %}
+          <div class="page-stack page-stack--compact">
+            {% for block in section.blocks %}
+              <details class="page-card page-card--accordion page-card--compact">
+                <summary class="page-card__summary">
+                  <span>{{ block.settings.question }}</span>
+                  <span class="page-card__icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="page-card__content">
+                  {{ block.settings.answer }}
+                </div>
+              </details>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p>Add Q&amp;A blocks in the section settings.</p>
+        {% endif %}
+      </div>
 
-      {% if section.settings.enable_chat %}
-        <div class="support-chat">
-          {{ section.settings.chat_snippet }}
-        </div>
-      {% endif %}
+      <div class="page-card">
+        <h2>Contact us</h2>
+        <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="page-form">
+          <input type="hidden" name="form_type" value="contact">
+          <label class="page-form__label">
+            <span>Name</span>
+            <input type="text" name="contact[name]" placeholder="Your name">
+          </label>
+          <label class="page-form__label">
+            <span>Email</span>
+            <input type="email" name="contact[email]" placeholder="you@example.com">
+          </label>
+          <label class="page-form__label">
+            <span>Message</span>
+            <textarea name="contact[body]" rows="5" placeholder="How can we help?"></textarea>
+          </label>
+          <button type="submit" class="button">Send message</button>
+        </form>
+
+        {% if section.settings.enable_chat %}
+          <div class="page-spotlight page-spotlight--compact">
+            {{ section.settings.chat_snippet }}
+          </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 

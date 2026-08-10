@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Press",
+        "title": "Featured in the press",
+        "description": "Showcase logos, awards, reviews, and press mentions in a polished featured-in page.",
+        "highlight_heading": "What to include",
+        "bullets": "Brand logos and media partners\nAwards and recognition\nPress highlights and links",
+        "cards": "Social proof | Highlight trusted coverage from the media. ||Credibility | Reinforce quality and legitimacy. ||Easy sharing | Make it simple to link out to press coverage.",
+        "cta_label": "View brand story",
+        "cta_url": "/pages/about"
+      }
+    }
+  },
+  "order": ["main"]
+}

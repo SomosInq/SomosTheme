@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Subscription",
+        "title": "Subscribe and save",
+        "description": "Create a focused landing page that promotes recurring deliveries, subscription perks, and easy product replenishment.",
+        "highlight_heading": "What this page should include",
+        "bullets": "Subscription benefits\nPricing and frequency options\nFlexible recurring delivery messaging",
+        "cards": "Value proposition | Highlight savings, convenience, and exclusivity. ||Subscription options | Show flexible delivery schedules and bundle choices. ||App-ready | Support integration with subscription apps and checkout flows.",
+        "cta_label": "Explore subscriptions",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

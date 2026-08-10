@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Recipes and guides",
+        "title": "Recipes, tutorials, and how-to guides",
+        "description": "Turn educational content into a commerce-driven experience by linking tutorials, recipes, and guides to products.",
+        "highlight_heading": "Strong for",
+        "bullets": "Food and beverage\nHome and lifestyle\nBeauty and wellness",
+        "cards": "Helpful content | Provide practical value to shoppers. ||Commerce-driven | Link educational content to relevant products. ||Better engagement | Keep visitors on-site longer with memorable content.",
+        "cta_label": "Browse guides",
+        "cta_url": "/blogs" 
+      }
+    }
+  },
+  "order": ["main"]
+}

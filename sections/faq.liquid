@@ -1,25 +1,31 @@
-<section class="section faq-section page-width">
-  <h1>{{ page.title }}</h1>
-  <div class="faq-list">
-    {% for block in section.blocks %}
-      <div class="faq-item">
-        <button class="faq-question">{{ block.settings.question }}</button>
-        <div class="faq-answer">{{ block.settings.answer }}</div>
-      </div>
-    {% endfor %}
-  </div>
+<section class="section page-shell faq-section">
+  <div class="page-width-content">
+    <div class="page-hero">
+      <span class="page-pill">Support</span>
+      <h1>{{ page.title }}</h1>
+      <p>Browse the most common questions below and find the answer quickly.</p>
+    </div>
 
-  <script>
-    (function(){
-      document.querySelectorAll('.faq-question').forEach(function(btn){
-        btn.addEventListener('click', function(){
-          this.classList.toggle('open');
-          const a = this.nextElementSibling;
-          if(a.style.display === 'block') a.style.display = 'none'; else a.style.display = 'block';
-        });
-      });
-    })();
-  </script>
+    <div class="page-stack">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <details class="page-card page-card--accordion">
+            <summary class="page-card__summary">
+              <span>{{ block.settings.question }}</span>
+              <span class="page-card__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="page-card__content">
+              {{ block.settings.answer }}
+            </div>
+          </details>
+        {% endfor %}
+      {% else %}
+        <div class="page-card">
+          <p>Add Q&amp;A blocks in the section settings to populate this page.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
 
   {% schema %}
   {

@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Product finder",
+        "title": "Find the right product for you",
+        "description": "Guide shoppers through a simple quiz or recommendation experience to reduce decision friction and improve conversion.",
+        "highlight_heading": "What this page includes",
+        "bullets": "Short quiz or questionnaire flow\nClear product recommendations\nOutcome-based merchandising",
+        "cards": "Take the quiz | Let customers describe their needs and receive a tailored recommendation. ||See the results | Surface the best-fitting products and add a strong call to action. ||Personalize the journey | Use this page to support gifting, skincare routines, and product discovery.",
+        "cta_label": "Start finding",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,40 @@
+<section class="section page-shell advanced-product-page-section">
+  <div class="page-width-content">
+    <div class="page-hero page-hero--split">
+      <div>
+        <span class="page-pill page-pill--accent">Advanced product experience</span>
+        <h1>{{ product.title | default: page.title }}</h1>
+        <p>{{ product.description | strip_html | truncate: 220 }}</p>
+        {% if product.url != blank %}
+          <div class="page-actions">
+            <a href="{{ product.url }}" class="button">View product</a>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="page-spotlight">
+        <h2>What this layout supports</h2>
+        <ul class="page-list">
+          <li>Hero area with product story and call-to-action</li>
+          <li>Specs, FAQs, and social proof modules</li>
+          <li>Flexible merchandising blocks for bundles and related products</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-grid page-grid--support">
+      <article class="page-card">
+        <h2>Product details</h2>
+        <p>Use this template to surface pricing, availability, materials, and key differentiators in a more editorial layout.</p>
+      </article>
+      <article class="page-card">
+        <h2>Customer proof</h2>
+        <p>Pair this page with reviews, UGC, before and after imagery, or a shop-the-look module for stronger conversion.</p>
+      </article>
+      <article class="page-card">
+        <h2>Conversion tools</h2>
+        <p>Add bundle offers, size guidance, and subscriptions to create a complete commerce story.</p>
+      </article>
+    </div>
+  </div>
+</section>

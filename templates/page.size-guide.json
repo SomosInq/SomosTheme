@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Size guide",
+        "title": "Find the right fit",
+        "description": "Create a clear fit guide that helps customers choose the right size and reduce returns.",
+        "highlight_heading": "Helpful content",
+        "bullets": "Measurement charts\nFit notes by collection or product\nSize recommendations for different bodies or use cases",
+        "cards": "Measurement guide | Help customers compare their measurements against your sizing chart. ||Fit notes | Add guidance for relaxed, true-to-size, or oversized fits. ||Category-specific support | Tailor the page for apparel, footwear, accessories, and more.",
+        "cta_label": "Shop now",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

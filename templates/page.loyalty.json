@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Rewards and loyalty",
+        "title": "Loyalty that keeps customers coming back",
+        "description": "Explain points, tiers, referrals, and member benefits in a dedicated loyalty landing page.",
+        "highlight_heading": "Members can earn",
+        "bullets": "Points on purchases\nTier unlocks and perks\nReferral rewards and early access",
+        "cards": "Simple education | Help customers understand exactly how the program works. ||Strong retention | Encourage repeat purchases and deeper engagement. ||Useful for email and CRM | Pair with loyalty app flows and campaigns.",
+        "cta_label": "Join now",
+        "cta_url": "/account/register"
+      }
+    }
+  },
+  "order": ["main"]
+}

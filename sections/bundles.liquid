@@ -1,18 +1,36 @@
-<section class="section bundles-section">
-  <div class="page-width">
-    <h1>{{ page.title }}</h1>
+<section class="section page-shell bundles-section">
+  <div class="page-width-content">
+    <div class="page-hero">
+      <span class="page-pill">Curated bundles</span>
+      <h1>{{ page.title }}</h1>
+      <p>Explore hand-picked bundles designed to make your next order feel effortless.</p>
+    </div>
+
     {% if section.settings.collection != blank %}
       {% assign coll = collections[section.settings.collection] %}
-      <div class="bundles-grid">
-        {% for product in coll.products %}
-          <article class="bundle-item">
-            <a href="{{ product.url }}">{{ product.title }}</a>
-            <div class="price">{{ product.price | money }}</div>
-          </article>
-        {% endfor %}
-      </div>
+      {% if coll.products.size > 0 %}
+        <div class="page-grid">
+          {% for product in coll.products %}
+            <article class="page-card page-card--product">
+              <span class="page-card__eyebrow">Bundle</span>
+              <h2><a href="{{ product.url }}">{{ product.title }}</a></h2>
+              <p>{{ product.description | strip_html | truncate: 120 }}</p>
+              <div class="page-card__footer">
+                <span class="page-price">{{ product.price | money }}</span>
+                <a href="{{ product.url }}" class="button button-secondary">View bundle</a>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="page-card">
+          <p>No products were found in this collection yet.</p>
+        </div>
+      {% endif %}
     {% else %}
-      <p>Add a collection of bundled products in the section settings.</p>
+      <div class="page-card">
+        <p>Add a collection of bundled products in the section settings.</p>
+      </div>
     {% endif %}
   </div>
 

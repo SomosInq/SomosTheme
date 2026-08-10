@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Stockists",
+        "title": "Find a stockist near you",
+        "description": "Create a curated stockist page that complements your store locator and increases offline discovery.",
+        "highlight_heading": "Useful for",
+        "bullets": "Retail partners\nWholesale and omnichannel stores\nOffline discovery",
+        "cards": "Find a location | Help customers discover where your products are sold. ||Support local buying | Encourage in-person shopping. ||Pair with store locator | Connect online and offline experiences.",
+        "cta_label": "Find a store",
+        "cta_url": "/pages/store-locator"
+      }
+    }
+  },
+  "order": ["main"]
+}

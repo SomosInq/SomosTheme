@@ -1,0 +1,71 @@
+<section class="section page-shell feature-landing-section">
+  <div class="page-width-content">
+    <div class="page-hero page-hero--split">
+      <div>
+        {% if section.settings.eyebrow != blank %}
+          <span class="page-pill page-pill--accent">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+        <h1>{{ section.settings.title | default: page.title }}</h1>
+        {% if section.settings.description != blank %}
+          <p>{{ section.settings.description }}</p>
+        {% endif %}
+        {% if section.settings.cta_label != blank and section.settings.cta_url != blank %}
+          <div class="page-actions">
+            <a href="{{ section.settings.cta_url }}" class="button">{{ section.settings.cta_label }}</a>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="page-spotlight">
+        <h2>{{ section.settings.highlight_heading | default: 'What this page includes' }}</h2>
+        {% assign bullet_items = section.settings.bullets | split: "\n" %}
+        <ul class="page-list">
+          {% for item in bullet_items %}
+            {% assign cleaned_item = item | strip %}
+            {% if cleaned_item != blank %}
+              <li>{{ cleaned_item }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    {% assign cards = section.settings.cards | split: '||' %}
+    {% if cards.size > 0 %}
+      <div class="page-grid page-grid--support">
+        {% for card in cards %}
+          {% assign parts = card | split: '|' %}
+          {% assign card_heading = parts[0] | strip %}
+          {% assign card_body = parts[1] | strip %}
+          {% if card_heading != blank or card_body != blank %}
+            <article class="page-card">
+              {% if card_heading != blank %}
+                <h2>{{ card_heading }}</h2>
+              {% endif %}
+              {% if card_body != blank %}
+                <p>{{ card_body }}</p>
+              {% endif %}
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% schema %}
+  {
+    "name": "Feature landing",
+    "settings": [
+      { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "textarea", "id": "description", "label": "Description" },
+      { "type": "text", "id": "highlight_heading", "label": "Highlights heading", "default": "What this page includes" },
+      { "type": "textarea", "id": "bullets", "label": "Highlights (one per line)" },
+      { "type": "textarea", "id": "cards", "label": "Cards (Title | Body || Title | Body)" },
+      { "type": "text", "id": "cta_label", "label": "CTA label" },
+      { "type": "url", "id": "cta_url", "label": "CTA URL" }
+    ],
+    "presets": [{ "name": "Feature landing" }]
+  }
+  {% endschema %}
+</section>

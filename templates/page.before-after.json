@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Before & after",
+        "title": "See the transformation",
+        "description": "Highlight before and after imagery for beauty, wellness, fitness, or home transformations.",
+        "highlight_heading": "Ideal for",
+        "bullets": "Beauty and skincare\nWellness and supplements\nFitness and home transformations",
+        "cards": "Visual proof | Let customers see the impact clearly. ||Higher confidence | Improve trust before they buy. ||Great for conversion | Pair with product details and reviews.",
+        "cta_label": "Explore transformations",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

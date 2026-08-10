@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Wholesale",
+        "title": "Wholesale and B2B",
+        "description": "Create a dedicated entry point for wholesale buyers with quick access to pricing, volume information, and enquiries.",
+        "highlight_heading": "What this page can include",
+        "bullets": "Wholesale enquiry form\nQuantity pricing information\nQuick-order or account access guidance",
+        "cards": "B2B enquiries | Make it simple to get in touch with your team. ||Volume pricing | Explain how wholesale pricing works. ||Account access | Guide buyers toward sign-up or approval flows.",
+        "cta_label": "Contact wholesale team",
+        "cta_url": "/pages/contact"
+      }
+    }
+  },
+  "order": ["main"]
+}

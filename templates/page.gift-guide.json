@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Gift guide",
+        "title": "Find the perfect gift",
+        "description": "Help shoppers discover thoughtful gift ideas by recipient, budget, or occasion.",
+        "highlight_heading": "Great for",
+        "bullets": "Holiday shopping\nRecipient-based discovery\nSeasonal merchandising",
+        "cards": "Filter by recipient | Make it easy to shop for moms, dads, partners, and more. ||Filter by budget | Help customers find gifts that fit their spending range. ||Filter by occasion | Highlight items for birthdays, anniversaries, and celebrations.",
+        "cta_label": "Browse gift ideas",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

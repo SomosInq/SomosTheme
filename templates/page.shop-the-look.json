@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Shop the look",
+        "title": "Style the full story",
+        "description": "Create shoppable lifestyle images with hotspots that connect visual inspiration to the products behind it.",
+        "highlight_heading": "Best for",
+        "bullets": "Fashion and home inspiration\nVisual merchandising stories\nHotspot-driven product discovery",
+        "cards": "Editorial storytelling | Turn lifestyle imagery into a clear shopping path. ||Fast product discovery | Highlight each featured item with a direct product link. ||Cross-sell naturally | Encourage customers to complete the entire look with related products.",
+        "cta_label": "Browse the collection",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

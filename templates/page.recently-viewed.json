@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Recently viewed",
+        "title": "Pick up where you left off",
+        "description": "Surface recently viewed products to make browsing easier and increase conversion on return visits.",
+        "highlight_heading": "Best use cases",
+        "bullets": "Returning shoppers\nHigh-consideration products\nCross-sell and re-engagement",
+        "cards": "Remind shoppers | Show them the products they were already exploring. ||Increase momentum | Make it easy to continue their purchase journey. ||Support merchandising | Pair this with recommendations and bundles.",
+        "cta_label": "Shop best sellers",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

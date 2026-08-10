@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Ingredients",
+        "title": "Ingredients and materials",
+        "description": "Use this page to explain the ingredients, materials, sourcing, or formulations behind your products in a more educational format.",
+        "highlight_heading": "Great for",
+        "bullets": "Beauty and wellness products\nFood and supplements\nFashion and home goods",
+        "cards": "Ingredient highlights | Explain what matters most to your customers. ||Materials and sourcing | Share your standards, origins, and quality. ||Transparency | Build trust through clear, structured content.",
+        "cta_label": "Explore products",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

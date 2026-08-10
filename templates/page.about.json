@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "About us",
+        "title": "Our story",
+        "description": "Use a more editorial page to tell your brand story, values, and the people behind the products.",
+        "highlight_heading": "This page can include",
+        "bullets": "Brand story and mission\nFounder or team highlights\nValues, community, and press mention",
+        "cards": "Story-led content | Create a memorable brand experience. ||Editorial feel | Move beyond generic content pages. ||Trust builder | Make your brand feel more human and credible.",
+        "cta_label": "Discover more",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

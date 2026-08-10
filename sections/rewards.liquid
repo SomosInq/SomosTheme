@@ -1,10 +1,26 @@
-<section class="section rewards-section page-width">
-  <h1>{{ page.title }}</h1>
-  <div class="rewards-content">
-    <div>{{ section.settings.content }}</div>
-    {% if section.settings.signup_url != blank %}
-      <p><a href="{{ section.settings.signup_url }}" class="btn">Join rewards</a></p>
-    {% endif %}
+<section class="section page-shell rewards-section">
+  <div class="page-width-content">
+    <div class="page-hero page-hero--split">
+      <div>
+        <span class="page-pill page-pill--accent">Loyalty program</span>
+        <h1>{{ page.title }}</h1>
+        <p>{{ section.settings.content }}</p>
+        {% if section.settings.signup_url != blank %}
+          <div class="page-actions">
+            <a href="{{ section.settings.signup_url }}" class="button">Join rewards</a>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="page-spotlight">
+        <h2>What members get</h2>
+        <ul class="page-list">
+          <li>Points on every purchase</li>
+          <li>Member-only drops and early access</li>
+          <li>Seasonal perks and birthday rewards</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   {% schema %}
