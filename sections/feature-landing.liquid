@@ -5,7 +5,7 @@
         {% if section.settings.eyebrow != blank %}
           <span class="page-pill page-pill--accent">{{ section.settings.eyebrow }}</span>
         {% endif %}
-        <h1>{{ section.settings.title | default: page.title }}</h1>
+        <h2>{{ section.settings.title | default: page.title }}</h2>
         {% if section.settings.description != blank %}
           <p>{{ section.settings.description }}</p>
         {% endif %}

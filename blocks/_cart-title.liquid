@@ -7,14 +7,14 @@
   style="{% render 'spacing-style', settings: block_settings %}"
   {{ block.shopify_attributes }}
 >
-  <h1 class="{{ block_settings.type_preset | default: 'h2' }}">
+  <h2 class="{{ block_settings.type_preset | default: 'h2' }}">
     {%- if cart.empty? -%}
       {{ 'content.your_cart_is_empty' | t }}
     {%- else -%}
       {{ block_settings.title }}
       {%- if block_settings.show_count -%}{% render 'cart-bubble' %}{%- endif -%}
     {%- endif -%}
-  </h1>
+  </h2>
 </div>
 
 {% stylesheet %}

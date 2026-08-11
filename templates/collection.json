@@ -15,7 +15,7 @@
           "type": "text",
           "name": "Title",
           "settings": {
-            "text": "<h1>{{ closest.collection.title }}</h1>",
+            "text": "<h2>{{ closest.collection.title }}</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -35,7 +35,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "text_twGGkJ": {
           "type": "text",
@@ -61,7 +62,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         }
       },
       "block_order": [
@@ -121,7 +123,8 @@
             "facets_margin_bottom": 8,
             "facets_margin_right": 20
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "product-card": {
           "type": "_product-card",
@@ -153,7 +156,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "product_title_4nY4eT": {
               "type": "product-title",
@@ -178,7 +182,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "price_EzJzMm": {
               "type": "price",
@@ -200,7 +205,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -224,10 +230,99 @@
         "padding-block-start": 0,
         "padding-block-end": 32
       }
+    },
+    "page_usp": {
+      "type": "mini-usp-strip",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "page_testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "page_faq": {
+      "type": "faq",
+      "blocks": {
+        "question_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How can we help?",
+            "answer": "Use this area to answer a common question for this page."
+          }
+        },
+        "question_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I learn more?",
+            "answer": "Add relevant guidance, links, or supporting information here."
+          }
+        },
+        "question_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Need personal support?",
+            "answer": "Contact our team and we will be happy to help."
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3"
+      ],
+      "settings": {
+      }
+    },
+    "page_cta": {
+      "type": "final-cta",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_primary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "left",
+        "image_url": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=80",
+        "image_alt": "Our collection editorial detail",
+        "eyebrow": "Our collection",
+        "heading": "Explore Our collection with confidence",
+        "heading_level": "h2",
+        "body": "<p>Discover considered pieces and the useful details that make choosing the right option easier.</p>",
+        "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_secondary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "right",
+        "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
+        "image_alt": "Our collection editorial detail",
+        "eyebrow": "Good to know",
+        "heading": "Made for more than one moment",
+        "heading_level": "h3",
+        "body": "<p>Build a wardrobe around pieces that work together and earn their place over time.</p>",
+        "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-2"
+      }
     }
   },
   "order": [
     "section",
-    "main"
+    "editorial_primary",
+    "main",
+    "page_usp",
+    "page_testimonials",
+    "editorial_secondary",
+    "page_faq",
+    "page_cta"
   ]
 }

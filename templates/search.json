@@ -32,7 +32,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "search": {
           "type": "_search-input",
@@ -43,7 +44,8 @@
             "inherit_color_scheme": true,
             "color_scheme": ""
           },
-          "blocks": {}
+          "blocks": {
+          }
         }
       },
       "settings": {
@@ -77,7 +79,8 @@
             "facets_margin_bottom": 8,
             "facets_margin_right": 20
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "product-card": {
           "type": "_product-card",
@@ -110,7 +113,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "product_title_j7qXTx": {
               "type": "product-title",
@@ -135,7 +139,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "price_fYkUgG": {
               "type": "price",
@@ -158,7 +163,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -182,10 +188,99 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "page_usp": {
+      "type": "mini-usp-strip",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "page_testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "page_faq": {
+      "type": "faq",
+      "blocks": {
+        "question_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How can we help?",
+            "answer": "Use this area to answer a common question for this page."
+          }
+        },
+        "question_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I learn more?",
+            "answer": "Add relevant guidance, links, or supporting information here."
+          }
+        },
+        "question_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Need personal support?",
+            "answer": "Contact our team and we will be happy to help."
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3"
+      ],
+      "settings": {
+      }
+    },
+    "page_cta": {
+      "type": "final-cta",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_primary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "left",
+        "image_url": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
+        "image_alt": "Search editorial detail",
+        "eyebrow": "Search",
+        "heading": "A clearer route through Search",
+        "heading_level": "h2",
+        "body": "<p>Find the essential information first, then move directly to the right next step.</p>",
+        "points": "Straightforward guidance\nUseful answers\nHuman support when needed",
+        "link_label": "Contact our team",
+        "link_url": "/pages/contact",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_secondary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "right",
+        "image_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80",
+        "image_alt": "Search editorial detail",
+        "eyebrow": "Good to know",
+        "heading": "Support that continues",
+        "heading_level": "h3",
+        "body": "<p>If the information here does not resolve your question, our team can help with the details.</p>",
+        "points": "Order and product help\nPractical next steps\nFriendly follow-up",
+        "link_label": "Contact our team",
+        "link_url": "/pages/contact",
+        "color_scheme": "scheme-2"
+      }
     }
   },
   "order": [
     "search",
-    "main"
+    "editorial_primary",
+    "main",
+    "page_usp",
+    "page_testimonials",
+    "editorial_secondary",
+    "page_faq",
+    "page_cta"
   ]
 }

@@ -12,7 +12,98 @@
         "cta_label": "Shop now",
         "cta_url": "/collections/all"
       }
+    },
+    "page_usp": {
+      "type": "mini-usp-strip",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "page_testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "page_faq": {
+      "type": "faq",
+      "blocks": {
+        "question_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How can we help?",
+            "answer": "Use this area to answer a common question for this page."
+          }
+        },
+        "question_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I learn more?",
+            "answer": "Add relevant guidance, links, or supporting information here."
+          }
+        },
+        "question_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Need personal support?",
+            "answer": "Contact our team and we will be happy to help."
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3"
+      ],
+      "settings": {
+      }
+    },
+    "page_cta": {
+      "type": "final-cta",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_primary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "left",
+        "image_url": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1400&q=80",
+        "image_alt": "Size Guide editorial detail",
+        "eyebrow": "Size Guide",
+        "heading": "Make Size Guide work for you",
+        "heading_level": "h2",
+        "body": "<p>Use the guidance on this page to compare options and make a confident, informed choice.</p>",
+        "points": "Start with your needs\nCompare the details\nChoose with confidence",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_secondary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "right",
+        "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80",
+        "image_alt": "Size Guide editorial detail",
+        "eyebrow": "Good to know",
+        "heading": "The details worth considering",
+        "heading_level": "h3",
+        "body": "<p>A good decision comes from useful context, not more noise. Focus on what changes the experience.</p>",
+        "points": "Fit and function\nMaterials and care\nEveryday use",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-2"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "editorial_primary",
+    "page_usp",
+    "page_testimonials",
+    "editorial_secondary",
+    "page_faq",
+    "page_cta"
+  ]
 }

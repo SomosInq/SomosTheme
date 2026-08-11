@@ -12,7 +12,98 @@
         "cta_label": "Read reviews",
         "cta_url": "/collections/all"
       }
+    },
+    "page_usp": {
+      "type": "mini-usp-strip",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "page_testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "page_faq": {
+      "type": "faq",
+      "blocks": {
+        "question_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How can we help?",
+            "answer": "Use this area to answer a common question for this page."
+          }
+        },
+        "question_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I learn more?",
+            "answer": "Add relevant guidance, links, or supporting information here."
+          }
+        },
+        "question_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Need personal support?",
+            "answer": "Contact our team and we will be happy to help."
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3"
+      ],
+      "settings": {
+      }
+    },
+    "page_cta": {
+      "type": "final-cta",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_primary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "left",
+        "image_url": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80",
+        "image_alt": "Reviews Ugc editorial detail",
+        "eyebrow": "Reviews Ugc",
+        "heading": "More from Reviews Ugc",
+        "heading_level": "h2",
+        "body": "<p>Discover how this experience adds value before, during, and after every order.</p>",
+        "points": "Simple to join\nUseful benefits\nBuilt around customers",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_secondary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "right",
+        "image_url": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1400&q=80",
+        "image_alt": "Reviews Ugc editorial detail",
+        "eyebrow": "Good to know",
+        "heading": "Designed to reward connection",
+        "heading_level": "h3",
+        "body": "<p>Somos grows through the people who wear, share, and return to the collection.</p>",
+        "points": "Member-first value\nReasons to return\nA growing community",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-2"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "editorial_primary",
+    "page_usp",
+    "page_testimonials",
+    "editorial_secondary",
+    "page_faq",
+    "page_cta"
+  ]
 }

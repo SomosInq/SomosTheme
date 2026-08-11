@@ -3,7 +3,7 @@
     <div class="page-hero page-hero--split">
       <div>
         <span class="page-pill page-pill--accent">Advanced product experience</span>
-        <h1>{{ product.title | default: page.title }}</h1>
+        <h2>{{ product.title | default: page.title }}</h2>
         <p>{{ product.description | strip_html | truncate: 220 }}</p>
         {% if product.url != blank %}
           <div class="page-actions">
