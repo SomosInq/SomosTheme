@@ -9,14 +9,14 @@
         "highlight_heading": "What it supports",
         "bullets": "Choose 3 or build-a-box flows\nRoutine or bundle recommendations\nUpsell and cross-sell opportunities",
         "cards": "Flexible selection | Let shoppers choose from complementary products. ||Higher AOV | Encourage larger baskets with curated combinations. ||Great for gift sets | Support routines, bundles, and seasonal collections.",
-        "hero_image_url": "https://images.unsplash.com/photo-1526397751294-331021109fbd?auto=format&fit=crop&w=1400&q=80",
         "secondary_title": "Turn selection into a story",
         "secondary_description": "Bundle pages encourage customers to explore more and buy with confidence when the combinations feel curated rather than random.",
-        "secondary_image_url": "https://images.unsplash.com/photo-1517394409934-1b74d8cf8d0b?auto=format&fit=crop&w=1400&q=80",
         "secondary_cta_label": "See featured sets",
         "secondary_cta_url": "/collections/all",
         "cta_label": "Browse bundles",
-        "cta_url": "/collections/all"
+        "cta_url": "/collections/all",
+        "hero_asset_filename": "editorial-collection-look.jpg",
+        "secondary_asset_filename": "editorial-brand-studio.jpg"
       }
     },
     "page_usp": {
@@ -28,8 +28,37 @@
     "page_testimonials": {
       "type": "testimonials",
       "settings": {
+        "heading": "Why customers return",
         "color_scheme": "scheme-1"
-      }
+      },
+      "blocks": {
+        "quote_1": {
+          "type": "quote",
+          "settings": {
+            "quote": "The details feel considered, and the product has become part of my everyday rotation.",
+            "author": "Verified customer"
+          }
+        },
+        "quote_2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Clear information made it easier to choose confidently.",
+            "author": "Somos customer"
+          }
+        },
+        "quote_3": {
+          "type": "quote",
+          "settings": {
+            "quote": "Thoughtful service from browsing through to delivery.",
+            "author": "Returning customer"
+          }
+        }
+      },
+      "block_order": [
+        "quote_1",
+        "quote_2",
+        "quote_3"
+      ]
     },
     "page_faq": {
       "type": "faq",
@@ -37,22 +66,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about start with the essential?",
+            "answer": "Pick the product that anchors the bundle."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about add what works with it?",
+            "answer": "Choose complementary pieces based on use, fit, or routine."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about review your set?",
+            "answer": "Check variants and quantities before adding everything to the basket."
           }
         }
       },
@@ -62,11 +91,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about build your set",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -74,32 +109,81 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Bundle Builder editorial detail",
-        "eyebrow": "Bundle Builder",
-        "heading": "Explore Bundle Builder with confidence",
+        "eyebrow": "Build your set",
+        "heading": "Start with the essential",
         "heading_level": "h2",
-        "body": "<p>Discover considered pieces and the useful details that make choosing the right option easier.</p>",
-        "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
+        "body": "<p>Pick the product that anchors the bundle.</p>",
+        "points": "Add what works with it\nReview your set",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Bundle Builder editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Made for more than one moment",
+        "eyebrow": "Next step",
+        "heading": "Review your set",
         "heading_level": "h3",
-        "body": "<p>Build a wardrobe around pieces that work together and earn their place over time.</p>",
-        "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
+        "body": "<p>Check variants and quantities before adding everything to the basket.</p>",
+        "points": "Review your set\nAdd what works with it\nStart with the essential",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Build your set",
+            "heading": "Start with the essential",
+            "text": "Pick the product that anchors the bundle.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Build your set",
+            "heading": "Add what works with it",
+            "text": "Choose complementary pieces based on use, fit, or routine.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Build your set",
+            "heading": "Review your set",
+            "text": "Check variants and quantities before adding everything to the basket.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Build your set",
+        "heading": "A bundle shaped around you",
+        "intro": "<p>Choose complementary products, create a useful set, and keep the experience straightforward.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
@@ -108,6 +192,7 @@
     "editorial_primary",
     "page_usp",
     "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

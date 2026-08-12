@@ -17,7 +17,9 @@
               <p>{{ product.description | strip_html | truncate: 120 }}</p>
               <div class="page-card__footer">
                 <span class="page-price">{{ product.price | money }}</span>
-                <a href="{{ product.url }}" class="button button-secondary">View bundle</a>
+                {% if product.has_only_default_variant and product.available %}
+                  <form action="{{ routes.cart_add_url }}" method="post"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><button type="submit" class="button button-secondary">Add bundle</button></form>
+                {% else %}<a href="{{ product.url }}" class="button button-secondary">Choose options</a>{% endif %}
               </div>
             </article>
           {% endfor %}

@@ -9,26 +9,14 @@
         "highlight_heading": "Great for",
         "bullets": "Beauty and wellness products\nFood and supplements\nFashion and home goods",
         "cards": "Ingredient highlights | Explain what matters most to your customers. ||Materials and sourcing | Share your standards, origins, and quality. ||Transparency | Build trust through clear, structured content.",
-        "hero_image_url": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1400&q=80",
         "secondary_title": "Education drives confidence",
         "secondary_description": "Shoppers want to feel informed, especially when the product story is a key part of the purchase decision.",
-        "secondary_image_url": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1400&q=80",
         "secondary_cta_label": "See featured products",
         "secondary_cta_url": "/collections/all",
         "cta_label": "Explore products",
-        "cta_url": "/collections/all"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "cta_url": "/collections/all",
+        "hero_asset_filename": "editorial-brand-studio.jpg",
+        "secondary_asset_filename": "editorial-community.jpg"
       }
     },
     "page_faq": {
@@ -37,22 +25,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about what it is?",
+            "answer": "Clear names and plain-language descriptions of each material."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about why it is used?",
+            "answer": "The function, feel, or performance it contributes."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about how to care for it?",
+            "answer": "Practical steps that protect quality and extend useful life."
           }
         }
       },
@@ -62,11 +50,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about materials",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -74,31 +68,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Ingredients editorial detail",
-        "eyebrow": "Ingredients",
-        "heading": "The thinking behind Ingredients",
+        "eyebrow": "Materials",
+        "heading": "What it is",
         "heading_level": "h2",
-        "body": "<p>Learn about the choices, people, and principles that shape this part of Somos.</p>",
-        "points": "Clear purpose\nConsidered decisions\nA long-term point of view",
+        "body": "<p>Clear names and plain-language descriptions of each material.</p>",
+        "points": "Why it is used\nHow to care for it",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Ingredients editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "How we put it into practice",
+        "eyebrow": "Next step",
+        "heading": "How to care for it",
         "heading_level": "h3",
-        "body": "<p>Details matter. This space gives customers the proof, process, and context behind the promise.</p>",
-        "points": "Useful transparency\nResponsible progress\nDesigned to last",
+        "body": "<p>Practical steps that protect quality and extend useful life.</p>",
+        "points": "How to care for it\nWhy it is used\nWhat it is",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Materials",
+            "heading": "What it is",
+            "text": "Clear names and plain-language descriptions of each material.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Materials",
+            "heading": "Why it is used",
+            "text": "The function, feel, or performance it contributes.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Materials",
+            "heading": "How to care for it",
+            "text": "Practical steps that protect quality and extend useful life.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "statement",
+        "eyebrow": "Materials",
+        "heading": "Know what goes into every product",
+        "intro": "<p>Understand the materials, ingredients, purpose, and sourcing behind the collection.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -106,8 +149,7 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

@@ -33,40 +33,28 @@
         "faq_3"
       ]
     },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about orders and delivery?",
+            "answer": "Track dispatches, understand timings, and resolve delivery questions."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about products and care?",
+            "answer": "Find sizing, materials, use, and maintenance guidance."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about returns and accounts?",
+            "answer": "Review return steps and manage customer details."
           }
         }
       },
@@ -76,54 +64,97 @@
         "question_3"
       ],
       "settings": {
-      }
-    },
-    "page_cta": {
-      "type": "final-cta",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "heading": "Questions about help centre",
+        "intro": "Practical answers specific to this page."
       }
     },
     "editorial_primary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Faq Hub editorial detail",
-        "eyebrow": "Faq Hub",
-        "heading": "A clearer route through Faq Hub",
+        "eyebrow": "Help centre",
+        "heading": "Orders and delivery",
         "heading_level": "h2",
-        "body": "<p>Find the essential information first, then move directly to the right next step.</p>",
-        "points": "Straightforward guidance\nUseful answers\nHuman support when needed",
+        "body": "<p>Track dispatches, understand timings, and resolve delivery questions.</p>",
+        "points": "Products and care\nReturns and accounts",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Faq Hub editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Support that continues",
+        "eyebrow": "Next step",
+        "heading": "Returns and accounts",
         "heading_level": "h3",
-        "body": "<p>If the information here does not resolve your question, our team can help with the details.</p>",
-        "points": "Order and product help\nPractical next steps\nFriendly follow-up",
+        "body": "<p>Review return steps and manage customer details.</p>",
+        "points": "Returns and accounts\nProducts and care\nOrders and delivery",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Help centre",
+            "heading": "Orders and delivery",
+            "text": "Track dispatches, understand timings, and resolve delivery questions.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Help centre",
+            "heading": "Products and care",
+            "text": "Find sizing, materials, use, and maintenance guidance.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Help centre",
+            "heading": "Returns and accounts",
+            "text": "Review return steps and manage customer details.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "statement",
+        "eyebrow": "Help centre",
+        "heading": "Answers, organised",
+        "intro": "<p>Find practical information by topic before contacting customer care.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
-    "editorial_secondary",
     "page_faq",
-    "page_cta"
+    "page_details",
+    "editorial_secondary"
   ]
 }

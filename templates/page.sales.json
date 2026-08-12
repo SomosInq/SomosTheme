@@ -15,8 +15,37 @@
     "page_testimonials": {
       "type": "testimonials",
       "settings": {
+        "heading": "Why customers return",
         "color_scheme": "scheme-1"
-      }
+      },
+      "blocks": {
+        "quote_1": {
+          "type": "quote",
+          "settings": {
+            "quote": "The details feel considered, and the product has become part of my everyday rotation.",
+            "author": "Verified customer"
+          }
+        },
+        "quote_2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Clear information made it easier to choose confidently.",
+            "author": "Somos customer"
+          }
+        },
+        "quote_3": {
+          "type": "quote",
+          "settings": {
+            "quote": "Thoughtful service from browsing through to delivery.",
+            "author": "Returning customer"
+          }
+        }
+      },
+      "block_order": [
+        "quote_1",
+        "quote_2",
+        "quote_3"
+      ]
     },
     "page_faq": {
       "type": "faq",
@@ -24,22 +53,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about check availability?",
+            "answer": "Sale sizes and colours can move quickly."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about review final-sale terms?",
+            "answer": "Read the product and returns information before ordering."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about choose for the long term?",
+            "answer": "A lower price is most valuable when the piece will be used."
           }
         }
       },
@@ -49,11 +78,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about sale edit",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -61,32 +96,81 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Sales editorial detail",
-        "eyebrow": "Sales",
-        "heading": "Explore Sales with confidence",
+        "eyebrow": "Sale edit",
+        "heading": "Check availability",
         "heading_level": "h2",
-        "body": "<p>Discover considered pieces and the useful details that make choosing the right option easier.</p>",
-        "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
+        "body": "<p>Sale sizes and colours can move quickly.</p>",
+        "points": "Review final-sale terms\nChoose for the long term",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Sales editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Made for more than one moment",
+        "eyebrow": "Next step",
+        "heading": "Choose for the long term",
         "heading_level": "h3",
-        "body": "<p>Build a wardrobe around pieces that work together and earn their place over time.</p>",
-        "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
+        "body": "<p>A lower price is most valuable when the piece will be used.</p>",
+        "points": "Choose for the long term\nReview final-sale terms\nCheck availability",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Sale edit",
+            "heading": "Check availability",
+            "text": "Sale sizes and colours can move quickly.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Sale edit",
+            "heading": "Review final-sale terms",
+            "text": "Read the product and returns information before ordering.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Sale edit",
+            "heading": "Choose for the long term",
+            "text": "A lower price is most valuable when the piece will be used.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "Sale edit",
+        "heading": "Considered pieces, better value",
+        "intro": "<p>Browse reduced products without losing sight of fit, usefulness, or longevity.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
@@ -95,6 +179,7 @@
     "editorial_primary",
     "page_usp",
     "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

@@ -10,19 +10,8 @@
         "bullets": "Measurement charts\nFit notes by collection or product\nSize recommendations for different bodies or use cases",
         "cards": "Measurement guide | Help customers compare their measurements against your sizing chart. ||Fit notes | Add guidance for relaxed, true-to-size, or oversized fits. ||Category-specific support | Tailor the page for apparel, footwear, accessories, and more.",
         "cta_label": "Shop now",
-        "cta_url": "/collections/all"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "cta_url": "/collections/all",
+        "hero_asset_filename": "editorial-fit-guide.jpg"
       }
     },
     "page_faq": {
@@ -31,22 +20,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about measure accurately?",
+            "answer": "Use a soft tape and keep it level without pulling tightly."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about compare the product?",
+            "answer": "Check the product-specific chart rather than assuming every fit is identical."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about choose your preference?",
+            "answer": "Size up or down when you prefer more ease or a closer fit."
           }
         }
       },
@@ -56,11 +45,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about fit guide",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Need personal fit advice?",
+        "text": "Tell us the product and measurements you are considering.",
+        "link_label": "Ask about fit",
+        "link_url": "/pages/contact",
         "color_scheme": "scheme-1"
       }
     },
@@ -68,40 +63,88 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Size Guide editorial detail",
-        "eyebrow": "Size Guide",
-        "heading": "Make Size Guide work for you",
+        "eyebrow": "Fit guide",
+        "heading": "Measure accurately",
         "heading_level": "h2",
-        "body": "<p>Use the guidance on this page to compare options and make a confident, informed choice.</p>",
-        "points": "Start with your needs\nCompare the details\nChoose with confidence",
+        "body": "<p>Use a soft tape and keep it level without pulling tightly.</p>",
+        "points": "Compare the product\nChoose your preference",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-fit-guide.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Size Guide editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "The details worth considering",
+        "eyebrow": "Next step",
+        "heading": "Choose your preference",
         "heading_level": "h3",
-        "body": "<p>A good decision comes from useful context, not more noise. Focus on what changes the experience.</p>",
-        "points": "Fit and function\nMaterials and care\nEveryday use",
+        "body": "<p>Size up or down when you prefer more ease or a closer fit.</p>",
+        "points": "Choose your preference\nCompare the product\nMeasure accurately",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Fit guide",
+            "heading": "Measure accurately",
+            "text": "Use a soft tape and keep it level without pulling tightly.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Fit guide",
+            "heading": "Compare the product",
+            "text": "Check the product-specific chart rather than assuming every fit is identical.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Fit guide",
+            "heading": "Choose your preference",
+            "text": "Size up or down when you prefer more ease or a closer fit.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "statement",
+        "eyebrow": "Fit guide",
+        "heading": "Measure once, choose with confidence",
+        "intro": "<p>Use body and garment measurements alongside the intended fit of each product.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

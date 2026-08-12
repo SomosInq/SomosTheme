@@ -12,14 +12,66 @@
     "instagram_slider": {
       "type": "social-media-slider",
       "blocks": {
-        "post_1": { "type": "post", "settings": { "image_url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80", "alt_text": "Curated clothing rail", "caption": "New textures, considered layers, and pieces made for repeat wear.", "post_url": "" } },
-        "post_2": { "type": "post", "settings": { "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80", "alt_text": "Street-style look", "caption": "Everyday dressing, seen our way.", "post_url": "" } },
-        "post_3": { "type": "post", "settings": { "image_url": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=80", "alt_text": "Fashion studio details", "caption": "Behind the details at Somos.", "post_url": "" } },
-        "post_4": { "type": "post", "settings": { "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80", "alt_text": "Neutral everyday outfit", "caption": "A closer look at this week’s edit.", "post_url": "" } },
-        "post_5": { "type": "post", "settings": { "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80", "alt_text": "Clothing collection", "caption": "Fewer, better choices for the season ahead.", "post_url": "" } }
+        "post_1": {
+          "type": "post",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+            "alt_text": "Curated clothing rail",
+            "caption": "New textures, considered layers, and pieces made for repeat wear.",
+            "post_url": ""
+          }
+        },
+        "post_2": {
+          "type": "post",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80",
+            "alt_text": "Street-style look",
+            "caption": "Everyday dressing, seen our way.",
+            "post_url": ""
+          }
+        },
+        "post_3": {
+          "type": "post",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=80",
+            "alt_text": "Fashion studio details",
+            "caption": "Behind the details at Somos.",
+            "post_url": ""
+          }
+        },
+        "post_4": {
+          "type": "post",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+            "alt_text": "Neutral everyday outfit",
+            "caption": "A closer look at this week’s edit.",
+            "post_url": ""
+          }
+        },
+        "post_5": {
+          "type": "post",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
+            "alt_text": "Clothing collection",
+            "caption": "Fewer, better choices for the season ahead.",
+            "post_url": ""
+          }
+        }
       },
-      "block_order": ["post_1", "post_2", "post_3", "post_4", "post_5"],
-      "settings": { "eyebrow": "Follow along", "heading": "Somos on Instagram", "profile_label": "Follow @somos", "profile_url": "https://www.instagram.com/", "color_scheme": "scheme-1" }
+      "block_order": [
+        "post_1",
+        "post_2",
+        "post_3",
+        "post_4",
+        "post_5"
+      ],
+      "settings": {
+        "eyebrow": "Follow along",
+        "heading": "Somos on Instagram",
+        "profile_label": "Follow @somos",
+        "profile_url": "https://www.instagram.com/",
+        "color_scheme": "scheme-1"
+      }
     },
     "hero_DKPQWC": {
       "type": "hero",
@@ -128,7 +180,8 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {}
+                  "blocks": {
+                  }
                 },
                 "text_kmJ9AQ": {
                   "type": "text",
@@ -154,7 +207,8 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {}
+                  "blocks": {
+                  }
                 }
               },
               "block_order": [
@@ -186,7 +240,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -292,7 +347,8 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "text_znMide": {
               "type": "text",
@@ -317,7 +373,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "button_yt3QW8": {
               "type": "button",
@@ -331,7 +388,8 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -391,7 +449,8 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "text_AtreaK": {
               "type": "text",
@@ -416,7 +475,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "button_qkHGEA": {
               "type": "button",
@@ -430,7 +490,8 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -490,7 +551,8 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "text_y3Hd9t": {
               "type": "text",
@@ -515,7 +577,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "button_nNr4em": {
               "type": "button",
@@ -529,7 +592,8 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -640,7 +704,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -687,7 +752,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -704,7 +770,8 @@
                 "border_opacity": 100,
                 "border_radius": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -756,7 +823,8 @@
             "image_position": "cover",
             "video_position": "cover"
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "content": {
           "type": "_content-without-appearance",
@@ -791,7 +859,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "group_YkhAe4": {
               "type": "group",
@@ -856,7 +925,8 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {}
+                  "blocks": {
+                  }
                 },
                 "text_wxbUBx": {
                   "type": "text",
@@ -881,7 +951,8 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {}
+                  "blocks": {
+                  }
                 }
               },
               "block_order": [
@@ -901,7 +972,8 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -966,7 +1038,8 @@
                 "padding-inline-start": 8,
                 "padding-inline-end": 8
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -983,7 +1056,8 @@
                 "border_opacity": 100,
                 "border_radius": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -1044,7 +1118,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "button_H9gpTf": {
           "type": "button",
@@ -1059,7 +1134,8 @@
             "width_mobile": "fit-content",
             "custom_width_mobile": 100
           },
-          "blocks": {}
+          "blocks": {
+          }
         }
       },
       "block_order": [
@@ -1154,7 +1230,8 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "text_Y6bbDR": {
               "type": "text",
@@ -1179,7 +1256,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "button_BdKCFR": {
               "type": "button",
@@ -1193,7 +1271,8 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -1253,7 +1332,8 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "text_tm8hwD": {
               "type": "text",
@@ -1278,7 +1358,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "button_THWtDN": {
               "type": "button",
@@ -1292,7 +1373,8 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -1362,7 +1444,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "text_zwQD8w": {
           "type": "text",
@@ -1387,7 +1470,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "email_signup_tVjwMD": {
           "type": "email-signup",
@@ -1412,7 +1496,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         }
       },
       "block_order": [
@@ -1516,7 +1601,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -1563,7 +1649,8 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -1580,7 +1667,8 @@
                 "border_opacity": 100,
                 "border_radius": 0
               },
-              "blocks": {}
+              "blocks": {
+              }
             }
           },
           "block_order": [
@@ -1644,7 +1732,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "text_Ly73ft": {
           "type": "text",
@@ -1670,7 +1759,8 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+          }
         },
         "button_a94Qng": {
           "type": "button",
@@ -1685,7 +1775,8 @@
             "width_mobile": "fit-content",
             "custom_width_mobile": 100
           },
-          "blocks": {}
+          "blocks": {
+          }
         }
       },
       "block_order": [

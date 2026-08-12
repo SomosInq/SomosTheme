@@ -1,29 +1,47 @@
 {
   "sections": {
     "main": {
-      "type": "feature-landing",
+      "type": "referral-rewards",
       "settings": {
-        "eyebrow": "Refer a friend",
         "title": "Bring a friend along",
-        "description": "Design a referral experience that rewards existing customers and helps friends discover your brand.",
-        "highlight_heading": "Why it works",
-        "bullets": "Reward both referrer and friend\nEasy sharing links\nLoyalty ecosystem support",
-        "cards": "Shareable rewards | Make it simple for customers to invite others. ||Build advocacy | Turn existing customers into advocates. ||Grow your community | Combine with loyalty and email campaigns.",
-        "cta_label": "Start sharing",
-        "cta_url": "/account/register"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "description": "Share your referral route and follow eligible rewards clearly from invitation to redemption.",
+        "referral_link": "/account/register"
       }
     },
     "page_testimonials": {
       "type": "testimonials",
       "settings": {
+        "heading": "Why customers return",
         "color_scheme": "scheme-1"
-      }
+      },
+      "blocks": {
+        "quote_1": {
+          "type": "quote",
+          "settings": {
+            "quote": "The details feel considered, and the product has become part of my everyday rotation.",
+            "author": "Verified customer"
+          }
+        },
+        "quote_2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Clear information made it easier to choose confidently.",
+            "author": "Somos customer"
+          }
+        },
+        "quote_3": {
+          "type": "quote",
+          "settings": {
+            "quote": "Thoughtful service from browsing through to delivery.",
+            "author": "Returning customer"
+          }
+        }
+      },
+      "block_order": [
+        "quote_1",
+        "quote_2",
+        "quote_3"
+      ]
     },
     "page_faq": {
       "type": "faq",
@@ -31,22 +49,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about send your link?",
+            "answer": "Use your personal referral route where available."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about a friend discovers somos?",
+            "answer": "They can explore and complete an eligible first order."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about receive the benefit?",
+            "answer": "Qualifying rewards appear according to the programme terms."
           }
         }
       },
@@ -56,11 +74,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about refer a friend",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -68,31 +92,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Refer A Friend editorial detail",
-        "eyebrow": "Refer A Friend",
-        "heading": "More from Refer A Friend",
+        "eyebrow": "Refer a friend",
+        "heading": "Send your link",
         "heading_level": "h2",
-        "body": "<p>Discover how this experience adds value before, during, and after every order.</p>",
-        "points": "Simple to join\nUseful benefits\nBuilt around customers",
+        "body": "<p>Use your personal referral route where available.</p>",
+        "points": "A friend discovers Somos\nReceive the benefit",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Refer A Friend editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Designed to reward connection",
+        "eyebrow": "Next step",
+        "heading": "Receive the benefit",
         "heading_level": "h3",
-        "body": "<p>Somos grows through the people who wear, share, and return to the collection.</p>",
-        "points": "Member-first value\nReasons to return\nA growing community",
+        "body": "<p>Qualifying rewards appear according to the programme terms.</p>",
+        "points": "Receive the benefit\nA friend discovers Somos\nSend your link",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Refer a friend",
+            "heading": "Send your link",
+            "text": "Use your personal referral route where available.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Refer a friend",
+            "heading": "A friend discovers Somos",
+            "text": "They can explore and complete an eligible first order.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Refer a friend",
+            "heading": "Receive the benefit",
+            "text": "Qualifying rewards appear according to the programme terms.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "Refer a friend",
+        "heading": "Share something worth discovering",
+        "intro": "<p>Invite someone to Somos and follow the reward terms clearly.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -100,8 +173,8 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
     "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

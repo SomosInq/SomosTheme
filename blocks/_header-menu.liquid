@@ -782,6 +782,11 @@
       "default": 0,
       "visible_if": "{{ block.settings.menu_style != 'text' }}"
     },
+    { "type": "header", "content": "Promotion" },
+    { "type": "image_picker", "id": "promo_image", "label": "Promotion image" },
+    { "type": "text", "id": "promo_heading", "label": "Promotion heading", "default": "The latest edit" },
+    { "type": "text", "id": "promo_text", "label": "Promotion text", "default": "Discover what is new" },
+    { "type": "url", "id": "promo_link", "label": "Promotion link" },
     {
       "type": "header",
       "content": "t:content.mobile_layout"

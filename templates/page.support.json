@@ -27,40 +27,28 @@
         "support_faq_2"
       ]
     },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about orders?",
+            "answer": "Get help with changes, tracking, delivery, and returns."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about products?",
+            "answer": "Ask about sizing, materials, care, or compatibility."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about accounts?",
+            "answer": "Resolve sign-in, rewards, subscription, or profile questions."
           }
         }
       },
@@ -70,43 +58,88 @@
         "question_3"
       ],
       "settings": {
-      }
-    },
-    "page_cta": {
-      "type": "final-cta",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "heading": "Questions about customer care",
+        "intro": "Practical answers specific to this page."
       }
     },
     "editorial_primary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Support editorial detail",
-        "eyebrow": "Support",
-        "heading": "A clearer route through Support",
+        "eyebrow": "Customer care",
+        "heading": "Orders",
         "heading_level": "h2",
-        "body": "<p>Find the essential information first, then move directly to the right next step.</p>",
-        "points": "Straightforward guidance\nUseful answers\nHuman support when needed",
+        "body": "<p>Get help with changes, tracking, delivery, and returns.</p>",
+        "points": "Products\nAccounts",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Support editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Support that continues",
+        "eyebrow": "Next step",
+        "heading": "Accounts",
         "heading_level": "h3",
-        "body": "<p>If the information here does not resolve your question, our team can help with the details.</p>",
-        "points": "Order and product help\nPractical next steps\nFriendly follow-up",
+        "body": "<p>Resolve sign-in, rewards, subscription, or profile questions.</p>",
+        "points": "Accounts\nProducts\nOrders",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Customer care",
+            "heading": "Orders",
+            "text": "Get help with changes, tracking, delivery, and returns.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Customer care",
+            "heading": "Products",
+            "text": "Ask about sizing, materials, care, or compatibility.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Customer care",
+            "heading": "Accounts",
+            "text": "Resolve sign-in, rewards, subscription, or profile questions.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Customer care",
+        "heading": "Practical help from real people",
+        "intro": "<p>Start with common guidance or send the details our team needs to resolve your issue.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -114,10 +147,8 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
-    "editorial_secondary",
     "page_faq",
-    "page_cta"
+    "page_details",
+    "editorial_secondary"
   ]
 }

@@ -1837,6 +1837,39 @@
       },
       {
         "type": "checkbox",
+        "id": "enable_free_shipping_progress",
+        "label": "Show free shipping progress",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "free_shipping_threshold",
+        "label": "Free shipping threshold",
+        "min": 10,
+        "max": 250,
+        "step": 5,
+        "unit": "£",
+        "default": 50
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_cart_upsells",
+        "label": "Show cart upsells",
+        "default": true
+      },
+      {
+        "type": "collection",
+        "id": "cart_upsell_collection",
+        "label": "Cart upsell collection"
+      },
+      {
+        "type": "text",
+        "id": "cart_upsell_heading",
+        "label": "Cart upsell heading",
+        "default": "You may also like"
+      },
+      {
+        "type": "checkbox",
         "id": "show_installments",
         "label": "t:settings.installments",
         "default": true
@@ -2417,4 +2450,3 @@
     ]
   }
 ]
-

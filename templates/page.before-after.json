@@ -9,26 +9,14 @@
         "highlight_heading": "Ideal for",
         "bullets": "Beauty and skincare\nWellness and supplements\nFitness and home transformations",
         "cards": "Visual proof | Let customers see the impact clearly. ||Higher confidence | Improve trust before they buy. ||Great for conversion | Pair with product details and reviews.",
-        "hero_image_url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=80",
         "secondary_title": "Build confidence with proof",
         "secondary_description": "Customers trust what they can see, especially for products that promise visible results.",
-        "secondary_image_url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=80",
         "secondary_cta_label": "Explore results",
         "secondary_cta_url": "/collections/all",
         "cta_label": "Explore transformations",
-        "cta_url": "/collections/all"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "cta_url": "/collections/all",
+        "hero_asset_filename": "editorial-fit-guide.jpg",
+        "secondary_asset_filename": "editorial-collection-look.jpg"
       }
     },
     "page_faq": {
@@ -37,22 +25,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about start with context?",
+            "answer": "See the original challenge before reviewing the outcome."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about notice the details?",
+            "answer": "Small improvements in fit, material, or routine create the larger change."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about apply it yourself?",
+            "answer": "Use the supporting guidance to find the most relevant products."
           }
         }
       },
@@ -62,11 +50,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about the difference",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -74,31 +68,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Before After editorial detail",
-        "eyebrow": "Before After",
-        "heading": "Make Before After work for you",
+        "eyebrow": "The difference",
+        "heading": "Start with context",
         "heading_level": "h2",
-        "body": "<p>Use the guidance on this page to compare options and make a confident, informed choice.</p>",
-        "points": "Start with your needs\nCompare the details\nChoose with confidence",
+        "body": "<p>See the original challenge before reviewing the outcome.</p>",
+        "points": "Notice the details\nApply it yourself",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-fit-guide.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Before After editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "The details worth considering",
+        "eyebrow": "Next step",
+        "heading": "Apply it yourself",
         "heading_level": "h3",
-        "body": "<p>A good decision comes from useful context, not more noise. Focus on what changes the experience.</p>",
-        "points": "Fit and function\nMaterials and care\nEveryday use",
+        "body": "<p>Use the supporting guidance to find the most relevant products.</p>",
+        "points": "Apply it yourself\nNotice the details\nStart with context",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "The difference",
+            "heading": "Start with context",
+            "text": "See the original challenge before reviewing the outcome.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "The difference",
+            "heading": "Notice the details",
+            "text": "Small improvements in fit, material, or routine create the larger change.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "The difference",
+            "heading": "Apply it yourself",
+            "text": "Use the supporting guidance to find the most relevant products.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "The difference",
+        "heading": "See what thoughtful changes can do",
+        "intro": "<p>Compare the starting point with the finished result and understand the choices behind it.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -106,8 +149,7 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

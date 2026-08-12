@@ -8,6 +8,10 @@
   @param {string} [menu_content_type] - The type of content to render, options: ['featured_products', 'featured_collections', 'collection_images', 'text'] (default: 'text')
   @param {number} [content_aspect_ratio] - The aspect ratio to display the content if applicable
   @param {number} [image_border_radius] - The border radius used for the content images
+  @param {image} [promo_image] - Optional promotional image
+  @param {string} [promo_heading] - Promotional heading
+  @param {string} [promo_text] - Promotional supporting text
+  @param {string} [promo_link] - Promotional link
 {%- enddoc -%}
 
 <div class="mega-menu section section--full-width-margin section--{{ section.settings.section_width }}">
@@ -26,5 +30,12 @@
       content_aspect_ratio: content_aspect_ratio,
       image_border_radius: image_border_radius
     %}
+    {% if promo_image != blank %}
+      <a class="mega-menu__promotion" href="{{ promo_link }}">
+        {{ promo_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: promo_heading }}
+        <span><strong>{{ promo_heading }}</strong>{% if promo_text != blank %}<small>{{ promo_text }}</small>{% endif %}</span>
+      </a>
+    {% endif %}
   </div>
 </div>
+{% stylesheet %}.mega-menu__promotion{display:grid;align-content:end;position:relative;min-height:18rem;color:#fff;text-decoration:none}.mega-menu__promotion img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.mega-menu__promotion span{position:relative;padding:1.25rem;background:linear-gradient(transparent,rgba(0,0,0,.75));display:grid}.mega-menu__promotion small{margin-top:.35rem}{% endstylesheet %}

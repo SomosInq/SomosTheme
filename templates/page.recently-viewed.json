@@ -1,26 +1,14 @@
 {
   "sections": {
     "main": {
-      "type": "feature-landing",
+      "type": "recently-viewed-products",
       "settings": {
-        "eyebrow": "Recently viewed",
-        "title": "Pick up where you left off",
-        "description": "Surface recently viewed products to make browsing easier and increase conversion on return visits.",
-        "highlight_heading": "Best use cases",
-        "bullets": "Returning shoppers\nHigh-consideration products\nCross-sell and re-engagement",
-        "cards": "Remind shoppers | Show them the products they were already exploring. ||Increase momentum | Make it easy to continue their purchase journey. ||Support merchandising | Pair this with recommendations and bundles.",
-        "cta_label": "Shop best sellers",
-        "cta_url": "/collections/all"
+        "title": "Continue where you left off",
+        "description": "Return to products you recently explored and keep your shortlist moving."
       }
     },
     "page_usp": {
       "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
       "settings": {
         "color_scheme": "scheme-1"
       }
@@ -31,22 +19,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about pick up quickly?",
+            "answer": "Reopen products without searching for them again."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about compare your shortlist?",
+            "answer": "Review price, colour, and availability side by side."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about clear your trail?",
+            "answer": "Recently viewed data can be reset when you want a fresh start."
           }
         }
       },
@@ -56,11 +44,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about your browsing",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -68,31 +62,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Recently Viewed editorial detail",
-        "eyebrow": "Recently Viewed",
-        "heading": "Explore Recently Viewed with confidence",
+        "eyebrow": "Your browsing",
+        "heading": "Pick up quickly",
         "heading_level": "h2",
-        "body": "<p>Discover considered pieces and the useful details that make choosing the right option easier.</p>",
-        "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
+        "body": "<p>Reopen products without searching for them again.</p>",
+        "points": "Compare your shortlist\nClear your trail",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Recently Viewed editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Made for more than one moment",
+        "eyebrow": "Next step",
+        "heading": "Clear your trail",
         "heading_level": "h3",
-        "body": "<p>Build a wardrobe around pieces that work together and earn their place over time.</p>",
-        "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
+        "body": "<p>Recently viewed data can be reset when you want a fresh start.</p>",
+        "points": "Clear your trail\nCompare your shortlist\nPick up quickly",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Your browsing",
+            "heading": "Pick up quickly",
+            "text": "Reopen products without searching for them again.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Your browsing",
+            "heading": "Compare your shortlist",
+            "text": "Review price, colour, and availability side by side.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Your browsing",
+            "heading": "Clear your trail",
+            "text": "Recently viewed data can be reset when you want a fresh start.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Your browsing",
+        "heading": "Continue where you left off",
+        "intro": "<p>Return to products you recently explored and compare them while the details are familiar.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -101,7 +144,7 @@
     "main",
     "editorial_primary",
     "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

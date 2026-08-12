@@ -1,0 +1,11 @@
+<section class="fbt page-width-content">
+  <h2>{{ section.settings.heading }}</h2>
+  <form action="{{ routes.cart_add_url }}" method="post" class="fbt__grid">
+    {% for block in section.blocks %}{% assign item = block.settings.product %}{% if item != blank %}{% assign variant = item.selected_or_first_available_variant %}
+      <label class="fbt__item" {{ block.shopify_attributes }}><input type="checkbox" name="items[][id]" value="{{ variant.id }}" {% if variant.available %}checked{% else %}disabled{% endif %}>{% if item.featured_image %}{{ item.featured_image | image_url: width: 500 | image_tag: loading: 'lazy', alt: item.title }}{% endif %}<span><strong>{{ item.title }}</strong><small>{{ variant.price | money }}</small></span></label>
+    {% endif %}{% endfor %}
+    <button class="button" type="submit">Add selected items</button>
+  </form>
+</section>
+{% stylesheet %}.fbt{padding-block:clamp(4rem,8vw,8rem)}.fbt h2{font-size:clamp(1.75rem,4vw,3.5rem)}.fbt__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem}.fbt__item{display:grid;gap:.75rem;border-block-start:1px solid currentColor;padding-block-start:1rem}.fbt__item img{width:100%;aspect-ratio:4/5;object-fit:cover}.fbt__item span{display:grid}.fbt__item input{position:absolute}.fbt__grid>.button{align-self:end;border-radius:0}{% endstylesheet %}
+{% schema %}{"name":"Bought together","max_blocks":4,"settings":[{"type":"text","id":"heading","label":"Heading","default":"Complete the set"}],"blocks":[{"type":"product","name":"Product","settings":[{"type":"product","id":"product","label":"Product"}]}],"presets":[{"name":"Bought together"}]}{% endschema %}

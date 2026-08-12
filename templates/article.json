@@ -95,49 +95,10 @@
         "padding-block-end": 80
       }
     },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_testimonials": {
       "type": "testimonials",
       "settings": {
         "color_scheme": "scheme-1"
-      }
-    },
-    "page_faq": {
-      "type": "faq",
-      "blocks": {
-        "question_1": {
-          "type": "faq",
-          "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
-          }
-        },
-        "question_2": {
-          "type": "faq",
-          "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
-          }
-        },
-        "question_3": {
-          "type": "faq",
-          "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
-          }
-        }
-      },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
-      "settings": {
       }
     },
     "page_cta": {
@@ -150,7 +111,6 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Journal editorial detail",
         "eyebrow": "Journal",
         "heading": "A closer look at Journal",
@@ -159,14 +119,15 @@
         "points": "Fresh perspective\nPractical inspiration\nEasy ways to shop the story",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Journal editorial detail",
         "eyebrow": "Good to know",
         "heading": "From inspiration to everyday wear",
@@ -175,17 +136,17 @@
         "points": "Build the look\nFind complementary pieces\nReturn for new edits",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "compact"
       }
     }
   },
   "order": [
     "section",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
     "editorial_secondary",
-    "page_faq",
+    "page_testimonials",
     "page_cta"
   ]
 }

@@ -1,29 +1,16 @@
 {
   "sections": {
     "main": {
-      "type": "feature-landing",
+      "type": "quiz-flow",
       "settings": {
-        "eyebrow": "Product finder",
         "title": "Find the right product for you",
-        "description": "Guide shoppers through a simple quiz or recommendation experience to reduce decision friction and improve conversion.",
-        "highlight_heading": "What this page includes",
-        "bullets": "Short quiz or questionnaire flow\nClear product recommendations\nOutcome-based merchandising",
-        "cards": "Take the quiz | Let customers describe their needs and receive a tailored recommendation. ||See the results | Surface the best-fitting products and add a strong call to action. ||Personalize the journey | Use this page to support gifting, skincare routines, and product discovery.",
-        "cta_label": "Start finding",
-        "cta_url": "/collections/all"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
+        "description": "Answer a few practical questions and receive a more focused recommendation."
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
     },
     "page_faq": {
       "type": "faq",
@@ -31,22 +18,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about tell us the use?",
+            "answer": "Begin with what you need the product to do."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about add your preferences?",
+            "answer": "Refine by fit, finish, routine, or priorities."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about review the match?",
+            "answer": "Understand why each recommendation suits your answers."
           }
         }
       },
@@ -56,11 +43,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about product finder",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -68,31 +61,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Product Finder editorial detail",
-        "eyebrow": "Product Finder",
-        "heading": "Make Product Finder work for you",
+        "eyebrow": "Product finder",
+        "heading": "Tell us the use",
         "heading_level": "h2",
-        "body": "<p>Use the guidance on this page to compare options and make a confident, informed choice.</p>",
-        "points": "Start with your needs\nCompare the details\nChoose with confidence",
+        "body": "<p>Begin with what you need the product to do.</p>",
+        "points": "Add your preferences\nReview the match",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-fit-guide.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Product Finder editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "The details worth considering",
+        "eyebrow": "Next step",
+        "heading": "Review the match",
         "heading_level": "h3",
-        "body": "<p>A good decision comes from useful context, not more noise. Focus on what changes the experience.</p>",
-        "points": "Fit and function\nMaterials and care\nEveryday use",
+        "body": "<p>Understand why each recommendation suits your answers.</p>",
+        "points": "Review the match\nAdd your preferences\nTell us the use",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Product finder",
+            "heading": "Tell us the use",
+            "text": "Begin with what you need the product to do.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Product finder",
+            "heading": "Add your preferences",
+            "text": "Refine by fit, finish, routine, or priorities.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Product finder",
+            "heading": "Review the match",
+            "text": "Understand why each recommendation suits your answers.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "statement",
+        "eyebrow": "Product finder",
+        "heading": "A shorter path to the right choice",
+        "intro": "<p>Answer a few practical questions and narrow the collection around your needs.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -100,8 +142,7 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

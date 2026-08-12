@@ -188,22 +188,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "How do I choose the right piece?",
+            "answer": "Use the product details, measurements, and care information to compare your options."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What are your delivery and return options?",
+            "answer": "Delivery estimates and the current returns policy are shown during checkout and in customer care."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "How should I care for my order?",
+            "answer": "Follow the care label and product-specific guidance to help each piece last longer."
           }
         }
       },
@@ -213,6 +213,8 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about list collections",
+        "intro": "Useful answers for this page, with a clear route to more help when you need it."
       }
     },
     "page_cta": {
@@ -225,7 +227,6 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "List Collections editorial detail",
         "eyebrow": "List Collections",
         "heading": "Explore List Collections with confidence",
@@ -234,14 +235,15 @@
         "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "List Collections editorial detail",
         "eyebrow": "Good to know",
         "heading": "Made for more than one moment",
@@ -250,7 +252,9 @@
         "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "compact"
       }
     }
   },

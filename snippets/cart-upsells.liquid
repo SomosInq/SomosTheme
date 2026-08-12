@@ -1,0 +1,29 @@
+{% if settings.enable_cart_upsells and settings.cart_upsell_collection != blank %}
+  {% assign upsell_collection = collections[settings.cart_upsell_collection] %}
+  {% assign cart_product_ids = cart.items | map: 'product_id' %}
+  <div class="cart-upsells">
+    <h3>{{ settings.cart_upsell_heading }}</h3>
+    <div class="cart-upsells__track">
+      {% for upsell in upsell_collection.products limit: 4 %}
+        {% unless cart_product_ids contains upsell.id %}
+          <article class="cart-upsells__item">
+            {% if upsell.featured_image %}{{ upsell.featured_image | image_url: width: 180 | image_tag: loading: 'lazy', alt: upsell.title }}{% endif %}
+            <div><a href="{{ upsell.url }}">{{ upsell.title }}</a><p>{{ upsell.price | money }}</p></div>
+            {% if upsell.has_only_default_variant and upsell.available %}
+              <form action="{{ routes.cart_add_url }}" method="post"><input type="hidden" name="id" value="{{ upsell.selected_or_first_available_variant.id }}"><button class="button" type="submit">Add</button></form>
+            {% else %}<a class="button" href="{{ upsell.url }}">Choose</a>{% endif %}
+          </article>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+{% stylesheet %}
+  .cart-upsells { padding:1.25rem var(--cart-drawer-padding); border-block-start:1px solid rgb(var(--color-foreground-rgb)/.15); }
+  .cart-upsells h3 { font-size:.875rem; margin:0 0 1rem; }
+  .cart-upsells__track { display:grid; gap:1rem; }
+  .cart-upsells__item { display:grid; grid-template-columns:64px 1fr auto; gap:.75rem; align-items:center; }
+  .cart-upsells__item img { width:64px; height:80px; object-fit:cover; }
+  .cart-upsells__item p { margin:.25rem 0 0; font-size:.75rem; }
+  .cart-upsells__item .button { min-height:2.25rem; padding:.5rem .75rem; border-radius:0; }
+{% endstylesheet %}

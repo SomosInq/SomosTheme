@@ -102,11 +102,14 @@
             aria-label="{{ 'accessibility.cart' | t }}"
             style="--header-height: 60px;"
           >
+            {% render 'free-shipping-progress' %}
             <scroll-hint
               class="cart-drawer__items"
             >
               {% render 'cart-products' %}
             </scroll-hint>
+
+            {% render 'cart-upsells' %}
 
             <div
               class="cart-drawer__summary"

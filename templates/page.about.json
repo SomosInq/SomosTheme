@@ -9,26 +9,14 @@
         "highlight_heading": "What this page can include",
         "bullets": "Brand story and mission\nFounder or team highlights\nValues, community, and press mention",
         "cards": "Story-led content | Create a memorable brand experience. ||Editorial feel | Move beyond generic content pages. ||Trust builder | Make your brand feel more human and credible.",
-        "hero_image_url": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80",
         "secondary_title": "Why a story-led page matters",
         "secondary_description": "Customers are more likely to buy when they understand the people, values, and craftsmanship behind the brand.",
-        "secondary_image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
         "secondary_cta_label": "Explore the collection",
         "secondary_cta_url": "/collections/all",
         "cta_label": "Discover more",
-        "cta_url": "/collections/all"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "cta_url": "/collections/all",
+        "hero_asset_filename": "editorial-brand-studio.jpg",
+        "secondary_asset_filename": "editorial-community.jpg"
       }
     },
     "page_faq": {
@@ -37,22 +25,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about people before product?",
+            "answer": "Independent ideas become better products when they begin with real lives and real needs."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about thoughtful by default?",
+            "answer": "Every material, proportion, and detail should earn its place."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about built for the long term?",
+            "answer": "We favour enduring relevance over a constant cycle of replacement."
           }
         }
       },
@@ -62,11 +50,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about our story",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -74,40 +68,88 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "The people and ideas behind Somos",
         "eyebrow": "Our story",
-        "heading": "Our point of view",
+        "heading": "People before product",
         "heading_level": "h2",
-        "body": "<p>Somos began with a simple idea: create thoughtful pieces that feel relevant now and remain useful long after the season changes.</p>",
-        "points": "Independent thinking\nConsidered design\nA long-term point of view",
+        "body": "<p>Independent ideas become better products when they begin with real lives and real needs.</p>",
+        "points": "Thoughtful by default\nBuilt for the long term",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "A closer look at the Somos approach",
-        "eyebrow": "Good to know",
-        "heading": "Made to be lived in",
+        "eyebrow": "Next step",
+        "heading": "Built for the long term",
         "heading_level": "h3",
-        "body": "<p>We balance character with practicality, choosing details that add comfort, versatility, and lasting value to everyday life.</p>",
-        "points": "Useful details\nResponsible progress\nDesigned for repeat wear",
+        "body": "<p>We favour enduring relevance over a constant cycle of replacement.</p>",
+        "points": "Built for the long term\nThoughtful by default\nPeople before product",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Our story",
+            "heading": "People before product",
+            "text": "Independent ideas become better products when they begin with real lives and real needs.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Our story",
+            "heading": "Thoughtful by default",
+            "text": "Every material, proportion, and detail should earn its place.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Our story",
+            "heading": "Built for the long term",
+            "text": "We favour enduring relevance over a constant cycle of replacement.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "Our story",
+        "heading": "Designed with purpose",
+        "intro": "<p>We create considered pieces for everyday life, balancing character, usefulness, and longevity.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

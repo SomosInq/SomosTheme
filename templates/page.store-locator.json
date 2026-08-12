@@ -6,40 +6,28 @@
         "stores": "Downtown Flagship | 123 Main Street, Seattle, WA 98101\nWestside Studio | 55 Pine Avenue, Portland, OR 97204"
       }
     },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about enter a location?",
+            "answer": "Use a town, city, or postcode to begin."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about compare locations?",
+            "answer": "Review distance, services, and opening information."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about confirm before travel?",
+            "answer": "Contact the store for live stock or holiday hours."
           }
         }
       },
@@ -49,43 +37,88 @@
         "question_3"
       ],
       "settings": {
-      }
-    },
-    "page_cta": {
-      "type": "final-cta",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "heading": "Questions about store locator",
+        "intro": "Practical answers specific to this page."
       }
     },
     "editorial_primary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Store Locator editorial detail",
-        "eyebrow": "Store Locator",
-        "heading": "A clearer route through Store Locator",
+        "eyebrow": "Store locator",
+        "heading": "Enter a location",
         "heading_level": "h2",
-        "body": "<p>Find the essential information first, then move directly to the right next step.</p>",
-        "points": "Straightforward guidance\nUseful answers\nHuman support when needed",
+        "body": "<p>Use a town, city, or postcode to begin.</p>",
+        "points": "Compare locations\nConfirm before travel",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Store Locator editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Support that continues",
+        "eyebrow": "Next step",
+        "heading": "Confirm before travel",
         "heading_level": "h3",
-        "body": "<p>If the information here does not resolve your question, our team can help with the details.</p>",
-        "points": "Order and product help\nPractical next steps\nFriendly follow-up",
+        "body": "<p>Contact the store for live stock or holiday hours.</p>",
+        "points": "Confirm before travel\nCompare locations\nEnter a location",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Store locator",
+            "heading": "Enter a location",
+            "text": "Use a town, city, or postcode to begin.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Store locator",
+            "heading": "Compare locations",
+            "text": "Review distance, services, and opening information.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Store locator",
+            "heading": "Confirm before travel",
+            "text": "Contact the store for live stock or holiday hours.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "statement",
+        "eyebrow": "Store locator",
+        "heading": "Plan your visit",
+        "intro": "<p>Search by place, review store details, and find the most convenient location.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -93,10 +126,8 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
-    "editorial_secondary",
     "page_faq",
-    "page_cta"
+    "page_details",
+    "editorial_secondary"
   ]
 }

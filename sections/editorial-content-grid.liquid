@@ -1,0 +1,32 @@
+<section class="content-grid content-grid--{{ section.settings.layout }} color-{{ section.settings.color_scheme }}">
+  <div class="content-grid__inner page-width-content">
+    <header class="content-grid__header">
+      {% if section.settings.eyebrow != blank %}<p>{{ section.settings.eyebrow }}</p>{% endif %}
+      <h2>{{ section.settings.heading }}</h2>
+      {% if section.settings.intro != blank %}<div class="rte">{{ section.settings.intro }}</div>{% endif %}
+    </header>
+    <div class="content-grid__items">
+      {% for block in section.blocks %}
+        <article class="content-grid__item" {{ block.shopify_attributes }}>
+          <span>{% if section.settings.layout == 'numbered' %}{{ forloop.index | prepend: '0' }}{% else %}{{ block.settings.label }}{% endif %}</span>
+          <h3>{{ block.settings.heading }}</h3>
+          <p>{{ block.settings.text }}</p>
+          {% if block.settings.link_label != blank and block.settings.link_url != blank %}<a href="{{ block.settings.link_url }}">{{ block.settings.link_label }} →</a>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% stylesheet %}
+  .content-grid{padding-block:clamp(4rem,9vw,9rem);border-block-start:1px solid rgb(var(--color-foreground-rgb)/.15)}
+  .content-grid__inner{display:grid;gap:clamp(3rem,7vw,7rem)}
+  .content-grid__header{display:grid;grid-template-columns:minmax(10rem,.5fr) minmax(0,1.2fr) minmax(16rem,.7fr);gap:clamp(1.5rem,5vw,5rem);align-items:start}
+  .content-grid__header>p{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase}.content-grid__header h2{margin:0;font-size:clamp(1.75rem,4vw,4rem);line-height:1.05;font-weight:400}.content-grid__header .rte{line-height:1.7;opacity:.75}
+  .content-grid__items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2rem,5vw,5rem)}
+  .content-grid__item{padding-block-start:1.25rem;border-block-start:1px solid currentColor}.content-grid__item>span{display:block;min-height:2rem;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase}.content-grid__item h3{font-size:clamp(1.1rem,2vw,1.65rem);font-weight:400}.content-grid__item p{line-height:1.65;opacity:.75}.content-grid__item a{color:inherit;text-underline-offset:.3em}
+  .content-grid--statement .content-grid__items{grid-template-columns:1fr}.content-grid--statement .content-grid__item{display:grid;grid-template-columns:.35fr 1fr 1fr;gap:2rem}.content-grid--statement .content-grid__item h3{margin-top:0}
+  @media(max-width:749px){.content-grid__header,.content-grid__items,.content-grid--statement .content-grid__item{grid-template-columns:1fr}.content-grid__header{gap:1.25rem}.content-grid__items{gap:3rem}}
+{% endstylesheet %}
+{% schema %}
+{"name":"Editorial content grid","max_blocks":6,"settings":[{"type":"select","id":"layout","label":"Layout","options":[{"value":"numbered","label":"Numbered"},{"value":"grid","label":"Grid"},{"value":"statement","label":"Statements"}],"default":"numbered"},{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Good to know"},{"type":"text","id":"heading","label":"Heading","default":"The details that matter"},{"type":"richtext","id":"intro","label":"Introduction"},{"type":"color_scheme","id":"color_scheme","label":"Color scheme","default":"scheme-1"}],"blocks":[{"type":"item","name":"Content item","settings":[{"type":"text","id":"label","label":"Label"},{"type":"text","id":"heading","label":"Heading","default":"A useful detail"},{"type":"textarea","id":"text","label":"Text"},{"type":"text","id":"link_label","label":"Link label"},{"type":"url","id":"link_url","label":"Link URL"}]}],"presets":[{"name":"Editorial content grid","blocks":[{"type":"item"},{"type":"item"},{"type":"item"}]}]}
+{% endschema %}

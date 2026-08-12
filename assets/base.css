@@ -598,6 +598,25 @@ p:empty {
   text-transform: uppercase;
 }
 
+/* Spacious, flat treatment across non-home page sections. */
+#MainContent:not([data-template^='index']) :is(.page-card, .page-pill, .page-spotlight, .button) {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#MainContent:not([data-template^='index']) > .shopify-section + .shopify-section {
+  border-block-start: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
+}
+
+#MainContent:not([data-template^='index']) :is(.faq-section, .support-page, .rewards-page, .bundles-page, .comparison-page, .sales-page) {
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+#MainContent:not([data-template^='index']) .page-hero {
+  gap: 1.25rem;
+  margin-block-end: clamp(2.5rem, 5vw, 5rem);
+}
+
 @media screen and (max-width: 749px) {
   .feature-landing-section .page-width-content {
     gap: 4rem;

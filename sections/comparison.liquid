@@ -43,6 +43,9 @@
           "available": {{ product.available | json }},
           "url": {{ product.url | json }},
           "image": {{ product.featured_image | image_url: width: 800 | json }}
+          {% for block in section.blocks %},
+          "spec_{{ forloop.index }}": {{ product.metafields[block.settings.namespace][block.settings.key].value | default: '—' | json }}
+          {% endfor %}
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ]
@@ -129,6 +132,12 @@
               <span class="page-comparison-label">Description</span>
               ${selectedProducts.map((product) => `<span class="page-comparison-value">${escapeHtml((product.description || '').slice(0, 120))}</span>`).join('')}
             </div>
+            {% for block in section.blocks %}
+            <div class="page-comparison-row">
+              <span class="page-comparison-label">{{ block.settings.label | escape }}</span>
+              ${selectedProducts.map((product) => `<span class="page-comparison-value">${escapeHtml(product.spec_{{ forloop.index }} || '—')}</span>`).join('')}
+            </div>
+            {% endfor %}
           </div>
         `;
       }
@@ -145,6 +154,7 @@
   {
     "name": "Product Comparison",
     "settings": [],
+    "blocks": [{"type":"spec","name":"Metafield specification","settings":[{"type":"text","id":"label","label":"Row label","default":"Material"},{"type":"text","id":"namespace","label":"Metafield namespace","default":"custom"},{"type":"text","id":"key","label":"Metafield key","default":"material"}]}],
     "presets": [
       {
         "name": "Comparison"

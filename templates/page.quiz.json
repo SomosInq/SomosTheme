@@ -7,40 +7,28 @@
         "description": "Answer a few quick questions to discover the best product experience for your needs."
       }
     },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about keep it honest?",
+            "answer": "Choose the answer closest to your actual routine."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about compare the result?",
+            "answer": "Review why the suggested option fits."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about adjust when needed?",
+            "answer": "Return to an earlier answer to explore another route."
           }
         }
       },
@@ -50,11 +38,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about guided finder",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -62,40 +56,88 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Quiz editorial detail",
-        "eyebrow": "Quiz",
-        "heading": "Make Quiz work for you",
+        "eyebrow": "Guided finder",
+        "heading": "Keep it honest",
         "heading_level": "h2",
-        "body": "<p>Use the guidance on this page to compare options and make a confident, informed choice.</p>",
-        "points": "Start with your needs\nCompare the details\nChoose with confidence",
+        "body": "<p>Choose the answer closest to your actual routine.</p>",
+        "points": "Compare the result\nAdjust when needed",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-fit-guide.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Quiz editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "The details worth considering",
+        "eyebrow": "Next step",
+        "heading": "Adjust when needed",
         "heading_level": "h3",
-        "body": "<p>A good decision comes from useful context, not more noise. Focus on what changes the experience.</p>",
-        "points": "Fit and function\nMaterials and care\nEveryday use",
+        "body": "<p>Return to an earlier answer to explore another route.</p>",
+        "points": "Adjust when needed\nCompare the result\nKeep it honest",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Guided finder",
+            "heading": "Keep it honest",
+            "text": "Choose the answer closest to your actual routine.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Guided finder",
+            "heading": "Compare the result",
+            "text": "Review why the suggested option fits.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Guided finder",
+            "heading": "Adjust when needed",
+            "text": "Return to an earlier answer to explore another route.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "Guided finder",
+        "heading": "Find your match",
+        "intro": "<p>A short sequence of questions turns preferences into a focused recommendation.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

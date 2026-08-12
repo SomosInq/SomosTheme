@@ -9,64 +9,23 @@
         "highlight_heading": "Best for",
         "bullets": "Fashion and home brands\nSeasonal campaigns\nEditorial product discovery",
         "cards": "Style-first storytelling | Present products in a curated, immersive way. ||Strong visual merchandising | Use imagery to guide shoppers to products. ||Conversion-friendly | Link each story to products and collections.",
-        "hero_image_url": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1400&q=80",
         "secondary_title": "Make styling feel aspirational",
         "secondary_description": "Editorial pages help shoppers see the products in context and imagine them in their own world.",
-        "secondary_image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
         "secondary_cta_label": "Shop the collection",
         "secondary_cta_url": "/collections/all",
         "cta_label": "Explore the lookbook",
-        "cta_url": "/collections/all"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_faq": {
-      "type": "faq",
-      "blocks": {
-        "question_1": {
-          "type": "faq",
-          "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
-          }
-        },
-        "question_2": {
-          "type": "faq",
-          "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
-          }
-        },
-        "question_3": {
-          "type": "faq",
-          "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
-          }
-        }
-      },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
-      "settings": {
+        "cta_url": "/collections/all",
+        "hero_asset_filename": "editorial-community.jpg",
+        "secondary_asset_filename": "editorial-collection-look.jpg"
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -74,31 +33,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Lookbook editorial detail",
         "eyebrow": "Lookbook",
-        "heading": "A closer look at Lookbook",
+        "heading": "Begin with one anchor",
         "heading_level": "h2",
-        "body": "<p>Explore the ideas, combinations, and considered details behind this edit.</p>",
-        "points": "Fresh perspective\nPractical inspiration\nEasy ways to shop the story",
+        "body": "<p>Build each look around a versatile central piece.</p>",
+        "points": "Work with proportion\nRepeat differently",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Lookbook editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "From inspiration to everyday wear",
+        "eyebrow": "Next step",
+        "heading": "Repeat differently",
         "heading_level": "h3",
-        "body": "<p>Use this page as a starting point, then make each idea your own.</p>",
-        "points": "Build the look\nFind complementary pieces\nReturn for new edits",
+        "body": "<p>Restyle existing pieces with a new layer or combination.</p>",
+        "points": "Repeat differently\nWork with proportion\nBegin with one anchor",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Lookbook",
+            "heading": "Begin with one anchor",
+            "text": "Build each look around a versatile central piece.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Lookbook",
+            "heading": "Work with proportion",
+            "text": "Balance volume, length, and texture rather than matching everything.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Lookbook",
+            "heading": "Repeat differently",
+            "text": "Restyle existing pieces with a new layer or combination.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Lookbook",
+        "heading": "Ideas for wearing the collection",
+        "intro": "<p>Explore seasonal combinations, proportions, and styling details, then make them your own.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -106,10 +114,8 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
-    "page_faq",
     "page_cta"
   ]
 }

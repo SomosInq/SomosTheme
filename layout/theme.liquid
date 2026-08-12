@@ -64,6 +64,8 @@
       {{ content_for_layout }}
     </main>
 
+    {% if template.name == 'product' %}{% render 'sticky-add-to-cart' %}{% endif %}
+
     {% sections 'footer-group' %}
 
     {% render 'search-modal' %}

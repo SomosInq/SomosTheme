@@ -30,9 +30,13 @@
       </div>
     </div>
 
-    {% if section.settings.hero_image_url != blank %}
+    {% if section.settings.hero_asset_filename != blank or section.settings.hero_image_url != blank %}
       <div class="feature-landing-media">
-        <img src="{{ section.settings.hero_image_url }}" alt="{{ section.settings.title | default: page.title | escape }}" loading="lazy">
+        {% if section.settings.hero_asset_filename != blank %}
+          <img src="{{ section.settings.hero_asset_filename | asset_url }}" alt="{{ section.settings.title | default: page.title | escape }}" loading="lazy" width="1200" height="1500">
+        {% else %}
+          <img src="{{ section.settings.hero_image_url }}" alt="{{ section.settings.title | default: page.title | escape }}" loading="lazy" width="1200" height="1500">
+        {% endif %}
       </div>
     {% endif %}
 
@@ -73,9 +77,13 @@
           {% endif %}
         </article>
 
-        {% if section.settings.secondary_image_url != blank %}
+        {% if section.settings.secondary_asset_filename != blank or section.settings.secondary_image_url != blank %}
           <div class="page-card feature-landing-media-card">
-            <img src="{{ section.settings.secondary_image_url }}" alt="{{ section.settings.secondary_title | escape }}" loading="lazy">
+            {% if section.settings.secondary_asset_filename != blank %}
+              <img src="{{ section.settings.secondary_asset_filename | asset_url }}" alt="{{ section.settings.secondary_title | escape }}" loading="lazy" width="1200" height="1500">
+            {% else %}
+              <img src="{{ section.settings.secondary_image_url }}" alt="{{ section.settings.secondary_title | escape }}" loading="lazy" width="1200" height="1500">
+            {% endif %}
           </div>
         {% endif %}
       </div>
@@ -92,9 +100,11 @@
       { "type": "text", "id": "highlight_heading", "label": "Highlights heading", "default": "What this page includes" },
       { "type": "textarea", "id": "bullets", "label": "Highlights (one per line)" },
       { "type": "textarea", "id": "cards", "label": "Cards (Title | Body || Title | Body)" },
+      { "type": "text", "id": "hero_asset_filename", "label": "Hero theme asset filename" },
       { "type": "text", "id": "hero_image_url", "label": "Hero image URL" },
       { "type": "text", "id": "secondary_title", "label": "Secondary title" },
       { "type": "textarea", "id": "secondary_description", "label": "Secondary description" },
+      { "type": "text", "id": "secondary_asset_filename", "label": "Secondary theme asset filename" },
       { "type": "text", "id": "secondary_image_url", "label": "Secondary image URL" },
       { "type": "text", "id": "secondary_cta_label", "label": "Secondary CTA label" },
       { "type": "url", "id": "secondary_cta_url", "label": "Secondary CTA URL" },

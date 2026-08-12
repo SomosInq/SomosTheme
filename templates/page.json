@@ -66,34 +66,28 @@
         "color_scheme": "scheme-1"
       }
     },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about start with the essentials?",
+            "answer": "Lead with the information visitors need to understand the page."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about add useful context?",
+            "answer": "Use supporting details, images, and links to answer the next question."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about offer a clear next step?",
+            "answer": "Finish with one relevant route rather than several competing actions."
           }
         }
       },
@@ -103,11 +97,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about information",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -115,32 +115,81 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=80",
         "image_alt": " editorial detail",
-        "eyebrow": "",
-        "heading": "Explore  with confidence",
+        "eyebrow": "Information",
+        "heading": "Start with the essentials",
         "heading_level": "h2",
-        "body": "<p>Discover considered pieces and the useful details that make choosing the right option easier.</p>",
-        "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
+        "body": "<p>Lead with the information visitors need to understand the page.</p>",
+        "points": "Add useful context\nOffer a clear next step",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": " editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Made for more than one moment",
+        "eyebrow": "Next step",
+        "heading": "Offer a clear next step",
         "heading_level": "h3",
-        "body": "<p>Build a wardrobe around pieces that work together and earn their place over time.</p>",
-        "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
+        "body": "<p>Finish with one relevant route rather than several competing actions.</p>",
+        "points": "Offer a clear next step\nAdd useful context\nStart with the essentials",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Information",
+            "heading": "Start with the essentials",
+            "text": "Lead with the information visitors need to understand the page.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Information",
+            "heading": "Add useful context",
+            "text": "Use supporting details, images, and links to answer the next question.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Information",
+            "heading": "Offer a clear next step",
+            "text": "Finish with one relevant route rather than several competing actions.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "Information",
+        "heading": "Everything you need, clearly organised",
+        "intro": "<p>Use this flexible page for useful brand, service, or product information.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
@@ -148,7 +197,7 @@
     "main",
     "editorial_primary",
     "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

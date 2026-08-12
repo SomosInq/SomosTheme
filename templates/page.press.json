@@ -10,19 +10,8 @@
         "bullets": "Brand logos and media partners\nAwards and recognition\nPress highlights and links",
         "cards": "Social proof | Highlight trusted coverage from the media. ||Credibility | Reinforce quality and legitimacy. ||Easy sharing | Make it simple to link out to press coverage.",
         "cta_label": "View brand story",
-        "cta_url": "/pages/about"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "cta_url": "/pages/about",
+        "hero_asset_filename": "editorial-brand-studio.jpg"
       }
     },
     "page_faq": {
@@ -31,22 +20,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about latest coverage?",
+            "answer": "Recent features and announcements appear first."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about brand resources?",
+            "answer": "Approved information helps editors represent Somos accurately."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about press enquiries?",
+            "answer": "Contact the team with publication and deadline details."
           }
         }
       },
@@ -56,11 +45,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about press",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Working on a story?",
+        "text": "Send the publication, subject, and deadline with your request.",
+        "link_label": "Contact the press team",
+        "link_url": "/pages/contact",
         "color_scheme": "scheme-1"
       }
     },
@@ -68,40 +63,88 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Press editorial detail",
         "eyebrow": "Press",
-        "heading": "The thinking behind Press",
+        "heading": "Latest coverage",
         "heading_level": "h2",
-        "body": "<p>Learn about the choices, people, and principles that shape this part of Somos.</p>",
-        "points": "Clear purpose\nConsidered decisions\nA long-term point of view",
+        "body": "<p>Recent features and announcements appear first.</p>",
+        "points": "Brand resources\nPress enquiries",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Press editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "How we put it into practice",
+        "eyebrow": "Next step",
+        "heading": "Press enquiries",
         "heading_level": "h3",
-        "body": "<p>Details matter. This space gives customers the proof, process, and context behind the promise.</p>",
-        "points": "Useful transparency\nResponsible progress\nDesigned to last",
+        "body": "<p>Contact the team with publication and deadline details.</p>",
+        "points": "Press enquiries\nBrand resources\nLatest coverage",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Press",
+            "heading": "Latest coverage",
+            "text": "Recent features and announcements appear first.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Press",
+            "heading": "Brand resources",
+            "text": "Approved information helps editors represent Somos accurately.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Press",
+            "heading": "Press enquiries",
+            "text": "Contact the team with publication and deadline details.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Press",
+        "heading": "Somos in print and conversation",
+        "intro": "<p>Explore selected coverage, interviews, and independent perspectives on the brand.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

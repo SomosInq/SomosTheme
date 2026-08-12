@@ -10,19 +10,8 @@
         "bullets": "Wholesale enquiry form\nQuantity pricing information\nQuick-order or account access guidance",
         "cards": "B2B enquiries | Make it simple to get in touch with your team. ||Volume pricing | Explain how wholesale pricing works. ||Account access | Guide buyers toward sign-up or approval flows.",
         "cta_label": "Contact wholesale team",
-        "cta_url": "/pages/contact"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "cta_url": "/pages/contact",
+        "hero_asset_filename": "editorial-brand-studio.jpg"
       }
     },
     "page_faq": {
@@ -31,22 +20,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about tell us about your store?",
+            "answer": "Share location, audience, channels, and existing brand mix."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about discuss the range?",
+            "answer": "We will review suitable products, quantities, and seasonal timing."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about plan the partnership?",
+            "answer": "Approved accounts receive commercial and ordering details."
           }
         }
       },
@@ -56,11 +45,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about wholesale",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Interested in stocking Somos?",
+        "text": "Tell us about your store, customers, and plans.",
+        "link_label": "Start a wholesale enquiry",
+        "link_url": "/pages/contact",
         "color_scheme": "scheme-1"
       }
     },
@@ -68,31 +63,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Wholesale editorial detail",
         "eyebrow": "Wholesale",
-        "heading": "The thinking behind Wholesale",
+        "heading": "Tell us about your store",
         "heading_level": "h2",
-        "body": "<p>Learn about the choices, people, and principles that shape this part of Somos.</p>",
-        "points": "Clear purpose\nConsidered decisions\nA long-term point of view",
+        "body": "<p>Share location, audience, channels, and existing brand mix.</p>",
+        "points": "Discuss the range\nPlan the partnership",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Wholesale editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "How we put it into practice",
+        "eyebrow": "Next step",
+        "heading": "Plan the partnership",
         "heading_level": "h3",
-        "body": "<p>Details matter. This space gives customers the proof, process, and context behind the promise.</p>",
-        "points": "Useful transparency\nResponsible progress\nDesigned to last",
+        "body": "<p>Approved accounts receive commercial and ordering details.</p>",
+        "points": "Plan the partnership\nDiscuss the range\nTell us about your store",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Wholesale",
+            "heading": "Tell us about your store",
+            "text": "Share location, audience, channels, and existing brand mix.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Wholesale",
+            "heading": "Discuss the range",
+            "text": "We will review suitable products, quantities, and seasonal timing.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Wholesale",
+            "heading": "Plan the partnership",
+            "text": "Approved accounts receive commercial and ordering details.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "Wholesale",
+        "heading": "Bring Somos to your customers",
+        "intro": "<p>Learn how we work with aligned retailers and send a complete trade enquiry.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -100,8 +144,7 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

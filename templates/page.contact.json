@@ -148,40 +148,28 @@
         "padding-block-end": 84
       }
     },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about order support?",
+            "answer": "Include your order number and the email used at checkout."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about product advice?",
+            "answer": "Tell us which product, size, or option you are considering."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about partnerships?",
+            "answer": "Share the business, press, or wholesale context for your enquiry."
           }
         }
       },
@@ -191,55 +179,98 @@
         "question_3"
       ],
       "settings": {
-      }
-    },
-    "page_cta": {
-      "type": "final-cta",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "heading": "Questions about contact",
+        "intro": "Practical answers specific to this page."
       }
     },
     "editorial_primary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Contact editorial detail",
         "eyebrow": "Contact",
-        "heading": "A clearer route through Contact",
+        "heading": "Order support",
         "heading_level": "h2",
-        "body": "<p>Find the essential information first, then move directly to the right next step.</p>",
-        "points": "Straightforward guidance\nUseful answers\nHuman support when needed",
+        "body": "<p>Include your order number and the email used at checkout.</p>",
+        "points": "Product advice\nPartnerships",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Contact editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Support that continues",
+        "eyebrow": "Next step",
+        "heading": "Partnerships",
         "heading_level": "h3",
-        "body": "<p>If the information here does not resolve your question, our team can help with the details.</p>",
-        "points": "Order and product help\nPractical next steps\nFriendly follow-up",
+        "body": "<p>Share the business, press, or wholesale context for your enquiry.</p>",
+        "points": "Partnerships\nProduct advice\nOrder support",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Contact",
+            "heading": "Order support",
+            "text": "Include your order number and the email used at checkout.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Contact",
+            "heading": "Product advice",
+            "text": "Tell us which product, size, or option you are considering.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Contact",
+            "heading": "Partnerships",
+            "text": "Share the business, press, or wholesale context for your enquiry.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Contact",
+        "heading": "Start the conversation",
+        "intro": "<p>Send the right details and our team can route your question quickly.</p>",
         "color_scheme": "scheme-2"
       }
     }
   },
   "order": [
     "main",
-    "editorial_primary",
     "form",
-    "page_usp",
-    "page_testimonials",
-    "editorial_secondary",
+    "editorial_primary",
     "page_faq",
-    "page_cta"
+    "page_details",
+    "editorial_secondary"
   ]
 }

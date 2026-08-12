@@ -33,40 +33,28 @@
         "faq_support"
       ]
     },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about before ordering?",
+            "answer": "Find sizing, stock, payment, and product information."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about after ordering?",
+            "answer": "Review delivery, changes, returns, and refund guidance."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about still need help??",
+            "answer": "Contact the team with the relevant details."
           }
         }
       },
@@ -76,43 +64,88 @@
         "question_3"
       ],
       "settings": {
-      }
-    },
-    "page_cta": {
-      "type": "final-cta",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "heading": "Questions about frequently asked",
+        "intro": "Practical answers specific to this page."
       }
     },
     "editorial_primary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Faq editorial detail",
-        "eyebrow": "Faq",
-        "heading": "A clearer route through Faq",
+        "eyebrow": "Frequently asked",
+        "heading": "Before ordering",
         "heading_level": "h2",
-        "body": "<p>Find the essential information first, then move directly to the right next step.</p>",
-        "points": "Straightforward guidance\nUseful answers\nHuman support when needed",
+        "body": "<p>Find sizing, stock, payment, and product information.</p>",
+        "points": "After ordering\nStill need help?",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Faq editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Support that continues",
+        "eyebrow": "Next step",
+        "heading": "Still need help?",
         "heading_level": "h3",
-        "body": "<p>If the information here does not resolve your question, our team can help with the details.</p>",
-        "points": "Order and product help\nPractical next steps\nFriendly follow-up",
+        "body": "<p>Contact the team with the relevant details.</p>",
+        "points": "Still need help?\nAfter ordering\nBefore ordering",
         "link_label": "Contact our team",
         "link_url": "/pages/contact",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Frequently asked",
+            "heading": "Before ordering",
+            "text": "Find sizing, stock, payment, and product information.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Frequently asked",
+            "heading": "After ordering",
+            "text": "Review delivery, changes, returns, and refund guidance.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Frequently asked",
+            "heading": "Still need help?",
+            "text": "Contact the team with the relevant details.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "Frequently asked",
+        "heading": "Quick answers to common questions",
+        "intro": "<p>Browse clear guidance about shopping, delivery, products, and customer care.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -120,10 +153,8 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
-    "editorial_secondary",
     "page_faq",
-    "page_cta"
+    "page_details",
+    "editorial_secondary"
   ]
 }

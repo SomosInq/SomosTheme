@@ -3,11 +3,13 @@
   assign image_alt = section.settings.image_alt | default: section.settings.heading
 %}
 
-<section class="editorial-image-text editorial-image-text--{{ section.settings.image_position }} color-{{ section.settings.color_scheme }}">
+<section class="editorial-image-text editorial-image-text--{{ section.settings.image_position }} editorial-image-text--{{ section.settings.layout_style }} color-{{ section.settings.color_scheme }}">
   <div class="editorial-image-text__inner page-width-content">
     <div class="editorial-image-text__media">
       {% if section.settings.image != blank %}
         {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '480, 750, 1100, 1600', alt: image_alt }}
+      {% elsif section.settings.asset_filename != blank %}
+        <img src="{{ section.settings.asset_filename | asset_url }}" alt="{{ image_alt | escape }}" loading="lazy" width="1200" height="1500">
       {% elsif section.settings.image_url != blank %}
         <img src="{{ section.settings.image_url }}" alt="{{ image_alt | escape }}" loading="lazy" width="800" height="960">
       {% else %}
@@ -54,6 +56,14 @@
   .editorial-image-text--right .editorial-image-text__media { order: 2; }
   .editorial-image-text--right .editorial-image-text__content { order: 1; }
 
+  .editorial-image-text--compact .editorial-image-text__inner {
+    grid-template-columns: minmax(18rem, .8fr) minmax(0, 1.2fr);
+  }
+
+  .editorial-image-text--compact.editorial-image-text--right .editorial-image-text__inner {
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, .8fr);
+  }
+
   .editorial-image-text__media img,
   .editorial-image-text__placeholder {
     display: block;
@@ -63,6 +73,12 @@
     object-fit: cover;
     border-radius: 0;
     box-shadow: none;
+  }
+
+  .editorial-image-text--compact .editorial-image-text__media img,
+  .editorial-image-text--compact .editorial-image-text__placeholder {
+    min-height: clamp(22rem, 38vw, 34rem);
+    aspect-ratio: 4 / 3;
   }
 
   .editorial-image-text__content {
@@ -114,6 +130,8 @@
 
   @media screen and (max-width: 749px) {
     .editorial-image-text__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .editorial-image-text--compact .editorial-image-text__inner,
+    .editorial-image-text--compact.editorial-image-text--right .editorial-image-text__inner { grid-template-columns: 1fr; }
     .editorial-image-text--right .editorial-image-text__media,
     .editorial-image-text--right .editorial-image-text__content { order: initial; }
     .editorial-image-text__media img,
@@ -126,7 +144,9 @@
   "name": "Editorial image & text",
   "settings": [
     { "type": "select", "id": "image_position", "label": "Image position", "options": [{ "value": "left", "label": "Left" }, { "value": "right", "label": "Right" }], "default": "left" },
+    { "type": "select", "id": "layout_style", "label": "Layout style", "options": [{ "value": "split", "label": "Large split" }, { "value": "compact", "label": "Compact editorial" }], "default": "split" },
     { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "asset_filename", "label": "Theme asset filename" },
     { "type": "text", "id": "image_url", "label": "External image URL" },
     { "type": "text", "id": "image_alt", "label": "Image alt text" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow" },

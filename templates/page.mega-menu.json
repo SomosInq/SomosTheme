@@ -12,34 +12,28 @@
         "color_scheme": "scheme-1"
       }
     },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about organise by intent?",
+            "answer": "Group links around how customers actually browse."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about add visual direction?",
+            "answer": "Use collection or product imagery to speed recognition."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about feature what matters now?",
+            "answer": "Give campaigns and new edits a focused promotional space."
           }
         }
       },
@@ -49,11 +43,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about navigation",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -61,31 +61,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Mega Menu editorial detail",
-        "eyebrow": "Mega Menu",
-        "heading": "Explore Mega Menu with confidence",
+        "eyebrow": "Navigation",
+        "heading": "Organise by intent",
         "heading_level": "h2",
-        "body": "<p>Discover considered pieces and the useful details that make choosing the right option easier.</p>",
-        "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
+        "body": "<p>Group links around how customers actually browse.</p>",
+        "points": "Add visual direction\nFeature what matters now",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Mega Menu editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Made for more than one moment",
+        "eyebrow": "Next step",
+        "heading": "Feature what matters now",
         "heading_level": "h3",
-        "body": "<p>Build a wardrobe around pieces that work together and earn their place over time.</p>",
-        "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
+        "body": "<p>Give campaigns and new edits a focused promotional space.</p>",
+        "points": "Feature what matters now\nAdd visual direction\nOrganise by intent",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Navigation",
+            "heading": "Organise by intent",
+            "text": "Group links around how customers actually browse.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Navigation",
+            "heading": "Add visual direction",
+            "text": "Use collection or product imagery to speed recognition.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Navigation",
+            "heading": "Feature what matters now",
+            "text": "Give campaigns and new edits a focused promotional space.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "Navigation",
+        "heading": "A clearer way through the collection",
+        "intro": "<p>Use rich navigation to surface departments, collections, featured products, and timely stories.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -94,7 +143,7 @@
     "main",
     "editorial_primary",
     "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

@@ -1,35 +1,6 @@
-<section class="section page-shell subscription-landing-section">
-  <div class="page-width-content">
-    <div class="page-hero page-hero--split">
-      <div>
-        <span class="page-pill page-pill--accent">Subscription</span>
-        <h2>{{ section.settings.title | default: page.title }}</h2>
-        <p>{{ section.settings.description }}</p>
-      </div>
-
-      <div class="page-card">
-        <form class="js-subscription-form page-stack--compact">
-          <label class="page-field-label" for="subscription-plan">Choose your plan</label>
-          <select class="page-field" id="subscription-plan" name="plan">
-            <option value="monthly">Monthly delivery</option>
-            <option value="quarterly">Quarterly delivery</option>
-            <option value="annual">Annual delivery</option>
-          </select>
-          <button class="button" type="submit">Continue to checkout</button>
-        </form>
-        <p class="page-status" data-subscription-status role="status">Choose a delivery plan and keep your favorites stocked automatically.</p>
-      </div>
-    </div>
-  </div>
-
-  {% schema %}
-  {
-    "name": "Subscription landing",
-    "settings": [
-      { "type": "text", "id": "title", "label": "Title", "default": "Subscribe and save" },
-      { "type": "textarea", "id": "description", "label": "Description", "default": "Offer recurring replenishment with flexible delivery options and better rates." }
-    ],
-    "presets": [{ "name": "Subscription landing" }]
-  }
-  {% endschema %}
+{% assign subscription_product = section.settings.product %}
+<section class="subscription-landing-section page-width-content">
+  <div class="page-hero page-hero--split"><div><span class="page-pill">Subscribe & save</span><h2>{{ section.settings.title }}</h2><p>{{ section.settings.description }}</p></div>
+  <div class="page-card">{% if subscription_product != blank %}{% form 'product', subscription_product %}<input type="hidden" name="id" value="{{ subscription_product.selected_or_first_available_variant.id }}"><label class="page-form__label">Delivery plan<select class="page-field" name="selling_plan" required><option value="">Choose a plan</option>{% for group in subscription_product.selling_plan_groups %}{% for plan in group.selling_plans %}<option value="{{ plan.id }}">{{ plan.name }}</option>{% endfor %}{% endfor %}</select></label><button class="button" type="submit" {% if subscription_product.selling_plan_groups.size == 0 %}disabled{% endif %}>Start subscription</button>{% endform %}{% if subscription_product.selling_plan_groups.size == 0 %}<p>Add selling plans to this product in Shopify first.</p>{% endif %}{% else %}<p>Select a subscription product in the theme editor.</p>{% endif %}</div></div>
 </section>
+{% schema %}{"name":"Subscription landing","settings":[{"type":"text","id":"title","label":"Title","default":"Subscribe and save"},{"type":"textarea","id":"description","label":"Description","default":"Choose a recurring delivery plan and manage it from your account."},{"type":"product","id":"product","label":"Subscription product"}],"presets":[{"name":"Subscription landing"}]}{% endschema %}

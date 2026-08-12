@@ -10,19 +10,8 @@
         "bullets": "Materials and sourcing\nCertifications and standards\nImpact highlights and progress",
         "cards": "Transparency | Show the story behind your materials and choices. ||Trust and credibility | Reinforce your values with proof points. ||Better conversion | Help values-led shoppers feel confident in their purchase.",
         "cta_label": "Explore the collection",
-        "cta_url": "/collections/all"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
+        "cta_url": "/collections/all",
+        "hero_asset_filename": "editorial-brand-studio.jpg"
       }
     },
     "page_faq": {
@@ -31,22 +20,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about design for longer use?",
+            "answer": "Durability and repeat wear reduce the need for constant replacement."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about choose with evidence?",
+            "answer": "We prioritise traceable information over unsupported claims."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about improve continuously?",
+            "answer": "Targets and practices should develop as better options become available."
           }
         }
       },
@@ -56,11 +45,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about responsibility",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Explore the products behind the approach",
+        "text": "Choose considered pieces and care for them well.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -68,40 +63,88 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Sustainability editorial detail",
-        "eyebrow": "Sustainability",
-        "heading": "The thinking behind Sustainability",
+        "eyebrow": "Responsibility",
+        "heading": "Design for longer use",
         "heading_level": "h2",
-        "body": "<p>Learn about the choices, people, and principles that shape this part of Somos.</p>",
-        "points": "Clear purpose\nConsidered decisions\nA long-term point of view",
+        "body": "<p>Durability and repeat wear reduce the need for constant replacement.</p>",
+        "points": "Choose with evidence\nImprove continuously",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Sustainability editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "How we put it into practice",
+        "eyebrow": "Next step",
+        "heading": "Improve continuously",
         "heading_level": "h3",
-        "body": "<p>Details matter. This space gives customers the proof, process, and context behind the promise.</p>",
-        "points": "Useful transparency\nResponsible progress\nDesigned to last",
+        "body": "<p>Targets and practices should develop as better options become available.</p>",
+        "points": "Improve continuously\nChoose with evidence\nDesign for longer use",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Responsibility",
+            "heading": "Design for longer use",
+            "text": "Durability and repeat wear reduce the need for constant replacement.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Responsibility",
+            "heading": "Choose with evidence",
+            "text": "We prioritise traceable information over unsupported claims.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Responsibility",
+            "heading": "Improve continuously",
+            "text": "Targets and practices should develop as better options become available.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "statement",
+        "eyebrow": "Responsibility",
+        "heading": "Progress over vague promises",
+        "intro": "<p>See how materials, production choices, packaging, and product longevity shape our approach.</p>",
+        "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"

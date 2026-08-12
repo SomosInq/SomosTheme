@@ -1,5 +1,18 @@
 {
   "sections": {
+    "shoppable_look": {
+      "type": "shop-the-look",
+      "blocks": {
+      },
+      "block_order": [
+
+      ],
+      "settings": {
+        "eyebrow": "Shop the edit",
+        "heading": "Wear the full story",
+        "color_scheme": "scheme-1"
+      }
+    },
     "main": {
       "type": "feature-landing",
       "settings": {
@@ -10,57 +23,17 @@
         "bullets": "Fashion and home inspiration\nVisual merchandising stories\nHotspot-driven product discovery",
         "cards": "Editorial storytelling | Turn lifestyle imagery into a clear shopping path. ||Fast product discovery | Highlight each featured item with a direct product link. ||Cross-sell naturally | Encourage customers to complete the entire look with related products.",
         "cta_label": "Browse the collection",
-        "cta_url": "/collections/all"
-      }
-    },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_faq": {
-      "type": "faq",
-      "blocks": {
-        "question_1": {
-          "type": "faq",
-          "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
-          }
-        },
-        "question_2": {
-          "type": "faq",
-          "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
-          }
-        },
-        "question_3": {
-          "type": "faq",
-          "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
-          }
-        }
-      },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
-      "settings": {
+        "cta_url": "/collections/all",
+        "hero_asset_filename": "editorial-community.jpg"
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -68,42 +41,90 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Shop The Look editorial detail",
-        "eyebrow": "Shop The Look",
-        "heading": "A closer look at Shop The Look",
+        "eyebrow": "Shop the look",
+        "heading": "Open a hotspot",
         "heading_level": "h2",
-        "body": "<p>Explore the ideas, combinations, and considered details behind this edit.</p>",
-        "points": "Fresh perspective\nPractical inspiration\nEasy ways to shop the story",
+        "body": "<p>Select a marker to reveal the featured product.</p>",
+        "points": "Explore the piece\nBuild your version",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-community.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Shop The Look editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "From inspiration to everyday wear",
+        "eyebrow": "Next step",
+        "heading": "Build your version",
         "heading_level": "h3",
-        "body": "<p>Use this page as a starting point, then make each idea your own.</p>",
-        "points": "Build the look\nFind complementary pieces\nReturn for new edits",
+        "body": "<p>Choose the parts of the look that work for you.</p>",
+        "points": "Build your version\nExplore the piece\nOpen a hotspot",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Shop the look",
+            "heading": "Open a hotspot",
+            "text": "Select a marker to reveal the featured product.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Shop the look",
+            "heading": "Explore the piece",
+            "text": "Review its price and full product information.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Shop the look",
+            "heading": "Build your version",
+            "text": "Choose the parts of the look that work for you.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Shop the look",
+        "heading": "From image to individual pieces",
+        "intro": "<p>Use interactive hotspots to identify and shop every product in the story.</p>",
         "color_scheme": "scheme-2"
       }
     }
   },
   "order": [
     "main",
+    "shoppable_look",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
-    "page_faq",
     "page_cta"
   ]
 }

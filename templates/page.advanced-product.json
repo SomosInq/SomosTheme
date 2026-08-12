@@ -5,40 +5,28 @@
       "settings": {
       }
     },
-    "page_usp": {
-      "type": "mini-usp-strip",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "page_testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_faq": {
       "type": "faq",
       "blocks": {
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How can we help?",
-            "answer": "Use this area to answer a common question for this page."
+            "question": "What should I know about choose your version?",
+            "answer": "Review sizes, colours, and available product options."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I learn more?",
-            "answer": "Add relevant guidance, links, or supporting information here."
+            "question": "What should I know about understand the details?",
+            "answer": "Use specifications, materials, and care notes to assess the product."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "Need personal support?",
-            "answer": "Contact our team and we will be happy to help."
+            "question": "What should I know about complete the experience?",
+            "answer": "Add compatible products, bundles, or a recurring plan where available."
           }
         }
       },
@@ -48,11 +36,17 @@
         "question_3"
       ],
       "settings": {
+        "heading": "Questions about product detail",
+        "intro": "Practical answers specific to this page."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover products designed for everyday use.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
     },
@@ -60,31 +54,80 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
-        "image_url": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Advanced Product editorial detail",
-        "eyebrow": "Advanced Product",
-        "heading": "Make Advanced Product work for you",
+        "eyebrow": "Product detail",
+        "heading": "Choose your version",
         "heading_level": "h2",
-        "body": "<p>Use the guidance on this page to compare options and make a confident, informed choice.</p>",
-        "points": "Start with your needs\nCompare the details\nChoose with confidence",
+        "body": "<p>Review sizes, colours, and available product options.</p>",
+        "points": "Understand the details\nComplete the experience",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-fit-guide.jpg",
+        "layout_style": "split"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
-        "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80",
         "image_alt": "Advanced Product editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "The details worth considering",
+        "eyebrow": "Next step",
+        "heading": "Complete the experience",
         "heading_level": "h3",
-        "body": "<p>A good decision comes from useful context, not more noise. Focus on what changes the experience.</p>",
-        "points": "Fit and function\nMaterials and care\nEveryday use",
+        "body": "<p>Add compatible products, bundles, or a recurring plan where available.</p>",
+        "points": "Complete the experience\nUnderstand the details\nChoose your version",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
+        "color_scheme": "scheme-2",
+        "asset_filename": "editorial-collection-look.jpg",
+        "layout_style": "compact"
+      }
+    },
+    "page_details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Product detail",
+            "heading": "Choose your version",
+            "text": "Review sizes, colours, and available product options.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Product detail",
+            "heading": "Understand the details",
+            "text": "Use specifications, materials, and care notes to assess the product.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Product detail",
+            "heading": "Complete the experience",
+            "text": "Add compatible products, bundles, or a recurring plan where available.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Product detail",
+        "heading": "Everything in one place",
+        "intro": "<p>Explore the product from every angle, compare its details, and choose the right configuration.</p>",
         "color_scheme": "scheme-2"
       }
     }
@@ -92,8 +135,7 @@
   "order": [
     "main",
     "editorial_primary",
-    "page_usp",
-    "page_testimonials",
+    "page_details",
     "editorial_secondary",
     "page_faq",
     "page_cta"
