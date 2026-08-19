@@ -1,0 +1,21 @@
+{
+  "name": "somos-shopify-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development and quality tooling for the Somos Shopify theme.",
+  "scripts": {
+    "check": "npm run check:theme && npm run check:javascript && npm run check:json && npm run check:format",
+    "check:theme": "shopify theme check",
+    "check:javascript": "node scripts/check-javascript.mjs",
+    "check:json": "node scripts/check-json.mjs",
+    "check:format": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.10.0",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
