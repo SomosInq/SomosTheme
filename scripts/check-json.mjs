@@ -1,5 +1,6 @@
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
+import { parse, printParseErrorCode } from 'jsonc-parser';
 
 const root = process.cwd();
 const directories = ['config', 'locales', 'sections', 'templates'];
@@ -15,10 +16,12 @@ for (const directory of directories) {
 const failures = [];
 
 for (const file of files.sort()) {
-  try {
-    JSON.parse(await readFile(path.join(root, file), 'utf8'));
-  } catch (error) {
-    failures.push(`${file}: ${error.message}`);
+  const source = await readFile(path.join(root, file), 'utf8');
+  const errors = [];
+  parse(source, errors, { allowTrailingComma: false, disallowComments: false });
+
+  for (const error of errors) {
+    failures.push(`${file}: ${printParseErrorCode(error.error)} at character ${error.offset}`);
   }
 }
 
