@@ -591,13 +591,6 @@ p:empty {
   padding: clamp(2rem, 5vw, 5rem);
 }
 
-.feature-landing-section .page-hero > div:first-child > h2 {
-  font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
-  line-height: 1.35;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 /* Spacious, flat treatment across non-home page sections. */
 #MainContent:not([data-template^='index']) :is(.page-card, .page-pill, .page-spotlight, .button) {
   border-radius: 0;
@@ -1191,8 +1184,9 @@ h2,
 .text-block.h2 > * {
   font-family: var(--font-h2--family);
   font-style: var(--font-h2--style);
-  font-weight: var(--font-h2--weight);
-  font-size: var(--font-h2--size);
+  font-weight: 400;
+  /* Keep section and page titles consistent across theme and custom sections. */
+  font-size: clamp(1.625rem, 1.35rem + 1vw, 2.25rem);
   line-height: var(--font-h2--line-height);
   letter-spacing: var(--font-h2--letter-spacing);
   text-transform: var(--font-h2--case);

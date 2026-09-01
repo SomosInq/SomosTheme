@@ -1,5 +1,5 @@
 {% assign subscription_product = section.settings.product %}
-<section class="subscription-landing-section page-width-content">
+<section class="section section--page-width subscription-landing-section page-width-content">
   <div class="page-hero page-hero--split"><div><span class="page-pill">Subscribe & save</span><h2>{{ section.settings.title }}</h2><p>{{ section.settings.description }}</p></div>
   <div class="page-card">{% if subscription_product != blank %}{% form 'product', subscription_product %}<input type="hidden" name="id" value="{{ subscription_product.selected_or_first_available_variant.id }}"><label class="page-form__label">Delivery plan<select class="page-field" name="selling_plan" required><option value="">Choose a plan</option>{% for group in subscription_product.selling_plan_groups %}{% for plan in group.selling_plans %}<option value="{{ plan.id }}">{{ plan.name }}</option>{% endfor %}{% endfor %}</select></label><button class="button" type="submit" {% if subscription_product.selling_plan_groups.size == 0 %}disabled{% endif %}>Start subscription</button>{% endform %}{% if subscription_product.selling_plan_groups.size == 0 %}<p>Add selling plans to this product in Shopify first.</p>{% endif %}{% else %}<p>Select a subscription product in the theme editor.</p>{% endif %}</div></div>
 </section>

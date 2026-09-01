@@ -3,7 +3,7 @@
   assign image_alt = section.settings.image_alt | default: section.settings.heading
 %}
 
-<section class="editorial-image-text editorial-image-text--{{ section.settings.image_position }} editorial-image-text--{{ section.settings.layout_style }} color-{{ section.settings.color_scheme }}">
+<section class="section section--page-width editorial-image-text editorial-image-text--{{ section.settings.image_position }} editorial-image-text--{{ section.settings.layout_style }} color-{{ section.settings.color_scheme }}">
   <div class="editorial-image-text__inner page-width-content">
     <div class="editorial-image-text__media">
       {% if section.settings.image != blank %}
@@ -99,9 +99,7 @@
   .editorial-image-text__content :is(h2, h3) {
     max-width: 13em;
     margin: 0 0 2rem;
-    font-size: clamp(1.75rem, 3.5vw, 3.75rem);
     line-height: 1.08;
-    font-weight: 400;
   }
 
   .editorial-image-text__body {

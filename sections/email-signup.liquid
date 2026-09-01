@@ -4,7 +4,7 @@
   Customize the heading, subheading, and success message in the section settings.
 {% endcomment %}
 
-<section class="email-signup-section section spacing-style color-{{ section.settings.color_scheme }}">
+<section class="email-signup-section section section--page-width spacing-style color-{{ section.settings.color_scheme }}">
   <div class="email-signup__container">
     {% if section.settings.heading != blank %}
       <h2 class="email-signup__heading">{{ section.settings.heading }}</h2>
@@ -77,7 +77,6 @@
   margin: 0 auto;
 }
 .email-signup__heading {
-  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 .email-signup__subheading {

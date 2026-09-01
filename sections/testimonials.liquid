@@ -2,7 +2,7 @@
 Testimonials - Fashion Store
 {% endcomment %}
 {% render 'theme-animations-config' %}
-<section class="testimonials section spacing-style color-{{ section.settings.color_scheme }}">
+<section class="testimonials section section--page-width spacing-style color-{{ section.settings.color_scheme }}">
   <div class="testimonials__container">
     <h2>{{ section.settings.heading }}</h2>
     {% for block in section.blocks %}<blockquote {{ block.shopify_attributes }}>“{{ block.settings.quote }}”<br><cite>— {{ block.settings.author }}</cite></blockquote>{% endfor %}
