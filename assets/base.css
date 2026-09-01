@@ -323,8 +323,39 @@ p:empty {
 .page-hero {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  max-width: 48rem;
+  gap: 1rem;
+  max-width: 52rem;
+}
+
+.page-title {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(2.25rem, 1.65rem + 2.4vw, 4.25rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.page-hero > p {
+  max-width: 42rem;
+  margin: 0;
+  color: rgb(var(--color-foreground-rgb) / 0.72);
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  line-height: 1.65;
+}
+
+.section-title {
+  max-width: 24ch;
+  margin-block: 0;
+  text-wrap: balance;
+}
+
+.card-title {
+  margin-block: 0;
+  font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .page-hero--split {
@@ -337,18 +368,19 @@ p:empty {
 .page-pill {
   display: inline-flex;
   align-self: flex-start;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  background: rgb(var(--color-foreground-rgb) / 0.08);
+  padding: 0 0 0.65rem;
+  border-block-end: 1px solid currentColor;
+  border-radius: 0;
+  background: transparent;
   color: var(--color-foreground);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .page-pill--accent {
-  background: rgb(var(--color-accent-rgb, var(--color-foreground-rgb)) / 0.12);
+  background: transparent;
   color: var(--color-accent, var(--color-foreground));
 }
 
@@ -377,11 +409,11 @@ p:empty {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.25rem;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
   border: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
-  border-radius: var(--style-border-radius-buttons-primary, 0.75rem);
-  background: rgb(var(--color-background-rgb, 255 255 255) / 0.8);
-  box-shadow: 0 10px 30px rgb(var(--color-shadow-rgb, 0 0 0) / 0.05);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .page-card--accordion {
@@ -460,7 +492,9 @@ p:empty {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.1rem 1.25rem;
+  padding: 1.35rem 0;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  font-weight: 500;
   cursor: pointer;
   list-style: none;
 }
@@ -470,13 +504,32 @@ p:empty {
 }
 
 .page-card__content {
-  padding: 0 1.25rem 1.2rem;
+  max-width: 48rem;
+  padding: 0 0 1.5rem;
   color: rgb(var(--color-foreground-rgb) / 0.78);
+  line-height: 1.7;
 }
 
 .page-card__icon {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 300;
   line-height: 1;
+}
+
+.page-card--accordion {
+  border-width: 1px 0 0;
+}
+
+.page-card--accordion:last-child {
+  border-block-end-width: 1px;
+}
+
+.page-card--accordion[open] .page-card__icon {
+  transform: rotate(45deg);
+}
+
+.page-card--accordion .page-card__icon {
+  transition: transform 180ms ease;
 }
 
 .page-card__eyebrow {
@@ -591,6 +644,12 @@ p:empty {
   padding: clamp(2rem, 5vw, 5rem);
 }
 
+.feature-landing-section .page-spotlight {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid rgb(var(--color-foreground-rgb) / 0.14);
+  background: transparent;
+}
+
 /* Spacious, flat treatment across non-home page sections. */
 #MainContent:not([data-template^='index']) :is(.page-card, .page-pill, .page-spotlight, .button) {
   border-radius: 0;
@@ -601,13 +660,58 @@ p:empty {
   border-block-start: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
 }
 
-#MainContent:not([data-template^='index']) :is(.faq-section, .support-page, .rewards-page, .bundles-page, .comparison-page, .sales-page) {
+#MainContent:not([data-template^='index']) .page-shell {
   padding-block: clamp(4rem, 8vw, 8rem);
 }
 
 #MainContent:not([data-template^='index']) .page-hero {
   gap: 1.25rem;
   margin-block-end: clamp(2.5rem, 5vw, 5rem);
+}
+
+.faq-section .page-width-content {
+  max-width: 58rem;
+}
+
+.comparison-section .page-width-content {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 5rem);
+}
+
+.comparison-section > .page-width-content > .page-hero {
+  margin-block-end: 0;
+}
+
+.comparison-section > .page-width-content > .page-card {
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.comparison-section .page-form__label {
+  gap: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.comparison-section .comparison-selector {
+  width: 100%;
+  min-height: 3.25rem;
+  padding-inline: 1rem 2.5rem;
+  border: 1px solid rgb(var(--color-foreground-rgb) / 0.2);
+  border-radius: 0;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+#comparison-results,
+#comparison-product-cards {
+  display: grid;
+  gap: 1.5rem;
 }
 
 @media screen and (max-width: 749px) {

@@ -2,12 +2,12 @@
   <div class='page-width-content'>
     <div class='page-hero'>
       <span class='page-pill'>Compare products</span>
-      <h2>{{ page.title }}</h2>
+      <h1 class='page-title'>{{ page.title }}</h1>
       <p>Choose up to four products from the selectors below and compare the details in real time.</p>
     </div>
 
     <div class='page-card'>
-      <h2>Select products to compare</h2>
+      <h2 class='section-title'>Select products to compare</h2>
       <div class='page-grid page-grid--selectors'>
         {% for i in (1..4) %}
           <label class='page-form__label'>
@@ -94,7 +94,7 @@
                 ${product.image ? `<a href="${product.url}" class="page-card__image-link"><img src="${product.image}" alt="${escapeHtml(product.title)}" loading="lazy"></a>` : ''}
                 <div class="page-card__body">
                   <span class="page-card__eyebrow">${escapeHtml(product.type || 'Product')}</span>
-                  <h2><a href="${product.url}">${escapeHtml(product.title)}</a></h2>
+                  <h3 class="card-title"><a href="${product.url}">${escapeHtml(product.title)}</a></h3>
                   <p>${escapeHtml((product.description || '').slice(0, 140))}</p>
                 </div>
                 <div class="page-card__footer">

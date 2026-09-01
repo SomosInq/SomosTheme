@@ -3,6 +3,7 @@
     "main": {
       "type": "faq",
       "settings": {
+        "heading_level": "h1"
       },
       "blocks": {
         "faq_1": {
