@@ -1,0 +1,129 @@
+{
+  "sections": {
+    "main": {
+      "type": "advanced-product-page",
+      "settings": {
+        "hero_image_url": "",
+        "secondary_title": "Why shoppers choose this product",
+        "secondary_description": "Use this area to highlight premium materials, product benefits, and the reasons customers keep coming back.",
+        "secondary_image_url": ""
+      }
+    },
+    "story": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "right",
+        "image_alt": "Advanced product editorial detail",
+        "eyebrow": "Designed for everyday use",
+        "heading": "Made to feel premium from first glance to final use",
+        "heading_level": "h2",
+        "body": "<p>Tell the product story here with material details, use-case context, and the reasons this item stands out in your range.</p>",
+        "points": "Thoughtful details\nMade to last\nA better everyday experience",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-1",
+        "asset_filename": "editorial-product-detail.jpg",
+        "layout_style": "split"
+      }
+    },
+    "details": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "detail_1": {
+          "type": "item",
+          "settings": {
+            "label": "Product detail",
+            "heading": "Choose your version",
+            "text": "Review sizes, colours, and available product options.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_2": {
+          "type": "item",
+          "settings": {
+            "label": "Product detail",
+            "heading": "Understand the details",
+            "text": "Surface specifications, materials, and care notes in a clear, scannable format.",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "detail_3": {
+          "type": "item",
+          "settings": {
+            "label": "Product detail",
+            "heading": "Complete the experience",
+            "text": "Pair this product with accessories, bundles, or a recurring plan where available.",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3"
+      ],
+      "settings": {
+        "layout": "grid",
+        "eyebrow": "Product detail",
+        "heading": "Everything in one place",
+        "intro": "<p>Help shoppers understand the value, compare their options, and feel confident before buying.</p>",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "question_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What should I know before choosing this product?",
+            "answer": "Review the sizing, options, and product details to make sure it fits your needs and routine."
+          }
+        },
+        "question_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I get the most out of it?",
+            "answer": "Use the care guidance, specifications, and recommended pairings to make the most of your purchase."
+          }
+        },
+        "question_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I add compatible products or bundles?",
+            "answer": "Yes. You can pair this product with add-ons, bundles, or a subscription option where relevant."
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3"
+      ],
+      "settings": {
+        "heading": "Questions about this product",
+        "intro": "Helpful answers for sizing, details, and buying confidence."
+      }
+    },
+    "cta": {
+      "type": "final-cta",
+      "settings": {
+        "heading": "Continue exploring",
+        "text": "Discover more products designed to fit your routine and elevate the everyday.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-1"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "story",
+    "details",
+    "faq",
+    "cta"
+  ]
+}
