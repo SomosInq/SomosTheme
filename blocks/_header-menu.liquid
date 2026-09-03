@@ -169,6 +169,18 @@
     white-space: nowrap;
   }
 
+  .menu-list__list-item--simple {
+    position: relative;
+  }
+
+  .menu-list__list-item--simple > .menu-list__submenu {
+    left: 0;
+    right: auto;
+    width: max-content;
+    min-width: 13rem;
+    max-width: min(90vw, 24rem);
+  }
+
   .menu-list__list-item[aria-hidden='true'] {
     visibility: hidden;
   }
@@ -244,6 +256,11 @@
     transition: height var(--submenu-animation-speed) var(--ease-out-cubic),
       opacity var(--animation-speed-slow) var(--ease-out-cubic) var(--animation-speed-fast);
     z-index: calc(var(--layer-header-menu) - 1);
+  }
+
+  header-menu:has(.menu-list__list-item--simple:hover) .overflow-menu::after,
+  header-menu:has(.menu-list__list-item--simple:focus-within) .overflow-menu::after {
+    display: none;
   }
 
   /** mega menu **/
@@ -705,6 +722,12 @@
       "content": "t:content.submenu_feature"
     },
     {
+      "type": "textarea",
+      "id": "dropdown_overrides",
+      "label": "Per-item menu type overrides",
+      "info": "Enter comma-separated entries using this format: menu-item=type. Types: simple, collection, mega. Example: shop=collection, features=mega, support=simple."
+    },
+    {
       "type": "select",
       "id": "menu_style",
       "label": "t:settings.media_type",
@@ -787,6 +810,10 @@
     { "type": "text", "id": "promo_heading", "label": "Promotion heading", "default": "The latest edit" },
     { "type": "text", "id": "promo_text", "label": "Promotion text", "default": "Discover what is new" },
     { "type": "url", "id": "promo_link", "label": "Promotion link" },
+    { "type": "image_picker", "id": "promo_image_2", "label": "Second promotion image" },
+    { "type": "text", "id": "promo_heading_2", "label": "Second promotion heading", "default": "Explore our story" },
+    { "type": "text", "id": "promo_text_2", "label": "Second promotion text", "default": "Learn more about us" },
+    { "type": "url", "id": "promo_link_2", "label": "Second promotion link" },
     {
       "type": "header",
       "content": "t:content.mobile_layout"

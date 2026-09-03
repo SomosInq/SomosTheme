@@ -25,11 +25,40 @@ class HeaderMenu extends Component {
   connectedCallback() {
     super.connectedCallback();
 
+    this.#setupCategoryMenus();
+
     this.overflowMenu?.addEventListener('pointerleave', () => this.#debouncedDeactivate(), {
       signal: this.#abortController.signal,
     });
 
     onDocumentLoaded(this.#preloadImages);
+  }
+
+  #setupCategoryMenus() {
+    this.querySelectorAll('.mega-menu--category').forEach((menu) => {
+      const buttons = menu.querySelectorAll('[data-category-target]');
+      const panels = menu.querySelectorAll('[data-category-panel]');
+
+      buttons.forEach((button) => {
+        button.addEventListener('pointerenter', () => this.#selectCategory(button, buttons, panels));
+        button.addEventListener('focus', () => this.#selectCategory(button, buttons, panels));
+      });
+    });
+  }
+
+  #selectCategory(button, buttons, panels) {
+    const target = button.dataset.categoryTarget;
+
+    buttons.forEach((item) => {
+      const selected = item === button;
+      item.classList.toggle('is-active', selected);
+      item.setAttribute('aria-selected', selected.toString());
+    });
+
+    panels.forEach((panel) => {
+      panel.hidden = panel.id !== target;
+      panel.classList.toggle('is-active', panel.id === target);
+    });
   }
 
   disconnectedCallback() {

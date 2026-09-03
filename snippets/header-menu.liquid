@@ -25,9 +25,27 @@
 
 {% capture children %}
   {% for link in block_settings.menu.links %}
+    {% liquid
+      assign dropdown_type = block_settings.menu_style
+      assign current_menu_content_type = block_settings.menu_style
+      assign dropdown_overrides = block_settings.dropdown_overrides | split: ','
+      for override in dropdown_overrides
+        assign override_parts = override | split: '='
+        assign override_handle = override_parts[0] | strip | downcase
+        assign override_type = override_parts[1] | strip | downcase
+        assign link_handle = link.handle | downcase
+        assign link_title = link.title | handleize
+        if override_handle == link_handle or override_handle == link_title
+          if override_type == 'mega' or override_type == 'collection' or override_type == 'simple'
+          assign dropdown_type = override_type
+          break
+          endif
+        endif
+      endfor
+    %}
     <li
       role="presentation"
-      class="menu-list__list-item"
+      class="menu-list__list-item{% if dropdown_type == 'simple' %} menu-list__list-item--simple{% endif %}"
       on:focus="/activate"
       on:blur="/deactivate"
       on:pointerenter="/activate"
@@ -47,25 +65,58 @@
         <span class="menu-list__link-title">{{- link.title -}}</span>
       </a>
       {%- if link.links != blank -%}
-        <div class="menu-list__submenu{{ color_scheme_classes }}" ref="submenu[]">
+        <div
+          class="menu-list__submenu{{ color_scheme_classes }}{% if dropdown_type == 'simple' %} menu-list__submenu--simple{% endif %}"
+          ref="submenu[]"
+        >
           <div
             id="submenu-{{ forloop.index }}"
             class="menu-list__submenu-inner"
             style="{% render 'submenu-font-styles', settings: block_settings %}"
           >
-            {% assign list_id = 'MegaMenuList-' | append: forloop.index %}
-            {% render 'mega-menu',
-              section: section,
-              parent_link: link,
-              id: list_id,
-              menu_content_type: menu_content_type,
-              content_aspect_ratio: ratio,
-              image_border_radius: image_border_radius,
-              promo_image: block_settings.promo_image,
-              promo_heading: block_settings.promo_heading,
-              promo_text: block_settings.promo_text,
-              promo_link: block_settings.promo_link
-            %}
+            {% if dropdown_type == 'simple' %}
+              {% render 'simple-menu', parent_link: link %}
+            {% else %}
+              {% assign list_id = 'MegaMenuList-' | append: forloop.index %}
+              {% if dropdown_type == 'mega' %}
+                {% assign current_menu_content_type = 'featured_collections' %}
+              {% elsif dropdown_type == 'collection' %}
+                {% assign current_menu_content_type = 'featured_products' %}
+              {% endif %}
+              {% assign dropdown_layout = dropdown_type %}
+              {% if dropdown_type == 'mega' %}
+                {% assign dropdown_layout = 'collection' %}
+              {% elsif dropdown_type == 'collection' %}
+                {% assign dropdown_layout = 'mega' %}
+              {% endif %}
+              {% assign show_promotions = false %}
+              {% if dropdown_type == 'mega' %}
+                {% assign show_promotions = true %}
+              {% endif %}
+              {% assign show_shop_all = true %}
+              {% if dropdown_type == 'mega' %}
+                {% assign show_shop_all = false %}
+              {% endif %}
+              {% render 'mega-menu',
+                section: section,
+                parent_link: link,
+                id: list_id,
+                menu_content_type: current_menu_content_type,
+                layout: dropdown_layout,
+                show_promotions: show_promotions,
+                show_shop_all: show_shop_all,
+                content_aspect_ratio: ratio,
+                image_border_radius: image_border_radius,
+                promo_image: block_settings.promo_image,
+                promo_heading: block_settings.promo_heading,
+                promo_text: block_settings.promo_text,
+                promo_link: block_settings.promo_link,
+                promo_image_2: block_settings.promo_image_2,
+                promo_heading_2: block_settings.promo_heading_2,
+                promo_text_2: block_settings.promo_text_2,
+                promo_link_2: block_settings.promo_link_2
+              %}
+            {% endif %}
           </div>
         </div>
       {%- endif -%}

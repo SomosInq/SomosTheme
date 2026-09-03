@@ -3,6 +3,9 @@
   When more menu links are present a duplicate instance of each submenu is also rendered.
 
   @param {object} [section] - The section object.
+  @param {string} [layout] - The dropdown layout, such as 'collection' or 'mega'.
+  @param {boolean} [show_promotions] - Whether this menu item may display promotions.
+  @param {boolean} [show_shop_all] - Whether to display the sidebar Shop all link.
   @param {linklist} [parent_link] - The linklist to render
   @param {string} [id] - Unique ID to assign ul in markup
   @param {string} [menu_content_type] - The type of content to render, options: ['featured_products', 'featured_collections', 'collection_images', 'text'] (default: 'text')
@@ -12,8 +15,122 @@
   @param {string} [promo_heading] - Promotional heading
   @param {string} [promo_text] - Promotional supporting text
   @param {string} [promo_link] - Promotional link
+  @param {image} [promo_image_2] - Optional second promotional image
+  @param {string} [promo_heading_2] - Second promotional heading
+  @param {string} [promo_text_2] - Second promotional supporting text
+  @param {string} [promo_link_2] - Second promotional link
 {%- enddoc -%}
 
+{% assign render_category_menu = false %}
+{% if parent_link.links.size > 0 %}
+  {% if layout == 'mega' or show_promotions %}
+    {% assign render_category_menu = true %}
+  {% endif %}
+{% endif %}
+
+{% if render_category_menu %}
+  <div class="mega-menu mega-menu--category section section--full-width-margin section--{{ section.settings.section_width }}">
+    <div class="mega-menu__category-layout">
+      <aside class="mega-menu__category-sidebar" aria-label="{{ parent_link.title }}">
+        <p class="mega-menu__category-label">{{ parent_link.title }}</p>
+        <ul class="list-unstyled mega-menu__category-links" role="tablist">
+          {% for category_link in parent_link.links %}
+            <li>
+              <button
+                class="mega-menu__category-button{% if forloop.first %} is-active{% endif %}"
+                type="button"
+                role="tab"
+                id="MegaMenuCategoryButton-{{ id }}-{{ forloop.index }}"
+                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-controls="MegaMenuCategory-{{ id }}-{{ forloop.index }}"
+                data-category-target="MegaMenuCategory-{{ id }}-{{ forloop.index }}"
+              >
+                {{ category_link.title }}
+              </button>
+            </li>
+          {% endfor %}
+        </ul>
+        {% if show_shop_all %}
+          <a class="mega-menu__category-shop-all" href="{{ parent_link.url }}">
+            Shop all <span aria-hidden="true">→</span>
+          </a>
+        {% endif %}
+      </aside>
+
+      {% unless show_promotions %}
+        <div class="mega-menu__category-panels">
+          {% for category_link in parent_link.links %}
+          {% assign category_collection = category_link.object %}
+          <section
+            id="MegaMenuCategory-{{ id }}-{{ forloop.index }}"
+            class="mega-menu__category-panel{% if forloop.first %} is-active{% endif %}"
+            role="tabpanel"
+            aria-labelledby="MegaMenuCategoryButton-{{ id }}-{{ forloop.index }}"
+            data-category-panel
+            {% unless forloop.first %}hidden{% endunless %}
+          >
+            <header class="mega-menu__category-heading">
+              <h2>{{ category_link.title }}</h2>
+            </header>
+            {% if category_link.type == 'collection_link' or category_link.type == 'catalog_link' or category_link.type == 'collections_link' %}
+              <ul class="mega-menu__category-products list-unstyled">
+                {% for product in category_collection.products limit: 4 %}
+                  <li>
+                    {% render 'resource-card',
+                      resource: product,
+                      resource_type: 'product',
+                      image_hover: true,
+                      image_aspect_ratio: content_aspect_ratio,
+                      image_sizes: '(min-width: 990px) 18vw, 40vw'
+                    %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              {% assign page_content = category_link.object.content | default: category_link.object.excerpt %}
+              <div class="mega-menu__category-copy">
+                {% if page_content != blank %}
+                  {{ page_content | strip_html | truncatewords: 70 | newline_to_br }}
+                {% else %}
+                  <p>Explore {{ category_link.title }}.</p>
+                {% endif %}
+                <a class="mega-menu__category-copy-link" href="{{ category_link.url }}">
+                  Visit {{ category_link.title }} <span aria-hidden="true">→</span>
+                </a>
+              </div>
+              {% if category_link.links != blank %}
+                <ul class="mega-menu__category-copy-links list-unstyled">
+                  {% for child_link in category_link.links limit: 4 %}
+                    <li><a href="{{ child_link.url }}">{{ child_link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endif %}
+          </section>
+          {% endfor %}
+        </div>
+      {% endunless %}
+      {% if show_promotions %}
+        {% if promo_image != blank or promo_image_2 != blank %}
+          <div class="mega-menu__category-promotions">
+            {% if promo_image != blank %}
+              <a class="mega-menu__promotion" href="{{ promo_link }}">
+                {{ promo_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: promo_heading }}
+                <span><strong>{{ promo_heading }}</strong>{% if promo_text != blank %}<small>{{ promo_text }}</small>{% endif %}</span>
+              </a>
+            {% endif %}
+            {% if promo_image_2 != blank %}
+              <a class="mega-menu__promotion" href="{{ promo_link_2 }}">
+                {{ promo_image_2 | image_url: width: 700 | image_tag: loading: 'lazy', alt: promo_heading_2 }}
+                <span><strong>{{ promo_heading_2 }}</strong>{% if promo_text_2 != blank %}<small>{{ promo_text_2 }}</small>{% endif %}</span>
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+{% else %}
 <div class="mega-menu section section--full-width-margin section--{{ section.settings.section_width }}">
   <div
     class="mega-menu__grid"
@@ -30,7 +147,7 @@
       content_aspect_ratio: content_aspect_ratio,
       image_border_radius: image_border_radius
     %}
-    {% if promo_image != blank %}
+    {% if show_promotions and promo_image != blank %}
       <a class="mega-menu__promotion" href="{{ promo_link }}">
         {{ promo_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: promo_heading }}
         <span><strong>{{ promo_heading }}</strong>{% if promo_text != blank %}<small>{{ promo_text }}</small>{% endif %}</span>
@@ -38,4 +155,219 @@
     {% endif %}
   </div>
 </div>
-{% stylesheet %}.mega-menu__promotion{display:grid;align-content:end;position:relative;min-height:18rem;color:#fff;text-decoration:none}.mega-menu__promotion img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.mega-menu__promotion span{position:relative;padding:1.25rem;background:linear-gradient(transparent,rgba(0,0,0,.75));display:grid}.mega-menu__promotion small{margin-top:.35rem}{% endstylesheet %}
+{% endif %}
+{% stylesheet %}
+  .mega-menu__promotion {
+    display: grid;
+    align-content: end;
+    position: relative;
+    min-height: 18rem;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .mega-menu__promotion img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mega-menu__promotion span {
+    position: relative;
+    padding: 1.25rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    display: grid;
+  }
+
+  .mega-menu__promotion small {
+    margin-top: 0.35rem;
+  }
+
+  .mega-menu--category {
+    padding-block: clamp(1.5rem, 3vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 4rem);
+  }
+
+  .mega-menu__category-layout {
+    display: grid;
+    grid-template-columns: minmax(150px, 190px) minmax(0, 1fr) minmax(180px, 250px);
+    gap: clamp(2rem, 5vw, 5rem);
+    width: 100%;
+  }
+
+  .mega-menu__category-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mega-menu__category-panels {
+    display: contents;
+  }
+
+  .mega-menu__category-panel {
+    grid-column: 2;
+  }
+
+  .mega-menu__category-label {
+    margin: 0 0 1rem;
+    color: rgb(var(--color-foreground-rgb) / 0.55);
+    font-size: 0.7rem;
+  }
+
+  .mega-menu__category-links {
+    display: grid;
+    gap: 0.2rem;
+    width: 100%;
+  }
+
+  .mega-menu__category-button,
+  .mega-menu__category-shop-all {
+    color: var(--color-foreground);
+    font: inherit;
+    font-size: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .mega-menu__category-button {
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.45rem 0.7rem;
+    width: 100%;
+  }
+
+  .mega-menu__category-button:is(:hover, :focus-visible),
+  .mega-menu__category-button.is-active {
+    background: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  .mega-menu__category-shop-all {
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.35);
+    border-radius: 999px;
+    margin-top: 1.5rem;
+    padding: 0.45rem 0.7rem;
+  }
+
+  .mega-menu__category-heading {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .mega-menu__category-heading h2 {
+    font-size: clamp(1rem, 1.4vw, 1.35rem);
+    margin: 0;
+  }
+
+  .mega-menu__category-heading a {
+    color: inherit;
+    font-size: 0.7rem;
+    text-decoration: none;
+  }
+
+  .mega-menu__category-products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.6rem, 1.5vw, 1.25rem);
+  }
+
+  .mega-menu__category-copy {
+    max-width: 42rem;
+    color: rgb(var(--color-foreground-rgb) / 0.75);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .mega-menu__category-copy p {
+    margin: 0;
+  }
+
+  .mega-menu__category-copy-link {
+    color: var(--color-foreground);
+    display: inline-flex;
+    gap: 0.35rem;
+    margin-top: 1.5rem;
+    text-decoration: none;
+  }
+
+  .mega-menu__category-copy-link:hover,
+  .mega-menu__category-copy-link:focus-visible {
+    text-decoration: underline;
+  }
+
+  .mega-menu__category-copy-links {
+    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+  }
+
+  .mega-menu__category-copy-links a {
+    color: var(--color-foreground);
+    font-size: 0.75rem;
+    text-decoration: none;
+  }
+
+  .mega-menu__category-copy-links a:hover,
+  .mega-menu__category-copy-links a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .mega-menu__category-promotions {
+    display: grid;
+    align-self: stretch;
+    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column: 2 / -1;
+    grid-row: 1;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .mega-menu__category-promotions .mega-menu__promotion {
+    min-height: clamp(12rem, 18vw, 20rem);
+    width: 100%;
+  }
+
+  .mega-menu__category-promotions .mega-menu__promotion img {
+    border-radius: var(--resource-card-corner-radius, 0px);
+  }
+
+  @media screen and (max-width: 1199px) {
+    .mega-menu__category-layout {
+      grid-template-columns: minmax(140px, 180px) minmax(0, 1fr) minmax(230px, 30%);
+    }
+  }
+
+  .mega-menu__category-panel[hidden] {
+    display: none;
+  }
+
+  .mega-menu__category-empty-link {
+    background: rgb(var(--color-foreground-rgb) / 0.05);
+    min-height: 8rem;
+    padding: 1rem;
+  }
+
+  .mega-menu__category-empty-link a {
+    color: inherit;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 989px) {
+    .mega-menu--category {
+      display: none;
+    }
+  }
+{% endstylesheet %}

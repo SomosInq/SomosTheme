@@ -1,0 +1,116 @@
+{% comment %}
+Functionality Journey - Fashion Store
+{% endcomment %}
+{% render 'theme-animations-config' %}
+
+<section class="functionality-journey section section--page-width" style="--functionality-bg: {{ section.settings.background_color }}; --functionality-text: {{ section.settings.text_color }}; --functionality-muted: {{ section.settings.muted_text_color }}; --functionality-border: {{ section.settings.border_color }};">
+  <div class="functionality-journey__stage">
+    <div class="functionality-journey__content">
+      {% if section.settings.eyebrow != blank %}
+        <p class="functionality-journey__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h2 class="functionality-journey__title">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <p class="functionality-journey__description">{{ section.settings.description }}</p>
+      {% endif %}
+
+      {% if section.settings.cta_label != blank and section.settings.cta_link != blank %}
+        <div class="functionality-journey__actions">
+          <a class="button button--primary" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+        </div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="functionality-journey__features">
+          {% for block in section.blocks %}
+            {% assign item = block.settings.title | strip %}
+            {% assign item_content = block.settings.content | strip %}
+
+            {% if item != blank %}
+              <details class="functionality-journey__feature" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+                <summary class="functionality-journey__feature-summary">
+                  <span>{{ item }}</span>
+                  <span class="functionality-journey__feature-toggle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.7 9.7 12 15l5.3-5.3" /></svg>
+                  </span>
+                </summary>
+
+                {% if item_content != blank %}
+                  <div class="functionality-journey__feature-content">
+                    {{ item_content }}
+                  </div>
+                {% endif %}
+              </details>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="functionality-journey__visual">
+      <div class="functionality-journey__word" aria-hidden="true">{{ section.settings.wordmark | default: 'momentum' }}</div>
+
+      <div class="functionality-journey__media">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1600 | image_tag: class: 'functionality-journey__image', loading: 'lazy', alt: section.settings.image.alt | default: section.settings.title | escape }}
+        {% else %}
+          <img
+            class="functionality-journey__image"
+            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1400&q=80"
+            alt="{{ section.settings.title | escape }}"
+            loading="lazy"
+            width="1400"
+            height="1400"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Functionality Journey",
+  "settings": [
+    { "type": "color", "id": "background_color", "label": "Background color", "default": "#171718" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#f5f5f5" },
+    { "type": "color", "id": "muted_text_color", "label": "Muted text color", "default": "#a9a9aa" },
+    { "type": "color", "id": "border_color", "label": "Border color", "default": "rgba(255,255,255,0.16)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Functionality" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Designed for Life's Journey" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Parenting is ever-evolving, and so are our products. Thoughtfully designed with innovative features, from compact solutions to everyday essentials, to help your family's needs today—and those that arise tomorrow." },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Learn More" },
+    { "type": "url", "id": "cta_link", "label": "Button link" },
+    { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "momentum" },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Accordion item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Warranty" },
+        { "type": "textarea", "id": "content", "label": "Content", "default": "Built to keep up with every phase of family life." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Functionality Journey",
+      "blocks": [
+        { "type": "accordion_item", "settings": { "title": "Warranty", "content": "Built to keep up with every phase of family life." } },
+        { "type": "accordion_item", "settings": { "title": "Sustainability", "content": "Made with thoughtful, lower-impact materials and design choices." } },
+        { "type": "accordion_item", "settings": { "title": "Durability", "content": "Crafted to handle daily routines and keep performing over time." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,59 @@
+<div class="simple-menu">
+  <a class="simple-menu__parent" href="{{ parent_link.url }}">{{ parent_link.title }}</a>
+  <ul class="simple-menu__links list-unstyled">
+    {% for link in parent_link.links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        {% if link.links != blank %}
+          <ul class="simple-menu__nested-links list-unstyled">
+            {% for nested_link in link.links %}
+              <li><a href="{{ nested_link.url }}">{{ nested_link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% stylesheet %}
+  .menu-list__submenu--simple .menu-list__submenu-inner {
+    padding-inline: var(--padding-xl);
+  }
+
+  .simple-menu {
+    max-width: 32rem;
+    padding: var(--padding-xl) 0;
+  }
+
+  .simple-menu__parent {
+    color: var(--color-foreground);
+    display: inline-flex;
+    font-weight: 600;
+    margin-bottom: var(--padding-sm);
+    text-decoration: none;
+  }
+
+  .simple-menu__links {
+    display: grid;
+    gap: var(--padding-2xs);
+  }
+
+  .simple-menu__links a {
+    color: var(--color-foreground);
+    display: inline-flex;
+    padding-block: var(--padding-2xs);
+    text-decoration: none;
+  }
+
+  .simple-menu__links a:hover,
+  .simple-menu__links a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .simple-menu__nested-links {
+    border-inline-start: 1px solid rgb(var(--color-foreground-rgb) / 0.2);
+    margin-inline-start: var(--padding-xs);
+    padding-inline-start: var(--padding-sm);
+  }
+{% endstylesheet %}
