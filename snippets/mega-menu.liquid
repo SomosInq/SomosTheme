@@ -36,9 +36,9 @@
         <ul class="list-unstyled mega-menu__category-links" role="tablist">
           {% for category_link in parent_link.links %}
             <li>
-              <button
+              <a
                 class="mega-menu__category-button{% if forloop.first %} is-active{% endif %}"
-                type="button"
+                href="{{ category_link.url }}"
                 role="tab"
                 id="MegaMenuCategoryButton-{{ id }}-{{ forloop.index }}"
                 aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
@@ -46,7 +46,7 @@
                 data-category-target="MegaMenuCategory-{{ id }}-{{ forloop.index }}"
               >
                 {{ category_link.title }}
-              </button>
+              </a>
             </li>
           {% endfor %}
         </ul>
@@ -237,7 +237,9 @@
     border-radius: 999px;
     background: transparent;
     cursor: pointer;
+    display: block;
     padding: 0.45rem 0.7rem;
+    text-decoration: none;
     width: 100%;
   }
 
