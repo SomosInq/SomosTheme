@@ -45,7 +45,7 @@ function initQuizFlow() {
           title: input.dataset.resultTitle || 'Recommendation',
           body: input.dataset.resultBody || 'We found the best fit for your needs.',
           link: input.dataset.resultLink || '/collections/all',
-          count: 0
+          count: 0,
         };
       }
       accumulator[key].count += 1;
@@ -55,14 +55,15 @@ function initQuizFlow() {
     const topRecommendation = Object.values(score).sort((a, b) => b.count - a.count)[0] || {
       title: 'Recommendation ready',
       body: 'Add some answer options in the theme editor to create tailored recommendations.',
-      link: '/collections/all'
+      link: '/collections/all',
     };
 
     if (resultTitle) resultTitle.textContent = topRecommendation.title;
     if (resultBody) resultBody.textContent = topRecommendation.body;
     if (resultLink) {
       resultLink.href = topRecommendation.link;
-      resultLink.textContent = topRecommendation.link === '/collections/all' ? 'Browse the collection' : 'Open the matching page';
+      resultLink.textContent =
+        topRecommendation.link === '/collections/all' ? 'Browse the collection' : 'Open the matching page';
     }
 
     result.hidden = false;
@@ -97,45 +98,47 @@ function initWishlist() {
 
     if (emptyState) emptyState.hidden = true;
 
-    list.replaceChildren(...items.map((item) => {
-      const article = document.createElement('article');
-      article.className = 'page-card page-card--product';
+    list.replaceChildren(
+      ...items.map((item) => {
+        const article = document.createElement('article');
+        article.className = 'page-card page-card--product';
 
-      const body = document.createElement('div');
-      body.className = 'page-card__body';
+        const body = document.createElement('div');
+        body.className = 'page-card__body';
 
-      const eyebrow = document.createElement('span');
-      eyebrow.className = 'page-card__eyebrow';
-      eyebrow.textContent = 'Saved item';
+        const eyebrow = document.createElement('span');
+        eyebrow.className = 'page-card__eyebrow';
+        eyebrow.textContent = 'Saved item';
 
-      const title = document.createElement('h2');
-      title.textContent = item.title || 'Saved product';
+        const title = document.createElement('h2');
+        title.textContent = item.title || 'Saved product';
 
-      const description = document.createElement('p');
-      if (item.url) {
-        const link = document.createElement('a');
-        link.href = item.url;
-        link.textContent = 'Open product';
-        description.append(link);
-      } else {
-        description.textContent = 'Saved for later';
-      }
+        const description = document.createElement('p');
+        if (item.url) {
+          const link = document.createElement('a');
+          link.href = item.url;
+          link.textContent = 'Open product';
+          description.append(link);
+        } else {
+          description.textContent = 'Saved for later';
+        }
 
-      body.append(eyebrow, title, description);
+        body.append(eyebrow, title, description);
 
-      const footer = document.createElement('div');
-      footer.className = 'page-card__footer';
+        const footer = document.createElement('div');
+        footer.className = 'page-card__footer';
 
-      const removeButton = document.createElement('button');
-      removeButton.className = 'button button-secondary';
-      removeButton.type = 'button';
-      removeButton.dataset.wishlistRemove = item.handle;
-      removeButton.textContent = 'Remove';
+        const removeButton = document.createElement('button');
+        removeButton.className = 'button button-secondary';
+        removeButton.type = 'button';
+        removeButton.dataset.wishlistRemove = item.handle;
+        removeButton.textContent = 'Remove';
 
-      footer.append(removeButton);
-      article.append(body, footer);
-      return article;
-    }));
+        footer.append(removeButton);
+        article.append(body, footer);
+        return article;
+      }),
+    );
   }
 
   buttons.forEach((button) => {
@@ -155,8 +158,8 @@ function initWishlist() {
             {
               handle,
               title: button.dataset.wishlistTitle || 'Saved product',
-              url: button.dataset.wishlistUrl || '#'
-            }
+              url: button.dataset.wishlistUrl || '#',
+            },
           ];
       saveItems(nextItems);
       button.classList.toggle('is-active', !exists);
@@ -169,14 +172,14 @@ function initWishlist() {
     if (!removeButton) return;
 
     const handle = removeButton.dataset.wishlistRemove;
-      const items = getItems().filter((item) => item.handle !== handle);
-      saveItems(items);
-      buttons.forEach((button) => {
-        if (button.dataset.wishlistHandle === handle) {
-          button.classList.remove('is-active');
-          button.textContent = 'Save for later';
-        }
-      });
+    const items = getItems().filter((item) => item.handle !== handle);
+    saveItems(items);
+    buttons.forEach((button) => {
+      if (button.dataset.wishlistHandle === handle) {
+        button.classList.remove('is-active');
+        button.textContent = 'Save for later';
+      }
+    });
   });
 
   clearButton?.addEventListener('click', () => {
@@ -213,34 +216,36 @@ function initRecentlyViewed() {
     return;
   }
 
-  container.replaceChildren(...items.map((item) => {
-    const article = document.createElement('article');
-    article.className = 'page-card';
+  container.replaceChildren(
+    ...items.map((item) => {
+      const article = document.createElement('article');
+      article.className = 'page-card';
 
-    const body = document.createElement('div');
-    body.className = 'page-card__body';
+      const body = document.createElement('div');
+      body.className = 'page-card__body';
 
-    const eyebrow = document.createElement('span');
-    eyebrow.className = 'page-card__eyebrow';
-    eyebrow.textContent = 'Recently viewed';
+      const eyebrow = document.createElement('span');
+      eyebrow.className = 'page-card__eyebrow';
+      eyebrow.textContent = 'Recently viewed';
 
-    const title = document.createElement('h2');
-    title.textContent = item.title || 'Recently viewed product';
+      const title = document.createElement('h2');
+      title.textContent = item.title || 'Recently viewed product';
 
-    const description = document.createElement('p');
-    if (item.url) {
-      const link = document.createElement('a');
-      link.href = item.url;
-      link.textContent = 'View product';
-      description.append(link);
-    } else {
-      description.textContent = 'Recently viewed';
-    }
+      const description = document.createElement('p');
+      if (item.url) {
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.textContent = 'View product';
+        description.append(link);
+      } else {
+        description.textContent = 'Recently viewed';
+      }
 
-    body.append(eyebrow, title, description);
-    article.append(body);
-    return article;
-  }));
+      body.append(eyebrow, title, description);
+      article.append(body);
+      return article;
+    }),
+  );
 }
 
 function initBackInStock() {
@@ -332,13 +337,17 @@ function initStoreLocator() {
           return;
         }
 
-        results.innerHTML = filtered.map((store) => `
+        results.innerHTML = filtered
+          .map(
+            (store) => `
           <article class="page-card page-card--location">
             <h2>${store.name}</h2>
             <p>${store.address}<br>${store.city}</p>
             <p><strong>Hours:</strong> ${store.hours}</p>
           </article>
-        `).join('');
+        `,
+          )
+          .join('');
       }
 
       input.addEventListener('input', (event) => renderList(event.target.value));
