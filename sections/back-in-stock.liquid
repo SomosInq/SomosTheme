@@ -9,8 +9,10 @@
 
       <div class="page-card">
         <form class="js-back-in-stock-form page-stack--compact">
-          <input class="page-field" type="email" name="email" placeholder="Your email" required>
-          <input class="page-field" type="text" name="product" value="{{ section.settings.product_name }}" placeholder="Product name" required>
+          <label for="back-in-stock-email-{{ section.id }}">Your email</label>
+          <input id="back-in-stock-email-{{ section.id }}" class="page-field" type="email" name="email" placeholder="Your email" required>
+          <label for="back-in-stock-product-{{ section.id }}">Product name</label>
+          <input id="back-in-stock-product-{{ section.id }}" class="page-field" type="text" name="product" value="{{ section.settings.product_name }}" placeholder="Product name" required>
           <button class="button" type="submit">Notify me</button>
         </form>
         <p class="page-status" data-back-in-stock-status role="status">We will send a notification as soon as the item is available again.</p>

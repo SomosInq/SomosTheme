@@ -17,7 +17,7 @@
             <article class="page-card page-card--location">
               <h2>{{ name }}</h2>
               <p>{{ address }}</p>
-              <a href="https://maps.google.com/?q={{ address | url_encode }}" target="_blank" class="button button-secondary">Open in maps</a>
+              <a href="https://maps.google.com/?q={{ address | url_encode }}" target="_blank" rel="noopener noreferrer" class="button button-secondary">Open in maps</a>
             </article>
           {% endif %}
         {% endfor %}

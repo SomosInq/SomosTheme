@@ -97,18 +97,45 @@ function initWishlist() {
 
     if (emptyState) emptyState.hidden = true;
 
-    list.innerHTML = items.map((item) => `
-      <article class="page-card page-card--product">
-        <div class="page-card__body">
-          <span class="page-card__eyebrow">Saved item</span>
-          <h2>${item.title}</h2>
-          <p>${item.url ? `<a href="${item.url}">Open product</a>` : 'Saved for later'}</p>
-        </div>
-        <div class="page-card__footer">
-          <button class="button button-secondary" type="button" data-wishlist-remove="${item.handle}">Remove</button>
-        </div>
-      </article>
-    `).join('');
+    list.replaceChildren(...items.map((item) => {
+      const article = document.createElement('article');
+      article.className = 'page-card page-card--product';
+
+      const body = document.createElement('div');
+      body.className = 'page-card__body';
+
+      const eyebrow = document.createElement('span');
+      eyebrow.className = 'page-card__eyebrow';
+      eyebrow.textContent = 'Saved item';
+
+      const title = document.createElement('h2');
+      title.textContent = item.title || 'Saved product';
+
+      const description = document.createElement('p');
+      if (item.url) {
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.textContent = 'Open product';
+        description.append(link);
+      } else {
+        description.textContent = 'Saved for later';
+      }
+
+      body.append(eyebrow, title, description);
+
+      const footer = document.createElement('div');
+      footer.className = 'page-card__footer';
+
+      const removeButton = document.createElement('button');
+      removeButton.className = 'button button-secondary';
+      removeButton.type = 'button';
+      removeButton.dataset.wishlistRemove = item.handle;
+      removeButton.textContent = 'Remove';
+
+      footer.append(removeButton);
+      article.append(body, footer);
+      return article;
+    }));
   }
 
   buttons.forEach((button) => {
@@ -137,9 +164,11 @@ function initWishlist() {
     });
   });
 
-  list?.querySelectorAll('[data-wishlist-remove]').forEach((removeButton) => {
-    removeButton.addEventListener('click', () => {
-      const handle = removeButton.dataset.wishlistRemove;
+  list?.addEventListener('click', (event) => {
+    const removeButton = event.target.closest('[data-wishlist-remove]');
+    if (!removeButton) return;
+
+    const handle = removeButton.dataset.wishlistRemove;
       const items = getItems().filter((item) => item.handle !== handle);
       saveItems(items);
       buttons.forEach((button) => {
@@ -148,7 +177,6 @@ function initWishlist() {
           button.textContent = 'Save for later';
         }
       });
-    });
   });
 
   clearButton?.addEventListener('click', () => {
@@ -185,15 +213,34 @@ function initRecentlyViewed() {
     return;
   }
 
-  container.innerHTML = items.map((item) => `
-    <article class="page-card">
-      <div class="page-card__body">
-        <span class="page-card__eyebrow">Recently viewed</span>
-        <h2>${item.title}</h2>
-        <p>${item.url ? `<a href="${item.url}">View product</a>` : 'Recently viewed'}</p>
-      </div>
-    </article>
-  `).join('');
+  container.replaceChildren(...items.map((item) => {
+    const article = document.createElement('article');
+    article.className = 'page-card';
+
+    const body = document.createElement('div');
+    body.className = 'page-card__body';
+
+    const eyebrow = document.createElement('span');
+    eyebrow.className = 'page-card__eyebrow';
+    eyebrow.textContent = 'Recently viewed';
+
+    const title = document.createElement('h2');
+    title.textContent = item.title || 'Recently viewed product';
+
+    const description = document.createElement('p');
+    if (item.url) {
+      const link = document.createElement('a');
+      link.href = item.url;
+      link.textContent = 'View product';
+      description.append(link);
+    } else {
+      description.textContent = 'Recently viewed';
+    }
+
+    body.append(eyebrow, title, description);
+    article.append(body);
+    return article;
+  }));
 }
 
 function initBackInStock() {

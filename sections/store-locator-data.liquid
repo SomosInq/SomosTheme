@@ -7,7 +7,8 @@
     </div>
 
     <div class="page-card" data-store-locator data-store-locator-data="{{ section.settings.data_source }}">
-      <input class="page-field" type="search" data-store-search placeholder="Search by city or store name">
+      <label for="store-locator-search-{{ section.id }}">Search by city or store name</label>
+      <input id="store-locator-search-{{ section.id }}" class="page-field" type="search" data-store-search placeholder="Search by city or store name">
       <div class="page-grid" data-store-results></div>
     </div>
   </div>
