@@ -11,10 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
 function safeStorage(key, fallback) {
   try {
     const raw = window.localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : fallback;
+    const value = raw ? JSON.parse(raw) : fallback;
+    return value ?? fallback;
   } catch (error) {
     return fallback;
   }
+}
+
+function setStatus(element, message) {
+  if (!element) return;
+  element.textContent = message;
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
 function writeStorage(key, value) {
@@ -67,7 +77,7 @@ function initQuizFlow() {
     }
 
     result.hidden = false;
-    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    result.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
   });
 }
 
@@ -79,7 +89,8 @@ function initWishlist() {
   const clearButton = document.querySelector('[data-wishlist-clear]');
 
   function getItems() {
-    return safeStorage(wishlistKey, []);
+    const items = safeStorage(wishlistKey, []);
+    return Array.isArray(items) ? items : [];
   }
 
   function saveItems(items) {
@@ -146,6 +157,7 @@ function initWishlist() {
     const items = getItems();
     const isSaved = items.some((item) => item.handle === handle);
     button.classList.toggle('is-active', isSaved);
+    button.setAttribute('aria-pressed', String(isSaved));
     button.textContent = isSaved ? 'Saved' : 'Save for later';
 
     button.addEventListener('click', () => {
@@ -163,6 +175,7 @@ function initWishlist() {
           ];
       saveItems(nextItems);
       button.classList.toggle('is-active', !exists);
+      button.setAttribute('aria-pressed', String(!exists));
       button.textContent = exists ? 'Save for later' : 'Saved';
     });
   });
@@ -177,6 +190,7 @@ function initWishlist() {
     buttons.forEach((button) => {
       if (button.dataset.wishlistHandle === handle) {
         button.classList.remove('is-active');
+          button.setAttribute('aria-pressed', 'false');
         button.textContent = 'Save for later';
       }
     });
@@ -186,6 +200,7 @@ function initWishlist() {
     saveItems([]);
     buttons.forEach((button) => {
       button.classList.remove('is-active');
+      button.setAttribute('aria-pressed', 'false');
       button.textContent = 'Save for later';
     });
   });
@@ -205,7 +220,8 @@ function initRecentlyViewed() {
     const image = document.querySelector('meta[property="og:image"]')?.content || '';
     const handle = currentPath.split('/products/')[1].split('/')[0];
     const item = { handle, title, url, image };
-    const items = safeStorage(key, []);
+    const storedItems = safeStorage(key, []);
+    const items = Array.isArray(storedItems) ? storedItems : [];
     const filtered = [item, ...items.filter((entry) => entry.handle !== handle)].slice(0, 6);
     writeStorage(key, filtered);
   }
@@ -277,27 +293,40 @@ function initReferral() {
   const inviteLink = widget.dataset.referralLink || `${window.location.origin}/account/register`;
 
   function updateCount() {
-    const state = safeStorage(key, { count: 0 });
+    const storedState = safeStorage(key, { count: 0 });
+    const state = storedState && typeof storedState === 'object' ? storedState : { count: 0 };
+    state.count = Number.isFinite(Number(state.count)) ? Number(state.count) : 0;
     count.textContent = state.count;
-    status.textContent = `You have earned ${state.count * 10} reward points.`;
+    setStatus(status, `You have earned ${state.count * 10} reward points.`);
   }
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const state = safeStorage(key, { count: 0 });
+    const storedState = safeStorage(key, { count: 0 });
+    const state = storedState && typeof storedState === 'object' ? storedState : { count: 0 };
+    state.count = Number.isFinite(Number(state.count)) ? Number(state.count) : 0;
     state.count += 1;
     writeStorage(key, state);
     updateCount();
-    status.textContent = `Invite sent. Your reward link is ${inviteLink}`;
+    setStatus(status, `Invite sent. Your reward link is ${inviteLink}`);
   });
 
   widget.querySelector('[data-copy-link]')?.addEventListener('click', () => {
-    navigator.clipboard.writeText(inviteLink);
-    const state = safeStorage(key, { count: 0 });
-    state.count += 1;
-    writeStorage(key, state);
-    updateCount();
-    status.textContent = 'Invite link copied. Your friend can redeem it instantly.';
+    const copyLink = navigator.clipboard?.writeText
+      ? navigator.clipboard.writeText(inviteLink)
+      : Promise.reject(new Error('Clipboard API unavailable'));
+
+    copyLink
+      .then(() => {
+        const storedState = safeStorage(key, { count: 0 });
+        const state = storedState && typeof storedState === 'object' ? storedState : { count: 0 };
+        state.count = Number.isFinite(Number(state.count)) ? Number(state.count) : 0;
+        state.count += 1;
+        writeStorage(key, state);
+        updateCount();
+        setStatus(status, 'Invite link copied. Your friend can redeem it instantly.');
+      })
+      .catch(() => setStatus(status, 'Copy failed. Select and copy the invite link manually.'));
   });
 
   updateCount();
@@ -324,36 +353,61 @@ function initStoreLocator() {
   if (!source) return;
 
   fetch(source)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) throw new Error(`Store data request failed: ${response.status}`);
+      return response.json();
+    })
     .then((stores) => {
+      if (!Array.isArray(stores)) throw new Error('Store data must be an array');
+
       function renderList(query = '') {
-        const normalized = query.toLowerCase();
+        const normalized = query.trim().toLowerCase();
         const filtered = stores.filter((store) => {
-          return [store.name, store.address, store.city].join(' ').toLowerCase().includes(normalized);
+          return [store.name, store.address, store.city].filter(Boolean).join(' ').toLowerCase().includes(normalized);
         });
 
         if (!filtered.length) {
-          results.innerHTML = '<div class="page-card"><p>No stores matched your search.</p></div>';
+          const emptyState = document.createElement('div');
+          emptyState.className = 'page-card';
+          const message = document.createElement('p');
+          message.textContent = 'No stores matched your search.';
+          emptyState.append(message);
+          results.replaceChildren(emptyState);
           return;
         }
 
-        results.innerHTML = filtered
-          .map(
-            (store) => `
-          <article class="page-card page-card--location">
-            <h2>${store.name}</h2>
-            <p>${store.address}<br>${store.city}</p>
-            <p><strong>Hours:</strong> ${store.hours}</p>
-          </article>
-        `,
-          )
-          .join('');
+        results.replaceChildren(
+          ...filtered.map((store) => {
+            const article = document.createElement('article');
+            article.className = 'page-card page-card--location';
+
+            const name = document.createElement('h2');
+            name.textContent = store.name || 'Store';
+
+            const address = document.createElement('p');
+            address.textContent = [store.address, store.city].filter(Boolean).join('\n');
+            address.style.whiteSpace = 'pre-line';
+
+            const hours = document.createElement('p');
+            const label = document.createElement('strong');
+            label.textContent = 'Hours: ';
+            hours.append(label, document.createTextNode(store.hours || 'Check with store'));
+
+            article.append(name, address, hours);
+            return article;
+          }),
+        );
       }
 
       input.addEventListener('input', (event) => renderList(event.target.value));
       renderList();
     })
     .catch(() => {
-      results.innerHTML = '<div class="page-card"><p>Store data is temporarily unavailable.</p></div>';
+        const errorState = document.createElement('div');
+        errorState.className = 'page-card';
+        const message = document.createElement('p');
+        message.textContent = 'Store data is temporarily unavailable.';
+        errorState.append(message);
+        results.replaceChildren(errorState);
     });
 }
