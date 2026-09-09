@@ -27,6 +27,17 @@ function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+function safeHref(value) {
+  if (!value) return '';
+
+  try {
+    const url = new URL(value, window.location.origin);
+    return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+  } catch (error) {
+    return '';
+  }
+}
+
 function writeStorage(key, value) {
   try {
     window.localStorage.setItem(key, JSON.stringify(value));
@@ -71,9 +82,10 @@ function initQuizFlow() {
     if (resultTitle) resultTitle.textContent = topRecommendation.title;
     if (resultBody) resultBody.textContent = topRecommendation.body;
     if (resultLink) {
-      resultLink.href = topRecommendation.link;
-      resultLink.textContent =
-        topRecommendation.link === '/collections/all' ? 'Browse the collection' : 'Open the matching page';
+      const link = safeHref(topRecommendation.link) || '/collections/all';
+      resultLink.href = link;
+      const isCollectionLink = new URL(link, window.location.origin).pathname === '/collections/all';
+      resultLink.textContent = isCollectionLink ? 'Browse the collection' : 'Open the matching page';
     }
 
     result.hidden = false;
@@ -125,9 +137,10 @@ function initWishlist() {
         title.textContent = item.title || 'Saved product';
 
         const description = document.createElement('p');
-        if (item.url) {
+        const url = safeHref(item.url);
+        if (url) {
           const link = document.createElement('a');
-          link.href = item.url;
+          link.href = url;
           link.textContent = 'Open product';
           description.append(link);
         } else {
@@ -190,7 +203,7 @@ function initWishlist() {
     buttons.forEach((button) => {
       if (button.dataset.wishlistHandle === handle) {
         button.classList.remove('is-active');
-          button.setAttribute('aria-pressed', 'false');
+        button.setAttribute('aria-pressed', 'false');
         button.textContent = 'Save for later';
       }
     });
@@ -248,9 +261,10 @@ function initRecentlyViewed() {
       title.textContent = item.title || 'Recently viewed product';
 
       const description = document.createElement('p');
-      if (item.url) {
+      const url = safeHref(item.url);
+      if (url) {
         const link = document.createElement('a');
-        link.href = item.url;
+        link.href = url;
         link.textContent = 'View product';
         description.append(link);
       } else {
@@ -274,7 +288,8 @@ function initBackInStock() {
     const email = form.querySelector('input[name="email"]').value.trim();
     const product = form.querySelector('input[name="product"]').value.trim();
     const key = 'somos_back_in_stock';
-    const entries = safeStorage(key, []);
+    const storedEntries = safeStorage(key, []);
+    const entries = Array.isArray(storedEntries) ? storedEntries : [];
     entries.unshift({ email, product, createdAt: new Date().toISOString() });
     writeStorage(key, entries.slice(0, 10));
     status.textContent = `Thanks! We will notify ${email || 'you'} when ${product || 'this item'} is back in stock.`;
@@ -403,11 +418,11 @@ function initStoreLocator() {
       renderList();
     })
     .catch(() => {
-        const errorState = document.createElement('div');
-        errorState.className = 'page-card';
-        const message = document.createElement('p');
-        message.textContent = 'Store data is temporarily unavailable.';
-        errorState.append(message);
-        results.replaceChildren(errorState);
+      const errorState = document.createElement('div');
+      errorState.className = 'page-card';
+      const message = document.createElement('p');
+      message.textContent = 'Store data is temporarily unavailable.';
+      errorState.append(message);
+      results.replaceChildren(errorState);
     });
 }
