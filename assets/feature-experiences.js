@@ -18,8 +18,20 @@ function safeStorage(key, fallback) {
   }
 }
 
+function readStorageArray(key, fallback = []) {
+  const value = safeStorage(key, fallback);
+  return Array.isArray(value) ? value : fallback;
+}
+
+function readStorageObject(key, fallback = {}) {
+  const value = safeStorage(key, fallback);
+  return value && typeof value === 'object' ? value : fallback;
+}
+
 function setStatus(element, message) {
   if (!element) return;
+  element.setAttribute('aria-live', 'polite');
+  element.setAttribute('aria-atomic', 'true');
   element.textContent = message;
 }
 
@@ -101,8 +113,7 @@ function initWishlist() {
   const clearButton = document.querySelector('[data-wishlist-clear]');
 
   function getItems() {
-    const items = safeStorage(wishlistKey, []);
-    return Array.isArray(items) ? items : [];
+    return readStorageArray(wishlistKey, []);
   }
 
   function saveItems(items) {
@@ -239,7 +250,8 @@ function initRecentlyViewed() {
     writeStorage(key, filtered);
   }
 
-  const items = safeStorage(key, []);
+  const storedItems = safeStorage(key, []);
+  const items = Array.isArray(storedItems) ? storedItems : [];
   if (!items.length) {
     container.innerHTML = '<div class="page-card"><p>No recent products yet.</p></div>';
     return;
@@ -283,17 +295,32 @@ function initBackInStock() {
   const status = document.querySelector('[data-back-in-stock-status]');
   if (!form || !status) return;
 
+  const submitButton = form.querySelector('button[type="submit"]');
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    if (submitButton?.disabled) return;
+
     const email = form.querySelector('input[name="email"]').value.trim();
     const product = form.querySelector('input[name="product"]').value.trim();
+    if (!email || !product) {
+      setStatus(status, 'Please complete both the email and product name fields before submitting.');
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Saving...';
+
     const key = 'somos_back_in_stock';
-    const storedEntries = safeStorage(key, []);
-    const entries = Array.isArray(storedEntries) ? storedEntries : [];
+    const entries = readStorageArray(key, []);
     entries.unshift({ email, product, createdAt: new Date().toISOString() });
     writeStorage(key, entries.slice(0, 10));
-    status.textContent = `Thanks! We will notify ${email || 'you'} when ${product || 'this item'} is back in stock.`;
+    setStatus(status, `Thanks! We will notify ${email} when ${product} is back in stock.`);
     form.reset();
+
+    submitButton.disabled = false;
+    submitButton.textContent = 'Notify me';
   });
 }
 
@@ -306,10 +333,11 @@ function initReferral() {
 
   const key = 'somos_referrals';
   const inviteLink = widget.dataset.referralLink || `${window.location.origin}/account/register`;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const copyButton = widget.querySelector('[data-copy-link]');
 
   function updateCount() {
-    const storedState = safeStorage(key, { count: 0 });
-    const state = storedState && typeof storedState === 'object' ? storedState : { count: 0 };
+    const state = readStorageObject(key, { count: 0 });
     state.count = Number.isFinite(Number(state.count)) ? Number(state.count) : 0;
     count.textContent = state.count;
     setStatus(status, `You have earned ${state.count * 10} reward points.`);
@@ -317,31 +345,47 @@ function initReferral() {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const storedState = safeStorage(key, { count: 0 });
-    const state = storedState && typeof storedState === 'object' ? storedState : { count: 0 };
+
+    if (submitButton?.disabled) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+
+    const state = readStorageObject(key, { count: 0 });
     state.count = Number.isFinite(Number(state.count)) ? Number(state.count) : 0;
     state.count += 1;
     writeStorage(key, state);
     updateCount();
     setStatus(status, `Invite sent. Your reward link is ${inviteLink}`);
+
+    submitButton.disabled = false;
+    submitButton.textContent = 'Send invite';
   });
 
-  widget.querySelector('[data-copy-link]')?.addEventListener('click', () => {
+  copyButton?.addEventListener('click', () => {
+    if (copyButton.disabled) return;
+
+    copyButton.disabled = true;
+    copyButton.textContent = 'Copying...';
+
     const copyLink = navigator.clipboard?.writeText
       ? navigator.clipboard.writeText(inviteLink)
       : Promise.reject(new Error('Clipboard API unavailable'));
 
     copyLink
       .then(() => {
-        const storedState = safeStorage(key, { count: 0 });
-        const state = storedState && typeof storedState === 'object' ? storedState : { count: 0 };
+        const state = readStorageObject(key, { count: 0 });
         state.count = Number.isFinite(Number(state.count)) ? Number(state.count) : 0;
         state.count += 1;
         writeStorage(key, state);
         updateCount();
         setStatus(status, 'Invite link copied. Your friend can redeem it instantly.');
       })
-      .catch(() => setStatus(status, 'Copy failed. Select and copy the invite link manually.'));
+      .catch(() => setStatus(status, 'Copy failed. Select and copy the invite link manually.'))
+      .finally(() => {
+        copyButton.disabled = false;
+        copyButton.textContent = 'Copy invite link';
+      });
   });
 
   updateCount();
@@ -367,6 +411,9 @@ function initStoreLocator() {
 
   if (!source) return;
 
+  results.setAttribute('aria-live', 'polite');
+  results.setAttribute('aria-atomic', 'true');
+
   fetch(source)
     .then((response) => {
       if (!response.ok) throw new Error(`Store data request failed: ${response.status}`);
@@ -378,7 +425,8 @@ function initStoreLocator() {
       function renderList(query = '') {
         const normalized = query.trim().toLowerCase();
         const filtered = stores.filter((store) => {
-          return [store.name, store.address, store.city].filter(Boolean).join(' ').toLowerCase().includes(normalized);
+          const details = [store?.name, store?.address, store?.city].filter(Boolean).join(' ').toLowerCase();
+          return details.includes(normalized);
         });
 
         if (!filtered.length) {
@@ -397,16 +445,16 @@ function initStoreLocator() {
             article.className = 'page-card page-card--location';
 
             const name = document.createElement('h2');
-            name.textContent = store.name || 'Store';
+            name.textContent = store?.name || 'Store';
 
             const address = document.createElement('p');
-            address.textContent = [store.address, store.city].filter(Boolean).join('\n');
+            address.textContent = [store?.address, store?.city].filter(Boolean).join('\n');
             address.style.whiteSpace = 'pre-line';
 
             const hours = document.createElement('p');
             const label = document.createElement('strong');
             label.textContent = 'Hours: ';
-            hours.append(label, document.createTextNode(store.hours || 'Check with store'));
+            hours.append(label, document.createTextNode(store?.hours || 'Check with store'));
 
             article.append(name, address, hours);
             return article;
