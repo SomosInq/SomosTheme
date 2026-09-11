@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initAnalytics();
   initQuizFlow();
   initWishlist();
   initRecentlyViewed();
@@ -56,6 +57,91 @@ function writeStorage(key, value) {
   } catch (error) {
     console.warn('Could not persist feature data', error);
   }
+}
+
+function dispatchAnalyticsEvent(eventName, payload = {}) {
+  const eventData = {
+    event: eventName,
+    timestamp: new Date().toISOString(),
+    ...payload,
+  };
+
+  if (Array.isArray(window.dataLayer)) {
+    window.dataLayer.push(eventData);
+  }
+
+  document.dispatchEvent(new CustomEvent('theme:analytics', { detail: eventData, bubbles: true }));
+}
+
+function showToast(message, tone = 'success') {
+  let toast = document.querySelector('[data-theme-toast]');
+
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.dataset.themeToast = 'true';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    toast.style.position = 'fixed';
+    toast.style.right = '1rem';
+    toast.style.bottom = '1rem';
+    toast.style.zIndex = '2000';
+    toast.style.maxWidth = '22rem';
+    toast.style.padding = '0.75rem 1rem';
+    toast.style.borderRadius = '999px';
+    toast.style.fontSize = '0.875rem';
+    toast.style.fontWeight = '600';
+    toast.style.background = tone === 'error' ? 'rgba(160, 20, 20, 0.92)' : 'rgba(20, 70, 45, 0.92)';
+    toast.style.color = '#fff';
+    toast.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(8px)';
+    toast.style.transition = 'opacity 180ms ease, transform 180ms ease';
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.style.opacity = '1';
+  toast.style.transform = 'translateY(0)';
+
+  clearTimeout(showToast.timeoutId);
+  showToast.timeoutId = setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(8px)';
+  }, 2400);
+}
+
+function initAnalytics() {
+  const pathname = window.location.pathname || '';
+
+  if (pathname.includes('/products/')) {
+    const productId = document.querySelector('input[name="id"]')?.value || '';
+    const title = document.querySelector('meta[property="og:title"]')?.content || document.title;
+    const url = document.querySelector('meta[property="og:url"]')?.content || window.location.href;
+    const handle = pathname.split('/products/')[1]?.split('/')[0] || '';
+
+    dispatchAnalyticsEvent('product_view', {
+      product_id: productId,
+      product_handle: handle,
+      product_title: title,
+      product_url: url,
+    });
+  }
+
+  document.addEventListener('cart:update', (event) => {
+    const data = event.detail?.data ?? {};
+    const productId = data.productId || document.querySelector('input[name="id"]')?.value || '';
+    const itemCount = Number(data.itemCount || 1);
+
+    dispatchAnalyticsEvent('add_to_cart', {
+      product_id: productId,
+      item_count: itemCount,
+      source: data.source || 'unknown',
+    });
+
+    if (itemCount > 0) {
+      showToast(itemCount > 1 ? `${itemCount} items added to cart` : 'Item added to cart');
+    }
+  });
 }
 
 function initQuizFlow() {
