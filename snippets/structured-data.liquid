@@ -1,0 +1,30 @@
+{%- liquid
+  assign current_url = canonical_url | default: request.origin
+-%}
+
+{%- if request.page_type == 'product' and product != blank -%}
+  <script type='application/ld+json'>
+    {{ product | structured_data }}
+  </script>
+{%- elsif request.page_type == 'article' and article != blank -%}
+  <script type='application/ld+json'>
+    {{ article | structured_data }}
+  </script>
+{%- elsif request.page_type == 'collection' and collection != blank -%}
+  <script type='application/ld+json'>
+    {{ collection | structured_data }}
+  </script>
+{%- elsif request.page_type == 'blog' and blog != blank -%}
+  <script type='application/ld+json'>
+    {{ blog | structured_data }}
+  </script>
+{%- else -%}
+  <script type='application/ld+json'>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "url": {{ current_url | json }}
+    }
+  </script>
+{%- endif -%}
