@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReferral();
   initSubscription();
   initStoreLocator();
+  initSupportWiki();
 });
 
 function safeStorage(key, fallback) {
@@ -108,6 +109,49 @@ function showToast(message, tone = 'success') {
     toast.style.opacity = '0';
     toast.style.transform = 'translateY(8px)';
   }, 2400);
+}
+
+function initSupportWiki() {
+  const wiki = document.querySelector('[data-support-wiki]');
+  const form = document.querySelector('[data-support-search-form]');
+  const input = document.querySelector('[data-support-search-input]');
+  const categories = Array.from(document.querySelectorAll('[data-support-category]'));
+  const links = Array.from(document.querySelectorAll('[data-support-link]'));
+  const results = document.querySelector('[data-support-search-results]');
+  const emptyState = document.querySelector('[data-support-search-empty]');
+  const status = document.querySelector('[data-support-search-status]');
+
+  if (!wiki || !form || !input || !categories.length) return;
+
+  const filter = () => {
+    const query = input.value.trim().toLowerCase();
+    let matchCount = 0;
+
+    categories.forEach((category) => {
+      let categoryMatches = 0;
+      category.querySelectorAll('[data-support-link]').forEach((link) => {
+        const matches = !query || `${link.textContent} ${link.dataset.searchText || ''}`.toLowerCase().includes(query);
+        link.hidden = !matches;
+        if (matches) categoryMatches += 1;
+      });
+      category.hidden = categoryMatches === 0;
+      matchCount += categoryMatches;
+    });
+
+    const searching = query.length > 0;
+    if (results) results.hidden = !searching;
+    if (emptyState) emptyState.hidden = !searching || matchCount > 0;
+    if (status)
+      status.textContent = searching
+        ? `${matchCount} guide${matchCount === 1 ? '' : 's'} found.`
+        : 'Browse practical guidance by topic, or search the help center above.';
+  };
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    filter();
+  });
+  input.addEventListener('input', filter);
 }
 
 function initAnalytics() {

@@ -6,38 +6,11 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */ {
   "sections": {
     "main": {
       "type": "main-blog",
       "blocks": {
-        "title": {
-          "type": "text",
-          "name": "Title",
-          "settings": {
-            "text": "<h2>{{ closest.blog.title }}</h2>",
-            "width": "fit-content",
-            "max_width": "narrow",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 48,
-            "padding-block-end": 48,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-          }
-        },
         "static-blog-post-card": {
           "type": "_blog-post-card",
           "static": true,
@@ -67,8 +40,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "blog-post-details": {
               "type": "_blog-post-info-text",
@@ -83,8 +55,7 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "image": {
               "type": "_blog-post-image",
@@ -96,18 +67,13 @@
                 "border_opacity": 100,
                 "border_radius": 4
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-
-          ]
+          "block_order": []
         }
       },
-      "block_order": [
-        "title"
-      ],
+      "block_order": [],
       "settings": {
         "color_scheme": "",
         "padding-block-start": 0,
@@ -161,11 +127,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "editorial_secondary",
-    "page_testimonials",
-    "page_cta"
-  ]
+  "order": ["main", "editorial_primary", "editorial_secondary", "page_testimonials", "page_cta"]
 }

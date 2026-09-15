@@ -2,6 +2,30 @@
   "sections": {
     "main": {
       "type": "quiz-flow",
+      "blocks": {
+        "question_1": {
+          "type": "quiz_question",
+          "settings": {
+            "question": "What are you shopping for today?",
+            "options": "Everyday layers | Everyday essentials | Pieces that work hard in your wardrobe. | /collections/all || A thoughtful gift | Giftable favourites | Useful pieces with an easy point of view. | /collections/accessories || A considered detail | Accessories and extras | Small additions that make the everyday feel more intentional. | /collections/accessories"
+          }
+        },
+        "question_2": {
+          "type": "quiz_question",
+          "settings": {
+            "question": "Which feeling matters most?",
+            "options": "Comfort and ease | Everyday essentials | Relaxed pieces for repeat wear. | /collections/all || A clear point of view | Signature layers | Distinctive pieces that still earn their place. | /collections/all || Practical versatility | Useful accessories | Details designed to go further. | /collections/accessories"
+          }
+        },
+        "question_3": {
+          "type": "quiz_question",
+          "settings": {
+            "question": "How do you prefer to shop?",
+            "options": "Start with a collection | Explore the collection | Browse a focused edit at your own pace. | /collections/all || Find one strong piece | Shop signature products | Begin with a considered favourite. | /collections/all || Compare the details | Compare products | Make the choice with useful information in view. | /pages/comparison-page"
+          }
+        }
+      },
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "title": "Find the right fit",
         "description": "Answer a few quick questions to discover the best product experience for your needs."
@@ -32,11 +56,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about guided finder",
         "intro": "Practical answers specific to this page."
@@ -120,11 +140,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "numbered",
         "eyebrow": "Guided finder",
@@ -134,12 +150,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_details",
-    "editorial_secondary",
-    "page_faq",
-    "page_cta"
-  ]
+  "order": ["main", "editorial_primary", "page_details", "editorial_secondary", "page_faq", "page_cta"]
 }

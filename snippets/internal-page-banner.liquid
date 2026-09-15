@@ -1,0 +1,113 @@
+{%- liquid
+  assign banner_title = page_title | default: shop.name
+  assign banner_description = blank
+  assign banner_image = blank
+  assign banner_asset = 'editorial-community.jpg'
+  assign banner_label = 'Explore'
+  assign show_banner_search = false
+
+  case request.page_type
+    when 'product'
+      assign banner_title = product.title
+      assign banner_description = product.description | strip_html | truncate: 150
+      assign banner_image = product.featured_image
+      assign banner_label = 'Product'
+    when 'collection'
+      assign banner_title = collection.title
+      assign banner_description = collection.description | strip_html | truncate: 150
+      assign banner_image = collection.featured_image
+      assign banner_label = 'Collection'
+    when 'article'
+      assign banner_title = article.title
+      assign banner_description = article.excerpt_or_content | strip_html | truncate: 150
+      assign banner_image = article.image
+      assign banner_label = 'Journal'
+    when 'blog'
+      assign banner_title = blog.title
+      assign banner_description = blog.description | strip_html | truncate: 150
+      assign banner_image = blog.image
+      assign banner_label = 'Journal'
+    when 'page'
+      assign banner_title = page.title
+      assign banner_description = page.content | strip_html | truncate: 150
+      assign banner_label = 'Information'
+
+      if page.handle contains 'support'
+        assign banner_description = 'A practical guide to products, orders, accounts, and every useful route through the store.'
+        assign banner_label = 'Help center'
+        assign banner_asset = 'editorial-brand-studio.jpg'
+        assign show_banner_search = true
+      endif
+
+      if page.handle contains 'sales' or page.handle contains 'sale'
+        assign banner_description = 'Considered pieces, reduced for a limited time. Find useful layers and everyday essentials while availability lasts.'
+        assign banner_asset = 'editorial-collection-look.jpg'
+        assign banner_label = 'Sale edit'
+      elsif page.handle contains 'quiz' or page.handle contains 'finder' or page.handle contains 'comparison' or page.handle contains 'size' or page.handle contains 'choose'
+        assign banner_asset = 'editorial-fit-guide.jpg'
+        assign banner_label = 'Guided finder'
+      elsif page.handle contains 'bundle' or page.handle contains 'look' or page.handle contains 'recipe'
+        assign banner_asset = 'editorial-collection-look.jpg'
+        assign banner_label = 'Explore'
+      elsif page.handle contains 'review' or page.handle contains 'refer' or page.handle contains 'loyalty' or page.handle contains 'reward'
+        assign banner_asset = 'editorial-community.jpg'
+        assign banner_label = 'Community'
+      elsif page.handle contains 'size' or page.handle contains 'fit'
+        assign banner_asset = 'editorial-fit-guide.jpg'
+      elsif page.handle contains 'shop' or page.handle contains 'bundle' or page.handle contains 'collection'
+        assign banner_asset = 'editorial-collection-look.jpg'
+      elsif page.handle contains 'about' or page.handle contains 'story' or page.handle contains 'sustain'
+        assign banner_asset = 'editorial-brand-studio.jpg'
+      endif
+    when 'search'
+      assign banner_title = 'Search'
+      assign banner_label = 'Find your fit'
+    when 'cart'
+      assign banner_title = 'Your cart'
+      assign banner_label = 'Order'
+    else
+      assign banner_label = 'Somos'
+  endcase
+-%}
+
+<section class='internal-page-banner' aria-labelledby='InternalPageBannerTitle'>
+  <div class='internal-page-banner__inner page-width'>
+    <div class='internal-page-banner__media'>
+      {%- if banner_image != blank -%}
+        {{
+          banner_image
+          | image_url: width: 2000
+          | image_tag: loading: 'eager', widths: '640, 960, 1280, 1600, 2000', sizes: '100vw', alt: banner_title
+        }}
+      {%- else -%}
+        <img
+          src='{{ banner_asset | asset_url }}'
+          alt=''
+          loading='eager'
+          width='1600'
+          height='900'
+        >
+      {%- endif -%}
+    </div>
+    <div class='internal-page-banner__content'>
+      <span class='page-pill'>{{ banner_label }}</span>
+      <h1 id='InternalPageBannerTitle'>{{ banner_title | escape }}</h1>
+      {%- if banner_description != blank -%}
+        <p>{{ banner_description | escape }}</p>
+      {%- endif -%}
+      {%- if show_banner_search -%}
+        <form class='internal-page-banner__search' data-support-search-form role='search'>
+          <label class='visually-hidden' for='SupportWikiSearch'>Search the help center</label>
+          <input
+            id='SupportWikiSearch'
+            type='search'
+            placeholder='Search the help center'
+            autocomplete='off'
+            data-support-search-input
+          >
+          <button type='submit' class='button'>Search</button>
+        </form>
+      {%- endif -%}
+    </div>
+  </div>
+</section>

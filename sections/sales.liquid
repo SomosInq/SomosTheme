@@ -1,50 +1,103 @@
-<section class="section section--page-width page-shell sales-section">
-  <div class="page-width-content">
-    <div class="page-hero">
-      <span class="page-pill page-pill--accent">Limited-time offers</span>
-      <h2>{{ page.title }}</h2>
-      <p>Browse the items currently discounted and save while they last.</p>
+<section class='section section--page-width page-shell sales-section'>
+  <div class='page-width-content'>
+    <div class='page-hero'>
+      <span class='page-pill page-pill--accent'>Limited-time offers</span>
+      <p>
+        Browse considered pieces at a better value. Availability changes quickly, so choose the things you will reach
+        for often.
+      </p>
     </div>
 
     {% if section.settings.collection != blank %}
       {% assign coll = collections[section.settings.collection] %}
-      {% assign sale_products = coll.products | where: 'compare_at_price', '>' %}
-      {% if sale_products.size > 0 %}
-        <div class="page-grid">
-          {% for product in coll.products %}
-            {% if product.compare_at_price > product.price %}
-              <article class="page-card page-card--sale">
-                <span class="page-card__eyebrow">On sale</span>
-                <h2><a href="{{ product.url }}">{{ product.title }}</a></h2>
-                <p>{{ product.description | strip_html | truncate: 120 }}</p>
-                <div class="page-card__footer">
-                  <div>
-                    <span class="page-price">{{ product.price | money }}</span>
-                    <span class="page-price page-price--muted">{{ product.compare_at_price | money }}</span>
+      {% if coll != blank %}
+        {% assign sale_count = 0 %}
+        {% for product in coll.products %}
+          {% if product.compare_at_price > product.price %}
+            {% assign sale_count = sale_count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        {% if sale_count > 0 %}
+          <div class='sales-section__intro'>
+            <div>
+              <span class='page-card__eyebrow'>The current edit</span>
+              <h2>
+                {{ sale_count }}
+                {% if sale_count == 1 %}piece{% else %}pieces{% endif %} worth a closer look
+              </h2>
+            </div>
+            <p>
+              Compare the original and current price, then check the product page for fit, materials, and final-sale
+              details.
+            </p>
+          </div>
+          <div class='sales-grid'>
+            {% for product in coll.products %}
+              {% if product.compare_at_price > product.price %}
+                {% assign savings = product.compare_at_price | minus: product.price %}
+                <article class='sales-card'>
+                  <a class='sales-card__media' href='{{ product.url }}' aria-label='View {{ product.title | escape }}'>
+                    {% if product.featured_image %}
+                      {{
+                        product.featured_image
+                        | image_url: width: 900
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '360, 540, 720, 900',
+                          sizes: '(min-width: 750px) 33vw, 100vw',
+                          alt: product.title
+                      }}
+                    {% else %}
+                      {{ 'product-1' | placeholder_svg_tag: 'sales-card__placeholder' }}
+                    {% endif %}
+                    <span class='sales-card__badge'>Save {{ savings | money }}</span>
+                  </a>
+                  <div class='sales-card__body'>
+                    <div>
+                      <span class='page-card__eyebrow'>
+                        {%- if product.available %}Available now{% else %}Sold out{% endif -%}
+                      </span>
+                      <h2>
+                        <a href='{{ product.url }}'>{{ product.title }}</a>
+                      </h2>
+                      <p>{{ product.description | strip_html | truncate: 110 }}</p>
+                    </div>
+                    <div class='sales-card__footer'>
+                      <div class='sales-card__prices'>
+                        <span class='page-price'>{{ product.price | money }}</span>
+                        <span class='page-price page-price--muted'>{{ product.compare_at_price | money }}</span>
+                      </div>
+                      <a href='{{ product.url }}' class='button'>View piece</a>
+                    </div>
                   </div>
-                  <a href="{{ product.url }}" class="button">Shop now</a>
-                </div>
-              </article>
-            {% endif %}
-          {% endfor %}
-        </div>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class='page-card sales-section__empty'>
+            <p>No discounted products were found in the selected collection right now.</p>
+            <a href='{{ routes.all_products_collection_url }}' class='button'>Browse all products</a>
+          </div>
+        {% endif %}
       {% else %}
-        <div class="page-card">
-          <p>No discounted products were found in the selected collection right now.</p>
+        <div class='page-card sales-section__empty'>
+          <p>The sale edit is being refreshed. Check back soon for the next selection.</p>
+          <a href='{{ routes.all_products_collection_url }}' class='button'>Browse all products</a>
         </div>
       {% endif %}
     {% else %}
-      <div class="page-card">
+      <div class='page-card sales-section__empty'>
         <p>Select a collection in the section settings to show sale items.</p>
       </div>
     {% endif %}
   </div>
 
   {% schema %}
-  {
-    "name": "Sales",
-    "settings": [ { "type":"collection", "id":"collection", "label":"Collection to check for sales" } ],
-    "presets": [{ "name": "Sales" }]
-  }
+{
+  "name": "Sales",
+  "settings": [{ "type": "collection", "id": "collection", "label": "Collection to check for sales" }],
+  "presets": [{ "name": "Sales" }]
+}
   {% endschema %}
 </section>

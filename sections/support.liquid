@@ -1,55 +1,138 @@
-<section class="section section--page-width page-shell support-section">
-  <div class="page-width-content">
-    <div class="page-hero">
-      <span class="page-pill">Help center</span>
-      <h2>{{ page.title }}</h2>
-      <p>Need a hand? Start with the answers below or send us a note and we’ll follow up soon.</p>
-    </div>
-
-    <div class="page-grid page-grid--support">
-      <div class="page-card">
-        <h2>Common questions</h2>
-        {% if section.blocks.size > 0 %}
-          <div class="page-stack page-stack--compact">
-            {% for block in section.blocks %}
-              <details class="page-card page-card--accordion page-card--compact">
-                <summary class="page-card__summary">
-                  <span>{{ block.settings.question }}</span>
-                  <span class="page-card__icon" aria-hidden="true">+</span>
-                </summary>
-                <div class="page-card__content">
-                  {{ block.settings.answer }}
-                </div>
-              </details>
-            {% endfor %}
-          </div>
-        {% else %}
-          <p>Add Q&amp;A blocks in the section settings.</p>
-        {% endif %}
+<section class='section section--page-width page-shell support-section'>
+  <div class='page-width-content'>
+    <div class='support-wiki' data-support-wiki>
+      <div class='support-wiki__header'>
+        <div>
+          <span class='page-pill'>Browse the wiki</span>
+          <h2>Find the right place to start</h2>
+        </div>
+        <p data-support-search-status role='status'>
+          Browse practical guidance by topic, or search the help center above.
+        </p>
       </div>
 
-      <div class="page-card">
-        <h2>Contact us</h2>
-        <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="page-form">
-          <input type="hidden" name="form_type" value="contact">
-          <label class="page-form__label">
-            <span>Name</span>
-            <input type="text" name="contact[name]" placeholder="Your name">
-          </label>
-          <label class="page-form__label">
-            <span>Email</span>
-            <input type="email" name="contact[email]" placeholder="you@example.com">
-          </label>
-          <label class="page-form__label">
-            <span>Message</span>
-            <textarea name="contact[body]" rows="5" placeholder="How can we help?"></textarea>
-          </label>
-          <button type="submit" class="button">Send message</button>
-        </form>
+      <div class='support-wiki__results' data-support-search-results hidden>
+        <p class='support-wiki__empty' data-support-search-empty hidden>
+          No matching guides found. Try a different search.
+        </p>
+      </div>
 
-        {% if section.settings.enable_chat %}
-          <div class="page-spotlight page-spotlight--compact">
-            {{ section.settings.chat_snippet }}
+      <div class='support-wiki__categories'>
+        <section class='support-wiki__category' data-support-category>
+          <div class='support-wiki__category-heading'>
+            <span class='support-wiki__number'>01</span>
+            <div>
+              <span class='page-card__eyebrow'>Start here</span>
+              <h3>Choosing well</h3>
+            </div>
+          </div>
+          <div class='support-wiki__links'>
+            <a href='/pages/how-to-choose' data-support-link data-search-text='how to choose find the right product'
+              >How To Choose <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/product-finder' data-support-link data-search-text='product finder quiz recommendation'
+              >Product Finder <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/size-guide' data-support-link data-search-text='size guide fit measurements'
+              >Size Guide <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/comparison-page' data-support-link data-search-text='comparison compare products'
+              >Compare Products <span aria-hidden='true'>↗</span></a
+            >
+          </div>
+        </section>
+
+        <section class='support-wiki__category' data-support-category>
+          <div class='support-wiki__category-heading'>
+            <span class='support-wiki__number'>02</span>
+            <div>
+              <span class='page-card__eyebrow'>Your order</span>
+              <h3>Buying and managing</h3>
+            </div>
+          </div>
+          <div class='support-wiki__links'>
+            <a href='/pages/sales-page' data-support-link data-search-text='sale sales offers reduced products'
+              >Sale Edit <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/bundles' data-support-link data-search-text='bundles sets products'
+              >Bundles <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/back-in-stock' data-support-link data-search-text='back in stock availability notifications'
+              >Back In Stock <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/cart' data-support-link data-search-text='cart basket order'
+              >Cart and checkout <span aria-hidden='true'>↗</span></a
+            >
+          </div>
+        </section>
+
+        <section class='support-wiki__category' data-support-category>
+          <div class='support-wiki__category-heading'>
+            <span class='support-wiki__number'>03</span>
+            <div>
+              <span class='page-card__eyebrow'>Product knowledge</span>
+              <h3>Details and care</h3>
+            </div>
+          </div>
+          <div class='support-wiki__links'>
+            <a href='/pages/ingredients' data-support-link data-search-text='ingredients materials contents'
+              >Ingredients and materials <span aria-hidden='true'>↗</span></a
+            >
+            <a
+              href='/pages/specifications'
+              data-support-link
+              data-search-text='specifications details product information'
+              >Specifications <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/recipes-guides' data-support-link data-search-text='recipes guides how to use'
+              >Recipes and guides <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/before-after' data-support-link data-search-text='before after results examples'
+              >Before and After <span aria-hidden='true'>↗</span></a
+            >
+          </div>
+        </section>
+
+        <section class='support-wiki__category' data-support-category>
+          <div class='support-wiki__category-heading'>
+            <span class='support-wiki__number'>04</span>
+            <div>
+              <span class='page-card__eyebrow'>Account and community</span>
+              <h3>Stay connected</h3>
+            </div>
+          </div>
+          <div class='support-wiki__links'>
+            <a href='/pages/loyalty' data-support-link data-search-text='loyalty rewards points benefits'
+              >Loyalty and Rewards <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/refer-a-friend' data-support-link data-search-text='refer friend referral invite'
+              >Refer a Friend <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/reviews-ugc' data-support-link data-search-text='reviews community customer stories'
+              >Reviews and community <span aria-hidden='true'>↗</span></a
+            >
+            <a href='/pages/contact-page' data-support-link data-search-text='contact customer service help'
+              >Contact the team <span aria-hidden='true'>↗</span></a
+            >
+          </div>
+        </section>
+      </div>
+
+      <div class='support-wiki__faq'>
+        <div>
+          <span class='page-card__eyebrow'>Still need help?</span>
+          <h2>Common questions</h2>
+        </div>
+        {% if section.blocks.size > 0 %}
+          <div class='page-stack page-stack--compact'>
+            {% for block in section.blocks %}
+              <details class='page-card page-card--accordion page-card--compact'>
+                <summary class='page-card__summary'>
+                  <span>{{ block.settings.question }}</span><span class='page-card__icon' aria-hidden='true'>+</span>
+                </summary>
+                <div class='page-card__content'>{{ block.settings.answer }}</div>
+              </details>
+            {% endfor %}
           </div>
         {% endif %}
       </div>
@@ -57,16 +140,20 @@
   </div>
 
   {% schema %}
-  {
-    "name": "Support",
-    "settings": [
-      { "type": "checkbox", "id": "enable_chat", "label": "Enable chat snippet", "default": false },
-      { "type": "textarea", "id": "chat_snippet", "label": "Chat snippet (HTML/JS)", "info":"Paste provider snippet here" }
-    ],
-    "blocks": [
-      { "type": "faq", "name": "Q&A", "settings": [ { "id":"question","type":"text","label":"Question" }, { "id":"answer","type":"textarea","label":"Answer" } ] }
-    ],
-    "presets": [{ "name": "Support" }]
-  }
+{
+  "name": "Support wiki",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Q&A",
+      "settings": [
+        { "id": "question", "type": "text", "label": "Question" },
+        { "id": "answer", "type": "textarea", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Support wiki" }]
+}
   {% endschema %}
 </section>

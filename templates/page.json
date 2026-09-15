@@ -7,51 +7,19 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- 
- {
+
+{
   "sections": {
     "main": {
       "type": "main-page",
       "blocks": {
-        "heading": {
-          "type": "text",
-          "name": "Title",
-          "settings": {
-            "text": "<h2>{{ closest.page.title }}</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-          }
-        },
         "page-content": {
           "type": "page-content",
-          "settings": {
-          },
-          "blocks": {
-          }
+          "settings": {},
+          "blocks": {}
         }
       },
-      "block_order": [
-        "heading",
-        "page-content"
-      ],
+      "block_order": ["page-content"],
       "settings": {
         "content_direction": "column",
         "gap": 32,
@@ -91,11 +59,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about information",
         "intro": "Practical answers specific to this page."
@@ -179,11 +143,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "numbered",
         "eyebrow": "Information",
@@ -193,13 +153,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_usp",
-    "page_details",
-    "editorial_secondary",
-    "page_faq",
-    "page_cta"
-  ]
+  "order": ["main", "editorial_primary", "page_usp", "page_details", "editorial_secondary", "page_faq", "page_cta"]
 }

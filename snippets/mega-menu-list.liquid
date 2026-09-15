@@ -72,9 +72,9 @@
   endif
 %}
 <ul
-  data-menu-list-id="{{ id }}"
-  class="mega-menu__list list-unstyled"
-  style="--menu-image-border-radius: {{ image_border_radius }}px;"
+  data-menu-list-id='{{ id }}'
+  class='mega-menu__list list-unstyled'
+  style='--menu-image-border-radius: {{ image_border_radius }}px;'
 >
   {% for link in parent_link.links %}
     {% liquid
@@ -109,8 +109,8 @@
     %}
     <div>
       <a
-        href="{{ link.url }}"
-        class="mega-menu__link {% if link.links != blank %}mega-menu__link--parent{% endif %}"
+        href='{{ link.url }}'
+        class='mega-menu__link {% if link.links != blank %}mega-menu__link--parent{% endif %}'
       >
         {% if menu_content_type == 'collection_images' %}
           {%- capture collection_image_sizes -%}
@@ -133,30 +133,30 @@
           {% render 'link-featured-image', link: link, class: 'mega-menu__link-image', sizes: collection_image_sizes %}
         {% endif %}
         <span
-          class="mega-menu__link-title wrap-text"
+          class='mega-menu__link-title wrap-text'
         >
           {{- link.title -}}
         </span>
       </a>
       {% if link.links != blank %}
         <ul
-          class="list-unstyled"
+          class='list-unstyled'
           {% if should_break_columns %}
-            style="column-count: {{ column_span }};"
+            style='column-count: {{ column_span }};'
           {% endif %}
         >
           {% for childLink in link.links %}
             {% assign break_after_modulo = forloop.index | modulo: links_before_wrap %}
             <li
               {% if break_after_modulo == 0 and should_break_columns %}
-                style="break-after: column;"
+                style='break-after: column;'
               {% endif %}
             >
               <a
-                href="{{ childLink.url }}"
-                class="mega-menu__link"
+                href='{{ childLink.url }}'
+                class='mega-menu__link'
               >
-                <span class="mega-menu__link-title wrap-text">{{- childLink.title -}}</span>
+                <span class='mega-menu__link-title wrap-text'>{{- childLink.title -}}</span>
               </a>
             </li>
           {% endfor %}
@@ -183,6 +183,100 @@
       endif
     %}
   {% endfor %}
+  {% if parent_link.handle == 'features' %}
+    <li class='mega-menu__column mega-menu__column--span-2'>
+      <div>
+        <span class='mega-menu__link mega-menu__link--parent'>More features</span>
+        <ul class='list-unstyled'>
+          <li>
+            <a href='/pages/about' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>About</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/bundles' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Bundles</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/shop-the-look' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Shop the Look</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/lookbook' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Lookbook</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/ingredients' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Ingredients</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/specifications' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Specifications</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/recipes-guides' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Recipes and Guides</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/before-after' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Before and After</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/sustainability' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Sustainability</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/stockists' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Stockists</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/wholesale' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Wholesale</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/loyalty' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Loyalty</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/rewards' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Rewards</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/refer-a-friend' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Refer a Friend</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/reviews-ugc' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Reviews and UGC</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/recently-viewed' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Recently Viewed</span></a
+            >
+          </li>
+          <li>
+            <a href='/pages/wishlist' class='mega-menu__link'
+              ><span class='mega-menu__link-title wrap-text'>Wishlist</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </li>
+  {% endif %}
 </ul>
 
 {% liquid
@@ -283,16 +377,16 @@
     {%- endcapture -%}
 
     <span
-      class="mega-menu__content"
-      style="--menu-content-columns-desktop: {{ max_product_columns }}; --menu-content-columns-tablet: {{ max_product_columns_tablet }}; --resource-card-corner-radius: {{ image_border_radius }}px;"
+      class='mega-menu__content'
+      style='--menu-content-columns-desktop: {{ max_product_columns }}; --menu-content-columns-tablet: {{ max_product_columns_tablet }}; --resource-card-corner-radius: {{ image_border_radius }}px;'
     >
       <ul
-        class="mega-menu__content-list mega-menu__content-list--products list-unstyled"
+        class='mega-menu__content-list mega-menu__content-list--products list-unstyled'
       >
         {% if eager_loading %}
           {% paginate collection_object.products by max_featured_products %}
             {% for item in collection_object.products %}
-              <li class="mega-menu__content-list-item {% if forloop.index > max_featured_products_tablet %} mega-menu__content-list-item--hidden-tablet{% endif %}">
+              <li class='mega-menu__content-list-item {% if forloop.index > max_featured_products_tablet %} mega-menu__content-list-item--hidden-tablet{% endif %}'>
                 {% render 'resource-card',
                   resource: item,
                   resource_type: 'product',
@@ -320,12 +414,12 @@
     {% endif %}
 
     <span
-      class="mega-menu__content"
-      style="--menu-content-columns-desktop: {{ max_collection_columns }}; --menu-content-columns-tablet: {{ max_collection_columns_tablet }}; --resource-card-corner-radius: {{ image_border_radius }}px;"
+      class='mega-menu__content'
+      style='--menu-content-columns-desktop: {{ max_collection_columns }}; --menu-content-columns-tablet: {{ max_collection_columns_tablet }}; --resource-card-corner-radius: {{ image_border_radius }}px;'
     >
       <ul
-        class="mega-menu__content-list mega-menu__content-list--collections list-unstyled"
-        style="--menu-content-columns-desktop: {{ max_featured_collections }}; --menu-content-columns-tablet: {{ max_featured_collections_tablet }};"
+        class='mega-menu__content-list mega-menu__content-list--collections list-unstyled'
+        style='--menu-content-columns-desktop: {{ max_featured_collections }}; --menu-content-columns-tablet: {{ max_featured_collections_tablet }};'
       >
         {% for handle in collection_handles limit: max_featured_collections %}
           {% if handle == 'all' %}
@@ -333,7 +427,7 @@
           {% else %}
             {% assign collection_object = collections[handle] %}
           {% endif %}
-          <li class="mega-menu__content-list-item{% if forloop.index > max_featured_collections_tablet %} mega-menu__content-list-item--hidden-tablet{% endif %}">
+          <li class='mega-menu__content-list-item{% if forloop.index > max_featured_collections_tablet %} mega-menu__content-list-item--hidden-tablet{% endif %}'>
             {% render 'resource-card',
               resource: collection_object,
               resource_type: 'collection',

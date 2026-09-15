@@ -29,100 +29,144 @@
 {% endif %}
 
 {% if render_category_menu %}
-  <div class="mega-menu mega-menu--category section section--full-width-margin section--{{ section.settings.section_width }}">
-    <div class="mega-menu__category-layout">
-      <aside class="mega-menu__category-sidebar" aria-label="{{ parent_link.title }}">
-        <p class="mega-menu__category-label">{{ parent_link.title }}</p>
-        <ul class="list-unstyled mega-menu__category-links" role="tablist">
+  <div class='mega-menu mega-menu--category section section--full-width-margin section--{{ section.settings.section_width }}'>
+    <div class='mega-menu__category-layout'>
+      <aside class='mega-menu__category-sidebar' aria-label='{{ parent_link.title }}'>
+        <p class='mega-menu__category-label'>{{ parent_link.title }}</p>
+        <ul class='list-unstyled mega-menu__category-links' role='tablist'>
           {% for category_link in parent_link.links %}
             <li>
               <a
-                class="mega-menu__category-button{% if forloop.first %} is-active{% endif %}"
-                href="{{ category_link.url }}"
-                role="tab"
-                id="MegaMenuCategoryButton-{{ id }}-{{ forloop.index }}"
-                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-                aria-controls="MegaMenuCategory-{{ id }}-{{ forloop.index }}"
-                data-category-target="MegaMenuCategory-{{ id }}-{{ forloop.index }}"
+                class='mega-menu__category-button{% if forloop.first %} is-active{% endif %}'
+                href='{{ category_link.url }}'
+                role='tab'
+                id='MegaMenuCategoryButton-{{ id }}-{{ forloop.index }}'
+                aria-selected='{% if forloop.first %}true{% else %}false{% endif %}'
+                aria-controls='MegaMenuCategory-{{ id }}-{{ forloop.index }}'
+                data-category-target='MegaMenuCategory-{{ id }}-{{ forloop.index }}'
               >
                 {{ category_link.title }}
               </a>
             </li>
           {% endfor %}
+          {% if parent_link.handle == 'features' %}
+            <li class='mega-menu__category-more-label'>More features</li>
+            <li><a class='mega-menu__category-button' href='/pages/about'>About</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/bundles'>Bundles</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/shop-the-look'>Shop the Look</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/lookbook'>Lookbook</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/ingredients'>Ingredients</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/specifications'>Specifications</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/recipes-guides'>Recipes and Guides</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/before-after'>Before and After</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/sustainability'>Sustainability</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/stockists'>Stockists</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/wholesale'>Wholesale</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/loyalty'>Loyalty</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/rewards'>Rewards</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/refer-a-friend'>Refer a Friend</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/reviews-ugc'>Reviews and UGC</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/recently-viewed'>Recently Viewed</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/wishlist'>Wishlist</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/product-finder'>Product Finder</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/quiz'>Quiz</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/subscription-landing'>Subscriptions</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/back-in-stock'>Back In Stock</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/faq-hub'>FAQ Hub</a></li>
+            <li><a class='mega-menu__category-button' href='/pages/support-hub'>Support Hub</a></li>
+          {% endif %}
         </ul>
         {% if show_shop_all %}
-          <a class="mega-menu__category-shop-all" href="{{ parent_link.url }}">
-            Shop all <span aria-hidden="true">→</span>
+          <a class='mega-menu__category-shop-all' href='{{ parent_link.url }}'>
+            Shop all <span aria-hidden='true'>→</span>
           </a>
         {% endif %}
       </aside>
 
       {% unless show_promotions %}
-        <div class="mega-menu__category-panels">
+        <div class='mega-menu__category-panels'>
           {% for category_link in parent_link.links %}
-          {% assign category_collection = category_link.object %}
-          <section
-            id="MegaMenuCategory-{{ id }}-{{ forloop.index }}"
-            class="mega-menu__category-panel{% if forloop.first %} is-active{% endif %}"
-            role="tabpanel"
-            aria-labelledby="MegaMenuCategoryButton-{{ id }}-{{ forloop.index }}"
-            data-category-panel
-            {% unless forloop.first %}hidden{% endunless %}
-          >
-            <header class="mega-menu__category-heading">
-              <h2>{{ category_link.title }}</h2>
-            </header>
-            {% if category_link.type == 'collection_link' or category_link.type == 'catalog_link' or category_link.type == 'collections_link' %}
-              <ul class="mega-menu__category-products list-unstyled">
-                {% for product in category_collection.products limit: 4 %}
-                  <li>
-                    {% render 'resource-card',
-                      resource: product,
-                      resource_type: 'product',
-                      image_hover: true,
-                      image_aspect_ratio: content_aspect_ratio,
-                      image_sizes: '(min-width: 990px) 18vw, 40vw'
-                    %}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              {% assign page_content = category_link.object.content | default: category_link.object.excerpt %}
-              <div class="mega-menu__category-copy">
-                {% if page_content != blank %}
-                  {{ page_content | strip_html | truncatewords: 70 | newline_to_br }}
-                {% else %}
-                  <p>Explore {{ category_link.title }}.</p>
-                {% endif %}
-                <a class="mega-menu__category-copy-link" href="{{ category_link.url }}">
-                  Visit {{ category_link.title }} <span aria-hidden="true">→</span>
-                </a>
-              </div>
-              {% if category_link.links != blank %}
-                <ul class="mega-menu__category-copy-links list-unstyled">
-                  {% for child_link in category_link.links limit: 4 %}
-                    <li><a href="{{ child_link.url }}">{{ child_link.title }}</a></li>
+            {% assign category_collection = category_link.object %}
+            <section
+              id='MegaMenuCategory-{{ id }}-{{ forloop.index }}'
+              class='mega-menu__category-panel{% if forloop.first %} is-active{% endif %}'
+              role='tabpanel'
+              aria-labelledby='MegaMenuCategoryButton-{{ id }}-{{ forloop.index }}'
+              data-category-panel
+              {% unless forloop.first %}
+                hidden
+              {% endunless %}
+            >
+              <header class='mega-menu__category-heading'>
+                <h2>{{ category_link.title }}</h2>
+              </header>
+              {% if category_link.type == 'collection_link'
+                or category_link.type == 'catalog_link'
+                or category_link.type == 'collections_link'
+              %}
+                <ul class='mega-menu__category-products list-unstyled'>
+                  {% for product in category_collection.products limit: 4 %}
+                    <li>
+                      {% render 'resource-card',
+                        resource: product,
+                        resource_type: 'product',
+                        image_hover: true,
+                        image_aspect_ratio: content_aspect_ratio,
+                        image_sizes: '(min-width: 990px) 18vw, 40vw'
+                      %}
+                    </li>
                   {% endfor %}
                 </ul>
+              {% else %}
+                {% assign page_content = category_link.object.content | default: category_link.object.excerpt %}
+                <div class='mega-menu__category-copy'>
+                  {% if page_content != blank %}
+                    {{ page_content | strip_html | truncatewords: 70 | newline_to_br }}
+                  {% else %}
+                    <p>Explore {{ category_link.title }}.</p>
+                  {% endif %}
+                  <a class='mega-menu__category-copy-link' href='{{ category_link.url }}'>
+                    Visit {{ category_link.title }}
+                    <span aria-hidden='true'>→</span>
+                  </a>
+                </div>
+                {% if category_link.links != blank %}
+                  <ul class='mega-menu__category-copy-links list-unstyled'>
+                    {% for child_link in category_link.links limit: 4 %}
+                      <li>
+                        <a href='{{ child_link.url }}'>{{ child_link.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               {% endif %}
-            {% endif %}
-          </section>
+            </section>
           {% endfor %}
         </div>
       {% endunless %}
       {% if show_promotions %}
         {% if promo_image != blank or promo_image_2 != blank %}
-          <div class="mega-menu__category-promotions">
+          <div class='mega-menu__category-promotions'>
             {% if promo_image != blank %}
-              <a class="mega-menu__promotion" href="{{ promo_link }}">
+              <a class='mega-menu__promotion' href='{{ promo_link }}'>
                 {{ promo_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: promo_heading }}
-                <span><strong>{{ promo_heading }}</strong>{% if promo_text != blank %}<small>{{ promo_text }}</small>{% endif %}</span>
+                <span
+                  ><strong>{{ promo_heading }}</strong>
+                  {%- if promo_text != blank -%}
+                    <small>{{ promo_text }}</small>
+                  {%- endif -%}
+                </span>
               </a>
             {% endif %}
             {% if promo_image_2 != blank %}
-              <a class="mega-menu__promotion" href="{{ promo_link_2 }}">
+              <a class='mega-menu__promotion' href='{{ promo_link_2 }}'>
                 {{ promo_image_2 | image_url: width: 700 | image_tag: loading: 'lazy', alt: promo_heading_2 }}
-                <span><strong>{{ promo_heading_2 }}</strong>{% if promo_text_2 != blank %}<small>{{ promo_text_2 }}</small>{% endif %}</span>
+                <span
+                  ><strong>{{ promo_heading_2 }}</strong>
+                  {%- if promo_text_2 != blank -%}
+                    <small>{{ promo_text_2 }}</small>
+                  {%- endif -%}
+                </span>
               </a>
             {% endif %}
           </div>
@@ -131,37 +175,45 @@
     </div>
   </div>
 {% else %}
-<div class="mega-menu section section--full-width-margin section--{{ section.settings.section_width }}">
-  <div
-    class="mega-menu__grid"
-    data-menu-grid-id="{{ id }}"
-  >
-    {% render 'mega-menu-list',
-      parent_link: parent_link,
-      id: id,
-      section: section,
-      grid_columns_count: 6,
-      grid_columns_count_tablet: 4,
-      grid_columns_count_collection_images: 8,
-      menu_content_type: menu_content_type,
-      content_aspect_ratio: content_aspect_ratio,
-      image_border_radius: image_border_radius
-    %}
-    {% if show_promotions and promo_image != blank %}
-      <a class="mega-menu__promotion" href="{{ promo_link }}">
-        {{ promo_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: promo_heading }}
-        <span><strong>{{ promo_heading }}</strong>{% if promo_text != blank %}<small>{{ promo_text }}</small>{% endif %}</span>
-      </a>
-    {% endif %}
+  <div class='mega-menu section section--full-width-margin section--{{ section.settings.section_width }}'>
+    <div
+      class='mega-menu__grid'
+      data-menu-grid-id='{{ id }}'
+    >
+      {% render 'mega-menu-list',
+        parent_link: parent_link,
+        id: id,
+        section: section,
+        grid_columns_count: 6,
+        grid_columns_count_tablet: 4,
+        grid_columns_count_collection_images: 8,
+        menu_content_type: menu_content_type,
+        content_aspect_ratio: content_aspect_ratio,
+        image_border_radius: image_border_radius
+      %}
+      {% if show_promotions and promo_image != blank %}
+        <a class='mega-menu__promotion' href='{{ promo_link }}'>
+          {{ promo_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: promo_heading }}
+          <span
+            ><strong>{{ promo_heading }}</strong>
+            {%- if promo_text != blank -%}
+              <small>{{ promo_text }}</small>
+            {%- endif -%}
+          </span>
+        </a>
+      {% endif %}
+    </div>
   </div>
-</div>
 {% endif %}
 {% stylesheet %}
   .mega-menu__promotion {
     display: grid;
     align-content: end;
     position: relative;
-    min-height: 18rem;
+    height: clamp(11rem, 18vw, 15rem);
+    max-height: 15rem;
+    min-height: 0;
+    overflow: hidden;
     color: #fff;
     text-decoration: none;
   }
@@ -328,6 +380,7 @@
   .mega-menu__category-promotions {
     display: grid;
     align-self: stretch;
+    align-items: start;
     gap: clamp(0.75rem, 1.5vw, 1.25rem);
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-column: 2 / -1;
@@ -337,7 +390,10 @@
   }
 
   .mega-menu__category-promotions .mega-menu__promotion {
-    min-height: clamp(12rem, 18vw, 20rem);
+    align-self: start;
+    height: clamp(11rem, 18vw, 15rem);
+    max-height: 15rem;
+    min-height: 0;
     width: 100%;
   }
 

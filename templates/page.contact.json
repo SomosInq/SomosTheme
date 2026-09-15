@@ -6,38 +6,11 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */ {
   "sections": {
     "main": {
       "type": "main-page",
       "blocks": {
-        "title": {
-          "type": "text",
-          "name": "t:names.title",
-          "settings": {
-            "text": "<h2>{{ closest.page.title }}</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-          }
-        },
         "content": {
           "type": "text",
           "name": "t:names.content",
@@ -62,14 +35,10 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         }
       },
-      "block_order": [
-        "title",
-        "content"
-      ],
+      "block_order": ["content"],
       "settings": {
         "content_direction": "column",
         "gap": 32,
@@ -107,18 +76,13 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-
-          ]
+          "block_order": []
         }
       },
-      "block_order": [
-        "contact_form_UwiCkQ"
-      ],
+      "block_order": ["contact_form_UwiCkQ"],
       "name": "t:names.contact_form",
       "settings": {
         "content_direction": "column",
@@ -173,11 +137,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about contact",
         "intro": "Practical answers specific to this page."
@@ -251,11 +211,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "grid",
         "eyebrow": "Contact",
@@ -265,12 +221,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "form",
-    "editorial_primary",
-    "page_faq",
-    "page_details",
-    "editorial_secondary"
-  ]
+  "order": ["main", "form", "editorial_primary", "page_faq", "page_details", "editorial_secondary"]
 }

@@ -6,39 +6,11 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */ {
   "sections": {
     "section": {
       "type": "main-blog-post",
       "blocks": {
-        "blog-post-title": {
-          "type": "text",
-          "name": "Title",
-          "static": true,
-          "settings": {
-            "text": "<h2>{{ article.title }}</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-          }
-        },
         "blog-post-details": {
           "type": "_blog-post-info-text",
           "name": "Details",
@@ -52,8 +24,7 @@
             "padding-block-start": 24,
             "padding-block-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "blog-post-image": {
           "type": "image",
@@ -75,16 +46,13 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "blog-post-content": {
           "type": "_blog-post-content",
           "static": true,
-          "settings": {
-          },
-          "blocks": {
-          }
+          "settings": {},
+          "blocks": {}
         }
       },
       "settings": {
@@ -142,11 +110,5 @@
       }
     }
   },
-  "order": [
-    "section",
-    "editorial_primary",
-    "editorial_secondary",
-    "page_testimonials",
-    "page_cta"
-  ]
+  "order": ["section", "editorial_primary", "editorial_secondary", "page_testimonials", "page_cta"]
 }
