@@ -64,6 +64,9 @@
     "nested_product": "{{ product_title }} pre {{ parent_title }}",
     "discount_menu": "Zľavové kódy"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Pridať do košíka",
     "clear_all": "Vymazať všetko",

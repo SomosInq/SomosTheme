@@ -62,6 +62,9 @@
     "rating": "此产品的评分是 {{ rating }}/5",
     "nested_product": "{{ product_title }}（{{ parent_title }}）"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "添加到购物车",
     "clear_all": "全部清除",

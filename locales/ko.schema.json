@@ -177,6 +177,7 @@
     "policies_and_links": "정책 및 링크"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
     "autoplay": "자동 재생",
     "background": "배경",
     "border_radius": "코너 반경",

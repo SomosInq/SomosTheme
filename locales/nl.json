@@ -62,6 +62,9 @@
     "rating": "Beoordeling van dit product is {{ rating }} van 5",
     "nested_product": "{{ product_title }} voor {{ parent_title }}"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Aan winkelwagen toevoegen",
     "clear_all": "Alles wissen",

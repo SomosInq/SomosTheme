@@ -63,6 +63,9 @@
     "rating": "La note de ce produit est {{ rating }} sur 5",
     "nested_product": "{{ product_title }} pour {{ parent_title }}"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Ajouter au panier",
     "clear_all": "Tout effacer",

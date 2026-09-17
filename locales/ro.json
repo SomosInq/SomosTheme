@@ -63,6 +63,9 @@
     "nested_product": "{{ product_title }} pentru {{ parent_title }}",
     "discount_menu": "Coduri de reduceri"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Adaugă în coș",
     "clear_all": "Golește tot",

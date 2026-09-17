@@ -64,6 +64,9 @@
     "quantity": "Ilość",
     "nested_product": "{{ product_title }}: {{ parent_title }}"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Dodaj do koszyka",
     "clear_all": "Wyczyść wszystko",

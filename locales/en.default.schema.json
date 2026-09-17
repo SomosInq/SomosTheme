@@ -719,7 +719,9 @@
   },
   "settings": {
     "accordion": "Accordion",
+    "parallax_background": "Background image parallax",
     "account": "Account",
+    "block_link": "Block link",
     "alignment": "Alignment",
     "alignment_mobile": "Mobile alignment",
     "align_baseline": "Align text baseline",
@@ -1134,6 +1136,7 @@
     "contact_form_button_label": "Submit",
     "discover_collection": "Discover the collection",
     "email_signup_button_label": "Subscribe",
+    "faq": "FAQ",
     "fit": "fit",
     "heading": "Heading",
     "how_much_for_shipping": "How much does shipping cost?",

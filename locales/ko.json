@@ -62,6 +62,9 @@
     "rating": "이 제품의 평점은 5점 만점에 {{ rating }}점입니다",
     "nested_product": "{{ parent_title }}용 {{ product_title }}"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "카트에 추가",
     "clear_all": "모두 지우기",

@@ -1,6 +1,7 @@
 {
   "names": {
     "404": "404",
+    "column": "Column",
     "borders": "Kanter",
     "collapsible_row": "Række, der kan skjules",
     "colors": "Farver",
@@ -177,6 +178,9 @@
     "policies_and_links": "Politikker og links"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
+    "media_type_1": "Media type",
+    "media_type_2": "Media 2 type",
     "alignment": "Justering",
     "autoplay": "Automatisk afspilning",
     "background": "Baggrund",
@@ -815,6 +819,7 @@
     "subtle_zoom": "Zoom"
   },
   "content": {
+    "submissions_are_sent_to_store_email_address": "Submissions are sent to your store's sender email address",
     "advanced": "Avanceret",
     "background_image": "Baggrundsbillede",
     "background_video": "Baggrundsvideo",

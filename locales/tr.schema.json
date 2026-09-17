@@ -177,6 +177,7 @@
     "policies_and_links": "Politikalar ve bağlantılar"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
     "autoplay": "Otomatik oynatma",
     "background": "Arka plan",
     "border_radius": "Köşe yarıçapı",

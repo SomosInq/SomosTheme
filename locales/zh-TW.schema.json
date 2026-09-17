@@ -1,6 +1,7 @@
 {
   "names": {
     "404": "404",
+    "column": "Column",
     "borders": "邊框",
     "collapsible_row": "可折疊的橫列",
     "colors": "顏色",
@@ -177,6 +178,9 @@
     "policies_and_links": "政策與連結"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
+    "media_type_1": "Media type",
+    "media_type_2": "Media 2 type",
     "alignment": "對齊方式",
     "autoplay": "自動播放",
     "background": "背景",
@@ -815,6 +819,7 @@
     "subtle_zoom": "縮放"
   },
   "content": {
+    "submissions_are_sent_to_store_email_address": "Submissions are sent to your store's sender email address",
     "advanced": "進階",
     "background_image": "背景圖片",
     "background_video": "背景影片",

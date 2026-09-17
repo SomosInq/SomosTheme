@@ -62,6 +62,9 @@
     "rating": "Bedømmelsen af dette produkt er {{ rating }} ud af 5",
     "nested_product": "{{ product_title }} for {{ parent_title }}"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Læg i indkøbskurven",
     "clear_all": "Ryd alt",

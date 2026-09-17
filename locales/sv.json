@@ -62,6 +62,9 @@
     "rating": "Betyget för den här produkten är {{ rating }} av 5",
     "nested_product": "{{ product_title }} för {{ parent_title }}"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Lägg till i varukorgen",
     "clear_all": "Rensa alla",

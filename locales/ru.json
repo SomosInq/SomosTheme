@@ -64,6 +64,9 @@
     "nested_product": "{{ product_title }} для товара \"{{ parent_title }}\"",
     "discount_menu": "Коды скидок"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Добавить в корзину",
     "clear_all": "Удалить все",

@@ -1,6 +1,7 @@
 {
   "names": {
     "404": "404",
+    "column": "Column",
     "borders": "Ohraničení",
     "collapsible_row": "Sbalitelný řádek",
     "colors": "Barvy",
@@ -177,6 +178,9 @@
     "policies_and_links": "Zásady a odkazy"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
+    "media_type_1": "Media type",
+    "media_type_2": "Media 2 type",
     "alignment": "Zarovnání",
     "autoplay": "Automatické přehrávání",
     "background": "Pozadí",
@@ -815,6 +819,7 @@
     "subtle_zoom": "Přiblížení"
   },
   "content": {
+    "submissions_are_sent_to_store_email_address": "Submissions are sent to your store's sender email address",
     "advanced": "Pokročilé",
     "background_image": "Obrázek na pozadí",
     "background_video": "Video na pozadí",

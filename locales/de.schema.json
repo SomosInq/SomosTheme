@@ -177,6 +177,7 @@
     "policies_and_links": "Richtlinien und Links"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
     "autoplay": "Automatische Wiedergabe",
     "background": "Hintergrund",
     "border_radius": "Eckradius",

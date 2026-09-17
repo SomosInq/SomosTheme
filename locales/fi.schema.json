@@ -177,6 +177,7 @@
     "policies_and_links": "Käytännöt ja linkit"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
     "alignment": "Tasaus",
     "autoplay": "Automaattinen toisto",
     "background": "Tausta",

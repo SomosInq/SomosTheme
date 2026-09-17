@@ -177,6 +177,7 @@
     "policies_and_links": "Politiques et liens"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
     "autoplay": "Jeu automatique",
     "background": "Arrière‑plan",
     "border_radius": "Rayon de coin",

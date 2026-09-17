@@ -1,6 +1,7 @@
 {
   "names": {
     "404": "404",
+    "column": "Column",
     "borders": "Obramowania",
     "collapsible_row": "Zwijany wiersz",
     "custom_section": "Sekcja niestandardowa",
@@ -177,6 +178,9 @@
     "policies_and_links": "Polityki i linki"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
+    "media_type_1": "Media type",
+    "media_type_2": "Media 2 type",
     "autoplay": "Autoodtwarzanie",
     "background": "Tło",
     "border_radius": "Promień rogu",
@@ -814,6 +818,7 @@
     "subtle_zoom": "Powiększenie"
   },
   "content": {
+    "submissions_are_sent_to_store_email_address": "Submissions are sent to your store's sender email address",
     "background_video": "Film w tle",
     "describe_the_video_for": "Opisz film dla klientów korzystających z czytników ekranu. [Dowiedz się więcej](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Szerokość jest automatycznie dostosowywana do urządzeń mobilnych.",

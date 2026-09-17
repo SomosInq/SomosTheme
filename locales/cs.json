@@ -64,6 +64,9 @@
     "quantity": "Množství",
     "nested_product": "{{ product_title }} pro {{ parent_title }}"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Přidat do košíku",
     "clear_all": "Vymazat vše",

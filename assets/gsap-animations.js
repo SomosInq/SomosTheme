@@ -1,12 +1,10 @@
 // gsap-animations.js
 // Requires: gsap-loader.js, theme-animations-config.liquid
 
-import './gsap-loader.js';
+import { gsap, ScrollTrigger } from './gsap-loader.js';
 
 (function () {
-  if (!window.gsap || !window.themeAnimations) return;
-  const gsap = window.gsap;
-  const ScrollTrigger = window.gsap.ScrollTrigger;
+  if (!window.themeAnimations) return;
   const config = window.themeAnimations;
 
   if (!config.enabled) return;

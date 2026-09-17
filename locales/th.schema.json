@@ -177,6 +177,7 @@
     "policies_and_links": "นโยบายและลิงก์"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
     "alignment": "การจัดแนว",
     "autoplay": "เล่นอัตโนมัติ",
     "background": "พื้นหลัง",

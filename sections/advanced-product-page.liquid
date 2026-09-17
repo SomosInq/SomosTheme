@@ -24,7 +24,7 @@
 
     {% if section.settings.hero_image_url != blank %}
       <div class="feature-landing-media">
-        <img src="{{ section.settings.hero_image_url }}" alt="{{ product.title | default: page.title | escape }}" loading="lazy">
+        <img src="{{ section.settings.hero_image_url }}" width="1200" height="800" alt="{{ product.title | default: page.title | escape }}" loading="lazy">
       </div>
     {% endif %}
 
@@ -56,7 +56,7 @@
 
         {% if section.settings.secondary_image_url != blank %}
           <div class="page-card feature-landing-media-card">
-            <img src="{{ section.settings.secondary_image_url }}" alt="{{ section.settings.secondary_title | escape }}" loading="lazy">
+            <img src="{{ section.settings.secondary_image_url }}" width="1200" height="800" alt="{{ section.settings.secondary_title | escape }}" loading="lazy">
           </div>
         {% endif %}
       </div>

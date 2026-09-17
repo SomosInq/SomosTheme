@@ -64,6 +64,9 @@
     "nested_product": "{{ product_title }} ({{ parent_title }})",
     "discount_menu": "Nuolaidų kodai"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Įdėti į krepšelį",
     "clear_all": "Išvalyti viską",

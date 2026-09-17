@@ -177,6 +177,7 @@
     "policies_and_links": "Retningslinjer og lenker"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
     "alignment": "Justering",
     "autoplay": "Spill av automatisk",
     "background": "Bakgrunn",

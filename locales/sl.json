@@ -64,6 +64,9 @@
     "nested_product": "{{ product_title }} za {{ parent_title }}",
     "discount_menu": "Kode za popust"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Dodaj v košarico",
     "clear_all": "Počisti vse",

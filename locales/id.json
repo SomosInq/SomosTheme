@@ -62,6 +62,9 @@
     "nested_product": "{{ product_title }} untuk {{ parent_title }}",
     "discount_menu": "Kode Diskon"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Tambahkan ke keranjang",
     "clear_all": "Hapus semua",

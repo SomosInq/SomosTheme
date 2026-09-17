@@ -177,6 +177,7 @@
     "policies_and_links": "Políticas e links"
   },
   "settings": {
+    "parallax_background": "Background image parallax",
     "alignment": "Alinhamento",
     "autoplay": "Reprodução automática",
     "background": "Plano de fundo",

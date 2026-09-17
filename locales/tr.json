@@ -62,6 +62,9 @@
     "rating": "Bu ürünün puanı 5 üzerinden {{ rating }}",
     "nested_product": "{{ parent_title }} için {{ product_title }}"
   },
+  "settings": {
+    "parallax_background": "Background image parallax"
+  },
   "actions": {
     "add_to_cart": "Sepete ekle",
     "clear_all": "Tümünü temizle",
