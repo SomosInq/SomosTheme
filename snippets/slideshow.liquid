@@ -28,6 +28,10 @@
 
 {% assign class = class | strip %}
 {% assign style = style | strip %}
+{% assign disable_slideshow = false %}
+{% if attributes contains 'disabled' %}
+  {% assign disable_slideshow = true %}
+{% endif %}
 
 <slideshow-component
   {% if ref != blank %}
@@ -54,10 +58,10 @@
     {{ header }}
   {% endif %}
   <slideshow-container ref="slideshowContainer">
-    {% if show_arrows and disabled != true %}
+    {% if show_arrows and disable_slideshow == false %}
       {% render 'slideshow-arrows', icon_style: icon_style, arrows_position: arrows_position %}
     {% endif %}
-    {% if slideshow_arrows and disabled != true %}
+    {% if slideshow_arrows and disable_slideshow == false %}
       {{ slideshow_arrows }}
     {% endif %}
     <slideshow-slides
