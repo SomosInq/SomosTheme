@@ -174,7 +174,8 @@
     "blog_posts_editorial": "Blogposts: redactioneel",
     "excerpt": "Uittreksel",
     "footer_password": "Voettekst wachtwoordpagina",
-    "policies_and_links": "Beleid en links"
+    "policies_and_links": "Beleid en links",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "Aangepaste mobiele media",
     "stack_media_on_mobile": "Media stapelen",
     "media_type_1": "Mediatype",
-    "media_type_2": "Mediatype 2"
+    "media_type_2": "Mediatype 2",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "Aanpassen aan afbeelding",

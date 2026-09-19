@@ -174,7 +174,8 @@
     "blog_posts_editorial": "블로그 게시물: 에디토리얼",
     "excerpt": "요약",
     "footer_password": "비밀번호 바닥글",
-    "policies_and_links": "정책 및 링크"
+    "policies_and_links": "정책 및 링크",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "사용자 지정 모바일 미디어",
     "stack_media_on_mobile": "미디어 쌓기",
     "media_type_1": "미디어 유형",
-    "media_type_2": "미디어 2 유형"
+    "media_type_2": "미디어 2 유형",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "이미지에 맞춤",

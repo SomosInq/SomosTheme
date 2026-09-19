@@ -543,7 +543,8 @@
     "auto_load_products": "Automatyczne ładowanie produktów podczas przewijania",
     "products_per_page": "Produktów na stronę",
     "custom_mobile_media": "Niestandardowe media mobilne",
-    "stack_media_on_mobile": "Układaj media w stos"
+    "stack_media_on_mobile": "Układaj media w stos",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "Dostosuj do obrazu",

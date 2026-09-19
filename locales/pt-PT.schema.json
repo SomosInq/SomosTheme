@@ -174,7 +174,8 @@
     "blog_posts_editorial": "Publicações no blogue: Editorial",
     "excerpt": "Excerto",
     "footer_password": "Rodapé da palavra-passe",
-    "policies_and_links": "Políticas e links"
+    "policies_and_links": "Políticas e links",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "Conteúdo multimédia para móvel personalizado",
     "stack_media_on_mobile": "Empilhar conteúdo multimédia",
     "media_type_1": "Tipo de conteúdo multimédia",
-    "media_type_2": "Tipo de conteúdo multimédia 2"
+    "media_type_2": "Tipo de conteúdo multimédia 2",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "Adaptar à imagem",

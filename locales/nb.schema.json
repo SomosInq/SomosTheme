@@ -174,7 +174,8 @@
     "blog_posts_editorial": "Blogginnlegg: Redaksjonelt",
     "excerpt": "Utdrag",
     "footer_password": "Bunntekst for passordside",
-    "policies_and_links": "Retningslinjer og lenker"
+    "policies_and_links": "Retningslinjer og lenker",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "Egendefinerte mobilmedier",
     "stack_media_on_mobile": "Stable medier",
     "media_type_1": "Medietype",
-    "media_type_2": "Medietype 2"
+    "media_type_2": "Medietype 2",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "Tilpass til bilde",

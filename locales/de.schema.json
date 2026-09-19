@@ -174,7 +174,8 @@
     "blog_posts_editorial": "Blog-Beiträge: Editorial",
     "excerpt": "Auszug",
     "footer_password": "Passwort-Fußzeile",
-    "policies_and_links": "Richtlinien und Links"
+    "policies_and_links": "Richtlinien und Links",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "Benutzerdefinierte mobile Medien",
     "stack_media_on_mobile": "Medien stapeln",
     "media_type_1": "Medientyp",
-    "media_type_2": "Medientyp 2"
+    "media_type_2": "Medientyp 2",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "An Bild anpassen",

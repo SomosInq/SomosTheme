@@ -174,7 +174,8 @@
     "blog_posts_editorial": "Articoli del blog: editoriale",
     "excerpt": "Estratto",
     "footer_password": "Footer per pagina protetta da password",
-    "policies_and_links": "Politiche e link"
+    "policies_and_links": "Politiche e link",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "Contenuti multimediali personalizzati per mobile",
     "stack_media_on_mobile": "Impila contenuti multimediali",
     "media_type_1": "Tipo di contenuti multimediali",
-    "media_type_2": "Tipo di contenuti multimediali 2"
+    "media_type_2": "Tipo di contenuti multimediali 2",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "Adatta a immagine",

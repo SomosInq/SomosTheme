@@ -174,7 +174,8 @@
     "blog_posts_editorial": "博客文章：编辑精选",
     "excerpt": "摘录",
     "footer_password": "密码页脚",
-    "policies_and_links": "政策和链接"
+    "policies_and_links": "政策和链接",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "自定义移动端媒体文件",
     "stack_media_on_mobile": "堆叠媒体文件",
     "media_type_1": "媒体文件类型",
-    "media_type_2": "媒体文件 2 类型"
+    "media_type_2": "媒体文件 2 类型",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "适应图片",

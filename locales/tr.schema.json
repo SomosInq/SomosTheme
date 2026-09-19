@@ -174,7 +174,8 @@
     "blog_posts_editorial": "Blog gönderileri: Editoryal",
     "excerpt": "Alıntı",
     "footer_password": "Şifre altbilgisi",
-    "policies_and_links": "Politikalar ve bağlantılar"
+    "policies_and_links": "Politikalar ve bağlantılar",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "Özel mobil medya",
     "stack_media_on_mobile": "Medyayı üst üste diz",
     "media_type_1": "Medya türü",
-    "media_type_2": "Medya 2 türü"
+    "media_type_2": "Medya 2 türü",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "Görsele uyarla",

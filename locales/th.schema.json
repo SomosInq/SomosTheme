@@ -174,7 +174,8 @@
     "blog_posts_editorial": "บล็อกโพสต์: รูปแบบบทความ",
     "excerpt": "เนื้อหาบางส่วน",
     "footer_password": "ส่วนท้ายของหน้ารหัสผ่าน",
-    "policies_and_links": "นโยบายและลิงก์"
+    "policies_and_links": "นโยบายและลิงก์",
+    "column": "Column"
   },
   "settings": {
     "parallax_background": "Background image parallax",
@@ -542,7 +543,8 @@
     "custom_mobile_media": "สื่อสำหรับมือถือแบบกำหนดเอง",
     "stack_media_on_mobile": "เรียงซ้อนสื่อ",
     "media_type_1": "ประเภทสื่อ",
-    "media_type_2": "ประเภทสื่อ 2"
+    "media_type_2": "ประเภทสื่อ 2",
+    "block_link": "Block link"
   },
   "options": {
     "adapt_to_image": "ปรับตามรูปภาพ",
