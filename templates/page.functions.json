@@ -1,0 +1,203 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "blocks": {
+        "hero_text": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>Explore every capability</h1>"
+          }
+        },
+        "hero_body": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A live showcase of the sections and functions available in this theme.</p>"
+          }
+        },
+        "hero_button": {
+          "type": "button",
+          "settings": {
+            "label": "Shop the collection",
+            "link": "/collections/all"
+          }
+        }
+      },
+      "block_order": ["hero_text", "hero_body", "hero_button"],
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "",
+        "overlay_color": "#000000",
+        "section_height": "medium"
+      }
+    },
+    "features": {
+      "type": "feature-landing",
+      "settings": {
+        "eyebrow": "Theme reference",
+        "title": "Built in modules",
+        "description": "Compose rich storefront experiences from reusable sections, content blocks, and interactive functions.",
+        "highlight_heading": "This page demonstrates",
+        "bullets": "Editorial storytelling\nCommerce and discovery\nCustomer support and conversion",
+        "cards": "Flexible layouts | Build focused landing pages from modular content. ||Commerce tools | Showcase products, collections, bundles, and recommendations. ||Interactive journeys | Guide shoppers with quizzes, accordions, and support content.",
+        "cta_label": "Browse products",
+        "cta_url": "/collections/all"
+      }
+    },
+    "expanded": {
+      "type": "expanded-features",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "media_content": {
+      "type": "media-with-content",
+      "settings": {
+        "media_position": "left",
+        "media_width": "50",
+        "media_height": "adapt",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "editorial": {
+      "type": "editorial-image-text",
+      "settings": {
+        "eyebrow": "Editorial",
+        "heading": "Tell the story behind the product",
+        "heading_level": "h2",
+        "body": "<p>Pair imagery with useful context to help customers understand what makes a product worth choosing.</p>",
+        "points": "Thoughtful materials\nConsidered details\nMade for everyday use",
+        "link_label": "Discover more",
+        "link_url": "/collections/all",
+        "layout_style": "split",
+        "image_position": "right",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "content_grid": {
+      "type": "editorial-content-grid",
+      "blocks": {
+        "grid_one": { "type": "item", "settings": { "label": "01", "heading": "Discover", "text": "Lead shoppers into the collection with a clear point of view." } },
+        "grid_two": { "type": "item", "settings": { "label": "02", "heading": "Compare", "text": "Give customers the information they need to make a confident choice." } },
+        "grid_three": { "type": "item", "settings": { "label": "03", "heading": "Continue", "text": "Finish every journey with a relevant next step." } }
+      },
+      "block_order": ["grid_one", "grid_two", "grid_three"],
+      "settings": {
+        "layout": "numbered",
+        "eyebrow": "A simple journey",
+        "heading": "Everything customers need, clearly organised",
+        "intro": "<p>Use content grids to make complex information easy to scan.</p>",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "benefits": { "type": "benefits-grid", "settings": { "color_scheme": "scheme-2" } },
+    "comparison": { "type": "comparison-table", "settings": { "color_scheme": "scheme-1" } },
+    "usp": { "type": "mini-usp-strip", "settings": { "color_scheme": "scheme-2" } },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_one": { "type": "quote", "settings": { "quote": "Beautifully considered and easy to live with.", "author": "A happy customer" } },
+        "testimonial_two": { "type": "quote", "settings": { "quote": "The details make the difference.", "author": "Verified customer" } }
+      },
+      "block_order": ["testimonial_one", "testimonial_two"],
+      "settings": { "heading": "Loved by our community", "color_scheme": "scheme-1" }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq_one": { "type": "faq", "settings": { "question": "How do I choose the right product?", "answer": "Start with the collection that matches your needs, then compare the details on each product page." } },
+        "faq_two": { "type": "faq", "settings": { "question": "Where can I find product support?", "answer": "Our support content and contact options are available whenever you need them." } },
+        "faq_three": { "type": "faq", "settings": { "question": "Can I change my order?", "answer": "Contact us as soon as possible and we will do our best to help." } }
+      },
+      "block_order": ["faq_one", "faq_two", "faq_three"],
+      "settings": { "heading": "Common questions", "intro": "Helpful answers before you make a decision." }
+    },
+    "email": {
+      "type": "email-signup",
+      "settings": {
+        "heading": "Stay in the loop",
+        "subheading": "Get product news, useful guidance, and occasional offers.",
+        "button_label": "Sign up",
+        "success_message": "Thanks for joining us.",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "marquee": { "type": "marquee", "settings": { "movement_direction": "left", "color_scheme": "scheme-1" } },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_one": { "type": "_slide", "settings": {}, "blocks": { "slide_text": { "type": "text", "settings": { "text": "<h2>Designed for daily life</h2>" } } }, "block_order": ["slide_text"] },
+        "slide_two": { "type": "_slide", "settings": {}, "blocks": { "slide_text": { "type": "text", "settings": { "text": "<h2>Find your next favourite</h2>" } } }, "block_order": ["slide_text"] }
+      },
+      "block_order": ["slide_one", "slide_two"],
+      "settings": { "autoplay": true, "color_scheme": "scheme-1" }
+    },
+    "social_proof": { "type": "social-proof", "settings": { "color_scheme": "scheme-2" } },
+    "intro": { "type": "intro-story", "settings": { "color_scheme": "scheme-1" } },
+    "collections": {
+      "type": "collection-links",
+      "blocks": {
+        "collection_one": { "type": "collection-link", "settings": { "collection": "all" } },
+        "collection_two": { "type": "collection-link", "settings": { "collection": "" } }
+      },
+      "block_order": ["collection_one", "collection_two"],
+      "settings": { "color_scheme": "scheme-2" }
+    },
+    "products": {
+      "type": "product-list",
+      "settings": { "collection": "all", "max_products": 4, "columns": 4, "mobile_columns": "2", "color_scheme": "scheme-1" }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": { "product": "", "recommendation_type": "related", "max_products": 4, "columns": 4, "mobile_columns": "2", "color_scheme": "scheme-2" }
+    },
+    "shop_look": {
+      "type": "shop-the-look",
+      "blocks": {
+        "look_product_one": { "type": "product", "settings": { "product": "", "x": 30, "y": 35 } },
+        "look_product_two": { "type": "product", "settings": { "product": "", "x": 68, "y": 65 } }
+      },
+      "block_order": ["look_product_one", "look_product_two"],
+      "settings": { "eyebrow": "Shop the look", "heading": "Build the complete picture", "color_scheme": "scheme-1" }
+    },
+    "functionality": {
+      "type": "functionality-journey",
+      "blocks": {
+        "function_one": { "type": "accordion_item", "settings": { "title": "Thoughtful design", "content": "Every detail is considered to make everyday routines feel simpler." } },
+        "function_two": { "type": "accordion_item", "settings": { "title": "Built to last", "content": "Reliable materials and practical construction support life in motion." } },
+        "function_three": { "type": "accordion_item", "settings": { "title": "Easy support", "content": "Clear guidance and helpful service are part of the experience." } }
+      },
+      "block_order": ["function_one", "function_two", "function_three"],
+      "settings": { "eyebrow": "Functionality", "title": "Designed to do more", "description": "Explore the practical features that make the experience work.", "cta_label": "Learn more", "cta_link": "/pages/about", "wordmark": "function", "background_color": "#171718", "text_color": "#f5f5f5", "muted_text_color": "#a9a9aa", "border_color": "rgba(255,255,255,0.16)" }
+    },
+    "support": {
+      "type": "support",
+      "blocks": {
+        "support_one": { "type": "faq", "settings": { "question": "Need help choosing?", "answer": "Our support team can help you find the right fit." } },
+        "support_two": { "type": "faq", "settings": { "question": "Need help with an order?", "answer": "Send us your order details and we will take a look." } }
+      },
+      "block_order": ["support_one", "support_two"]
+    },
+    "quiz": {
+      "type": "quiz-flow",
+      "blocks": {
+        "quiz_one": { "type": "quiz_question", "settings": { "question": "What matters most to you?", "options": "Everyday ease\nLong-term durability\nThoughtful design" } },
+        "quiz_two": { "type": "quiz_question", "settings": { "question": "How do you like to shop?", "options": "I know what I want\nI am exploring\nI need a recommendation" } }
+      },
+      "block_order": ["quiz_one", "quiz_two"],
+      "settings": { "title": "Find your best fit", "description": "Answer two quick questions to get started." }
+    },
+    "custom": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div style=\"text-align:center;padding:2rem 0\"><p>Built for your next chapter.</p></div>",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "cta": {
+      "type": "final-cta",
+      "settings": { "heading": "Ready to explore?", "text": "Find the pieces that fit your everyday.", "link_label": "Shop the collection", "link_url": "/collections/all", "color_scheme": "scheme-1" }
+    }
+  },
+  "order": ["hero", "features", "expanded", "media_content", "editorial", "content_grid", "benefits", "comparison", "usp", "testimonials", "faq", "email", "marquee", "slideshow", "social_proof", "intro", "collections", "products", "recommendations", "shop_look", "functionality", "support", "quiz", "custom", "cta"]
+}
