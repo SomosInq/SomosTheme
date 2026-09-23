@@ -35,7 +35,7 @@
 
 {% stylesheet %}
   .social-slider { display: block; padding-block: clamp(4rem, 8vw, 8rem); overflow: hidden; }
-  .social-slider__inner { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); }
+  .social-slider__inner { display: grid; width: min(100%, var(--normal-content-width)); margin-inline: auto; gap: clamp(2.5rem, 5vw, 4.5rem); }
   .social-slider__header { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
   .social-slider__eyebrow { margin: 0 0 1rem; font-size: .6875rem; letter-spacing: .14em; text-transform: uppercase; }
   .social-slider__header h2 { margin: 0; line-height: 1; }
