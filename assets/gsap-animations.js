@@ -36,9 +36,10 @@ import { gsap, ScrollTrigger } from './gsap-loader.js';
   const animatedElements = new WeakSet();
 
   function animateSections(root = document) {
-    const elements = root.querySelectorAll(
-      'section:not([data-animate="none"]), [data-animate]:not([data-animate="none"])',
-    );
+    const selector = 'section:not([data-animate="none"]), [data-animate]:not([data-animate="none"])';
+    const elements = root.matches?.(selector)
+      ? [root, ...root.querySelectorAll(selector)]
+      : root.querySelectorAll(selector);
 
     elements.forEach((el) => {
       if (animatedElements.has(el)) return;

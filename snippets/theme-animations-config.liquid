@@ -3,8 +3,8 @@ Theme animation settings as JS config for GSAP
 {%- endcomment -%}
 <script id="theme-animations-config">
   window.themeAnimations = {
-    enabled: {{ settings.animations_enabled | default: true | json }},
-    respectReducedMotion: {{ settings.animations_respect_reduced_motion | default: true | json }},
+    enabled: {{ settings.animations_enabled | json }},
+    respectReducedMotion: {{ settings.animations_respect_reduced_motion | json }},
     defaultStyle: {{ settings.animations_default_style | default: 'fade-in' | json }},
     defaultDuration: {{ settings.animations_default_duration | default: 0.6 | json }},
     defaultDelay: {{ settings.animations_default_delay | default: 0 | json }},
