@@ -6,11 +6,8 @@
         "title": "Find the right product for you",
         "description": "Answer a few practical questions and receive a more focused recommendation."
       },
-      "blocks": {
-      },
-      "block_order": [
-
-      ]
+      "blocks": {},
+      "block_order": []
     },
     "page_faq": {
       "type": "faq",
@@ -37,11 +34,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about product finder",
         "intro": "Practical answers specific to this page."
@@ -125,11 +118,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "statement",
         "eyebrow": "Product finder",
@@ -139,12 +128,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_details",
-    "editorial_secondary",
-    "page_faq",
-    "page_cta"
-  ]
+  "order": ["main", "editorial_primary", "page_details", "editorial_secondary", "page_faq", "page_cta"]
 }

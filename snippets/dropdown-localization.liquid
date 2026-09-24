@@ -22,7 +22,7 @@
 %}
 
 {% if show_language and show_country == false %}
-  <div class="dropdown-localization mobile:hidden">
+  <div class='dropdown-localization mobile:hidden'>
     {% render 'localization-form',
       show_country: show_country,
       show_language: show_language,
@@ -33,38 +33,38 @@
   </div>
 {% elsif show_country %}
   <dropdown-localization-component
-    class="dropdown-localization mobile:hidden"
+    class='dropdown-localization mobile:hidden'
   >
     <button
-      type="button"
-      class="button dropdown-localization__button localization-selector link link--text"
-      aria-expanded="false"
-      aria-controls="dropdown-localization-results"
-      ref="button"
-      on:click="/toggleSelector"
-      style="{{ localization_font }} {{ localization_font_size }}"
+      type='button'
+      class='button dropdown-localization__button localization-selector link link--text'
+      aria-expanded='false'
+      aria-controls='dropdown-localization-results'
+      ref='button'
+      on:click='/toggleSelector'
+      style='{{ localization_font }} {{ localization_font_size }}'
     >
       {% if show_country %}
         {% if country_style == true %}
           <span
-            class="icon-flag"
-            style="
+            class='icon-flag'
+            style='
               background-image: url({{- localization.country | image_url: width: 32 }});
               --size-shadow: {{ shadow_size }}px;
               --color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-30-60));
-            "
+            '
           ></span>
         {% endif %}
         <span
-          class="currency-code"
-          data-testid="localization-currency-code"
+          class='currency-code'
+          data-testid='localization-currency-code'
         >
           {{- localization.country.currency.iso_code -}}
         </span>
       {% endif %}
       <span
-        class="visually-hidden"
-        data-testid="localization-visually-hidden"
+        class='visually-hidden'
+        data-testid='localization-visually-hidden'
       >
         {{- 'accessibility.localization_region_and_language' | t -}}
       </span>
@@ -78,15 +78,15 @@
           {{ localization.language.iso_code | upcase }}
         </span>
       {%- endif -%}
-      <span class="svg-wrapper icon-caret">
+      <span class='svg-wrapper icon-caret'>
         {{- 'icon-caret.svg' | inline_asset_content -}}
       </span>
     </button>
 
     <div
-      class="localization-wrapper {{ localization_position }}-bound color-{{ settings.popover_color_scheme }}"
+      class='localization-wrapper {{ localization_position }}-bound color-{{ settings.popover_color_scheme }}'
       hidden
-      ref="panel"
+      ref='panel'
     >
       {% render 'localization-form',
         show_country: show_country,

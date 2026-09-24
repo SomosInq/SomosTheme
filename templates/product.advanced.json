@@ -60,11 +60,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "grid",
         "eyebrow": "Product detail",
@@ -98,11 +94,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about this product",
         "intro": "Helpful answers for sizing, details, and buying confidence."
@@ -119,11 +111,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "story",
-    "details",
-    "faq",
-    "cta"
-  ]
+  "order": ["main", "story", "details", "faq", "cta"]
 }

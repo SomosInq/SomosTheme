@@ -1,5 +1,5 @@
-
-
+{% comment %}Section offset utilities are defined in the global theme styles.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 {% liquid
   assign media_class_modifier = 'media-with-content--' | append: section.settings.media_width
 
@@ -12,11 +12,11 @@
   endif
 %}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class="section section--{{ section.settings.section_width }} disable-section-top-offset media-with-content color-{{ section.settings.color_scheme }} spacing-style {{ media_class_modifier }}"
-  data-testid="media-with-content"
-  style="
+  class='section section--{{ section.settings.section_width }} disable-section-top-offset media-with-content color-{{ section.settings.color_scheme }} spacing-style {{ media_class_modifier }}'
+  data-testid='media-with-content'
+  style='
     {%- render 'spacing-style', settings: section.settings %}
     {% render 'border-override', settings: section.settings %}
     --media-height: {{ section.settings.media_height }};
@@ -36,7 +36,7 @@
     {% if section.settings.media_height != 'auto' %}
      --section-preview-height: 600px;
      {% endif %}
-  "
+  '
   {% if request.visual_preview_mode %}
     data-shopify-visual-preview
   {% endif %}

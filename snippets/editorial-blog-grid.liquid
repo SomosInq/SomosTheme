@@ -8,8 +8,8 @@
   {% render 'editorial-blog-grid', items: items %}
 {%- enddoc -%}
 
-<div class="editorial-blog__grid">
-  <div class="editorial-blog__spacer"></div>
+<div class='editorial-blog__grid'>
+  <div class='editorial-blog__spacer'></div>
 
   {% for item in items %}
     {% liquid
@@ -56,8 +56,8 @@
       assign grid_row = grid_row | plus: full_grid_rows
     %}
     <div
-      class="editorial-blog__item-{{ forloop.index0 | modulo: 4 }}"
-      style="grid-column: {{ grid_column }}; grid-row: {{ grid_row }} / span {{ grid_row_span }};"
+      class='editorial-blog__item-{{ forloop.index0 | modulo: 4 }}'
+      style='grid-column: {{ grid_column }}; grid-row: {{ grid_row }} / span {{ grid_row_span }};'
     >
       {{ item }}
     </div>

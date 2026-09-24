@@ -7,7 +7,7 @@
           element.getAttribute('data-auto-close-details')?.includes(closingOn) &&
           !(event.target instanceof Node && element.contains(event.target))
         );
-      }
+      },
     );
 
     for (const detailsElement of detailsToClose) detailsElement.removeAttribute('open');

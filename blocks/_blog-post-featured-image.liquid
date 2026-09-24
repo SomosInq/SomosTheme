@@ -1,5 +1,3 @@
-
-
 {%- doc -%}
   Renders the blog post featured image block.
 {%- enddoc -%}
@@ -10,8 +8,8 @@
 %}
 
 <div
-  class="blog-post-featured-image blog-post-featured-image--{{ block.id }} blog-post-featured-image--height-{{ block_settings.height }} spacing-style size-style"
-  style="
+  class='blog-post-featured-image blog-post-featured-image--{{ block.id }} blog-post-featured-image--height-{{ block_settings.height }} spacing-style size-style'
+  style='
     --ratio: {% case block_settings.image_ratio %}
       {% when 'landscape' %}16 / 9
       {% when 'portrait' %}4 / 5
@@ -20,7 +18,7 @@
     {% endcase %};
     {% render 'size-style', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
-  "
+  '
   {{ block.shopify_attributes }}
 >
   {%- capture image_border_style -%}

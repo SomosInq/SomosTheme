@@ -1,24 +1,24 @@
 <script
-  src="{{ 'dialog.js' | asset_url }}"
-  type="module"
+  src='{{ 'dialog.js' | asset_url }}'
+  type='module'
 ></script>
 
 <dialog-component
-  id="search-modal"
-  class="search-modal"
+  id='search-modal'
+  class='search-modal'
   {{ block.shopify_attributes }}
 >
   <dialog
-    ref="dialog"
-    on:click="/closeDialogOnClickOutside"
-    on:keydown="/closeDialogOnEscapePress"
-    class="search-modal__content dialog-modal"
+    ref='dialog'
+    on:click='/closeDialogOnClickOutside'
+    on:keydown='/closeDialogOnEscapePress'
+    class='search-modal__content dialog-modal'
     scroll-lock
-    aria-labelledby="search-modal-heading"
+    aria-labelledby='search-modal-heading'
   >
     <h2
-      id="search-modal-heading"
-      class="visually-hidden"
+      id='search-modal-heading'
+      class='visually-hidden'
     >
       {{ 'content.search' | t }}
     </h2>

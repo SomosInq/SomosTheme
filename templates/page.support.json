@@ -22,10 +22,7 @@
           }
         }
       },
-      "block_order": [
-        "support_faq_1",
-        "support_faq_2"
-      ]
+      "block_order": ["support_faq_1", "support_faq_2"]
     },
     "page_faq": {
       "type": "faq",
@@ -52,11 +49,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about customer care",
         "intro": "Practical answers specific to this page."
@@ -130,11 +123,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "grid",
         "eyebrow": "Customer care",
@@ -144,11 +133,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_faq",
-    "page_details",
-    "editorial_secondary"
-  ]
+  "order": ["main", "editorial_primary", "page_faq", "page_details", "editorial_secondary"]
 }

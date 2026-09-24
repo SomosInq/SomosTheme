@@ -39,7 +39,7 @@ class DisclosureCustom extends Component {
     trigger.setAttribute('aria-expanded', String(!expanded));
     trigger.setAttribute(
       'aria-label',
-      `${expanded ? trigger.dataset.disclosureOpen : trigger.dataset.disclosureClose}`
+      `${expanded ? trigger.dataset.disclosureOpen : trigger.dataset.disclosureClose}`,
     );
     content.inert = expanded;
   };

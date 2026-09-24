@@ -1,3 +1,5 @@
+{% comment %}Placeholder-image is a shared media utility class.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 {%- doc -%}
   Renders media block contents (used in _media and _media-without-appearance blocks)
 
@@ -21,20 +23,20 @@
 %}
 
 <div
-  class="
+  class='
     media-block
     spacing-style
     {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}
     {% if show_image and block_settings.image_position == 'contain' or show_video and block_settings.video_position == 'contain' %}
       media-block--contain
     {% endif %}
-  "
-  style="
+  '
+  style='
     {% render 'border-override', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
     --image-position: {{ block_settings.image_position }};
     --video-position: {{ block_settings.video_position }};
-  "
+  '
   {{ block.shopify_attributes }}
 >
   {%- if show_image -%}
@@ -54,8 +56,8 @@
 
     {% if block_settings.link != blank %}
       <a
-        href="{{ block_settings.link }}"
-        class="media-block__media-link"
+        href='{{ block_settings.link }}'
+        class='media-block__media-link'
       >
         {{ image_tag }}
       </a>
@@ -71,7 +73,7 @@
       section_id: section_id
     %}
   {%- else -%}
-    <div class="placeholder-image media-block__media border-style">
+    <div class='placeholder-image media-block__media border-style'>
       {{ 'hero-apparel-3' | placeholder_svg_tag }}
     </div>
   {%- endif -%}

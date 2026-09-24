@@ -229,7 +229,7 @@ export class Slideshow extends Component {
         trigger: 'select',
         slide,
         id: slide.getAttribute('slide-id'),
-      })
+      }),
     );
   }
 
@@ -527,7 +527,7 @@ export class Slideshow extends Component {
         trigger: 'scroll',
         slide,
         id: slide.getAttribute('slide-id'),
-      })
+      }),
     );
   };
 
@@ -688,7 +688,7 @@ export class Slideshow extends Component {
           trigger: 'drag',
           slide: newSlide,
           id: newSlide.getAttribute('slide-id'),
-        })
+        }),
       );
 
       this.current = newIndex;

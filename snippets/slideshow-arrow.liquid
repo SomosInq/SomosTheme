@@ -25,21 +25,21 @@
 -%}
 
 <button
-  class="
+  class='
     slideshow-control slideshow-control--{{ action }}
     {% if icon_size %} slideshow-control--{{ icon_size }}{% endif %}
     {% if shape != 'none' %} slideshow-control--shape-{{ shape }}{% endif %}
     slideshow-control--style-{{ style }}
     button button-unstyled button-unstyled--transparent
     {% if action == 'previous' %} flip-x{% endif %}
-  "
+  '
   {% # theme-check-disable %}
-  aria-label="{{ 'accessibility.slideshow_' | append: action | t }}"
+  aria-label='{{ 'accessibility.slideshow_' | append: action | t }}'
   {% # theme-check-enable %}
-  on:click="/{{ action }}"
-  ref="{{ action }}"
+  on:click='/{{ action }}'
+  ref='{{ action }}'
 >
-  <span class="svg-wrapper icon-{{ icon_name }}">
+  <span class='svg-wrapper icon-{{ icon_name }}'>
     {%- if icon_name == 'caret' -%}
       {{- 'icon-caret.svg' | inline_asset_content -}}
     {%- else -%}

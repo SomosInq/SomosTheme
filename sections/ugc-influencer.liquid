@@ -1,21 +1,21 @@
 {% comment %}
-UGC / Influencer Proof - Fashion Store
+  UGC / Influencer Proof - Fashion Store
 {% endcomment %}
-<section class="ugc-influencer section section--page-width spacing-style color-{{ section.settings.color_scheme }}">
-  <div class="ugc-influencer__container">
+<section class='ugc-influencer section section--page-width spacing-style color-{{ section.settings.color_scheme }}'>
+  <div class='ugc-influencer__container'>
     <h3>As seen on</h3>
-    <div class="ugc-influencer__logos">
-      <img src="https://placehold.co/100x40?text=Vogue" alt="Vogue" />
-      <img src="https://placehold.co/100x40?text=Elle" alt="Elle" />
-      <img src="https://placehold.co/100x40?text=GQ" alt="GQ" />
-      <img src="https://placehold.co/100x40?text=Insta" alt="Instagram Influencer" />
+    <div class='ugc-influencer__logos'>
+      <span>Vogue</span>
+      <span>Elle</span>
+      <span>GQ</span>
+      <span>Instagram</span>
     </div>
   </div>
 </section>
-{% schema %}{
+{% schema %}
+{
   "name": "UGC / Influencer Proof",
-  "settings": [
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
-  ],
-  "presets": [ { "name": "UGC / Influencer Proof" } ]
-}{% endschema %}
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }],
+  "presets": [{ "name": "UGC / Influencer Proof" }]
+}
+{% endschema %}

@@ -1,27 +1,25 @@
-
-
 {% liquid
   assign section_collections = collections
   assign max_items = 20
 %}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 
 <div
-  class="
+  class='
     section
     section--{{ section.settings.section_width }}
     color-{{ section.settings.color_scheme }}
     section-resource-list
     spacing-style
     gap-style
-  "
-  style="
+  '
+  style='
     {% render 'spacing-style', settings: section.settings %}
     {% render 'gap-style', value: section.settings.gap %}
-  "
+  '
 >
-  <div class="section-resource-list__content">
+  <div class='section-resource-list__content'>
     {%- content_for 'blocks' -%}
   </div>
 

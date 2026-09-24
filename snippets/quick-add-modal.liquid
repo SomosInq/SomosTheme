@@ -1,20 +1,20 @@
-<quick-add-dialog id="quick-add-dialog">
+<quick-add-dialog id='quick-add-dialog'>
   <dialog
-    class="quick-add-modal dialog-modal color-{{ settings.popover_color_scheme }}"
-    ref="dialog"
+    class='quick-add-modal dialog-modal color-{{ settings.popover_color_scheme }}'
+    ref='dialog'
     scroll-lock
   >
     <button
-      ref="closeButton"
-      on:click="/closeDialog"
-      class="button button-unstyled close-button quick-add-modal__close"
-      aria-label="{{ 'accessibility.close_dialog' | t }}"
+      ref='closeButton'
+      on:click='/closeDialog'
+      class='button button-unstyled close-button quick-add-modal__close'
+      aria-label='{{ 'accessibility.close_dialog' | t }}'
     >
       {{- 'icon-close.svg' | inline_asset_content -}}
     </button>
     <div
-      id="quick-add-modal-content"
-      class="quick-add-modal__content"
+      id='quick-add-modal-content'
+      class='quick-add-modal__content'
     ></div>
   </dialog>
 </quick-add-dialog>
@@ -275,19 +275,19 @@
   .quick-add-modal__content
     .group-block:not(
       :has(
-          .buy-buttons-block,
-          .buy-buttons-block *,
-          .view-product-title,
-          .view-product-title *,
-          variant-picker,
-          variant-picker *,
-          product-price,
-          product-price *,
-          product-inventory,
-          product-inventory *,
-          .view-more-details__wrapper,
-          .view-more-details__wrapper *
-        ),
+        .buy-buttons-block,
+        .buy-buttons-block *,
+        .view-product-title,
+        .view-product-title *,
+        variant-picker,
+        variant-picker *,
+        product-price,
+        product-price *,
+        product-inventory,
+        product-inventory *,
+        .view-more-details__wrapper,
+        .view-more-details__wrapper *
+      ),
       .buy-buttons-block
     ) {
     display: none;

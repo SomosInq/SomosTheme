@@ -1,26 +1,26 @@
 {%- if paginate.pages > 1 -%}
   <nav
-    class="pagination"
-    aria-label="{{ 'content.pagination.nav_label' | t }}"
+    class='pagination'
+    aria-label='{{ 'content.pagination.nav_label' | t }}'
   >
     <ul
-      class="pagination__list"
-      role="list"
+      class='pagination__list'
+      role='list'
     >
-      <li class="pagination__item">
+      <li class='pagination__item'>
         {%- if paginate.previous -%}
           <a
-            href="{{ paginate.previous.url }}"
-            aria-label="{{ 'content.pagination.previous' | t }}"
-            class="pagination__link pagination__link--arrow"
+            href='{{ paginate.previous.url }}'
+            aria-label='{{ 'content.pagination.previous' | t }}'
+            class='pagination__link pagination__link--arrow'
           >
             {{ 'icon-chevron-left.svg' | inline_asset_content }}
           </a>
         {%- else -%}
           <span
-            aria-label="{{ 'content.pagination.previous' | t }}"
-            class="pagination__link pagination__link--arrow pagination__link--disabled"
-            aria-disabled="true"
+            aria-label='{{ 'content.pagination.previous' | t }}'
+            class='pagination__link pagination__link--arrow pagination__link--disabled'
+            aria-disabled='true'
           >
             {{ 'icon-chevron-left.svg' | inline_asset_content }}
           </span>
@@ -76,26 +76,26 @@
             assign li_classes = li_classes | append: ' pagination__item--gap'
           endif
         %}
-        <li class="{{ li_classes }}">
+        <li class='{{ li_classes }}'>
           {%- if part.is_link -%}
             <a
-              href="{{ part.url }}"
-              aria-label="{{ 'content.pagination.page' | t: page: part.title }}"
-              class="pagination__link pagination__link--page"
+              href='{{ part.url }}'
+              aria-label='{{ 'content.pagination.page' | t: page: part.title }}'
+              class='pagination__link pagination__link--page'
             >
               {{ part.title }}
             </a>
           {%- else -%}
             {%- if part.title == '&hellip;' -%}
               <span
-                class="pagination__link pagination__link--gap"
-                aria-hidden="true"
+                class='pagination__link pagination__link--gap'
+                aria-hidden='true'
                 >&hellip;</span
               >
             {%- else -%}
               <span
-                class="pagination__link pagination__link--page pagination__link--current"
-                aria-current="page"
+                class='pagination__link pagination__link--page pagination__link--current'
+                aria-current='page'
               >
                 {{- part.title -}}
               </span>
@@ -104,20 +104,20 @@
         </li>
       {%- endfor -%}
 
-      <li class="pagination__item">
+      <li class='pagination__item'>
         {%- if paginate.next -%}
           <a
-            href="{{ paginate.next.url }}"
-            aria-label="{{ 'content.pagination.next' | t }}"
-            class="pagination__link pagination__link--arrow"
+            href='{{ paginate.next.url }}'
+            aria-label='{{ 'content.pagination.next' | t }}'
+            class='pagination__link pagination__link--arrow'
           >
             {{ 'icon-chevron-right.svg' | inline_asset_content }}
           </a>
         {%- else -%}
           <span
-            aria-label="{{ 'content.pagination.next' | t }}"
-            class="pagination__link pagination__link--arrow pagination__link--disabled"
-            aria-disabled="true"
+            aria-label='{{ 'content.pagination.next' | t }}'
+            class='pagination__link pagination__link--arrow pagination__link--disabled'
+            aria-disabled='true'
           >
             {{ 'icon-chevron-right.svg' | inline_asset_content }}
           </span>
@@ -170,7 +170,8 @@
     font-size: var(--font-size--md);
     font-weight: var(--font-weight-normal);
     border-radius: calc(var(--pagination-radius) * 1px);
-    transition: color var(--hover-transition-duration) var(--hover-transition-timing),
+    transition:
+      color var(--hover-transition-duration) var(--hover-transition-timing),
       opacity var(--hover-transition-duration) var(--hover-transition-timing);
   }
 
@@ -222,7 +223,8 @@
       background: rgb(var(--color-foreground-rgb) / var(--opacity-10));
       z-index: -1;
       opacity: 0;
-      transition: background var(--hover-transition-duration) var(--hover-transition-timing),
+      transition:
+        background var(--hover-transition-duration) var(--hover-transition-timing),
         opacity var(--hover-transition-duration) var(--hover-transition-timing);
     }
 
@@ -250,7 +252,8 @@
       opacity: 0;
       border-radius: calc(var(--pagination-radius) * 1px);
       background: rgb(var(--color-foreground-rgb) / var(--opacity-10));
-      transition: left var(--hover-transition-duration) var(--hover-transition-timing),
+      transition:
+        left var(--hover-transition-duration) var(--hover-transition-timing),
         top var(--hover-transition-duration) var(--hover-transition-timing);
     }
 

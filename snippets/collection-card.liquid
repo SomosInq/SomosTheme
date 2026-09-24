@@ -28,38 +28,38 @@
 %}
 
 <div
-  class="
+  class='
     collection-card
     border-style
     {% if block_settings.placement == 'on_image' %}collection-card--image-bg{% endif %}
     {% if section.settings.layout_type == 'bento' %}collection-card--image-height-fixed{% endif %}
     {% if section.settings.layout_type == 'editorial' %}collection-card--flexible-aspect-ratio{% endif %}
     {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}
-  "
-  data-block-id="{{ block.id }}"
+  '
+  data-block-id='{{ block.id }}'
   {% if onboarding %}
-    data-placeholder="true"
+    data-placeholder='true'
   {% endif %}
-  style="
+  style='
     {% render 'border-override', settings: block_settings %}
     --horizontal-alignment: {{ block_settings.horizontal_alignment }};
     --vertical-alignment: {{ block_settings.vertical_alignment }};
     --background-overlay-color: {{ block_settings.overlay_color }};
     --collection-card-gap: {{ block_settings.collection_card_gap }}px;
-  "
+  '
   {{- block.shopify_attributes -}}
 >
   <a
-    class="collection-card__link"
+    class='collection-card__link'
     {% unless onboarding %}
-      href="{{ collection.url }}"
+      href='{{ collection.url }}'
     {% endunless %}
   >
-    <span class="visually-hidden">{{ collection.title }}</span>
+    <span class='visually-hidden'>{{ collection.title }}</span>
   </a>
-  <div class="collection-card__inner">
+  <div class='collection-card__inner'>
     {{ card_image }}
-    <div class="collection-card__content layout-panel-flex--column">
+    <div class='collection-card__content layout-panel-flex--column'>
       {{ children }}
     </div>
   </div>

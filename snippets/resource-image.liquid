@@ -128,7 +128,7 @@
 
 {% if image_resource != blank %}
   <div
-    class="
+    class='
       image-block
       resource-image
       {% if content_type == 'articles' %}
@@ -138,11 +138,11 @@
       {% endif %}
       spacing-style border-style
       {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}
-    "
-    style="
+    '
+    style='
       {%- render 'spacing-style', settings: block_settings -%}
       {%- render 'border-override', settings: block_settings -%}
-    "
+    '
     {{ block_attributes }}
   >
     {%- if block_settings.toggle_overlay -%}
@@ -157,7 +157,7 @@
   </div>
 {% else %}
   <div
-    class="
+    class='
       image-block
       resource-image resource-image--placeholder
       {% if content_type == 'articles' %}
@@ -167,18 +167,18 @@
       {% endif %}
       spacing-style border-style
       {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}
-    "
-    style="
+    '
+    style='
       {%- render 'spacing-style', settings: block_settings -%}
       {%- render 'border-override', settings: block_settings -%}
-    "
+    '
     {{ block_attributes }}
   >
     {%- if block_settings.toggle_overlay -%}
       {% render 'overlay', settings: block_settings %}
     {%- endif -%}
 
-    <div class="image-block__image">
+    <div class='image-block__image'>
       {% if content_type == 'articles' %}
         {{ placeholder_name | placeholder_svg_tag: 'blog-placeholder-svg' }}
       {% else %}

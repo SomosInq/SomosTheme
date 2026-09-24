@@ -39,11 +39,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about stockists",
         "intro": "Practical answers specific to this page."
@@ -117,11 +113,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "grid",
         "eyebrow": "Stockists",
@@ -131,11 +123,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_faq",
-    "page_details",
-    "editorial_secondary"
-  ]
+  "order": ["main", "editorial_primary", "page_faq", "page_details", "editorial_secondary"]
 }

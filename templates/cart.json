@@ -6,7 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */ {
   "sections": {
     "cart-section": {
       "type": "main-cart",
@@ -24,8 +24,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "cart-page-items": {
           "type": "_cart-products",
@@ -40,8 +39,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "cart-page-summary": {
           "type": "_cart-summary",
@@ -55,8 +53,7 @@
             "border_opacity": 100,
             "border_radius": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         }
       },
       "settings": {
@@ -127,8 +124,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "product_list_button_eibbma": {
               "type": "_product-list-button",
@@ -142,14 +138,10 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "product_list_text_fifeh4",
-            "product_list_button_eibbma"
-          ]
+          "block_order": ["product_list_text_fifeh4", "product_list_button_eibbma"]
         },
         "static-product-card": {
           "type": "_product-card",
@@ -183,8 +175,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "product_title_WNMpHe": {
               "type": "product-title",
@@ -209,8 +200,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "price_yXfkPX": {
               "type": "price",
@@ -233,15 +223,10 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "product_card_gallery_PEPpfq",
-            "product_title_WNMpHe",
-            "price_yXfkPX"
-          ]
+          "block_order": ["product_card_gallery_PEPpfq", "product_title_WNMpHe", "price_yXfkPX"]
         }
       },
       "name": "Featured collection",
@@ -302,11 +287,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about cart",
         "intro": "Useful answers for this page, with a clear route to more help when you need it."

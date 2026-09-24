@@ -1,5 +1,3 @@
-
-
 {% assign block_settings = block.settings %}
 {%- capture cart_summary_inner_class -%}
   cart__summary-inner
@@ -13,15 +11,15 @@
 
 {% if block_settings.extend_summary %}
   <div
-    class="section-background {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }} inherit-parent-scheme--mobile{% endif %}"
+    class='section-background {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }} inherit-parent-scheme--mobile{% endif %}'
   ></div>
 {% endif %}
 <div
-  class="cart__summary-container border-style{% if block_settings.extend_summary == true %} cart__container--extend {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }} inherit-parent-scheme--mobile{% endif %}{% endif %}{% if block_settings.border_radius > 0 %} has-border-radius{% endif %}"
-  style="{% render 'border-override', settings: block_settings %}"
+  class='cart__summary-container border-style{% if block_settings.extend_summary == true %} cart__container--extend {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }} inherit-parent-scheme--mobile{% endif %}{% endif %}{% if block_settings.border_radius > 0 %} has-border-radius{% endif %}'
+  style='{% render 'border-override', settings: block_settings %}'
   {{ block.shopify_attributes }}
 >
-  <div class="{{ cart_summary_inner_class }}">
+  <div class='{{ cart_summary_inner_class }}'>
     {% render 'cart-summary', accelerated_checkout_buttons_layout: 'vertical' %}
   </div>
 </div>

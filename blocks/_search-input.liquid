@@ -1,11 +1,9 @@
-
-
 {%- assign block_settings = block.settings -%}
 
 <script
-  src="{{ 'search-page-input.js' | asset_url }}"
+  src='{{ 'search-page-input.js' | asset_url }}'
   defer
-  type="module"
+  type='module'
 ></script>
 
 {% if block_settings.inherit_color_scheme == false %}
@@ -13,57 +11,57 @@
 {% endif %}
 
 <form
-  action="{{ routes.search_url }}"
-  method="get"
-  role="search"
-  class="search-page-input__parent"
+  action='{{ routes.search_url }}'
+  method='get'
+  role='search'
+  class='search-page-input__parent'
 >
   <search-page-input-component
-    style="{% render 'size-style', settings: block_settings %}{% render 'spacing-style', settings: block_settings %}"
+    style='{% render 'size-style', settings: block_settings %}{% render 'spacing-style', settings: block_settings %}'
     {{ block.shopify_attributes }}
   >
     <label
-      for="SearchPageInput--{{ block.id }}"
-      class="visually-hidden"
+      for='SearchPageInput--{{ block.id }}'
+      class='visually-hidden'
     >
       {{ 'content.search_input_label' | t }}
     </label>
-    <span class="svg-wrapper search__icon{{ color_scheme }}">
+    <span class='svg-wrapper search__icon{{ color_scheme }}'>
       {{ 'icon-search.svg' | inline_asset_content }}
     </span>
     <input
-      name="type"
-      value="product"
-      type="hidden"
+      name='type'
+      value='product'
+      type='hidden'
     >
     <input
-      class="search-page-input{{ color_scheme }}"
-      id="SearchPageInput--{{ block.id }}"
-      type="search"
-      name="q"
-      ref="searchPageInput"
-      on:keydown="/handleKeyDown"
-      value="{{ search.terms | escape }}"
-      placeholder="{{ 'content.search_input_placeholder' | t }}"
+      class='search-page-input{{ color_scheme }}'
+      id='SearchPageInput--{{ block.id }}'
+      type='search'
+      name='q'
+      ref='searchPageInput'
+      on:keydown='/handleKeyDown'
+      value='{{ search.terms | escape }}'
+      placeholder='{{ 'content.search_input_placeholder' | t }}'
     >
     <button
-      type="button"
-      name="reset"
-      class="button-unstyled search__reset-button{{ color_scheme }}"
-      aria-label="{{ 'accessibility.reset_search' | t }}"
-      on:click="/handleClearClick"
+      type='button'
+      name='reset'
+      class='button-unstyled search__reset-button{{ color_scheme }}'
+      aria-label='{{ 'accessibility.reset_search' | t }}'
+      on:click='/handleClearClick'
     >
-      <span class="svg-wrapper search__reset-button-icon">
+      <span class='svg-wrapper search__reset-button-icon'>
         {{ 'icon-reset.svg' | inline_asset_content }}
       </span>
-      <span class="search__reset-button-text">
+      <span class='search__reset-button-text'>
         {{ 'actions.clear' | t }}
       </span>
     </button>
   </search-page-input-component>
 
   {% if search.results.size == 0 and search.terms != blank %}
-    <div class="search-results__no-results">
+    <div class='search-results__no-results'>
       <p>
         {{ 'content.search_results_no_results_check_spelling' | t: terms: search.terms }}
       </p>
@@ -154,7 +152,8 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--animation-speed) var(--animation-easing),
+    transition:
+      opacity var(--animation-speed) var(--animation-easing),
       visibility var(--animation-speed) var(--animation-easing);
 
     @media screen and (max-width: 749px) {

@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign product = closest.product
   assign block_settings = block.settings
@@ -26,17 +24,17 @@
 %}
 
 <product-price
-  class="text-right {{ block_settings.type_preset | default: 'h6' }} spacing-style"
-  data-block-id="{{ block.id }}"
-  data-product-id="{{ product.id }}"
-  style="
+  class='text-right {{ block_settings.type_preset | default: 'h6' }} spacing-style'
+  data-block-id='{{ block.id }}'
+  data-product-id='{{ product.id }}'
+  style='
     {% render 'spacing-style', settings: block_settings %}
     --product-price-width: 100%;
-  "
+  '
   {{ block.shopify_attributes }}
 >
   {% if product.price_varies and has_swatches_only == false and price_min != blank %}
-    <span class="price">{{ display_price }}</span>
+    <span class='price'>{{ display_price }}</span>
   {% else %}
     {% render 'price',
       show_unit_price: true,

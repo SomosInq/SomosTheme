@@ -87,42 +87,42 @@
 
 {%- if settings.transition_to_main_product -%}
   <product-card-link
-    data-product-id="{{ product.id }}"
-    data-featured-media-url="{{ featured_media_url }}"
-    data-product-transition="{{ settings.transition_to_main_product }}"
+    data-product-id='{{ product.id }}'
+    data-featured-media-url='{{ featured_media_url }}'
+    data-product-transition='{{ settings.transition_to_main_product }}'
     {% if onboarding %}
-      data-placeholder="true"
+      data-placeholder='true'
     {% endif %}
   >
 {%- endif -%}
 <product-card
-  class="product-card"
-  data-product-id="{{ product.id }}"
-  data-product-variants-size="{{ product.variants.size }}"
-  id="product-card-{{ block.id }}"
-  data-product-transition="{{ settings.transition_to_main_product }}"
+  class='product-card'
+  data-product-id='{{ product.id }}'
+  data-product-variants-size='{{ product.variants.size }}'
+  id='product-card-{{ block.id }}'
+  data-product-transition='{{ settings.transition_to_main_product }}'
   {{ block.shopify_attributes }}
   {% if no_swatch_selected %}
-    data-no-swatch-selected="true"
+    data-no-swatch-selected='true'
   {% endif %}
   {% if onboarding %}
-    data-placeholder="true"
+    data-placeholder='true'
   {% endif %}
 >
   <a
-    id="{{ product_card_id | md5 }}"
+    id='{{ product_card_id | md5 }}'
     {% unless onboarding %}
-      href="{{ variant_to_link.url }}"
+      href='{{ variant_to_link.url }}'
     {% endunless %}
-    class="product-card__link"
-    ref="productCardLink"
+    class='product-card__link'
+    ref='productCardLink'
   >
-    <span class="visually-hidden">
+    <span class='visually-hidden'>
       {{ product.title }}
     </span>
   </a>
   <div
-    class="
+    class='
       product-card__content
       layout-panel-flex
       layout-panel-flex--column
@@ -131,8 +131,8 @@
       border-style
       gap-style
       {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}
-    "
-    style="
+    '
+    style='
       {% render 'border-override', settings: block_settings %}
       {% render 'layout-panel-style', settings: block_settings %}
       {% render 'spacing-style', settings: block_settings %}
@@ -143,7 +143,7 @@
       {% if block_settings.padding-inline-end > 0 %}--zoom-out-padding-inline-end: min(var(--padding-xs), {{ block_settings.padding-inline-end | times: 0.7}}px);{% endif %}
       {% if block_settings.padding-block-start > 0 %}--zoom-out-padding-block-start: min(var(--padding-xs), {{ block_settings.padding-block-start | times: 0.7}}px);{% endif %}
       {% if block_settings.padding-block-end > 0 %}--zoom-out-padding-block-end: min(var(--padding-xs), {{ block_settings.padding-block-end | times: 0.7}}px);{% endif %}
-    "
+    '
   >
     {{ children }}
   </div>

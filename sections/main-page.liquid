@@ -1,20 +1,18 @@
-
-
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
-<div class="section section--page-width page-width-content color-{{ section.settings.color_scheme }}">
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
+<div class='section section--page-width page-width-content color-{{ section.settings.color_scheme }}'>
   <div
-    class="
+    class='
       page-shell
       spacing-style
       layout-panel-flex
       layout-panel-flex--column
       section-content-wrapper
       mobile-column
-    "
-    style="
+    '
+    style='
       {% render 'layout-panel-style', settings: section.settings %}
       {% render 'spacing-style', settings: section.settings %}
-    "
+    '
   >
     {% content_for 'blocks' %}
   </div>

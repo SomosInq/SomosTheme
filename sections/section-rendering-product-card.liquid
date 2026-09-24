@@ -1,5 +1,3 @@
-
-
 {% liquid
   if product == blank
     assign product = closest.product
@@ -23,16 +21,16 @@
 
 {%- if settings.transition_to_main_product -%}
   <product-card-link
-    data-product-id="{{ product.id }}"
-    data-featured-media-url="{{ featured_media_url }}"
-    data-product-transition="{{ settings.transition_to_main_product }}"
+    data-product-id='{{ product.id }}'
+    data-featured-media-url='{{ featured_media_url }}'
+    data-product-transition='{{ settings.transition_to_main_product }}'
   >
 {%- endif -%}
 
 <product-card>
   <a
-    href="{{ url }}"
-    ref="productCardLink"
+    href='{{ url }}'
+    ref='productCardLink'
   >
     {% render 'variant-quick-add', product_resource: product %}
     {% render 'variant-swatches', product_resource: product, has_option_selected: true %}

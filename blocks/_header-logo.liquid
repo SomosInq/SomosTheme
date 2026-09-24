@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign block_settings = block.settings
   assign use_inverse_logo = false
@@ -29,15 +27,15 @@
   {% if template.name == 'index' and block_settings.hide_logo_on_home_page %}
     data-hidden-on-home-page
   {% endif %}
-  href="{{ routes.root_url }}"
-  class="size-style spacing-style header-logo"
-  style="
+  href='{{ routes.root_url }}'
+  class='size-style spacing-style header-logo'
+  style='
     {% render 'size-style', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
     --font-family: var(--font-body--family);
     --font-style: var(--font-body--style);
     --font-weight: 600;
-  "
+  '
   {{ block.shopify_attributes }}
 >
   {% liquid
@@ -50,8 +48,8 @@
   %}
 
   <span
-    class="header-logo__image-container header-logo__image-container--original"
-    data-testid="header-logo"
+    class='header-logo__image-container header-logo__image-container--original'
+    data-testid='header-logo'
   >
     {% render 'image',
       image: settings.logo,
@@ -64,8 +62,8 @@
 
   {% if use_inverse_logo %}
     <span
-      class="header-logo__image-container header-logo__image-container--inverse"
-      data-testid="header-logo-inverse"
+      class='header-logo__image-container header-logo__image-container--inverse'
+      data-testid='header-logo-inverse'
     >
       {% render 'image',
         image: inverse_logo,

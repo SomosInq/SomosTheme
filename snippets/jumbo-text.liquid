@@ -53,15 +53,15 @@
   If the jumbo text is not wrapped inside its own container, the overflow calculation does not always work correctly
   (looks like some weird off-by-one error when comparing sizes).
 {% endcomment %}
-<div class="jumbo-text__container">
+<div class='jumbo-text__container'>
   {% if text != blank %}
     <jumbo-text {{ attributes }}>{{ text }}</jumbo-text>
   {% else %}
-    <span class="visually-hidden">{{ shown_text }}</span>
+    <span class='visually-hidden'>{{ shown_text }}</span>
     <jumbo-text
       {{ attributes }}
-      data-text-effect="{{ block_settings.text_effect }}"
-      data-animation-repeat="{{ block_settings.animation_repeat }}"
+      data-text-effect='{{ block_settings.text_effect }}'
+      data-animation-repeat='{{ block_settings.animation_repeat }}'
     >
       {%- assign char_index = 0 -%}
       {%- for line in text_with_lines -%}
@@ -69,27 +69,27 @@
           <br>
         {%- endif -%}
         <span
-          class="jumbo-text-line"
-          style="--line-index: {{ forloop.index }};"
-          data-testid="jumbo-text-line"
-          aria-hidden="true"
+          class='jumbo-text-line'
+          style='--line-index: {{ forloop.index }};'
+          data-testid='jumbo-text-line'
+          aria-hidden='true'
         >
           {%- assign chars = line | split: ' ' | join: ' ' | split: '' -%}
           {%- for char in chars -%}
             {%- if char == ' ' -%}
               <span
-                class="jumbo-text-space"
-                aria-hidden="true"
+                class='jumbo-text-space'
+                aria-hidden='true'
               >
                 {{ char }}
               </span>
             {%- else -%}
               <span
-                class="jumbo-text-char"
-                style="--char-index: {{ char_index }};"
-                aria-hidden="true"
+                class='jumbo-text-char'
+                style='--char-index: {{ char_index }};'
+                aria-hidden='true'
               >
-                <span class="jumbo-text-char-inner">{{ char }}</span>
+                <span class='jumbo-text-char-inner'>{{ char }}</span>
               </span>
               {%- assign char_index = char_index | plus: 1 -%}
             {%- endif -%}
@@ -100,8 +100,8 @@
   {% endif %}
 
   <script
-    src="{{ 'jumbo-text.js' | asset_url }}"
-    type="module"
+    src='{{ 'jumbo-text.js' | asset_url }}'
+    type='module'
   ></script>
 </div>
 
@@ -159,7 +159,9 @@
       filter: blur(20px);
       opacity: 0.5;
       scale: 1.05;
-      transition: filter 1.6s var(--animation-timing-fade-in), opacity 1.3s var(--animation-timing-fade-in),
+      transition:
+        filter 1.6s var(--animation-timing-fade-in),
+        opacity 1.3s var(--animation-timing-fade-in),
         scale 1.6s var(--animation-timing-fade-in);
     }
 

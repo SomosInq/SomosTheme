@@ -1,7 +1,5 @@
-
-
 <div
-  class="social-icons__wrapper footer-utilities__icons"
+  class='social-icons__wrapper footer-utilities__icons'
   {{ block.shopify_attributes }}
 >
   {% liquid
@@ -74,28 +72,28 @@
     {% if link_url != blank %}
       {% if request.design_mode or has_profile %}
         <div
-          class="social-icons__icon-wrapper{% unless has_profile %} social-icons__icon-wrapper--disabled{% endunless %}"
+          class='social-icons__icon-wrapper{% unless has_profile %} social-icons__icon-wrapper--disabled{% endunless %}'
         >
           <a
-            href="{{ link_url }}"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="{{ platform | capitalize }}"
+            href='{{ link_url }}'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='{{ platform | capitalize }}'
             {% unless has_profile %}
               {% if request.design_mode %}
-                onclick="return false;"
-                aria-disabled="true"
+                onclick='return false;'
+                aria-disabled='true'
               {% endif %}
             {% endunless %}
           >
-            <span class="social-icons__icon-label">{{ platform | capitalize }}</span>
+            <span class='social-icons__icon-label'>{{ platform | capitalize }}</span>
             {% if render_icon %}
               <svg
-                class="social-icons__icon"
-                aria-hidden="true"
-                focusable="false"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
+                class='social-icons__icon'
+                aria-hidden='true'
+                focusable='false'
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 20 20'
               >
                 {%- render 'icon', icon: platform -%}
               </svg>

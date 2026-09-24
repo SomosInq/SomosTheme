@@ -136,7 +136,7 @@ export class Component extends DeclarativeShadowElement {
       mutations.some(
         (m) =>
           (m.type === 'attributes' && this.#isDescendant(m.target)) ||
-          (m.type === 'childList' && [...m.addedNodes, ...m.removedNodes].some(this.#isDescendant))
+          (m.type === 'childList' && [...m.addedNodes, ...m.removedNodes].some(this.#isDescendant)),
       )
     ) {
       this.#updateRefs();
@@ -258,7 +258,7 @@ function registerEventListeners() {
           }
         }
       },
-      { capture: true }
+      { capture: true },
     );
   }
 
@@ -292,7 +292,7 @@ function parseData(str) {
 
   return delimiter === '?'
     ? Object.fromEntries(
-        Array.from(new URLSearchParams(data).entries()).map(([key, value]) => [key, parseValue(value)])
+        Array.from(new URLSearchParams(data).entries()).map(([key, value]) => [key, parseValue(value)]),
       )
     : parseValue(data);
 }

@@ -91,22 +91,22 @@
 %}
 
 <div
-  ref="cardGallery"
-  class="card-gallery card-gallery-{{ block.id }} spacing-style border-style"
-  style="
+  ref='cardGallery'
+  class='card-gallery card-gallery-{{ block.id }} spacing-style border-style'
+  style='
     {% render 'border-override', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
     --gallery-aspect-ratio: {{ ratio }};
-  "
-  data-product-id="{{ product.id }}"
+  '
+  data-product-id='{{ product.id }}'
   {% if settings.show_second_image_on_hover %}
-    on:pointerenter="/previewImage"
-    on:pointerleave="/resetImage"
+    on:pointerenter='/previewImage'
+    on:pointerleave='/resetImage'
   {% endif %}
   {% if settings.transition_to_main_product %}
     data-view-transition-to-main-product
   {% endif %}
-  data-image-ratio="{{ block_settings.image_ratio }}"
+  data-image-ratio='{{ block_settings.image_ratio }}'
   {{ block.shopify_attributes }}
 >
   {%- if all_media.size > 0 -%}
@@ -199,10 +199,10 @@
       endif
     %}
     <a
-      class="contents"
-      ref="cardGalleryLink"
-      href="{% render 'product-card-variant-url', product: product %}"
-      aria-label="{{- product.title -}}"
+      class='contents'
+      ref='cardGalleryLink'
+      href='{% render 'product-card-variant-url', product: product %}'
+      aria-label='{{- product.title -}}'
     >
       {% render 'slideshow',
         ref: 'slideshow',
@@ -214,14 +214,14 @@
       %}
     </a>
   {% elsif product != blank and product.media.size == 0 %}
-    <product-title class="product-card-gallery__title-placeholder">
+    <product-title class='product-card-gallery__title-placeholder'>
       <a
-        class="contents"
-        ref="productTitleLink"
-        href="{% render 'product-card-variant-url', product: product %}"
-        aria-hidden="true"
+        class='contents'
+        ref='productTitleLink'
+        href='{% render 'product-card-variant-url', product: product %}'
+        aria-hidden='true'
       >
-        <span class="title-text">{{- product.title -}}</span>
+        <span class='title-text'>{{- product.title -}}</span>
       </a>
     </product-title>
   {% elsif product == blank %}

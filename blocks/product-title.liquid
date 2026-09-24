@@ -1,5 +1,3 @@
-
-
 {% if closest.product == blank %}
   {% assign text = 'placeholders.product_title' | t %}
   {% assign product_title = '<p>' | append: text | append: '</p>' %}
@@ -7,9 +5,9 @@
 {% elsif closest.product != blank %}
   {% assign product_title = '<p>' | append: closest.product.title | append: '</p>' %}
   <a
-    class="contents user-select-text"
-    ref="productTitleLink"
-    href="{% render 'product-card-variant-url', product: closest.product %}"
+    class='contents user-select-text'
+    ref='productTitleLink'
+    href='{% render 'product-card-variant-url', product: closest.product %}'
   >
     {% render 'text', fallback_text: product_title, block: block %}
   </a>

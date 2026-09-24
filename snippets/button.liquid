@@ -12,20 +12,20 @@
 
 <a
   {% if link == blank %}
-    role="link"
-    aria-disabled="true"
+    role='link'
+    aria-disabled='true'
   {% else %}
-    href="{{ link }}"
+    href='{{ link }}'
   {% endif %}
-  class="
+  class='
     size-style
     {{ block_settings.style_class }}
     {{ block_settings.style_class }}--{{ block.id }}
-  "
-  style="{% render 'size-style', settings: block_settings %}"
+  '
+  style='{% render 'size-style', settings: block_settings %}'
   {%- if block_settings.open_in_new_tab -%}
-    target="_blank"
-    rel="noopener noreferrer"
+    target='_blank'
+    rel='noopener noreferrer'
   {%- endif -%}
   {{ block.shopify_attributes }}
 >

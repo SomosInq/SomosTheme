@@ -1,15 +1,13 @@
-
-
 {% assign full_width = false %}
 
 {% if section.settings.width_percent == 100 and section.settings.section_width == 'full-width' %}
   {% assign full_width = true %}
 {% endif %}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
-  data-testid="divider-{{ section.id }}"
+  class='section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}'
+  data-testid='divider-{{ section.id }}'
 >
   {% render 'divider', id: section.id, settings: section.settings, attributes: true, full_width: full_width %}
 </div>

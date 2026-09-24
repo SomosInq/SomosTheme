@@ -1,8 +1,6 @@
-
-
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+  class='section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}'
 >
   {% liquid
     assign total_blocks = section.blocks.size
@@ -28,19 +26,19 @@
     endif
   %}
   <div
-    class="
+    class='
       footer-content
       spacing-style
       {% if has_isolated_grid_item_desktop %}footer-content--isolated-grid-item-desktop{% endif %}
       {% if has_isolated_grid_item_tablet %}footer-content--isolated-grid-item-tablet{% endif %}
-    "
-    style="
+    '
+    style='
       {%  render 'spacing-style', settings: section.settings %}
       --footer-gap: {{ section.settings.gap }}px;
       --grid-columns: {{ grid_columns }};
       --last-row-count: {{ last_row_count }};
       --tablet-last-row-count: {{ tablet_last_row_count }};
-    "
+    '
   >
     {% content_for 'blocks' %}
   </div>

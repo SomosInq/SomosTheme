@@ -1,5 +1,3 @@
-
-
 {%- assign block_settings = block.settings -%}
 
 {% capture title %}
@@ -20,19 +18,19 @@
 {% endcapture %}
 
 <div
-  class="blog-post-card"
-  style="--text-align: {{ block_settings.alignment }}"
+  class='blog-post-card'
+  style='--text-align: {{ block_settings.alignment }}'
 >
   {%- if article.image -%}
-    <div class="blog-post-card__image-container">
-      <a href="{{ article.url }}">
+    <div class='blog-post-card__image-container'>
+      <a href='{{ article.url }}'>
         {% content_for 'block', id: 'image', type: '_blog-post-image', image: article.image %}
       </a>
     </div>
   {%- endif -%}
 
-  <div class="blog-post-card__content">
-    <a href="{{ article.url }}">{{ title }}</a>
+  <div class='blog-post-card__content'>
+    <a href='{{ article.url }}'>{{ title }}</a>
 
     {{ details }}
 

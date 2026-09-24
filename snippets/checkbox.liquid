@@ -15,16 +15,16 @@
   @param {boolean} [autofocus] - whether the input should be autofocused
 {%- enddoc -%}
 <div
-  class="checkbox"
+  class='checkbox'
   {{ events }}
 >
   <input
-    type="checkbox"
-    name="{{ name }}"
-    value="{{ value }}"
-    id="{{ id }}"
-    class="checkbox__input"
-    data-label="{{ label }}"
+    type='checkbox'
+    name='{{ name }}'
+    value='{{ value }}'
+    id='{{ id }}'
+    class='checkbox__input'
+    data-label='{{ label }}'
     {% if checked %}
       checked
     {% endif %}
@@ -32,27 +32,27 @@
       disabled
     {% endif %}
     {% if required %}
-      required aria-required="true"
+      required aria-required='true'
     {% endif %}
     {% if formId != blank %}
-      form="{{ formId }}"
+      form='{{ formId }}'
     {% endif %}
     {% if inputRef != blank %}
-      ref="{{ inputRef }}"
+      ref='{{ inputRef }}'
     {% endif %}
     {% if autofocus %}
       autofocus
     {% endif %}
   >
   <label
-    class="checkbox__label"
-    for="{{ id }}"
+    class='checkbox__label'
+    for='{{ id }}'
     {% if labelRef != blank %}
-      ref="{{ labelRef }}"
+      ref='{{ labelRef }}'
     {% endif %}
-    role="checkbox"
+    role='checkbox'
   >
     {{ 'icon-checkmark.svg' | inline_asset_content }}
-    <span class="checkbox__label-text">{{- label -}}</span>
+    <span class='checkbox__label-text'>{{- label -}}</span>
   </label>
 </div>

@@ -1,13 +1,15 @@
-<div class="simple-menu">
-  <a class="simple-menu__parent" href="{{ parent_link.url }}">{{ parent_link.title }}</a>
-  <ul class="simple-menu__links list-unstyled">
+<div class='simple-menu'>
+  <a class='simple-menu__parent' href='{{ parent_link.url }}'>{{ parent_link.title }}</a>
+  <ul class='simple-menu__links list-unstyled'>
     {% for link in parent_link.links %}
       <li>
-        <a href="{{ link.url }}">{{ link.title }}</a>
+        <a href='{{ link.url }}'>{{ link.title }}</a>
         {% if link.links != blank %}
-          <ul class="simple-menu__nested-links list-unstyled">
+          <ul class='simple-menu__nested-links list-unstyled'>
             {% for nested_link in link.links %}
-              <li><a href="{{ nested_link.url }}">{{ nested_link.title }}</a></li>
+              <li>
+                <a href='{{ nested_link.url }}'>{{ nested_link.title }}</a>
+              </li>
             {% endfor %}
           </ul>
         {% endif %}

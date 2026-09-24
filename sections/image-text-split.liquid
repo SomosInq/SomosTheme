@@ -1,21 +1,37 @@
 {% comment %}
-Image/Text Split Section - Fashion Store
+  Image/Text Split Section - Fashion Store
 {% endcomment %}
-<section class="image-text-split section section--page-width spacing-style color-{{ section.settings.color_scheme }}">
-  <div class="image-text-split__container">
-    <div class="image-text-split__image">
-      <img src="https://placehold.co/600x800" alt="Fashion Look" />
+<section class='image-text-split section section--page-width spacing-style color-{{ section.settings.color_scheme }}'>
+  <div class='image-text-split__container'>
+    <div class='image-text-split__image'>
+      {% if section.settings.image != blank %}
+        {{
+          section.settings.image
+          | image_url: width: 1200
+          | image_tag:
+            loading: 'lazy',
+            widths: '480, 720, 960, 1200',
+            sizes: '(min-width: 750px) 50vw, 100vw',
+            alt: section.settings.image.alt
+          | default: 'Fashion look'
+        }}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
     </div>
-    <div class="image-text-split__text">
+    <div class='image-text-split__text'>
       <h3>Effortless Style</h3>
       <p>Discover our latest collection, designed for comfort and confidence—wherever life takes you.</p>
     </div>
   </div>
 </section>
-{% schema %}{
+{% schema %}
+{
   "name": "Image/Text Split",
   "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
   ],
-  "presets": [ { "name": "Image/Text Split" } ]
-}{% endschema %}
+  "presets": [{ "name": "Image/Text Split" }]
+}
+{% endschema %}

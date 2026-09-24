@@ -193,7 +193,7 @@ class ProductFormComponent extends Component {
 
       const cartItem = cart.items.find(
         /** @param {any} item */
-        (item) => item.variant_id.toString() === variantIdInput.value.toString()
+        (item) => item.variant_id.toString() === variantIdInput.value.toString(),
       );
       const cartQty = cartItem ? cartItem.quantity : 0;
 
@@ -306,7 +306,7 @@ class ProductFormComponent extends Component {
       .then((response) => {
         if (response.status) {
           this.dispatchEvent(
-            new CartErrorEvent(form.getAttribute('id') || '', response.message, response.description, response.errors)
+            new CartErrorEvent(form.getAttribute('id') || '', response.message, response.description, response.errors),
           );
 
           if (!addToCartTextError) return;
@@ -340,7 +340,7 @@ class ProductFormComponent extends Component {
               source: 'product-form-component',
               itemCount: Number(formData.get('quantity')) || Number(this.dataset.quantityDefault),
               productId: this.dataset.productId,
-            })
+            }),
           );
 
           return;
@@ -376,7 +376,7 @@ class ProductFormComponent extends Component {
               itemCount: Number(formData.get('quantity')) || Number(this.dataset.quantityDefault),
               productId: this.dataset.productId,
               sections: response.sections,
-            })
+            }),
           );
         }
       })
@@ -490,11 +490,7 @@ class ProductFormComponent extends Component {
     );
 
     if (quantitySelector?.updateConstraints && newQuantityInput) {
-      quantitySelector.updateConstraints(
-        newQuantityInput.min,
-        newQuantityInput.max || null,
-        newQuantityInput.step
-      );
+      quantitySelector.updateConstraints(newQuantityInput.min, newQuantityInput.max || null, newQuantityInput.step);
     }
 
     // Check if quantity rules are appearing/disappearing (causes layout shift)
@@ -525,7 +521,7 @@ class ProductFormComponent extends Component {
           newQuantitySelector.updateConstraints(
             newQuantityInputElement.min,
             newQuantityInputElement.max || null,
-            newQuantityInputElement.step
+            newQuantityInputElement.step,
           );
         }
       }

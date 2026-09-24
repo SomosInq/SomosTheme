@@ -104,8 +104,8 @@ class PredictiveSearchComponent extends Component {
       this.querySelectorAll(
         '.predictive-search-results__wrapper-queries, ' +
           '.predictive-search-results__wrapper-products, ' +
-          '.predictive-search-results__list'
-      )
+          '.predictive-search-results__list',
+      ),
     );
 
     const allItems = containers

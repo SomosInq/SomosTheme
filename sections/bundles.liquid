@@ -1,7 +1,7 @@
-<section class="section section--page-width page-shell bundles-section">
-  <div class="page-width-content">
-    <div class="page-hero">
-      <span class="page-pill">Curated bundles</span>
+<section class='section section--page-width page-shell bundles-section'>
+  <div class='page-width-content'>
+    <div class='page-hero'>
+      <span class='page-pill'>Curated bundles</span>
       <h2>{{ page.title }}</h2>
       <p>Explore hand-picked bundles designed to make your next order feel effortless.</p>
     </div>
@@ -9,41 +9,46 @@
     {% if section.settings.collection != blank %}
       {% assign coll = collections[section.settings.collection] %}
       {% if coll.products.size > 0 %}
-        <div class="page-grid">
+        <div class='page-grid'>
           {% for product in coll.products %}
-            <article class="page-card page-card--product">
-              <span class="page-card__eyebrow">Bundle</span>
-              <h2><a href="{{ product.url }}">{{ product.title }}</a></h2>
+            <article class='page-card page-card--product'>
+              <span class='page-card__eyebrow'>Bundle</span>
+              <h2>
+                <a href='{{ product.url }}'>{{ product.title }}</a>
+              </h2>
               <p>{{ product.description | strip_html | truncate: 120 }}</p>
-              <div class="page-card__footer">
-                <span class="page-price">{{ product.price | money }}</span>
+              <div class='page-card__footer'>
+                <span class='page-price'>{{ product.price | money }}</span>
                 {% if product.has_only_default_variant and product.available %}
-                  <form action="{{ routes.cart_add_url }}" method="post"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><button type="submit" class="button button-secondary">Add bundle</button></form>
-                {% else %}<a href="{{ product.url }}" class="button button-secondary">Choose options</a>{% endif %}
+                  <form action='{{ routes.cart_add_url }}' method='post'>
+                    <input type='hidden' name='id' value='{{ product.selected_or_first_available_variant.id }}'
+                    ><button type='submit' class='button button-secondary'>Add bundle</button>
+                  </form>
+                {% else -%}
+                  <a href='{{ product.url }}' class='button button-secondary'>Choose options</a>
+                {%- endif %}
               </div>
             </article>
           {% endfor %}
         </div>
       {% else %}
-        <div class="page-card">
+        <div class='page-card'>
           <p>No products were found in this collection yet.</p>
         </div>
       {% endif %}
     {% else %}
-      <div class="page-card">
+      <div class='page-card'>
         <p>Add a collection of bundled products in the section settings.</p>
       </div>
     {% endif %}
   </div>
 
   {% schema %}
-  {
-    "name": "Bundles",
-    "settings": [
-      { "type": "collection", "id": "collection", "label": "Bundles collection" }
-    ],
-    "blocks": [],
-    "presets": [{ "name": "Bundles" }]
-  }
+{
+  "name": "Bundles",
+  "settings": [{ "type": "collection", "id": "collection", "label": "Bundles collection" }],
+  "blocks": [],
+  "presets": [{ "name": "Bundles" }]
+}
   {% endschema %}
 </section>

@@ -75,35 +75,35 @@
 {% endstyle %}
 
 <div
-  id="ResultsList"
-  class="
+  id='ResultsList'
+  class='
     grid main-collection-grid
     {%- if section.settings.inherit_color_scheme == false %} color-{{ section.settings.color_scheme }}{% endif %}
     {%- if section.settings.product_grid_width == 'full-width' %} collection-wrapper--full-width{% endif %}
     {%- if section.settings.full_width_on_mobile == true %} collection-wrapper--full-width-on-mobile{% endif %}
     spacing-style
-  "
+  '
 
-  style="
+  style='
     --grid--margin--mobile: 0{% if section.settings.product_grid_width == 'centered' and section.settings.full_width_on_mobile == false %} var(--margin-lg){% else %} 0{% endif %};
     --grid-column--desktop: var(--{% if section.settings.product_grid_width == 'centered' %}centered{% else %}full-width{% endif %});
     --grid-column--mobile: var(--{% if section.settings.full_width_on_mobile %}full-width{% else %}{% if section.settings.product_grid_width == 'centered' %}centered{% else %}full-width{% endif %}{% endif %});
     --padding-inline-start: {{ section.settings.padding-inline-start }}px;
     --padding-inline-end: {{ section.settings.padding-inline-end }}px;
-  "
+  '
 >
   <div
-    style="
+    style='
       grid-column: var(--full-width);
       --product-grid-gap-mobile: {{ section.settings.columns_gap_vertical | at_most: 12 }}px {{ section.settings.columns_gap_horizontal | at_most: 12 }}px;
       --product-grid-gap-desktop: {{ section.settings.columns_gap_vertical }}px {{ section.settings.columns_gap_horizontal }}px;
       container-type: inline-size;
       container-name: product-grid;
-    "
+    '
   >
     {% if products.size == 0 %}
-      <div class="main-collection-grid__empty">
-        <h2 class="main-collection-grid__empty-title h2">
+      <div class='main-collection-grid__empty'>
+        <h2 class='main-collection-grid__empty-title h2'>
           {{ 'content.no_products_found' | t }}
         </h2>
         <p>
@@ -112,25 +112,25 @@
       </div>
     {% else %}
       {% if enable_infinite_scroll %}
-        <span ref="viewMorePrevious"></span>
+        <span ref='viewMorePrevious'></span>
       {% endif %}
 
       {% if title %}
-        <h4 class="main-collection-grid__title">{{ title }}</h4>
+        <h4 class='main-collection-grid__title'>{{ title }}</h4>
       {% endif %}
       <ul
-        class="product-grid product-grid--{{ section.id }} product-grid--{{ section.settings.layout_type }} {% if section.settings.mobile_product_card_size == 'large' %} product-grid-mobile--large{% endif %}"
-        product-grid-view="default"
-        ref="grid"
-        role="list"
-        data-last-page="{{ paginate.pages }}"
-        data-product-card-size="{{ section.settings.product_card_size }}"
-        style="--mobile-columns: {% if section.settings.mobile_product_card_size == 'large' %}1{% else %}2{% endif %};"
+        class='product-grid product-grid--{{ section.id }} product-grid--{{ section.settings.layout_type }} {% if section.settings.mobile_product_card_size == 'large' %} product-grid-mobile--large{% endif %}'
+        product-grid-view='default'
+        ref='grid'
+        role='list'
+        data-last-page='{{ paginate.pages }}'
+        data-product-card-size='{{ section.settings.product_card_size }}'
+        style='--mobile-columns: {% if section.settings.mobile_product_card_size == 'large' %}1{% else %}2{% endif %};'
       >
         {{ children }}
       </ul>
       {% if enable_infinite_scroll != false %}
-        <span ref="viewMoreNext"></span>
+        <span ref='viewMoreNext'></span>
       {% else %}
         {% render 'pagination-controls', paginate: paginate %}
       {% endif %}

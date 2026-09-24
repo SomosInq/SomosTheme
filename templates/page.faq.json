@@ -3,7 +3,7 @@
     "main": {
       "type": "faq",
       "settings": {
-        "heading_level": "h1"
+        "heading_level": "h2"
       },
       "blocks": {
         "faq_shipping": {
@@ -28,11 +28,7 @@
           }
         }
       },
-      "block_order": [
-        "faq_shipping",
-        "faq_returns",
-        "faq_support"
-      ]
+      "block_order": ["faq_shipping", "faq_returns", "faq_support"]
     },
     "page_faq": {
       "type": "faq",
@@ -59,11 +55,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about frequently asked",
         "intro": "Practical answers specific to this page."
@@ -137,11 +129,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "numbered",
         "eyebrow": "Frequently asked",
@@ -151,11 +139,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_faq",
-    "page_details",
-    "editorial_secondary"
-  ]
+  "order": ["main", "editorial_primary", "page_faq", "page_details", "editorial_secondary"]
 }

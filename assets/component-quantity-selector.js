@@ -174,10 +174,7 @@ export class QuantitySelectorComponent extends Component {
     const { min, step, value } = this.getCurrentValues();
     const effectiveMax = this.getEffectiveMax();
 
-    const newValue = Math.min(
-      effectiveMax ?? Infinity,
-      Math.max(min, value + step * stepMultiplier)
-    );
+    const newValue = Math.min(effectiveMax ?? Infinity, Math.max(min, value + step * stepMultiplier));
 
     quantityInput.value = newValue.toString();
     this.onQuantityChange();
@@ -229,10 +226,7 @@ export class QuantitySelectorComponent extends Component {
     const effectiveMax = this.getEffectiveMax();
 
     // Snap to bounds
-    const quantity = Math.min(
-      effectiveMax ?? Infinity,
-      Math.max(min, parseInt(event.target.value) || 0)
-    );
+    const quantity = Math.min(effectiveMax ?? Infinity, Math.max(min, parseInt(event.target.value) || 0));
 
     // Validate step increment
     if ((quantity - min) % step !== 0) {
@@ -267,10 +261,7 @@ export class QuantitySelectorComponent extends Component {
     const effectiveMax = this.getEffectiveMax();
 
     // Clamp value to new effective max if necessary
-    const clampedValue = Math.min(
-      effectiveMax ?? Infinity,
-      Math.max(min, value)
-    );
+    const clampedValue = Math.min(effectiveMax ?? Infinity, Math.max(min, value));
 
     if (clampedValue !== value) {
       quantityInput.value = clampedValue.toString();

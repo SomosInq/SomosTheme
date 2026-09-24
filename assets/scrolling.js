@@ -248,7 +248,7 @@ export class Scroller {
         this.#isScrolling = false;
       }
     },
-    SCROLL_END_TIMEOUT
+    SCROLL_END_TIMEOUT,
   );
 
   /**
@@ -347,7 +347,7 @@ export function scrollIntoView(element, { ancestor, behavior = 'smooth', block =
           ancestor.clientHeight,
           elemRect.top,
           elemRect.height,
-          ancestor.scrollTop
+          ancestor.scrollTop,
         )
       : ancestor.scrollTop;
 
@@ -359,7 +359,7 @@ export function scrollIntoView(element, { ancestor, behavior = 'smooth', block =
           ancestor.clientWidth,
           elemRect.left,
           elemRect.width,
-          ancestor.scrollLeft
+          ancestor.scrollLeft,
         )
       : ancestor.scrollLeft;
 

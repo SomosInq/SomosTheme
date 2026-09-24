@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign collection_list = section.settings.collection_list
 
@@ -17,27 +15,27 @@
 %}
 
 <script
-  src="{{ 'collection-links.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"
+  src='{{ 'collection-links.js' | asset_url }}'
+  type='module'
+  fetchpriority='low'
 ></script>
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style"
-  style="{% render 'spacing-style', settings: section.settings %}"
-  data-testid="collection-links-{{ section.id }}"
+  class='section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style'
+  style='{% render 'spacing-style', settings: section.settings %}'
+  data-testid='collection-links-{{ section.id }}'
 >
   <collection-links-component
-    layout="{{ section.settings.layout }}"
-    alignment="{{ section.settings.alignment }}"
+    layout='{{ section.settings.layout }}'
+    alignment='{{ section.settings.alignment }}'
     {% if section.settings.image_position == 'left' %}
       reverse
     {% endif %}
   >
     <div
-      class="collection-links__container"
-      ref="container"
+      class='collection-links__container'
+      ref='container'
     >
       {% for block in section.blocks %}
         {% liquid

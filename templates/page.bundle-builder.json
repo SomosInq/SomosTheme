@@ -54,11 +54,7 @@
           }
         }
       },
-      "block_order": [
-        "quote_1",
-        "quote_2",
-        "quote_3"
-      ]
+      "block_order": ["quote_1", "quote_2", "quote_3"]
     },
     "page_faq": {
       "type": "faq",
@@ -85,11 +81,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about build your set",
         "intro": "Practical answers specific to this page."
@@ -173,11 +165,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "grid",
         "eyebrow": "Build your set",

@@ -652,7 +652,7 @@ class SortingFilterComponent extends Component {
     if (!(facetStatus instanceof FacetStatusComponent)) return;
 
     facetStatus.textContent =
-      event.target.value !== details.dataset.defaultSortBy ? event.target.dataset.optionName ?? '' : '';
+      event.target.value !== details.dataset.defaultSortBy ? (event.target.dataset.optionName ?? '') : '';
   }
 }
 

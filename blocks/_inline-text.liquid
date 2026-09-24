@@ -1,5 +1,3 @@
-
-
 {%- doc -%}
   Renders an inline text block.
 
@@ -12,13 +10,13 @@
 {% # We need to make sure the wrapper is rendered even if the text element is empty in the theme editor to allow live text editing %}
 {%- if plain_text != '' or request.design_mode -%}
   <span
-    class="
+    class='
       text-block
       custom-typography
       {% if block_settings.weight != blank %}custom-font-weight{% endif %}
       {% if block_settings.font_size != blank %}custom-font-size{% endif %}
-    "
-    style="{% render 'typography-style', preset: 'custom', settings: block_settings, type: 'heading' %}"
+    '
+    style='{% render 'typography-style', preset: 'custom', settings: block_settings, type: 'heading' %}'
     {{ block.shopify_attributes }}
   >
     <span>{{ block.settings.text }}</span>{{ suffix }}

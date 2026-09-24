@@ -115,7 +115,7 @@ class ShowMoreComponent extends Component {
       {
         duration: this.#animationSpeed,
         easing: 'ease-in-out',
-      }
+      },
     );
 
     this.#animation.onfinish = () => this.#onAnimationFinish();

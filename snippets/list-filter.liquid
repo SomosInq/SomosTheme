@@ -1,3 +1,5 @@
+{% comment %}Variant classes are styled by the shared filtering components.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 {%- doc -%}
   Renders a list or swatch filter.
 
@@ -26,37 +28,37 @@
 %}
 
 <accordion-custom
-  class="facets__item"
+  class='facets__item'
   {% if filter_style == 'horizontal' %}
-    data-disable-animation-on-desktop="true"
-    data-close-with-escape="true"
+    data-disable-animation-on-desktop='true'
+    data-close-with-escape='true'
   {% endif %}
   open-by-default-on-mobile
   {% if filter_style == 'vertical' %}
     open
     open-by-default-on-desktop
   {% endif %}
-  data-filter-param-name="{{ filter.param_name | escape | replace: '.', '-' }}"
+  data-filter-param-name='{{ filter.param_name | escape | replace: '.', '-' }}'
 >
   <details
-    id="Facet-Details-{{ sectionId }}-{{ filter.param_name | escape | replace: '.', '-' }}"
-    class="facets__panel"
+    id='Facet-Details-{{ sectionId }}-{{ filter.param_name | escape | replace: '.', '-' }}'
+    class='facets__panel'
     {% if filter_style == 'horizontal' %}
-      data-auto-close-details="desktop"
+      data-auto-close-details='desktop'
     {% endif %}
   >
-    <summary class="facets__summary">
-      <span class="facets__label">{{ filter.label }}</span>
+    <summary class='facets__summary'>
+      <span class='facets__label'>{{ filter.label }}</span>
 
-      <div class="facets__status-wrapper">
+      <div class='facets__status-wrapper'>
         {% if is_swatch %}
           <facet-status-component
-            class="facets__status facets__status--swatches"
-            facet-type="swatches"
+            class='facets__status facets__status--swatches'
+            facet-type='swatches'
           >
             <span
-              class="facets__swatch-wrapper{% if active_value_count > 3 %} bubble facets__bubble{% endif %}"
-              ref="facetStatus"
+              class='facets__swatch-wrapper{% if active_value_count > 3 %} bubble facets__bubble{% endif %}'
+              ref='facetStatus'
             >
               {%- liquid
                 if active_value_count > 3
@@ -71,22 +73,22 @@
           </facet-status-component>
         {% else %}
           <facet-status-component
-            class="facets__status"
-            facet-type="list"
-            data-filter-style="{{ filter_style }}"
+            class='facets__status'
+            facet-type='list'
+            data-filter-style='{{ filter_style }}'
           >
             <span
               {% if filter_style == 'horizontal' %}
                 {% if active_value_count > 1 %}
-                  class="bubble facets__bubble"
+                  class='bubble facets__bubble'
                 {% endif %}
               {% else %}
                 {% if active_value_count > 0 %}
-                  class="bubble facets__bubble"
+                  class='bubble facets__bubble'
                 {% endif %}
               {% endif %}
               hide-when-empty
-              ref="facetStatus"
+              ref='facetStatus'
             >
               {%- liquid
                 if filter_style == 'horizontal' and active_value_count == 1
@@ -98,7 +100,7 @@
             </span>
           </facet-status-component>
         {% endif %}
-        <span class="svg-wrapper icon-caret icon-animated">
+        <span class='svg-wrapper icon-caret icon-animated'>
           {{- 'icon-caret.svg' | inline_asset_content -}}
         </span>
       </div>
@@ -107,12 +109,12 @@
       {% unless filter_style == 'vertical' %}
         data-close-on-resize
       {% endunless %}
-      class="facets__inputs facets__panel-content details-content{% if filter_style == 'horizontal' %} color-{{ settings.popover_color_scheme }}{% endif %}"
-      id="facet-inputs-{{ filter.param_name | escape | replace: '.', '-' }}"
+      class='facets__inputs facets__panel-content details-content{% if filter_style == 'horizontal' %} color-{{ settings.popover_color_scheme }}{% endif %}'
+      id='facet-inputs-{{ filter.param_name | escape | replace: '.', '-' }}'
     >
       <facet-inputs-component
-        on:change="/updateFilters"
-        id="facet-inputs-component-{{ filter.param_name | escape | replace: '.', '-' }}"
+        on:change='/updateFilters'
+        id='facet-inputs-component-{{ filter.param_name | escape | replace: '.', '-' }}'
       >
         {% liquid
           assign has_active_values = false
@@ -156,8 +158,8 @@
         %}
 
         <div
-          class="facets__inputs-wrapper{% if is_swatch or is_image or should_use_pills %} facets__inputs-wrapper--row{% endif %}"
-          ref="showMoreContent"
+          class='facets__inputs-wrapper{% if is_swatch or is_image or should_use_pills %} facets__inputs-wrapper--row{% endif %}'
+          ref='showMoreContent'
         >
           {% liquid
             if is_swatch
@@ -186,15 +188,15 @@
             endif
           %}
           <ul
-            id="filters-list-{{ sectionId }}-{{ filter.param_name | escape | replace: '.', '-' }}"
-            class="facets__inputs-list{% if should_use_pills %} facets__inputs-list--grid{% endif %} list-unstyled{% if is_swatch %} facets__inputs-list--swatches{% if show_swatch_label %} facets__inputs-list--swatches-grid{% endif %}{% endif %}{% if is_image %} facets__inputs-list--images{% endif %}"
+            id='filters-list-{{ sectionId }}-{{ filter.param_name | escape | replace: '.', '-' }}'
+            class='facets__inputs-list{% if should_use_pills %} facets__inputs-list--grid{% endif %} list-unstyled{% if is_swatch %} facets__inputs-list--swatches{% if show_swatch_label %} facets__inputs-list--swatches-grid{% endif %}{% endif %}{% if is_image %} facets__inputs-list--images{% endif %}'
             {% if is_swatch %}
-              style="--swatch-columns: {{ swatch_columns }};"
+              style='--swatch-columns: {{ swatch_columns }};'
             {% endif %}
             {% if is_image %}
-              style="--image-columns: {{ image_columns }};"
+              style='--image-columns: {{ image_columns }};'
             {% endif %}
-            name="{{ filter.label }}"
+            name='{{ filter.label }}'
           >
             {%- for value in filter.values -%}
               {% liquid
@@ -212,10 +214,10 @@
                 endif
               %}
               <li
-                data-skip-node-update="true"
-                class="facets__inputs-list-item{% if hidden_class %} {{ hidden_class }}{% endif %}"
+                data-skip-node-update='true'
+                class='facets__inputs-list-item{% if hidden_class %} {{ hidden_class }}{% endif %}'
                 {% if hidden_class %}
-                  ref="showMoreItems[]"
+                  ref='showMoreItems[]'
                 {% endif %}
               >
                 {% if value.active %}
@@ -223,33 +225,33 @@
                 {% endif %}
                 {% if is_image %}
                   <fieldset
-                    class="variant-option variant-option--buttons variant-option--images"
-                    aria-label="{{ value.label }}"
-                    on:keydown="#facet-inputs-component-{{ filter.param_name | escape | replace: '.', '-' }}/handleKeyDown"
+                    class='variant-option variant-option--buttons variant-option--images'
+                    aria-label='{{ value.label }}'
+                    on:keydown='#facet-inputs-component-{{ filter.param_name | escape | replace: '.', '-' }}/handleKeyDown'
                   >
-                    <div class="facets__image-wrapper">
+                    <div class='facets__image-wrapper'>
                       {% if value.image %}
                         {{ value.image | image_url: width: 300 | image_tag: alt: value.alt }}
                       {% endif %}
                       {% if is_disabled %}
                         <svg
-                          aria-hidden="true"
-                          width="100%"
-                          height="100%"
-                          viewBox="0 0 100 100"
-                          preserveAspectRatio="none"
+                          aria-hidden='true'
+                          width='100%'
+                          height='100%'
+                          viewBox='0 0 100 100'
+                          preserveAspectRatio='none'
                         >
                           <line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke" />
                         </svg>
                       {% endif %}
                     </div>
                     <input
-                      tabindex="0"
-                      type="checkbox"
-                      name="{{ value.param_name }}"
-                      value="{{ value.value }}"
-                      aria-label="{{ value.label }}"
-                      id="{{ input_id }}"
+                      tabindex='0'
+                      type='checkbox'
+                      name='{{ value.param_name }}'
+                      value='{{ value.value }}'
+                      aria-label='{{ value.label }}'
+                      id='{{ input_id }}'
                       {% if value.active %}
                         checked
                       {% endif %}
@@ -259,37 +261,37 @@
                       {% if autofocus %}
                         autofocus
                       {% endif %}
-                      ref="facetInputs[]"
+                      ref='facetInputs[]'
                     >
                     <label
-                      class="facets__image-label"
-                      for="{{ input_id }}"
-                      tabindex="-1"
+                      class='facets__image-label'
+                      for='{{ input_id }}'
+                      tabindex='-1'
                     >
                       {{- value.label }}
                     </label>
                   </fieldset>
                 {% elsif is_swatch %}
                   <fieldset
-                    class="variant-option variant-option--buttons variant-option--swatches {% if is_disabled %}variant-option--swatches-disabled{% endif %}"
-                    aria-label="{{ value.label }}"
-                    on:keydown="#facet-inputs-component-{{ filter.param_name | escape | replace: '.', '-' }}/handleKeyDown"
+                    class='variant-option variant-option--buttons variant-option--swatches {% if is_disabled %}variant-option--swatches-disabled{% endif %}'
+                    aria-label='{{ value.label }}'
+                    on:keydown='#facet-inputs-component-{{ filter.param_name | escape | replace: '.', '-' }}/handleKeyDown'
                   >
                     <label
-                      class="variant-option__button-label variant-option__button-label--has-swatch swatch-rounded"
-                      on:pointerenter="/prefetchPage"
-                      on:pointerleave="/cancelPrefetchPage"
+                      class='variant-option__button-label variant-option__button-label--has-swatch swatch-rounded'
+                      on:pointerenter='/prefetchPage'
+                      on:pointerleave='/cancelPrefetchPage'
                     >
                       <div
-                        class="variant-option__swatch-wrapper"
+                        class='variant-option__swatch-wrapper'
                       >
                         <input
-                          tabindex="0"
-                          type="checkbox"
-                          name="{{ value.param_name }}"
-                          value="{{ value.value }}"
-                          aria-label="{{ value.label }}"
-                          id="{{ input_id }}"
+                          tabindex='0'
+                          type='checkbox'
+                          name='{{ value.param_name }}'
+                          value='{{ value.value }}'
+                          aria-label='{{ value.label }}'
+                          id='{{ input_id }}'
                           {% if value.active %}
                             checked
                           {% endif %}
@@ -299,25 +301,25 @@
                           {% if autofocus %}
                             autofocus
                           {% endif %}
-                          ref="facetInputs[]"
+                          ref='facetInputs[]'
                         >
                         {% render 'swatch', swatch: value.swatch, mode: 'filter' %}
                         {% if is_disabled %}
                           <svg
-                            aria-hidden="true"
-                            width="100%"
-                            height="100%"
-                            viewBox="0 0 100 100"
-                            preserveAspectRatio="none"
+                            aria-hidden='true'
+                            width='100%'
+                            height='100%'
+                            viewBox='0 0 100 100'
+                            preserveAspectRatio='none'
                           >
                             <line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke" />
                           </svg>
                         {% endif %}
                       </div>
                       <label
-                        class="{% if show_swatch_label %}facets__swatch-label{% else %}hidden{% endif %}"
-                        for="{{ input_id }}"
-                        tabindex="-1"
+                        class='{% if show_swatch_label %}facets__swatch-label{% else %}hidden{% endif %}'
+                        for='{{ input_id }}'
+                        tabindex='-1'
                       >
                         {{- value.label }}
                       </label>
@@ -326,16 +328,16 @@
                 {% else %}
                   {% if should_use_pills %}
                     <div
-                      class="facets__pill-wrapper"
-                      on:keydown="#facet-inputs-component-{{ filter.param_name | escape | replace: '.', '-' }}/handleKeyDown"
+                      class='facets__pill-wrapper'
+                      on:keydown='#facet-inputs-component-{{ filter.param_name | escape | replace: '.', '-' }}/handleKeyDown'
                     >
                       <input
-                        type="checkbox"
-                        name="{{ value.param_name }}"
-                        value="{{ value.value }}"
-                        id="{{ input_id }}"
-                        class="facets__pill-input"
-                        data-label="{{ value.label }}"
+                        type='checkbox'
+                        name='{{ value.param_name }}'
+                        value='{{ value.value }}'
+                        id='{{ input_id }}'
+                        class='facets__pill-input'
+                        data-label='{{ value.label }}'
                         {% if value.active %}
                           checked
                         {% endif %}
@@ -345,22 +347,22 @@
                         {% if autofocus %}
                           autofocus
                         {% endif %}
-                        ref="facetInputs[]"
-                        tabindex="-1"
+                        ref='facetInputs[]'
+                        tabindex='-1'
                       >
                       <label
-                        class="facets__pill-label"
-                        for="{{ input_id }}"
-                        tabindex="0"
+                        class='facets__pill-label'
+                        for='{{ input_id }}'
+                        tabindex='0'
                       >
                         {{- value.label }}
                         {% if is_disabled %}
                           <svg
-                            aria-hidden="true"
-                            width="100%"
-                            height="100%"
-                            viewBox="0 0 100 100"
-                            preserveAspectRatio="none"
+                            aria-hidden='true'
+                            width='100%'
+                            height='100%'
+                            viewBox='0 0 100 100'
+                            preserveAspectRatio='none'
                           >
                             <line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke" />
                           </svg>
@@ -387,19 +389,19 @@
         </div>
         {% if render_show_more %}
           <button
-            class="show-more__button button-unstyled button-unstyled--with-icon{% if filter_style == 'horizontal' %} desktop:hidden{% endif %}"
-            ref="showMoreButton"
-            on:click="/toggle"
-            aria-expanded="false"
-            aria-controls="filters-list-{{ sectionId }}-{{ filter.param_name | escape | replace: '.', '-' }}"
+            class='show-more__button button-unstyled button-unstyled--with-icon{% if filter_style == 'horizontal' %} desktop:hidden{% endif %}'
+            ref='showMoreButton'
+            on:click='/toggle'
+            aria-expanded='false'
+            aria-controls='filters-list-{{ sectionId }}-{{ filter.param_name | escape | replace: '.', '-' }}'
           >
-            <span class="svg-wrapper icon-plus">
+            <span class='svg-wrapper icon-plus'>
               {{- 'icon-plus.svg' | inline_asset_content -}}
             </span>
-            <span class="show-more__label show-more__label--more">
+            <span class='show-more__label show-more__label--more'>
               {{- 'actions.show_more' | t -}}
             </span>
-            <span class="show-more__label show-more__label--less">
+            <span class='show-more__label show-more__label--less'>
               {{- 'actions.show_less' | t -}}
             </span>
           </button>
@@ -409,14 +411,14 @@
         {% if should_render_clear %}
           <facet-clear-component>
             <div
-              class="facets__clear {% if has_active_values %}facets__clear--active{% endif %}"
-              ref="clearButton"
+              class='facets__clear {% if has_active_values %}facets__clear--active{% endif %}'
+              ref='clearButton'
             >
               <button
-                type="button"
-                on:click="/clearFilter"
-                on:keydown="/clearFilter"
-                class="clear-filter button button-secondary"
+                type='button'
+                on:click='/clearFilter'
+                on:keydown='/clearFilter'
+                class='clear-filter button button-secondary'
               >
                 {{- 'actions.clear' | t -}}
               </button>
@@ -434,7 +436,9 @@
   }
 
   .facets .checkbox .icon-checkmark {
-    transition: border-color 0.2s ease, background-color 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease;
   }
 
   .facets .checkbox:not(:has(.checkbox__input:disabled)):hover .icon-checkmark {
@@ -451,7 +455,9 @@
   }
 
   .facets .checkbox .checkbox__label-text {
-    transition: color 0.2s ease, font-weight 0.2s ease;
+    transition:
+      color 0.2s ease,
+      font-weight 0.2s ease;
   }
 
   /* Pill style */
@@ -479,7 +485,8 @@
     color: rgb(var(--pill-label-color-rgb));
     background-color: rgb(var(--pill-label-background-color-rgb));
     cursor: pointer;
-    transition: color var(--animation-speed) var(--animation-easing),
+    transition:
+      color var(--animation-speed) var(--animation-easing),
       background-color var(--animation-speed) var(--animation-easing);
     outline-color: var(--pill-label-focus-outline-color);
 

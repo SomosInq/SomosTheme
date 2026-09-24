@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign block_settings = block.settings
   assign image = settings.logo
@@ -26,11 +24,11 @@
 {%- endif -%}
 
 <div
-  class="
+  class='
     logo-block
     spacing-style
-  "
-  style="
+  '
+  style='
     {% if block_settings.unit == 'percent' %}
       --logo-width: {{ block_settings.percent_width }}%;
     {% else %}
@@ -56,11 +54,11 @@
       {% endif %}
     {% endif %}
     {% render 'spacing-style', settings: block_settings %}
-  "
+  '
   {{ block.shopify_attributes }}
 >
   {% if logo_image %}
-    <div class="logo-block__image-wrapper">
+    <div class='logo-block__image-wrapper'>
       {{ logo_image }}
     </div>
   {% else %}

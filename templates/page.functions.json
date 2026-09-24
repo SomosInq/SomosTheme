@@ -6,7 +6,7 @@
         "hero_text": {
           "type": "text",
           "settings": {
-            "text": "<h1>Explore every capability</h1>"
+            "text": "<h2>Explore every capability</h2>"
           }
         },
         "hero_body": {
@@ -77,9 +77,30 @@
     "content_grid": {
       "type": "editorial-content-grid",
       "blocks": {
-        "grid_one": { "type": "item", "settings": { "label": "01", "heading": "Discover", "text": "Lead shoppers into the collection with a clear point of view." } },
-        "grid_two": { "type": "item", "settings": { "label": "02", "heading": "Compare", "text": "Give customers the information they need to make a confident choice." } },
-        "grid_three": { "type": "item", "settings": { "label": "03", "heading": "Continue", "text": "Finish every journey with a relevant next step." } }
+        "grid_one": {
+          "type": "item",
+          "settings": {
+            "label": "01",
+            "heading": "Discover",
+            "text": "Lead shoppers into the collection with a clear point of view."
+          }
+        },
+        "grid_two": {
+          "type": "item",
+          "settings": {
+            "label": "02",
+            "heading": "Compare",
+            "text": "Give customers the information they need to make a confident choice."
+          }
+        },
+        "grid_three": {
+          "type": "item",
+          "settings": {
+            "label": "03",
+            "heading": "Continue",
+            "text": "Finish every journey with a relevant next step."
+          }
+        }
       },
       "block_order": ["grid_one", "grid_two", "grid_three"],
       "settings": {
@@ -96,8 +117,14 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "testimonial_one": { "type": "quote", "settings": { "quote": "Beautifully considered and easy to live with.", "author": "A happy customer" } },
-        "testimonial_two": { "type": "quote", "settings": { "quote": "The details make the difference.", "author": "Verified customer" } }
+        "testimonial_one": {
+          "type": "quote",
+          "settings": { "quote": "Beautifully considered and easy to live with.", "author": "A happy customer" }
+        },
+        "testimonial_two": {
+          "type": "quote",
+          "settings": { "quote": "The details make the difference.", "author": "Verified customer" }
+        }
       },
       "block_order": ["testimonial_one", "testimonial_two"],
       "settings": { "heading": "Loved by our community", "color_scheme": "scheme-1" }
@@ -105,9 +132,27 @@
     "faq": {
       "type": "faq",
       "blocks": {
-        "faq_one": { "type": "faq", "settings": { "question": "How do I choose the right product?", "answer": "Start with the collection that matches your needs, then compare the details on each product page." } },
-        "faq_two": { "type": "faq", "settings": { "question": "Where can I find product support?", "answer": "Our support content and contact options are available whenever you need them." } },
-        "faq_three": { "type": "faq", "settings": { "question": "Can I change my order?", "answer": "Contact us as soon as possible and we will do our best to help." } }
+        "faq_one": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose the right product?",
+            "answer": "Start with the collection that matches your needs, then compare the details on each product page."
+          }
+        },
+        "faq_two": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I find product support?",
+            "answer": "Our support content and contact options are available whenever you need them."
+          }
+        },
+        "faq_three": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I change my order?",
+            "answer": "Contact us as soon as possible and we will do our best to help."
+          }
+        }
       },
       "block_order": ["faq_one", "faq_two", "faq_three"],
       "settings": { "heading": "Common questions", "intro": "Helpful answers before you make a decision." }
@@ -126,8 +171,18 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "slide_one": { "type": "_slide", "settings": {}, "blocks": { "slide_text": { "type": "text", "settings": { "text": "<h2>Designed for daily life</h2>" } } }, "block_order": ["slide_text"] },
-        "slide_two": { "type": "_slide", "settings": {}, "blocks": { "slide_text": { "type": "text", "settings": { "text": "<h2>Find your next favourite</h2>" } } }, "block_order": ["slide_text"] }
+        "slide_one": {
+          "type": "_slide",
+          "settings": {},
+          "blocks": { "slide_text": { "type": "text", "settings": { "text": "<h2>Designed for daily life</h2>" } } },
+          "block_order": ["slide_text"]
+        },
+        "slide_two": {
+          "type": "_slide",
+          "settings": {},
+          "blocks": { "slide_text": { "type": "text", "settings": { "text": "<h2>Find your next favourite</h2>" } } },
+          "block_order": ["slide_text"]
+        }
       },
       "block_order": ["slide_one", "slide_two"],
       "settings": { "autoplay": true, "color_scheme": "scheme-1" }
@@ -145,11 +200,24 @@
     },
     "products": {
       "type": "product-list",
-      "settings": { "collection": "all", "max_products": 4, "columns": 4, "mobile_columns": "2", "color_scheme": "scheme-1" }
+      "settings": {
+        "collection": "all",
+        "max_products": 4,
+        "columns": 4,
+        "mobile_columns": "2",
+        "color_scheme": "scheme-1"
+      }
     },
     "recommendations": {
       "type": "product-recommendations",
-      "settings": { "product": "", "recommendation_type": "related", "max_products": 4, "columns": 4, "mobile_columns": "2", "color_scheme": "scheme-2" }
+      "settings": {
+        "product": "",
+        "recommendation_type": "related",
+        "max_products": 4,
+        "columns": 4,
+        "mobile_columns": "2",
+        "color_scheme": "scheme-2"
+      }
     },
     "shop_look": {
       "type": "shop-the-look",
@@ -163,26 +231,79 @@
     "functionality": {
       "type": "functionality-journey",
       "blocks": {
-        "function_one": { "type": "accordion_item", "settings": { "title": "Thoughtful design", "content": "Every detail is considered to make everyday routines feel simpler." } },
-        "function_two": { "type": "accordion_item", "settings": { "title": "Built to last", "content": "Reliable materials and practical construction support life in motion." } },
-        "function_three": { "type": "accordion_item", "settings": { "title": "Easy support", "content": "Clear guidance and helpful service are part of the experience." } }
+        "function_one": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Thoughtful design",
+            "content": "Every detail is considered to make everyday routines feel simpler."
+          }
+        },
+        "function_two": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Built to last",
+            "content": "Reliable materials and practical construction support life in motion."
+          }
+        },
+        "function_three": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Easy support",
+            "content": "Clear guidance and helpful service are part of the experience."
+          }
+        }
       },
       "block_order": ["function_one", "function_two", "function_three"],
-      "settings": { "eyebrow": "Functionality", "title": "Designed to do more", "description": "Explore the practical features that make the experience work.", "cta_label": "Learn more", "cta_link": "/pages/about", "wordmark": "function", "background_color": "#171718", "text_color": "#f5f5f5", "muted_text_color": "#a9a9aa", "border_color": "rgba(255,255,255,0.16)" }
+      "settings": {
+        "eyebrow": "Functionality",
+        "title": "Designed to do more",
+        "description": "Explore the practical features that make the experience work.",
+        "cta_label": "Learn more",
+        "cta_link": "/pages/about",
+        "wordmark": "function",
+        "background_color": "#171718",
+        "text_color": "#f5f5f5",
+        "muted_text_color": "#a9a9aa",
+        "border_color": "rgba(255,255,255,0.16)"
+      }
     },
     "support": {
       "type": "support",
       "blocks": {
-        "support_one": { "type": "faq", "settings": { "question": "Need help choosing?", "answer": "Our support team can help you find the right fit." } },
-        "support_two": { "type": "faq", "settings": { "question": "Need help with an order?", "answer": "Send us your order details and we will take a look." } }
+        "support_one": {
+          "type": "faq",
+          "settings": {
+            "question": "Need help choosing?",
+            "answer": "Our support team can help you find the right fit."
+          }
+        },
+        "support_two": {
+          "type": "faq",
+          "settings": {
+            "question": "Need help with an order?",
+            "answer": "Send us your order details and we will take a look."
+          }
+        }
       },
       "block_order": ["support_one", "support_two"]
     },
     "quiz": {
       "type": "quiz-flow",
       "blocks": {
-        "quiz_one": { "type": "quiz_question", "settings": { "question": "What matters most to you?", "options": "Everyday ease\nLong-term durability\nThoughtful design" } },
-        "quiz_two": { "type": "quiz_question", "settings": { "question": "How do you like to shop?", "options": "I know what I want\nI am exploring\nI need a recommendation" } }
+        "quiz_one": {
+          "type": "quiz_question",
+          "settings": {
+            "question": "What matters most to you?",
+            "options": "Everyday ease\nLong-term durability\nThoughtful design"
+          }
+        },
+        "quiz_two": {
+          "type": "quiz_question",
+          "settings": {
+            "question": "How do you like to shop?",
+            "options": "I know what I want\nI am exploring\nI need a recommendation"
+          }
+        }
       },
       "block_order": ["quiz_one", "quiz_two"],
       "settings": { "title": "Find your best fit", "description": "Answer two quick questions to get started." }
@@ -196,8 +317,40 @@
     },
     "cta": {
       "type": "final-cta",
-      "settings": { "heading": "Ready to explore?", "text": "Find the pieces that fit your everyday.", "link_label": "Shop the collection", "link_url": "/collections/all", "color_scheme": "scheme-1" }
+      "settings": {
+        "heading": "Ready to explore?",
+        "text": "Find the pieces that fit your everyday.",
+        "link_label": "Shop the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-1"
+      }
     }
   },
-  "order": ["hero", "features", "expanded", "media_content", "editorial", "content_grid", "benefits", "comparison", "usp", "testimonials", "faq", "email", "marquee", "slideshow", "social_proof", "intro", "collections", "products", "recommendations", "shop_look", "functionality", "support", "quiz", "custom", "cta"]
+  "order": [
+    "hero",
+    "features",
+    "expanded",
+    "media_content",
+    "editorial",
+    "content_grid",
+    "benefits",
+    "comparison",
+    "usp",
+    "testimonials",
+    "faq",
+    "email",
+    "marquee",
+    "slideshow",
+    "social_proof",
+    "intro",
+    "collections",
+    "products",
+    "recommendations",
+    "shop_look",
+    "functionality",
+    "support",
+    "quiz",
+    "custom",
+    "cta"
+  ]
 }

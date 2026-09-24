@@ -67,7 +67,7 @@ const viewTransitionTypes = {
         });
 
         resolve(null);
-      })
+      }),
     );
 
     return () =>

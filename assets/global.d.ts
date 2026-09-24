@@ -61,7 +61,7 @@ declare global {
       element: Element,
       options?: {
         focusOnPlay?: boolean;
-      }
+      },
     ): ModelViewer;
     play(): void;
     pause(): void;

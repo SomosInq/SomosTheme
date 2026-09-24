@@ -89,7 +89,7 @@ export default class PaginatedList extends Component {
         },
         {
           rootMargin: '100px',
-        }
+        },
       );
     }
 

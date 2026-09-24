@@ -10,14 +10,14 @@
 {% enddoc %}
 
 <div
-  id="predictive-search-results"
-  class="predictive-search-dropdown"
-  role="listbox"
-  aria-expanded="true"
-  style="--color-shadow: rgb(var(--color-foreground-rgb) / {{ shadow_opacity }});"
+  id='predictive-search-results'
+  class='predictive-search-dropdown'
+  role='listbox'
+  aria-expanded='true'
+  style='--color-shadow: rgb(var(--color-foreground-rgb) / {{ shadow_opacity }});'
 >
   {% if load_empty_state %}
-    <div class="predictive-search-results__inner">
+    <div class='predictive-search-results__inner'>
       {% liquid
         assign collection = settings.empty_state_collection | default: collections.all
         assign default_title = 'content.search_results_resource_products' | t
@@ -34,7 +34,7 @@
             limit: 4
           %}
         {% else %}
-          <div class="predictive-search-results__no-results">
+          <div class='predictive-search-results__no-results'>
             <p>{{ 'content.no_products_found' | t }}</p>
           </div>
         {% endif %}

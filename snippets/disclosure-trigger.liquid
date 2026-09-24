@@ -19,19 +19,19 @@
 {% enddoc %}
 
 <button
-  aria-controls="{{ controls_id }}"
-  aria-expanded="{% if is_expanded %}true{% else %}false{% endif %}"
-  aria-label="{% if is_expanded %}{{ 'actions.close' | t }}{% else %}{{ 'actions.open' | t }}{% endif %} {{ disclosure_name | t }}"
-  class="disclosure-trigger"
-  data-disclosure-open="{{ 'actions.open' | t }} {{ disclosure_name | t }}"
-  data-disclosure-close="{{ 'actions.close' | t }} {{ disclosure_name | t }}"
-  on:click="/toggleDisclosure"
-  ref="disclosureTrigger"
-  type="button"
+  aria-controls='{{ controls_id }}'
+  aria-expanded='{% if is_expanded %}true{% else %}false{% endif %}'
+  aria-label='{% if is_expanded %}{{ 'actions.close' | t }}{% else %}{{ 'actions.open' | t }}{% endif %} {{ disclosure_name | t }}'
+  class='disclosure-trigger'
+  data-disclosure-open='{{ 'actions.open' | t }} {{ disclosure_name | t }}'
+  data-disclosure-close='{{ 'actions.close' | t }} {{ disclosure_name | t }}'
+  on:click='/toggleDisclosure'
+  ref='disclosureTrigger'
+  type='button'
 >
-  <span class="disclosure-trigger__label h6">{{ label_text | t }}</span>
+  <span class='disclosure-trigger__label h6'>{{ label_text | t }}</span>
 
-  <span class="svg-wrapper icon-plus">
+  <span class='svg-wrapper icon-plus'>
     {{- 'icon-plus.svg' | inline_asset_content -}}
   </span>
 </button>

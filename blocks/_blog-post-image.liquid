@@ -1,5 +1,3 @@
-
-
 {%- doc -%}
   Renders the blog post image block.
 
@@ -9,25 +7,25 @@
 {%- assign block_settings = block.settings -%}
 
 <img
-  srcset="
+  srcset='
     {% if image.width >= 350 %}{{ image | image_url: width: 350 }} 350w,{% endif %}
     {% if image.width >= 750 %}{{ image | image_url: width: 750 }} 750w,{% endif %}
     {% if image.width >= 1100 %}{{ image | image_url: width: 1100 }} 1100w,{% endif %}
     {% if image.width >= 1500 %}{{ image | image_url: width: 1500 }} 1500w,{% endif %}
     {{ image | image_url }} {{ image.width }}w
-  "
-  src="{{ image | image_url: width: 1100 }}"
-  loading="eager"
-  fetchpriority="high"
-  width="{{ image.width }}"
-  height="{{ image.height }}"
-  alt="{{ image.alt | escape }}"
-  class="
+  '
+  src='{{ image | image_url: width: 1100 }}'
+  loading='eager'
+  fetchpriority='high'
+  width='{{ image.width }}'
+  height='{{ image.height }}'
+  alt='{{ image.alt | escape }}'
+  class='
     border-style
     blog-post-card__image
     blog-post-card__image--{{ block_settings.height }}
-  "
-  style="{% render 'border-override', settings: block_settings %}"
+  '
+  style='{% render 'border-override', settings: block_settings %}'
 >
 
 {% stylesheet %}

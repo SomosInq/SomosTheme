@@ -9,7 +9,7 @@
   @param {boolean} should_show_clear_all - Whether to show the clear all button
 {%- enddoc -%}
 
-<div class="facets-remove facets-remove--mobile-and-vertical">
+<div class='facets-remove facets-remove--mobile-and-vertical'>
   {%- for filter in filters -%}
     {%- liquid
       assign is_first_filter = forloop.first
@@ -19,16 +19,16 @@
         assign is_active = true
       -%}
       <facet-remove-component
-        class="
+        class='
           pills__pill
           pills__pill--desktop-small
           facets-remove__pill
-        "
-        data-url="{{ filter.url_to_remove }}"
-        tabindex="0"
-        role="button"
-        on:click="/removeFilter?form="
-        on:keydown="/removeFilter?form="
+        '
+        data-url='{{ filter.url_to_remove }}'
+        tabindex='0'
+        role='button'
+        on:click='/removeFilter?form='
+        on:keydown='/removeFilter?form='
         {% if is_first_filter and forloop.first %}
           autofocus
         {% endif %}
@@ -44,10 +44,10 @@
           –
           {{- filter.max_value.value | money -}}
         {%- endif -%}
-        <span class="svg-wrapper svg-wrapper--smaller">
+        <span class='svg-wrapper svg-wrapper--smaller'>
           {{- 'icon-filters-close.svg' | inline_asset_content -}}
         </span>
-        <span class="visually-hidden">{{ 'actions.remove' | t }}</span>
+        <span class='visually-hidden'>{{ 'actions.remove' | t }}</span>
       </facet-remove-component>
     {% else %}
       {%- for value in filter.active_values -%}
@@ -55,17 +55,17 @@
           assign is_active = true
         -%}
         <facet-remove-component
-          class="
+          class='
             pills__pill
             pills__pill--desktop-small
             facets-remove__pill
             {% if value.swatch %}pills__pill--swatch{% endif %}
-          "
-          data-url="{{ value.url_to_remove }}"
-          tabindex="0"
-          role="button"
-          on:click="/removeFilter?form="
-          on:keydown="/removeFilter?form="
+          '
+          data-url='{{ value.url_to_remove }}'
+          tabindex='0'
+          role='button'
+          on:click='/removeFilter?form='
+          on:keydown='/removeFilter?form='
           {% if is_first_filter and forloop.first %}
             autofocus
           {% endif %}
@@ -80,24 +80,24 @@
             {{ value.label | escape }}
           {% endif %}
 
-          <span class="svg-wrapper svg-wrapper--smaller">
+          <span class='svg-wrapper svg-wrapper--smaller'>
             {{- 'icon-filters-close.svg' | inline_asset_content -}}
           </span>
-          <span class="visually-hidden">{{ 'actions.remove' | t }}</span>
+          <span class='visually-hidden'>{{ 'actions.remove' | t }}</span>
         </facet-remove-component>
       {%- endfor -%}
     {% endif %}
   {%- endfor -%}
   {% if should_show_clear_all and is_active %}
     <facet-remove-component
-      data-url="{{ results_url }}"
+      data-url='{{ results_url }}'
     >
       <button
-        type="button"
-        class="button-unstyled facets__clear-all-link facets__clear-all{% if is_active %} active{% endif %}"
-        ref="clearButton"
-        on:click="/removeFilter?form="
-        on:keydown="/removeFilter?form="
+        type='button'
+        class='button-unstyled facets__clear-all-link facets__clear-all{% if is_active %} active{% endif %}'
+        ref='clearButton'
+        on:click='/removeFilter?form='
+        on:keydown='/removeFilter?form='
       >
         {{- 'actions.clear_all' | t -}}
       </button>
@@ -140,7 +140,8 @@
     padding: var(--padding-xs);
     min-width: fit-content;
     color: var(--button-color);
-    transition: text-decoration-color var(--animation-speed) var(--animation-easing),
+    transition:
+      text-decoration-color var(--animation-speed) var(--animation-easing),
       color var(--animation-speed) var(--animation-easing);
   }
 

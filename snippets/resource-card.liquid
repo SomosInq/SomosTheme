@@ -35,27 +35,27 @@
 
 {%- if resource_type == 'product' and settings.transition_to_main_product -%}
   <product-card-link
-    data-product-id="{{ resource.id }}"
-    data-featured-media-url="{{ featured_media_url }}"
-    data-product-transition="{{ settings.transition_to_main_product }}"
+    data-product-id='{{ resource.id }}'
+    data-featured-media-url='{{ featured_media_url }}'
+    data-product-transition='{{ settings.transition_to_main_product }}'
   >
 {%- endif -%}
 <div
-  class="resource-card{% if style == 'overlay' %} resource-card--overlay{% endif %}"
-  href="{{ resource.url }}"
-  data-resource-type="{{ resource_type }}"
+  class='resource-card{% if style == 'overlay' %} resource-card--overlay{% endif %}'
+  href='{{ resource.url }}'
+  data-resource-type='{{ resource_type }}'
 >
   <a
-    class="resource-card__link"
-    href="{{ resource.url }}"
+    class='resource-card__link'
+    href='{{ resource.url }}'
   >
-    <span class="visually-hidden">
+    <span class='visually-hidden'>
       {{ resource.title }}
     </span>
   </a>
   <div
-    class="resource-card__media"
-    style="--resource-card-aspect-ratio: {{ ratio }};"
+    class='resource-card__media'
+    style='--resource-card-aspect-ratio: {{ ratio }};'
     {% if resource_type == 'product' and settings.transition_to_main_product %}
       data-view-transition-to-main-product
     {% endif %}
@@ -103,15 +103,15 @@
         {%- endif -%}
       {%- else -%}
         <div
-          aria-hidden="true"
-          class="resource-card__image-placeholder"
+          aria-hidden='true'
+          class='resource-card__image-placeholder'
         >
           {{- resource.title | truncate: 60 -}}
         </div>
       {%- endif -%}
     {%- elsif resource_type == 'collection' -%}
       {%- if resource.products.size > 0 -%}
-        <div class="resource-card__image-wrapper">
+        <div class='resource-card__image-wrapper'>
           {% assign resource_products = resource.products | where: 'featured_image' %}
           {% for product in resource_products limit: 4 %}
             {{
@@ -125,19 +125,19 @@
     {%- endif -%}
   </div>
 
-  <div class="resource-card__content">
-    <p class="resource-card__title{% if style == 'overlay' %} h5{%else %} paragraph{% endif %}">
+  <div class='resource-card__content'>
+    <p class='resource-card__title{% if style == 'overlay' %} h5{%else %} paragraph{% endif %}'>
       {{- resource.title -}}
     </p>
 
     {% if resource_type == 'product' %}
       {% render 'price', product_resource: resource, show_unit_price: true %}
     {% elsif resource_type == 'collection' and single_thumbnail_collection == false %}
-      <p class="resource-card__subtext paragraph">
+      <p class='resource-card__subtext paragraph'>
         {{- 'content.search_results_resource_products_count' | t: count: resource.all_products_count -}}
       </p>
     {% else %}
-      <p class="resource-card__subtext paragraph">
+      <p class='resource-card__subtext paragraph'>
         {{- resource.excerpt | default: resource.content | strip_html | truncate: 65 -}}
       </p>
     {% endif %}

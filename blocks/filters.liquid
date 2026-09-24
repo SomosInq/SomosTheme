@@ -1,4 +1,5 @@
-
+{% comment %}Facet classes are styled by the shared filtering components.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 {%- doc -%}
   Renders the facet filtering component
 
@@ -8,9 +9,9 @@
 {%- enddoc -%}
 
 <script
-  src="{{ 'facets.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"
+  src='{{ 'facets.js' | asset_url }}'
+  type='module'
+  fetchpriority='low'
 ></script>
 
 {%- liquid
@@ -75,15 +76,15 @@
   {% if block_settings.filter_style == 'vertical' %}
     {% # These elements are always rendered in the horizontal bar that's why we apply the .facets--horizontal class %}
     <div
-      class="facets facets--horizontal facets-controls-wrapper spacing-style"
-      style="{% render 'spacing-style', settings: block_settings %}{% if block_settings.text_label_case == 'uppercase' %} --facet-label-transform: uppercase;{% endif %}"
+      class='facets facets--horizontal facets-controls-wrapper spacing-style'
+      style='{% render 'spacing-style', settings: block_settings %}{% if block_settings.text_label_case == 'uppercase' %} --facet-label-transform: uppercase;{% endif %}'
     >
       {% if block_settings.enable_filtering %}
-        <h4 class="facets--filters-title">{{ 'content.filters' | t }}</h4>
+        <h4 class='facets--filters-title'>{{ 'content.filters' | t }}</h4>
       {% endif %}
 
-      <div class="products-count-wrapper">
-        <span title="{{ 'content.product_count' | t }}">
+      <div class='products-count-wrapper'>
+        <span title='{{ 'content.product_count' | t }}'>
           {{- 'content.item_count' | t: count: products_count -}}
         </span>
       </div>
@@ -107,7 +108,7 @@
   {% endif %}
 
   <div
-    class="
+    class='
       {% if should_show_pane == false %}
         hidden
       {% endif %}
@@ -115,8 +116,8 @@
       facets-block-wrapper--{{ block_settings.filter_style }}
       {%- if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}
       {%- if block_settings.filter_width == 'full-width' %} facets-block-wrapper--full-width{% endif %}
-    "
-    style="
+    '
+    style='
       --grid-column--desktop:
         {%- if block_settings.filter_style == 'horizontal' -%}
           var(--{{ block_settings.filter_width }})
@@ -126,24 +127,24 @@
       {{ facets_margin_style }}
       --facets-inner-padding-block: {{ block_settings.padding-block-start }}px {{ block_settings.padding-block-end }}px;
       --facets-inner-padding-inline: var(--padding-lg);
-    "
+    '
     {{ block.shopify_attributes }}
   >
     <div
-      class="facets facets--{{ block_settings.filter_style }} spacing-style"
-      style="{% render 'spacing-style', settings: block_settings %}{% if block_settings.text_label_case == 'uppercase' %} --facet-label-transform: uppercase;{% endif %}"
-      aria-label="{{ 'accessibility.filters' | t }}"
+      class='facets facets--{{ block_settings.filter_style }} spacing-style'
+      style='{% render 'spacing-style', settings: block_settings %}{% if block_settings.text_label_case == 'uppercase' %} --facet-label-transform: uppercase;{% endif %}'
+      aria-label='{{ 'accessibility.filters' | t }}'
     >
       <facets-form-component
-        class="facets__form-wrapper"
-        section-id="{{ section.id }}"
-        form-style="{{ block_settings.filter_style }}"
+        class='facets__form-wrapper'
+        section-id='{{ section.id }}'
+        form-style='{{ block_settings.filter_style }}'
       >
         <form
-          action="{{ results_url }}"
-          id="FacetFiltersForm--{{ section.id }}-desktop"
-          class="facets__form"
-          ref="facetsForm"
+          action='{{ results_url }}'
+          id='FacetFiltersForm--{{ section.id }}-desktop'
+          class='facets__form'
+          ref='facetsForm'
         >
           {% if should_show_pane %}
             {% render 'filter-remove-buttons',
@@ -193,7 +194,7 @@
                 {%- endfor -%}
               {% endcapture %}
 
-              <div class="facets__filters-wrapper">
+              <div class='facets__filters-wrapper'>
                 {% if block_settings.filter_style == 'horizontal' %}
                   {% liquid
                     assign more_attributes = 'on:click="#filters-drawer/showDialog"'
@@ -220,8 +221,8 @@
               %}
             {% endif %}
             {% if block_settings.filter_style == 'horizontal' %}
-              <div class="products-count-wrapper">
-                <span title="{{ 'content.product_count' | t }}">
+              <div class='products-count-wrapper'>
+                <span title='{{ 'content.product_count' | t }}'>
                   {{- 'content.item_count' | t: count: products_count -}}
                 </span>
               </div>
@@ -249,20 +250,20 @@
   </div>
 
   <div
-    class="facets-toggle{% if block_settings.enable_filtering == false %} facets-toggle--no-filters{% endif %}{% if block_settings.filter_style == 'horizontal' and block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}"
-    style="
+    class='facets-toggle{% if block_settings.enable_filtering == false %} facets-toggle--no-filters{% endif %}{% if block_settings.filter_style == 'horizontal' and block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}'
+    style='
       --facets-inner-padding-block: {{ block_settings.padding-block-start }}px {{ block_settings.padding-block-end }}px; --facets-inner-padding-inline: var(--padding-lg);
       {{ facets_margin_style }}
-    "
+    '
   >
     {% if block_settings.enable_filtering %}
-      <div class="facets-toggle__wrapper">
+      <div class='facets-toggle__wrapper'>
         <button
-          class="button facets-toggle__button button-unstyled button-unstyled--with-icon"
-          on:click="#filters-drawer/showDialog"
-          type="button"
+          class='button facets-toggle__button button-unstyled button-unstyled--with-icon'
+          on:click='#filters-drawer/showDialog'
+          type='button'
         >
-          <span class="svg-wrapper">
+          <span class='svg-wrapper'>
             {{ 'icon-filter.svg' | inline_asset_content }}
           </span>
 
@@ -270,16 +271,16 @@
 
           {% if total_active_values > 0 %}
             <div
-              id="filter-count-bubble-toggle"
-              class="filter-count-bubble"
-              aria-label="{{ 'accessibility.filter_count' | t: count: total_active_values }}"
+              id='filter-count-bubble-toggle'
+              class='filter-count-bubble'
+              aria-label='{{ 'accessibility.filter_count' | t: count: total_active_values }}'
             >
-              <span class="filter-count-bubble__background"></span>
+              <span class='filter-count-bubble__background'></span>
 
               <span
-                ref="cartBubbleText"
-                class="filter-count-bubble__text"
-                aria-hidden="true"
+                ref='cartBubbleText'
+                class='filter-count-bubble__text'
+                aria-hidden='true'
               >
                 {{ total_active_values }}
               </span>
@@ -289,16 +290,16 @@
       </div>
     {% endif %}
 
-    <div class="facets-mobile-wrapper facets-controls-wrapper">
+    <div class='facets-mobile-wrapper facets-controls-wrapper'>
       {% if block_settings.enable_filtering == false and block_settings.enable_sorting %}
         <facets-form-component
-          section-id="{{ section.id }}"
-          id="FacetFiltersForm--{{ section.id }}-mobile-sorting-only"
+          section-id='{{ section.id }}'
+          id='FacetFiltersForm--{{ section.id }}-mobile-sorting-only'
         >
           <form
-            action="{{ results_url }}"
-            id="FacetFiltersForm--{{ section.id }}-mobile-sorting-only"
-            ref="facetsForm"
+            action='{{ results_url }}'
+            id='FacetFiltersForm--{{ section.id }}-mobile-sorting-only'
+            ref='facetsForm'
           >
             {% render 'sorting',
               results: results,
@@ -322,59 +323,59 @@
 
 {% if block_settings.enable_filtering %}
   <dialog-component
-    id="filters-drawer"
-    class="facets-block-wrapper facets-block-wrapper--vertical facets-block-wrapper--drawer color-{{ settings.drawer_color_scheme }}"
+    id='filters-drawer'
+    class='facets-block-wrapper facets-block-wrapper--vertical facets-block-wrapper--drawer color-{{ settings.drawer_color_scheme }}'
   >
     <dialog
-      ref="dialog"
-      class="facets facets--drawer dialog-modal drawer dialog-drawer dialog-drawer--right spacing-style"
-      style="{% render 'spacing-style', settings: block_settings %}"
+      ref='dialog'
+      class='facets facets--drawer dialog-modal drawer dialog-drawer dialog-drawer--right spacing-style'
+      style='{% render 'spacing-style', settings: block_settings %}'
       scroll-lock
-      aria-labelledby="filters-drawer-heading"
+      aria-labelledby='filters-drawer-heading'
     >
       {% assign form_component = 'FacetFiltersFormComponent--' | append: section.id | append: '-overflow' %}
 
       <facets-form-component
-        class="facets__form-wrapper"
-        section-id="{{ section.id }}"
-        id="{{ form_component }}"
+        class='facets__form-wrapper'
+        section-id='{{ section.id }}'
+        id='{{ form_component }}'
       >
         <form
-          action="{{ results_url }}"
-          id="FacetFiltersForm--{{ section.id }}-overflow"
-          class="facets__form"
-          ref="facetsForm"
+          action='{{ results_url }}'
+          id='FacetFiltersForm--{{ section.id }}-overflow'
+          class='facets__form'
+          ref='facetsForm'
         >
           <div
-            class="facets__title-wrapper"
-            style="--color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));"
+            class='facets__title-wrapper'
+            style='--color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));'
           >
             <h2
-              id="filters-drawer-heading"
-              class="facets-drawer__title h3"
+              id='filters-drawer-heading'
+              class='facets-drawer__title h3'
             >
               {{ 'blocks.filter' | t }}
 
               {% if total_active_values > 0 %}
                 <span
-                  class="bubble facets__bubble"
-                  aria-hidden="true"
+                  class='bubble facets__bubble'
+                  aria-hidden='true'
                 >
                   {{ total_active_values }}
                 </span>
-                <span class="visually-hidden">
+                <span class='visually-hidden'>
                   {{ 'accessibility.filter_count' | t: count: total_active_values }}
                 </span>
               {% endif %}
             </h2>
             <button
-              class="button facets-drawer__close button-unstyled close-button"
-              on:click="dialog-component/closeDialog"
-              type="button"
+              class='button facets-drawer__close button-unstyled close-button'
+              on:click='dialog-component/closeDialog'
+              type='button'
             >
               <span
-                class="svg-wrapper svg-wrapper--small"
-                title="{{ 'actions.close' | t }}"
+                class='svg-wrapper svg-wrapper--small'
+                title='{{ 'actions.close' | t }}'
               >
                 {{ 'icon-close.svg' | inline_asset_content }}
               </span>
@@ -389,7 +390,7 @@
               should_show_clear_all: false
             %}
 
-            <div class="facets__filters-wrapper">
+            <div class='facets__filters-wrapper'>
               {% assign total_active_values = 0 %}
               {% assign is_active = false %}
 

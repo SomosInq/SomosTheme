@@ -1,17 +1,17 @@
-
-
+{% comment %}Predictive-search classes are styled by the shared search components.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 {%- if predictive_search.performed or search.performed -%}
   <div
-    id="predictive-search-results"
-    class="predictive-search-dropdown"
-    role="listbox"
-    aria-label="{{ 'content.search_results_label' | t }}"
-    aria-expanded="true"
+    id='predictive-search-results'
+    class='predictive-search-dropdown'
+    role='listbox'
+    aria-label='{{ 'content.search_results_label' | t }}'
+    aria-expanded='true'
     data-transition-container
-    style="--color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));"
+    style='--color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));'
   >
     <div
-      class="predictive-search-results__inner"
+      class='predictive-search-results__inner'
       data-search-results
     >
       {% if predictive_search.performed %}
@@ -26,9 +26,9 @@
       {% endif %}
 
       <div
-        class="visually-hidden"
-        role="status"
-        aria-live="polite"
+        class='visually-hidden'
+        role='status'
+        aria-live='polite'
       >
         {%- if predictive_search.performed and search_results_count > 0 -%}
           {{ 'accessibility.search_results_count' | t: count: search_results_count, query: predictive_search.terms }}
@@ -45,23 +45,23 @@
               | plus: predictive_search.resources.collections.size
             %}
             <ul
-              class="predictive-search-results__list predictive-search-results__wrapper predictive-search-results__wrapper-queries list-unstyled"
-              role="listbox"
-              aria-labelledby="predictive-search-queries"
+              class='predictive-search-results__list predictive-search-results__wrapper predictive-search-results__wrapper-queries list-unstyled'
+              role='listbox'
+              aria-labelledby='predictive-search-queries'
             >
               {%- for resource in predictive_search.resources.queries -%}
                 <li
-                  class="predictive-search-results__card--query"
-                  ref="resultsItems[]"
-                  data-search-result-index="search-results-{{ shared_results_index | plus: forloop.index }}"
-                  on:keydown="/onSearchKeyDown"
+                  class='predictive-search-results__card--query'
+                  ref='resultsItems[]'
+                  data-search-result-index='search-results-{{ shared_results_index | plus: forloop.index }}'
+                  on:keydown='/onSearchKeyDown'
                 >
                   <a
-                    class="pills__pill predictive-search-results__pill"
-                    href="{{ resource.url }}"
+                    class='pills__pill predictive-search-results__pill'
+                    href='{{ resource.url }}'
                   >
                     <span
-                      aria-label="{{ resource.text }}"
+                      aria-label='{{ resource.text }}'
                     >
                       {{ resource.styled_text }}
                     </span>
@@ -111,7 +111,7 @@
             %}
           {% endif %}
         {% else %}
-          <p class="predictive-search-results__no-results">
+          <p class='predictive-search-results__no-results'>
             {{ 'content.search_results_no_results' | t: terms: predictive_search.terms }}
           </p>
         {% endif %}
@@ -153,7 +153,7 @@
           {% endif %}
 
           {% if single_result_url %}
-            <div data-single-result-url="{{ single_result_url }}"></div>
+            <div data-single-result-url='{{ single_result_url }}'></div>
           {% endif %}
         {% endif %}
       {% endif %}
@@ -320,7 +320,8 @@
     font-weight: 500;
     white-space: nowrap;
     color: var(--color-foreground);
-    transition: background-color var(--animation-speed-medium) var(--animation-timing-hover),
+    transition:
+      background-color var(--animation-speed-medium) var(--animation-timing-hover),
       box-shadow var(--animation-speed-medium) var(--animation-timing-bounce),
       transform var(--animation-speed-medium) var(--animation-timing-bounce);
     margin: 2px;
@@ -378,7 +379,8 @@
     scroll-snap-align: start;
     scroll-margin-block: calc(var(--title-font-size) + var(--title-margin-block) + var(--padding-sm))
       calc(var(--padding-xl) + var(--button-padding-block) * 2);
-    transition: transform var(--animation-speed-medium) var(--animation-timing-default),
+    transition:
+      transform var(--animation-speed-medium) var(--animation-timing-default),
       background-color var(--animation-speed-medium) var(--animation-timing-hover),
       border-color var(--animation-speed-medium) var(--animation-timing-hover);
 
@@ -395,7 +397,9 @@
   .recently-viewed-wrapper .predictive-search-results__card {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .recently-viewed-wrapper.removing .predictive-search-results__card {

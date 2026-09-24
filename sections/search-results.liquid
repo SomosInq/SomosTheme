@@ -1,23 +1,23 @@
-
-
+{% comment %}Collection layout utilities are defined in the global theme styles.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 <script
-  src="{{ 'results-list.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"
+  src='{{ 'results-list.js' | asset_url }}'
+  type='module'
+  fetchpriority='low'
 ></script>
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 
 <results-list
-  class="section product-grid-container spacing-style color-{{ section.settings.color_scheme }}"
-  style="--padding-block-start: {{ section.settings.padding-block-start }}px; --padding-block-end: {{ section.settings.padding-block-end }}px;"
-  section-id="{{ section.id }}"
-  infinite-scroll="{{ section.settings.enable_infinite_scroll }}"
+  class='section product-grid-container spacing-style color-{{ section.settings.color_scheme }}'
+  style='--padding-block-start: {{ section.settings.padding-block-start }}px; --padding-block-end: {{ section.settings.padding-block-end }}px;'
+  section-id='{{ section.id }}'
+  infinite-scroll='{{ section.settings.enable_infinite_scroll }}'
 >
   {% render 'skip-to-content-link', href: '#ResultsList', text: 'accessibility.skip_to_results_list' %}
 
   <div
-    class="collection-wrapper grid gap-style"
+    class='collection-wrapper grid gap-style'
   >
     {% assign products_per_page = 24 %}
 

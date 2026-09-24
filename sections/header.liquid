@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign order = 'logo,menu,localization,search,mobile_search,actions'
 
@@ -173,7 +171,7 @@
   endif
 %}
 
-<script type="application/ld+json">
+<script type='application/ld+json'>
   {
     "@context": "http://schema.org",
     "@type": "Organization",
@@ -186,19 +184,19 @@
 </script>
 
 <header-component
-  id="header-component"
-  class="{{ class }}"
+  id='header-component'
+  class='{{ class }}'
   {% if transparent %}
-    transparent="{{ transparent }}"
+    transparent='{{ transparent }}'
   {% endif %}
   {% if sticky %}
-    sticky="{{ sticky }}"
+    sticky='{{ sticky }}'
   {% endif %}
   data-skip-node-update
-  data-scroll-direction="none"
+  data-scroll-direction='none'
 >
   {%- if request.page_type == 'index' -%}
-    <h1 class="visually-hidden">{{ shop.name }}</h1>
+    <h1 class='visually-hidden'>{{ shop.name }}</h1>
   {%- endif -%}
   {% for row in rows %}
     {% liquid
@@ -250,13 +248,13 @@
     {% assign content = content | strip %}
     {% if content != blank %}
       <div
-        class="{{ class | strip }}"
-        ref="headerRowTop"
+        class='{{ class | strip }}'
+        ref='headerRowTop'
         {%- if style != blank -%}
-          style="{{ style | strip }}"
+          style='{{ style | strip }}'
         {%- endif -%}
       >
-        <div class="header__columns spacing-style">
+        <div class='header__columns spacing-style'>
           {{ content }}
         </div>
       </div>
@@ -264,15 +262,15 @@
   {% endfor %}
 
   {% if navigation_bar != blank %}
-    <div class="header__row header__row--mobile desktop:hidden color-{{ section.settings.color_scheme_bottom }}">
+    <div class='header__row header__row--mobile desktop:hidden color-{{ section.settings.color_scheme_bottom }}'>
       {{ navigation_bar }}
     </div>
   {% endif %}
 </header-component>
 
 <script
-  src="{{ 'header.js' | asset_url }}"
-  type="module"
+  src='{{ 'header.js' | asset_url }}'
+  type='module'
 ></script>
 
 {% stylesheet %}
@@ -328,14 +326,18 @@
 
       .header__row {
         /* Faster transition for "in" animation */
-        transition: color var(--animation-values-fast), border-color var(--animation-values-fast),
+        transition:
+          color var(--animation-values-fast),
+          border-color var(--animation-values-fast),
           background-color var(--animation-values-fast);
       }
     }
 
     .header__row {
       /* Slower transition for "out" animation */
-      transition: color var(--animation-values-slow), border-color var(--animation-values-slow),
+      transition:
+        color var(--animation-values-slow),
+        border-color var(--animation-values-slow),
         background-color var(--animation-values-slow);
     }
   }
@@ -343,10 +345,10 @@
   :is(.header[transparent]:not([data-sticky-state='active']), .header[transparent='always'][data-sticky-state='active'])
     .header__row:not(
       :has(
-          .mega-menu__list:hover,
-          .menu-list__link[aria-haspopup]:is(:hover, [aria-expanded='true'], [data-animating]),
-          .menu-list__list-item[slot='overflow'] .menu-list__link:is(:hover, [aria-expanded='true'], [data-animating])
-        )
+        .mega-menu__list:hover,
+        .menu-list__link[aria-haspopup]:is(:hover, [aria-expanded='true'], [data-animating]),
+        .menu-list__list-item[slot='overflow'] .menu-list__link:is(:hover, [aria-expanded='true'], [data-animating])
+      )
     ) {
     /* while transparent, header-row ignores its color-scheme settings, pull from the header-component */
     --color-foreground: inherit;
@@ -643,7 +645,7 @@
 {% endstylesheet %}
 
 {% unless request.design_mode %}
-  <script type="module">
+  <script type='module'>
     import { hydrate } from '@theme/section-hydration';
     const url = new URL(window.location.href);
     url.searchParams.delete('page');

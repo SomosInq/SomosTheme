@@ -6,7 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */ {
   "sections": {
     "main": {
       "type": "product-information",
@@ -37,8 +37,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "product-details": {
           "type": "_product-details",
@@ -129,8 +128,7 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {
-                  }
+                  "blocks": {}
                 },
                 "price_tVjtKg": {
                   "type": "price",
@@ -152,14 +150,10 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {
-                  }
+                  "blocks": {}
                 }
               },
-              "block_order": [
-                "text_xrnftG",
-                "price_tVjtKg"
-              ]
+              "block_order": ["text_xrnftG", "price_tVjtKg"]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -171,8 +165,7 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
@@ -185,8 +178,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
@@ -202,10 +194,8 @@
                 "quantity": {
                   "type": "quantity",
                   "static": true,
-                  "settings": {
-                  },
-                  "blocks": {
-                  }
+                  "settings": {},
+                  "blocks": {}
                 },
                 "add-to-cart": {
                   "type": "add-to-cart",
@@ -213,21 +203,16 @@
                   "settings": {
                     "style_class": "button"
                   },
-                  "blocks": {
-                  }
+                  "blocks": {}
                 },
                 "accelerated-checkout": {
                   "type": "accelerated-checkout",
                   "static": true,
-                  "settings": {
-                  },
-                  "blocks": {
-                  }
+                  "settings": {},
+                  "blocks": {}
                 }
               },
-              "block_order": [
-
-              ]
+              "block_order": []
             },
             "text_aEtTtq": {
               "type": "text",
@@ -253,8 +238,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
           "block_order": [
@@ -304,8 +288,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "static-product-card": {
           "type": "_product-card",
@@ -339,8 +322,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "product_title_M7MJkb": {
               "type": "product-title",
@@ -365,8 +347,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "price_gLWgA6": {
               "type": "price",
@@ -388,20 +369,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "product_card_gallery_DNizbJ",
-            "product_title_M7MJkb",
-            "price_gLWgA6"
-          ]
+          "block_order": ["product_card_gallery_DNizbJ", "product_title_M7MJkb", "price_gLWgA6"]
         }
       },
-      "block_order": [
-        "text_cbcgyb"
-      ],
+      "block_order": ["text_cbcgyb"],
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -424,11 +398,8 @@
     },
     "frequently_bought_together": {
       "type": "frequently-bought-together",
-      "blocks": {
-      },
-      "block_order": [
-
-      ],
+      "blocks": {},
+      "block_order": [],
       "settings": {
         "heading": "Complete the set"
       }
@@ -470,11 +441,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about products",
         "intro": "Useful answers for this page, with a clear route to more help when you need it."

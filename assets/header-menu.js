@@ -189,9 +189,12 @@ class HeaderMenu extends Component {
     item.ariaExpanded = 'false';
     item.setAttribute('data-animating', '');
 
-    setTimeout(() => {
-      item.removeAttribute('data-animating');
-    }, Math.max(0, this.animationDelay - 150)); // Start header transition 150ms before submenu finishes
+    setTimeout(
+      () => {
+        item.removeAttribute('data-animating');
+      },
+      Math.max(0, this.animationDelay - 150),
+    ); // Start header transition 150ms before submenu finishes
   };
 
   /**

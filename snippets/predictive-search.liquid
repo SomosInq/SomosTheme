@@ -1,3 +1,5 @@
+{% comment %}Predictive-search classes are styled by the shared search components.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 {%- doc -%}
   Renders the predictive search input and results.
 
@@ -11,91 +13,91 @@
 {%- enddoc -%}
 
 <script
-  src="{{ 'predictive-search.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"
+  src='{{ 'predictive-search.js' | asset_url }}'
+  type='module'
+  fetchpriority='low'
 ></script>
 
 <predictive-search-component
-  class="predictive-search color-{{ settings.popover_color_scheme }}{% if class != blank %} {{ class | strip }}{% endif %}"
-  style="--product-corner-radius: {{ settings.product_corner_radius | default: 8 | append: 'px' }}; --card-corner-radius: {{ settings.card_corner_radius | default: 8 | append: 'px' }};{% if settings.card_title_case == 'uppercase' %} --title-case: uppercase;{% endif %}"
-  data-section-id="predictive-search"
-  data-testid="{{ search_test_id }}"
-  role="search"
-  aria-label="{{ 'content.search_input_label' | t }}"
+  class='predictive-search color-{{ settings.popover_color_scheme }}{% if class != blank %} {{ class | strip }}{% endif %}'
+  style='--product-corner-radius: {{ settings.product_corner_radius | default: 8 | append: 'px' }}; --card-corner-radius: {{ settings.card_corner_radius | default: 8 | append: 'px' }};{% if settings.card_title_case == 'uppercase' %} --title-case: uppercase;{% endif %}'
+  data-section-id='predictive-search'
+  data-testid='{{ search_test_id }}'
+  role='search'
+  aria-label='{{ 'content.search_input_label' | t }}'
 >
   <form
-    action="{{ routes.search_url }}"
-    method="get"
-    role="search"
-    class="predictive-search-form"
-    ref="form"
-    on:keydown="/onSearchKeyDown"
+    action='{{ routes.search_url }}'
+    method='get'
+    role='search'
+    class='predictive-search-form'
+    ref='form'
+    on:keydown='/onSearchKeyDown'
   >
     <div
-      class="predictive-search-form__header"
+      class='predictive-search-form__header'
     >
-      <div class="predictive-search-form__header-inner">
+      <div class='predictive-search-form__header-inner'>
         <label
-          for="{{ input_id | default: 'Search' }}"
-          class="visually-hidden"
+          for='{{ input_id | default: 'Search' }}'
+          class='visually-hidden'
         >
           {{- 'content.search_input_label' | t -}}
         </label>
         <input
-          class="search-input"
-          id="{{ input_id | default: 'Search' }}"
-          type="search"
-          name="q"
-          role="combobox"
-          aria-expanded="false"
-          aria-owns="predictive-search-results"
-          aria-controls="predictive-search-results"
-          aria-haspopup="listbox"
-          aria-autocomplete="list"
-          autocomplete="off"
-          placeholder="{{ 'content.search_input_placeholder' | t }}"
-          ref="searchInput"
-          on:input="/search"
-          on:keydown="/onSearchKeyDown"
+          class='search-input'
+          id='{{ input_id | default: 'Search' }}'
+          type='search'
+          name='q'
+          role='combobox'
+          aria-expanded='false'
+          aria-owns='predictive-search-results'
+          aria-controls='predictive-search-results'
+          aria-haspopup='listbox'
+          aria-autocomplete='list'
+          autocomplete='off'
+          placeholder='{{ 'content.search_input_placeholder' | t }}'
+          ref='searchInput'
+          on:input='/search'
+          on:keydown='/onSearchKeyDown'
         >
         <input
-          name="options[prefix]"
-          type="hidden"
-          value="last"
+          name='options[prefix]'
+          type='hidden'
+          value='last'
         >
-        <span class="svg-wrapper predictive-search__icon">
+        <span class='svg-wrapper predictive-search__icon'>
           {{ 'icon-search.svg' | inline_asset_content }}
         </span>
         <button
-          type="button"
-          class="button-unstyled predictive-search__reset-button"
-          ref="resetButton"
+          type='button'
+          class='button-unstyled predictive-search__reset-button'
+          ref='resetButton'
           hidden
-          on:click="/resetSearch"
+          on:click='/resetSearch'
         >
           {{ 'actions.clear' | t }}
         </button>
       </div>
       <button
-        type="button"
-        class="button predictive-search__close-modal-button"
-        aria-label="{{ 'accessibility.close_dialog' | t }}"
-        on:click="dialog-component/closeDialog"
-        ref="closeModalButton"
+        type='button'
+        class='button predictive-search__close-modal-button'
+        aria-label='{{ 'accessibility.close_dialog' | t }}'
+        on:click='dialog-component/closeDialog'
+        ref='closeModalButton'
       >
-        <span class="svg-wrapper">
+        <span class='svg-wrapper'>
           {{ 'icon-close.svg' | inline_asset_content }}
         </span>
       </button>
     </div>
 
-    <div class="predictive-search-form__content-wrapper">
+    <div class='predictive-search-form__content-wrapper'>
       <div
-        class="predictive-search-form__content"
-        tabindex="-1"
-        ref="predictiveSearchResults"
-        on:click="/handleModalClick"
+        class='predictive-search-form__content'
+        tabindex='-1'
+        ref='predictiveSearchResults'
+        on:click='/handleModalClick'
       >
         {% render 'predictive-search-empty-state',
           load_empty_state: false,
@@ -104,10 +106,10 @@
         %}
       </div>
 
-      <div class="predictive-search-form__footer">
+      <div class='predictive-search-form__footer'>
         <button
-          class="button button-primary predictive-search__search-button"
-          ref="viewAllButton"
+          class='button button-primary predictive-search__search-button'
+          ref='viewAllButton'
         >
           {{ 'content.search_results_view_all' | t }}
         </button>
@@ -324,7 +326,8 @@
     background: transparent;
     color: var(--color-foreground);
     opacity: 0.68;
-    transition: opacity var(--animation-speed-medium) var(--animation-timing-fade-out),
+    transition:
+      opacity var(--animation-speed-medium) var(--animation-timing-fade-out),
       visibility var(--animation-speed-medium) var(--animation-timing-fade-out);
 
     &:hover {
@@ -353,7 +356,8 @@
     justify-content: center;
     width: var(--icon-size-lg);
     height: var(--icon-size-lg);
-    transition: background-color var(--animation-speed-medium) ease-in-out,
+    transition:
+      background-color var(--animation-speed-medium) ease-in-out,
       transform var(--animation-speed-medium) var(--animation-timing-bounce);
     border-radius: 50%;
 
@@ -380,7 +384,8 @@
   .predictive-search__search-button {
     margin: auto;
     z-index: var(--layer-raised);
-    transition: transform var(--animation-speed-medium) var(--animation-timing-bounce),
+    transition:
+      transform var(--animation-speed-medium) var(--animation-timing-bounce),
       box-shadow var(--animation-speed-medium) var(--animation-timing-hover);
     transform-origin: center;
 

@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign section_settings = section.settings
   assign image = settings.logo
@@ -25,17 +23,17 @@
   {% endcapture %}
 {%- endif -%}
 
-<div class="section-background color-{{ section_settings.color_scheme }}"></div>
+<div class='section-background color-{{ section_settings.color_scheme }}'></div>
 <div
-  class="section section--{{ section_settings.section_width }} color-{{ section_settings.color_scheme }}"
+  class='section section--{{ section_settings.section_width }} color-{{ section_settings.color_scheme }}'
 >
   <div
-    class="
+    class='
       logo-section
       logo-section--{{ section_settings.alignment_horizontal }}
       spacing-style
-    "
-    style="
+    '
+    style='
       {% if section_settings.unit == 'percent' %}
         --logo-width: {{ section_settings.percent_width }}%;
       {% else %}
@@ -61,11 +59,11 @@
         {% endif %}
       {% endif %}
       {% render 'spacing-style', settings: section_settings %}
-    "
+    '
     {{ section.shopify_attributes }}
   >
     {% if logo_image %}
-      <div class="logo-section__image-wrapper">
+      <div class='logo-section__image-wrapper'>
         {{ logo_image }}
       </div>
     {% else %}

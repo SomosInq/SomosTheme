@@ -1,32 +1,58 @@
-<social-media-slider class="section section--page-width social-slider color-{{ section.settings.color_scheme }}">
-  <div class="social-slider__inner page-width-content">
-    <div class="social-slider__header">
+<social-media-slider class='section section--page-width social-slider color-{{ section.settings.color_scheme }}'>
+  <div class='social-slider__inner page-width-content'>
+    <div class='social-slider__header'>
       <div>
-        {% if section.settings.eyebrow != blank %}<p class="social-slider__eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+        {% if section.settings.eyebrow != blank %}
+          <p class='social-slider__eyebrow'>{{ section.settings.eyebrow }}</p>
+        {% endif %}
         <h2>{{ section.settings.heading }}</h2>
       </div>
-      <div class="social-slider__actions">
-        <button type="button" data-slider-previous aria-label="Previous posts">&#8592;</button>
-        <button type="button" data-slider-next aria-label="Next posts">&#8594;</button>
+      <div class='social-slider__actions'>
+        <button type='button' data-slider-previous aria-label='Previous posts'>&#8592;</button>
+        <button type='button' data-slider-next aria-label='Next posts'>&#8594;</button>
         {% if section.settings.profile_url != blank %}
-          <a href="{{ section.settings.profile_url }}" target="_blank" rel="noopener">{{ section.settings.profile_label }}</a>
+          <a href='{{ section.settings.profile_url }}' target='_blank' rel='noopener'>
+            {{- section.settings.profile_label -}}
+          </a>
         {% endif %}
       </div>
     </div>
 
-    <div class="social-slider__track" data-slider-track tabindex="0">
+    <div class='social-slider__track' data-slider-track tabindex='0'>
       {% for block in section.blocks %}
-        <article class="social-slider__post" {{ block.shopify_attributes }}>
-          {% if block.settings.post_url != blank %}<a href="{{ block.settings.post_url }}" target="_blank" rel="noopener" aria-label="View post on Instagram">{% endif %}
-            {% if block.settings.image != blank %}
-              {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', alt: block.settings.alt_text }}
-            {% elsif block.settings.image_url != blank %}
-              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.alt_text | escape }}" loading="lazy" width="720" height="720">
-            {% else %}
-              {{ 'image' | placeholder_svg_tag: 'social-slider__placeholder' }}
-            {% endif %}
+        <article class='social-slider__post' {{ block.shopify_attributes }}>
+          {% if block.settings.post_url != blank -%}
+            <a href='{{ block.settings.post_url }}' target='_blank' rel='noopener' aria-label='View post on Instagram'>
+          {%- endif %}
+          {% if block.settings.image != blank %}
+            {{
+              block.settings.image
+              | image_url: width: 900
+              | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', alt: block.settings.alt_text
+            }}
+          {% elsif block.settings.asset_filename != blank %}
+            <img
+              src='{{ block.settings.asset_filename | asset_url }}'
+              alt='{{ block.settings.alt_text | escape }}'
+              loading='lazy'
+              width='900'
+              height='900'
+            >
+          {% elsif block.settings.image_url != blank %}
+            <img
+              src='{{ block.settings.image_url }}'
+              alt='{{ block.settings.alt_text | escape }}'
+              loading='lazy'
+              width='720'
+              height='720'
+            >
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'social-slider__placeholder' }}
+          {% endif %}
           {% if block.settings.post_url != blank %}</a>{% endif %}
-          {% if block.settings.caption != blank %}<p>{{ block.settings.caption }}</p>{% endif %}
+          {% if block.settings.caption != blank %}
+            <p>{{ block.settings.caption }}</p>
+          {% endif %}
         </article>
       {% endfor %}
     </div>
@@ -34,42 +60,117 @@
 </social-media-slider>
 
 {% stylesheet %}
-  .social-slider { display: block; padding-block: clamp(4rem, 8vw, 8rem); overflow: hidden; }
-  .social-slider__inner { display: grid; width: min(100%, var(--normal-content-width)); margin-inline: auto; gap: clamp(2.5rem, 5vw, 4.5rem); }
-  .social-slider__header { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
-  .social-slider__eyebrow { margin: 0 0 1rem; font-size: .6875rem; letter-spacing: .14em; text-transform: uppercase; }
-  .social-slider__header h2 { margin: 0; line-height: 1; }
-  .social-slider__actions { display: flex; align-items: center; gap: .75rem; }
-  .social-slider__actions button { width: 2.75rem; height: 2.75rem; border: 1px solid currentColor; border-radius: 0; background: transparent; color: inherit; cursor: pointer; box-shadow: none; }
-  .social-slider__actions a { margin-inline-start: .75rem; color: inherit; text-underline-offset: .3em; white-space: nowrap; }
-  .social-slider__track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(17rem, 28vw); gap: clamp(1rem, 2vw, 2rem); overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: inline mandatory; scrollbar-width: none; }
-  .social-slider__track::-webkit-scrollbar { display: none; }
-  .social-slider__post { scroll-snap-align: start; }
-  .social-slider__post a { display: block; color: inherit; }
+  .social-slider {
+    display: block;
+    padding-block: clamp(4rem, 8vw, 8rem);
+    overflow: hidden;
+  }
+  .social-slider__inner {
+    display: grid;
+    width: min(100%, var(--normal-content-width));
+    margin-inline: auto;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  .social-slider__header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .social-slider__eyebrow {
+    margin: 0 0 1rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .social-slider__header h2 {
+    margin: 0;
+    line-height: 1;
+  }
+  .social-slider__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .social-slider__actions button {
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid currentColor;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    box-shadow: none;
+  }
+  .social-slider__actions a {
+    margin-inline-start: 0.75rem;
+    color: inherit;
+    text-underline-offset: 0.3em;
+    white-space: nowrap;
+  }
+  .social-slider__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(17rem, 28vw);
+    gap: clamp(1rem, 2vw, 2rem);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+  }
+  .social-slider__track::-webkit-scrollbar {
+    display: none;
+  }
+  .social-slider__post {
+    scroll-snap-align: start;
+  }
+  .social-slider__post a {
+    display: block;
+    color: inherit;
+  }
   .social-slider__post img,
-  .social-slider__placeholder { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0; box-shadow: none; }
-  .social-slider__post p { margin: 1rem 0 0; font-size: .8125rem; line-height: 1.5; }
+  .social-slider__placeholder {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .social-slider__post p {
+    margin: 1rem 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
   @media screen and (max-width: 749px) {
-    .social-slider__header { align-items: start; flex-direction: column; }
-    .social-slider__track { grid-auto-columns: minmax(16rem, 78vw); }
+    .social-slider__header {
+      align-items: start;
+      flex-direction: column;
+    }
+    .social-slider__track {
+      grid-auto-columns: minmax(16rem, 78vw);
+    }
   }
 {% endstylesheet %}
 
 {% javascript %}
   if (!customElements.get('social-media-slider')) {
-    customElements.define('social-media-slider', class extends HTMLElement {
-      connectedCallback() {
-        this.track = this.querySelector('[data-slider-track]');
-        this.querySelector('[data-slider-previous]')?.addEventListener('click', () => this.move(-1));
-        this.querySelector('[data-slider-next]')?.addEventListener('click', () => this.move(1));
-      }
-      move(direction) {
-        const post = this.track?.querySelector('.social-slider__post');
-        if (!post) return;
-        const gap = parseFloat(getComputedStyle(this.track).columnGap) || 0;
-        this.track.scrollBy({ left: direction * (post.getBoundingClientRect().width + gap), behavior: 'smooth' });
-      }
-    });
+    customElements.define(
+      'social-media-slider',
+      class extends HTMLElement {
+        connectedCallback() {
+          this.track = this.querySelector('[data-slider-track]');
+          this.querySelector('[data-slider-previous]')?.addEventListener('click', () => this.move(-1));
+          this.querySelector('[data-slider-next]')?.addEventListener('click', () => this.move(1));
+        }
+        move(direction) {
+          const post = this.track?.querySelector('.social-slider__post');
+          if (!post) return;
+          const gap = parseFloat(getComputedStyle(this.track).columnGap) || 0;
+          this.track.scrollBy({ left: direction * (post.getBoundingClientRect().width + gap), behavior: 'smooth' });
+        }
+      },
+    );
   }
 {% endjavascript %}
 
@@ -90,6 +191,7 @@
       "name": "Social post",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "asset_filename", "label": "Theme asset filename" },
         { "type": "text", "id": "image_url", "label": "External image URL" },
         { "type": "text", "id": "alt_text", "label": "Image alt text" },
         { "type": "textarea", "id": "caption", "label": "Caption" },
@@ -97,6 +199,11 @@
       ]
     }
   ],
-  "presets": [{ "name": "Social media slider", "blocks": [{ "type": "post" }, { "type": "post" }, { "type": "post" }, { "type": "post" }] }]
+  "presets": [
+    {
+      "name": "Social media slider",
+      "blocks": [{ "type": "post" }, { "type": "post" }, { "type": "post" }, { "type": "post" }]
+    }
+  ]
 }
 {% endschema %}

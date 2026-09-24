@@ -17,22 +17,22 @@
     endif
   %}
   <variant-picker
-    class="variant-picker spacing-style variant-picker--{{ block_settings.alignment }}"
-    style="--color-strikethrough-mix: {{ strikethrough_color_mix }}; {% render 'spacing-style', settings: block_settings %}"
-    data-section-id="{{ section.id }}"
-    data-product-id="{{ product_resource.id }}"
-    data-block-id="{{ block.id }}"
-    data-product-url="{{ product_resource.url }}"
-    ref="mainVariantPicker"
+    class='variant-picker spacing-style variant-picker--{{ block_settings.alignment }}'
+    style='--color-strikethrough-mix: {{ strikethrough_color_mix }}; {% render 'spacing-style', settings: block_settings %}'
+    data-section-id='{{ section.id }}'
+    data-product-id='{{ product_resource.id }}'
+    data-block-id='{{ block.id }}'
+    data-product-url='{{ product_resource.url }}'
+    ref='mainVariantPicker'
     {% if product.id == product_resource.id %}
-      data-template-product-match="true"
+      data-template-product-match='true'
     {% endif %}
     {{ block.shopify_attributes }}
     {% if request.visual_preview_mode %}
       data-shopify-visual-preview
     {% endif %}
   >
-    <form class="variant-picker__form">
+    <form class='variant-picker__form'>
       {%- for product_option in product_resource.options_with_values -%}
         {%- liquid
           assign swatch_count = product_option.values | map: 'swatch' | compact | size
@@ -56,15 +56,15 @@
         {%- if variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
           {%- assign fieldset_index = forloop.index0 -%}
           <fieldset
-            class="variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}"
-            data-fieldset-index="{{ fieldset_index }}"
-            ref="fieldsets[]"
+            class='variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}'
+            data-fieldset-index='{{ fieldset_index }}'
+            ref='fieldsets[]'
             {{ option_id_attribute }}
           >
             <legend>
               {{ product_option.name | escape -}}
               {%- if variant_style == 'swatch' -%}
-                <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
+                <span class='variant-option__swatch-value'>{{ product_option.selected_value }}</span>
               {%- endif %}
             </legend>
             {%- for product_option_value in product_option.values -%}
@@ -72,31 +72,31 @@
                 {% assign longest_value = product_option_value.size %}
               {% endif %}
               <label
-                class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}"
+                class='variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}'
               >
                 <input
-                  type="radio"
-                  name="{{ product_option.name | escape }}-{{ block.id }}-{{ product_resource.id }}"
-                  value="{{ product_option_value | escape }}"
-                  aria-label="{{ product_option_value.name }}"
+                  type='radio'
+                  name='{{ product_option.name | escape }}-{{ block.id }}-{{ product_resource.id }}'
+                  value='{{ product_option_value | escape }}'
+                  aria-label='{{ product_option_value.name }}'
                   {% if product_option_value.available == false %}
-                    aria-disabled="true"
+                    aria-disabled='true'
                   {% endif %}
-                  data-previous-checked="false"
-                  data-fieldset-index="{{ fieldset_index }}"
-                  data-input-index="{{ forloop.index0 }}"
-                  data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
-                  data-option-value-id="{{ product_option_value.id }}"
-                  data-option-available="{{ product_option_value.available }}"
-                  data-connected-product-url="{{ product_option_value.product_url }}"
+                  data-previous-checked='false'
+                  data-fieldset-index='{{ fieldset_index }}'
+                  data-input-index='{{ forloop.index0 }}'
+                  data-input-id='{{ product_option.position }}-{{ forloop.index0 }}'
+                  data-option-value-id='{{ product_option_value.id }}'
+                  data-option-available='{{ product_option_value.available }}'
+                  data-connected-product-url='{{ product_option_value.product_url }}'
                   {% if product_option_value.variant.id %}
-                    data-variant-id="{{ product_option_value.variant.id }}"
+                    data-variant-id='{{ product_option_value.variant.id }}'
                   {% endif %}
                   {% if product_option_value.selected %}
-                    data-current-checked="true"
+                    data-current-checked='true'
                     checked
                   {% else %}
-                    data-current-checked="false"
+                    data-current-checked='false'
                   {% endif %}
                 >
                 {% if variant_style == 'swatch' %}
@@ -117,9 +117,9 @@
                   %}
                 {% else %}
                   {% if product_option_value.available == true %}
-                    <span class="variant-option__button-label__pill"></span>
+                    <span class='variant-option__button-label__pill'></span>
                   {% endif %}
-                  <span class="variant-option__button-label__text">{{ product_option_value | escape }}</span>
+                  <span class='variant-option__button-label__text'>{{ product_option_value | escape }}</span>
                 {% endif %}
                 {% render 'strikethrough-variant', product_option: product_option_value %}
               </label>
@@ -147,30 +147,30 @@
             endif
           %}
 
-          <div class="variant-option variant-option--dropdowns">
-            <label for="Option-{{ block.id }}-{{ forloop.index0 }}">{{ product_option.name | escape }}</label>
+          <div class='variant-option variant-option--dropdowns'>
+            <label for='Option-{{ block.id }}-{{ forloop.index0 }}'>{{ product_option.name | escape }}</label>
             <div
-              class="variant-option__select-wrapper"
-              style="
+              class='variant-option__select-wrapper'
+              style='
                 {%- if property_being_updated  -%}
                   --variant-picker-swatch-width: clamp(10px,{{ new_width }}px, 50px);
                 {%- endif -%}
-              "
+              '
             >
               <select
-                id="Option-{{ block.id }}-{{ forloop.index0 }}"
-                name="options[{{ product_option.name | escape }}]"
-                class="variant-option__select"
+                id='Option-{{ block.id }}-{{ forloop.index0 }}'
+                name='options[{{ product_option.name | escape }}]'
+                class='variant-option__select'
               >
                 {%- for product_option_value in product_option.values -%}
                   <option
-                    value="{{ product_option_value | escape }}"
-                    data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
-                    data-option-value-id="{{ product_option_value.id }}"
-                    data-variant-id="{{ product_option_value.variant.id }}"
-                    data-connected-product-url="{{ product_option_value.product_url }}"
+                    value='{{ product_option_value | escape }}'
+                    data-input-id='{{ product_option.position }}-{{ forloop.index0 }}'
+                    data-option-value-id='{{ product_option_value.id }}'
+                    data-variant-id='{{ product_option_value.variant.id }}'
+                    data-connected-product-url='{{ product_option_value.product_url }}'
                     {% if product_option_value.selected %}
-                      selected="selected"
+                      selected='selected'
                     {% endif %}
                   >
                     {% if product_option_value.available == false %}
@@ -182,10 +182,10 @@
                 {%- endfor -%}
               </select>
               <svg
-                aria-hidden="true"
-                focusable="false"
-                class="icon icon-caret"
-                viewBox="0 0 10 6"
+                aria-hidden='true'
+                focusable='false'
+                class='icon icon-caret'
+                viewBox='0 0 10 6'
               >
                 {%- render 'icon', icon: 'caret' -%}
               </svg>
@@ -194,7 +194,7 @@
         {%- endif -%}
       {%- endfor -%}
 
-      <script type="application/json">
+      <script type='application/json'>
         {{ product_resource.selected_or_first_available_variant | json }}
       </script>
     </form>

@@ -161,7 +161,7 @@ export class OverflowList extends DeclarativeShadowElement {
       'reflow',
       /** @param {ReflowEvent} event */ (event) => {
         this.#reflowItems(event.detail.lastVisibleElement);
-      }
+      },
     );
 
     this.#reflowItems();
@@ -426,7 +426,7 @@ if (!customElements.get('overflow-list')) {
 // Function to calculate total height of header group children
 export function calculateHeaderGroupHeight(
   header = document.querySelector('#header-component'),
-  headerGroup = document.querySelector('#header-group')
+  headerGroup = document.querySelector('#header-group'),
 ) {
   if (!headerGroup) return 0;
 

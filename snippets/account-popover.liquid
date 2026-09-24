@@ -2,19 +2,17 @@
   Renders the account popover for desktop users, which appears when clicking the account icon. It contains links for account actions like login, logout, and viewing account details.
 
   @param {object} [settings] - The theme-level settings.
-
-  @param {string} [settings.popover_color_scheme] - The color scheme for the popover panel.
 {%- enddoc -%}
 <anchored-popover-component
-  data-close-on-resize="true"
-  class="account-popover mobile:hidden"
+  data-close-on-resize='true'
+  class='account-popover mobile:hidden'
 >
   {% render 'account-button' with 'account-popover' as popover_id %}
   <div
-    class="account-popover__panel details-content color-{{ settings.popover_color_scheme }}"
-    id="account-popover"
-    popover="auto"
-    ref="popover"
+    class='account-popover__panel details-content color-{{ settings.popover_color_scheme }}'
+    id='account-popover'
+    popover='auto'
+    ref='popover'
   >
     {% render 'account-actions' %}
   </div>

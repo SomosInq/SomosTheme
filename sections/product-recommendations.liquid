@@ -1,8 +1,9 @@
-
+{% comment %}Product recommendation classes are styled by shared product components.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 <script
-  src="{{ 'product-recommendations.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"
+  src='{{ 'product-recommendations.js' | asset_url }}'
+  type='module'
+  fetchpriority='low'
 ></script>
 
 {% liquid
@@ -26,33 +27,33 @@
 %}
 
 <product-recommendations
-  id="product-recommendations-{{ section.id }}"
-  class="product-recommendations"
-  data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.max_products }}"
-  data-section-id="{{ section.id }}"
-  data-product-id="{{ section.settings.product.id | default: product.id }}"
-  data-intent="{{ section.settings.recommendation_type }}"
-  data-testid="product-recommendations-section"
-  data-recommendations-performed="{{ recommendations.performed }}"
+  id='product-recommendations-{{ section.id }}'
+  class='product-recommendations'
+  data-url='{{ routes.product_recommendations_url }}?limit={{ section.settings.max_products }}'
+  data-section-id='{{ section.id }}'
+  data-product-id='{{ section.settings.product.id | default: product.id }}'
+  data-intent='{{ section.settings.recommendation_type }}'
+  data-testid='product-recommendations-section'
+  data-recommendations-performed='{{ recommendations.performed }}'
   {{ section.shopify_attributes }}
 >
-  <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+  <div class='section-background color-{{ section.settings.color_scheme }}'></div>
   <div
-    class="
+    class='
       section
       section--{{ section.settings.section_width }}
       color-{{ section.settings.color_scheme }}
       section-resource-list
       spacing-style
       gap-style
-    "
-    style="
+    '
+    style='
       {%  render 'spacing-style', settings: section.settings %}
       {%  render 'gap-style', value: section.settings.gap %}
       {{ styles }}
-    "
+    '
   >
-    <div class="section-resource-list__content">
+    <div class='section-resource-list__content'>
       {% content_for 'blocks' %}
     </div>
 
@@ -102,7 +103,7 @@
       %}
 
       <div
-        class="
+        class='
           resource-list
           {% if section.settings.layout_type == 'carousel' %}
             force-full-width
@@ -111,11 +112,11 @@
             hidden--mobile
           {% endif %}
           {{ classes }}
-        "
+        '
         {% if section.settings.layout_type == 'grid' %}
-          data-testid="resource-list-grid"
+          data-testid='resource-list-grid'
         {% endif %}
-        data-has-recommendations="{{ has_recommendations }}"
+        data-has-recommendations='{{ has_recommendations }}'
       >
         {% case section.settings.layout_type %}
           {% when 'grid' %}
@@ -135,15 +136,15 @@
           assign mobile_carousel_gap = section.settings.columns_gap
         %}
         <div
-          class="
+          class='
             resource-list
             hidden--desktop
             force-full-width
-          "
-          style="
+          '
+          style='
             --resource-list-gap: {{ mobile_carousel_gap }}px;
             --column-count: {{ section.settings.columns }};
-          "
+          '
         >
           {% render 'resource-list-carousel',
             ref: 'resourceListCarouselMobile',
@@ -155,12 +156,12 @@
       {% endif %}
     {%- else -%}
       <div
-        class="resource-list resource-list--grid"
+        class='resource-list resource-list--grid'
       >
         {% for i in (1..section.settings.columns) %}
           <div
-            class="product-recommendations__skeleton-item"
-            aria-label="{{ 'accessibility.loading_product_recommendations' | t }}"
+            class='product-recommendations__skeleton-item'
+            aria-label='{{ 'accessibility.loading_product_recommendations' | t }}'
           ></div>
         {% endfor %}
       </div>

@@ -100,7 +100,7 @@ class DeferredMedia extends Component {
         iframe.dataset.videoType === 'youtube'
           ? '{"event":"command","func":"playVideo","args":""}'
           : '{"method":"play"}',
-        '*'
+        '*',
       );
     } else {
       this.querySelector('video')?.play();
@@ -121,7 +121,7 @@ class DeferredMedia extends Component {
         iframe.dataset.videoType === 'youtube'
           ? '{"event":"command","func":"' + 'pauseVideo' + '","args":""}'
           : '{"method":"pause"}',
-        '*'
+        '*',
       );
     } else {
       this.querySelector('video')?.pause();
@@ -204,7 +204,7 @@ class ProductModel extends DeferredMedia {
         pointerStartX = event.clientX;
         pointerStartY = event.clientY;
       },
-      { signal }
+      { signal },
     );
 
     element.addEventListener(
@@ -221,7 +221,7 @@ class ProductModel extends DeferredMedia {
           this.pauseMedia();
         }
       },
-      { signal }
+      { signal },
     );
   }
 

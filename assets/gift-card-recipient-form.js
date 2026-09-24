@@ -114,8 +114,8 @@ class GiftCardRecipientForm extends Component {
     if (!Object.values(GiftCardRecipientForm.DeliveryMode).includes(mode)) {
       throw new Error(
         `Invalid delivery mode: ${mode}. Must be one of: ${Object.values(GiftCardRecipientForm.DeliveryMode).join(
-          ', '
-        )}`
+          ', ',
+        )}`,
       );
     }
 
@@ -167,7 +167,7 @@ class GiftCardRecipientForm extends Component {
           recipientFormVisible: isRecipientMode,
         },
         bubbles: true,
-      })
+      }),
     );
   }
 

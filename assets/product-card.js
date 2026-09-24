@@ -168,7 +168,7 @@ export class ProductCard extends Component {
         new CustomEvent('reflow', {
           bubbles: true,
           detail: {},
-        })
+        }),
       );
     });
   }

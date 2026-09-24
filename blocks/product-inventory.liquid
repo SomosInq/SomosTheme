@@ -1,5 +1,3 @@
-
-
 {%- liquid
   assign block_settings = block.settings
   assign variant = closest.product.selected_or_first_available_variant
@@ -43,27 +41,27 @@
 -%}
 
 <product-inventory
-  class="
+  class='
     product-inventory spacing-style
     {% if block_settings.type_preset != '' %}{{ block_settings.type_preset }}{% endif%}
-  "
-  style="{% render 'spacing-style', settings: block_settings %}"
+  '
+  style='{% render 'spacing-style', settings: block_settings %}'
   {{ block.shopify_attributes }}
-  data-product-id="{{ product.id }}"
+  data-product-id='{{ product.id }}'
 >
   <span
-    class="product-inventory__status"
+    class='product-inventory__status'
   >
     <span
-      class="svg-wrapper product-inventory__icon product-inventory__icon-{{ status }}"
+      class='svg-wrapper product-inventory__icon product-inventory__icon-{{ status }}'
     >
       {{ 'icon-inventory.svg' | inline_asset_content }}
     </span>
     <span
-      class="product-inventory__text"
-      id="Inventory-{{ section.id }}"
-      role="status"
-      aria-label="{{ 'accessibility.inventory_status' | t }}"
+      class='product-inventory__text'
+      id='Inventory-{{ section.id }}'
+      role='status'
+      aria-label='{{ 'accessibility.inventory_status' | t }}'
     >
       {%- if show_quantity -%}
         {{ 'content.inventory_low_stock_show_count' | t: count: inventory_quantity }}

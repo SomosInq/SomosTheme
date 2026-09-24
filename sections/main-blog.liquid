@@ -1,43 +1,41 @@
-
-
 <script
-  src="{{ 'blog-posts-list.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"
+  src='{{ 'blog-posts-list.js' | asset_url }}'
+  type='module'
+  fetchpriority='low'
 ></script>
 
-<blog-posts-list section-id="{{ section.id }}">
-  <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<blog-posts-list section-id='{{ section.id }}'>
+  <div class='section-background color-{{ section.settings.color_scheme }}'></div>
   <div
-    class="
+    class='
       section
       color-{{ section.settings.color_scheme }}
       blog-posts
       spacing-style
       size-style
-    "
-    style="{% render 'spacing-style', settings: section.settings %}"
+    '
+    style='{% render 'spacing-style', settings: section.settings %}'
   >
     {% content_for 'blocks' %}
 
     {%- paginate blog.articles by 12 -%}
-      <span ref="viewMorePrevious"></span>
+      <span ref='viewMorePrevious'></span>
       <div
-        ref="grid"
-        class="blog-posts-container"
-        data-last-page="{{ paginate.pages }}"
+        ref='grid'
+        class='blog-posts-container'
+        data-last-page='{{ paginate.pages }}'
       >
         {% for article in blog.articles %}
           <div
-            class="blog-post-item"
-            ref="cards[]"
-            data-page="{{ paginate.current_page }}"
+            class='blog-post-item'
+            ref='cards[]'
+            data-page='{{ paginate.current_page }}'
           >
             {% content_for 'block', id: 'static-blog-post-card', type: '_blog-post-card', article: article %}
           </div>
         {% endfor %}
       </div>
-      <span ref="viewMoreNext"></span>
+      <span ref='viewMoreNext'></span>
     {%- endpaginate -%}
   </div>
 </blog-posts-list>

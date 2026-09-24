@@ -179,7 +179,7 @@ class LocalizationFormComponent extends Component {
       labelMatchStart: false,
       // If true, a result will not display unless the search value equals an alias in its entirety
       aliasExactMatch: false,
-    }
+    },
   ) {
     let matchTypes = {};
     const { aliases, value: iso } = countryEl.dataset;
@@ -211,7 +211,7 @@ class LocalizationFormComponent extends Component {
       matchTypes.alias =
         countryAliases.length > 0 &&
         countryAliases.find((alias) =>
-          options.aliasExactMatch ? alias === searchValue : alias.startsWith(searchValue)
+          options.aliasExactMatch ? alias === searchValue : alias.startsWith(searchValue),
         ) !== undefined;
     }
 

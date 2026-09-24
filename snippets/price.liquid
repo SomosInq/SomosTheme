@@ -41,27 +41,27 @@
   endif
 -%}
 
-<div ref="priceContainer">
+<div ref='priceContainer'>
   {% if show_sale_price_first == false and show_compare_price %}
-    <span role="group">
-      <span class="visually-hidden">{{ 'content.price_regular' | t }}&nbsp;</span>
-      <span class="compare-at-price">{{- compare_at_price -}}</span>
+    <span role='group'>
+      <span class='visually-hidden'>{{ 'content.price_regular' | t }}&nbsp;</span>
+      <span class='compare-at-price'>{{- compare_at_price -}}</span>
     </span>
   {% endif %}
 
   {% if show_compare_price %}
-    <span role="group">
-      <span class="visually-hidden">{{ 'content.price_sale' | t }}&nbsp;</span>
-      <span class="price">{{ price | default: '&nbsp;' }}</span>
+    <span role='group'>
+      <span class='visually-hidden'>{{ 'content.price_sale' | t }}&nbsp;</span>
+      <span class='price'>{{ price | default: '&nbsp;' }}</span>
     </span>
   {% else %}
-    <span class="price">{{ price | default: '&nbsp;' }}</span>
+    <span class='price'>{{ price | default: '&nbsp;' }}</span>
   {% endif %}
 
   {% if show_sale_price_first == true and show_compare_price %}
-    <span role="group">
-      <span class="visually-hidden">{{ 'content.price_regular' | t }}&nbsp;</span>
-      <span class="compare-at-price">{{- compare_at_price -}}</span>
+    <span role='group'>
+      <span class='visually-hidden'>{{ 'content.price_regular' | t }}&nbsp;</span>
+      <span class='compare-at-price'>{{- compare_at_price -}}</span>
     </span>
   {% endif %}
   {%- if selected_variant.unit_price and show_unit_price %}

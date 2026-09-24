@@ -260,14 +260,14 @@ function getMostVisibleElement(elements) {
     const observer = new IntersectionObserver(
       (entries) => {
         const mostVisible = entries.reduce((prev, current) =>
-          current.intersectionRatio > prev.intersectionRatio ? current : prev
+          current.intersectionRatio > prev.intersectionRatio ? current : prev,
         );
         observer.disconnect();
         resolve(/** @type {HTMLElement} */ (mostVisible.target));
       },
       {
         threshold: Array.from({ length: 100 }, (_, i) => i / 100),
-      }
+      },
     );
 
     for (const element of elements) {

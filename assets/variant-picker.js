@@ -143,7 +143,7 @@ export default class VariantPicker extends Component {
             radios[newCurrentIndex].dataset.currentChecked = 'true';
             fieldset.style.setProperty(
               '--pill-width-current',
-              `${radios[newCurrentIndex].parentElement?.offsetWidth || 0}px`
+              `${radios[newCurrentIndex].parentElement?.offsetWidth || 0}px`,
             );
           }
 
@@ -152,7 +152,7 @@ export default class VariantPicker extends Component {
             radios[newPreviousIndex].dataset.currentChecked = 'false';
             fieldset.style.setProperty(
               '--pill-width-previous',
-              `${radios[newPreviousIndex].parentElement?.offsetWidth || 0}px`
+              `${radios[newPreviousIndex].parentElement?.offsetWidth || 0}px`,
             );
           }
         }
@@ -245,7 +245,7 @@ export default class VariantPicker extends Component {
                 html,
                 productId: this.dataset.productId ?? '',
                 newProduct,
-              })
+              }),
             );
           }
         }

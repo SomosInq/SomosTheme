@@ -96,7 +96,7 @@
 %}
 
 <div
-  class="
+  class='
     resource-list
     {% if settings.layout_type == 'carousel' %}
       force-full-width
@@ -105,10 +105,10 @@
       hidden--mobile
     {% endif %}
     {{ resource_list_classes }}
-  "
-  style="{{ resource_list_styles }}"
+  '
+  style='{{ resource_list_styles }}'
   {% if test_id %}
-    data-testid="{{ test_id }}"
+    data-testid='{{ test_id }}'
   {% endif %}
 >
   {% case settings.layout_type %}
@@ -149,18 +149,18 @@
   %}
 
   <div
-    class="
+    class='
       resource-list
       hidden--desktop
       resource-list__carousel
       force-full-width
-    "
-    style="
+    '
+    style='
       --resource-list-column-gap-desktop: {{ mobile_carousel_gap }}px;
       --column-count: {{ settings.columns | default: 3 }};
       --column-count-mobile: 1;
       --mobile-card-size: {{ settings.mobile_card_size | default: '60cqw' }};
-    "
+    '
   >
     {% liquid
       assign carousel_ref_mobile = carousel_ref | append: 'Mobile'

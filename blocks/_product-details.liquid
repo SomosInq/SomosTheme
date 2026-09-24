@@ -1,18 +1,16 @@
-
-
 {%- assign block_settings = block.settings -%}
 
 <div
-  id="ProductInformation-{{ section.id }}"
-  class="
+  id='ProductInformation-{{ section.id }}'
+  class='
     product-details
     {% if block_settings.sticky_details_desktop %} sticky-content--desktop{% endif %}
     {% if block_settings.height == 'fill' -%} full-height--desktop{% endif -%}
-  "
-  style="--details-position: {{ block_settings.details_position }};"
-  data-testid="product-information-details"
+  '
+  style='--details-position: {{ block_settings.details_position }};'
+  data-testid='product-information-details'
   {% if settings.transition_to_main_product %}
-    data-view-transition-type="product-details"
+    data-view-transition-type='product-details'
   {% endif %}
 >
   {% capture children %}

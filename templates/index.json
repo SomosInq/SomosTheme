@@ -15,7 +15,8 @@
         "post_1": {
           "type": "post",
           "settings": {
-            "image_url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+            "asset_filename": "editorial-collection-look.jpg",
+            "image_url": "",
             "alt_text": "Curated clothing rail",
             "caption": "New textures, considered layers, and pieces made for repeat wear.",
             "post_url": ""
@@ -24,7 +25,8 @@
         "post_2": {
           "type": "post",
           "settings": {
-            "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80",
+            "asset_filename": "editorial-community.jpg",
+            "image_url": "",
             "alt_text": "Street-style look",
             "caption": "Everyday dressing, seen our way.",
             "post_url": ""
@@ -33,7 +35,8 @@
         "post_3": {
           "type": "post",
           "settings": {
-            "image_url": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=80",
+            "asset_filename": "editorial-brand-studio.jpg",
+            "image_url": "",
             "alt_text": "Fashion studio details",
             "caption": "Behind the details at Somos.",
             "post_url": ""
@@ -42,7 +45,8 @@
         "post_4": {
           "type": "post",
           "settings": {
-            "image_url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+            "asset_filename": "editorial-fit-guide.jpg",
+            "image_url": "",
             "alt_text": "Neutral everyday outfit",
             "caption": "A closer look at this week’s edit.",
             "post_url": ""
@@ -51,20 +55,15 @@
         "post_5": {
           "type": "post",
           "settings": {
-            "image_url": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
+            "asset_filename": "editorial-collection-look.jpg",
+            "image_url": "",
             "alt_text": "Clothing collection",
             "caption": "Fewer, better choices for the season ahead.",
             "post_url": ""
           }
         }
       },
-      "block_order": [
-        "post_1",
-        "post_2",
-        "post_3",
-        "post_4",
-        "post_5"
-      ],
+      "block_order": ["post_1", "post_2", "post_3", "post_4", "post_5"],
       "settings": {
         "eyebrow": "Follow along",
         "heading": "Somos on Instagram",
@@ -180,8 +179,7 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {
-                  }
+                  "blocks": {}
                 },
                 "text_kmJ9AQ": {
                   "type": "text",
@@ -207,14 +205,10 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {
-                  }
+                  "blocks": {}
                 }
               },
-              "block_order": [
-                "text_Gpw73B",
-                "text_kmJ9AQ"
-              ]
+              "block_order": ["text_Gpw73B", "text_kmJ9AQ"]
             },
             "text_4EaGQt": {
               "type": "text",
@@ -240,19 +234,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "group_DKLfyX",
-            "text_4EaGQt"
-          ]
+          "block_order": ["group_DKLfyX", "text_4EaGQt"]
         }
       },
-      "block_order": [
-        "group_cYwbDP"
-      ],
+      "block_order": ["group_cYwbDP"],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
         "media_type_1": "image",
@@ -347,8 +335,7 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "text_znMide": {
               "type": "text",
@@ -373,8 +360,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "button_yt3QW8": {
               "type": "button",
@@ -388,15 +374,10 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "spacer_qQCMaD",
-            "text_znMide",
-            "button_yt3QW8"
-          ]
+          "block_order": ["spacer_qQCMaD", "text_znMide", "button_yt3QW8"]
         },
         "group_XqPK97": {
           "type": "group",
@@ -449,8 +430,7 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "text_AtreaK": {
               "type": "text",
@@ -475,8 +455,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "button_qkHGEA": {
               "type": "button",
@@ -490,15 +469,10 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "spacer_AmYeyC",
-            "text_AtreaK",
-            "button_qkHGEA"
-          ]
+          "block_order": ["spacer_AmYeyC", "text_AtreaK", "button_qkHGEA"]
         },
         "group_CPEDEc": {
           "type": "group",
@@ -551,8 +525,7 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "text_y3Hd9t": {
               "type": "text",
@@ -577,8 +550,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "button_nNr4em": {
               "type": "button",
@@ -592,22 +564,13 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "spacer_PGr3eC",
-            "text_y3Hd9t",
-            "button_nNr4em"
-          ]
+          "block_order": ["spacer_PGr3eC", "text_y3Hd9t", "button_nNr4em"]
         }
       },
-      "block_order": [
-        "group_HCNR7i",
-        "group_XqPK97",
-        "group_CPEDEc"
-      ],
+      "block_order": ["group_HCNR7i", "group_XqPK97", "group_CPEDEc"],
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -704,13 +667,10 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "text_eAJcGU"
-          ]
+          "block_order": ["text_eAJcGU"]
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -752,8 +712,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -770,26 +729,16 @@
                 "border_opacity": 100,
                 "border_radius": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "collection_title_Hnz3eH"
-          ]
+          "block_order": ["collection_title_Hnz3eH"]
         }
       },
-      "block_order": [
-        "group_CmMKtY"
-      ],
+      "block_order": ["group_CmMKtY"],
       "name": "t:names.collections_carousel",
       "settings": {
-        "collection_list": [
-          "shirts",
-          "sweaters-jackets",
-          "tshirts",
-          "accessories"
-        ],
+        "collection_list": ["shirts", "sweaters-jackets", "tshirts", "accessories"],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "columns": 4,
@@ -823,8 +772,7 @@
             "image_position": "cover",
             "video_position": "cover"
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "content": {
           "type": "_content-without-appearance",
@@ -859,8 +807,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "group_YkhAe4": {
               "type": "group",
@@ -925,8 +872,7 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {
-                  }
+                  "blocks": {}
                 },
                 "text_wxbUBx": {
                   "type": "text",
@@ -951,14 +897,10 @@
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {
-                  }
+                  "blocks": {}
                 }
               },
-              "block_order": [
-                "text_WYrHDa",
-                "text_wxbUBx"
-              ]
+              "block_order": ["text_WYrHDa", "text_wxbUBx"]
             },
             "button_7dCAeU": {
               "type": "button",
@@ -972,15 +914,10 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "text_9dwBPJ",
-            "group_YkhAe4",
-            "button_7dCAeU"
-          ]
+          "block_order": ["text_9dwBPJ", "group_YkhAe4", "button_7dCAeU"]
         }
       },
       "name": "t:names.editorial",
@@ -1038,8 +975,7 @@
                 "padding-inline-start": 8,
                 "padding-inline-end": 8
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -1056,23 +992,16 @@
                 "border_opacity": 100,
                 "border_radius": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "collection_title_weJtea"
-          ]
+          "block_order": ["collection_title_weJtea"]
         }
       },
       "disabled": true,
       "name": "t:names.collections_bento",
       "settings": {
-        "collection_list": [
-          "shirts",
-          "sweaters-jackets",
-          "tshirts"
-        ],
+        "collection_list": ["shirts", "sweaters-jackets", "tshirts"],
         "layout_type": "bento",
         "carousel_on_mobile": false,
         "columns": 4,
@@ -1118,8 +1047,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "button_H9gpTf": {
           "type": "button",
@@ -1134,14 +1062,10 @@
             "width_mobile": "fit-content",
             "custom_width_mobile": 100
           },
-          "blocks": {
-          }
+          "blocks": {}
         }
       },
-      "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
-      ],
+      "block_order": ["text_YLPk4p", "button_H9gpTf"],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -1230,8 +1154,7 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "text_Y6bbDR": {
               "type": "text",
@@ -1256,8 +1179,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "button_BdKCFR": {
               "type": "button",
@@ -1271,15 +1193,10 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "spacer_kgRkzK",
-            "text_Y6bbDR",
-            "button_BdKCFR"
-          ]
+          "block_order": ["spacer_kgRkzK", "text_Y6bbDR", "button_BdKCFR"]
         },
         "group_iTyatk": {
           "type": "group",
@@ -1332,8 +1249,7 @@
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "text_tm8hwD": {
               "type": "text",
@@ -1358,8 +1274,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "button_THWtDN": {
               "type": "button",
@@ -1373,21 +1288,13 @@
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "spacer_bXPtQT",
-            "text_tm8hwD",
-            "button_THWtDN"
-          ]
+          "block_order": ["spacer_bXPtQT", "text_tm8hwD", "button_THWtDN"]
         }
       },
-      "block_order": [
-        "group_dW3w4c",
-        "group_iTyatk"
-      ],
+      "block_order": ["group_dW3w4c", "group_iTyatk"],
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -1444,8 +1351,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "text_zwQD8w": {
           "type": "text",
@@ -1470,8 +1376,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "email_signup_tVjwMD": {
           "type": "email-signup",
@@ -1496,15 +1401,10 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         }
       },
-      "block_order": [
-        "text_RfyLwW",
-        "text_zwQD8w",
-        "email_signup_tVjwMD"
-      ],
+      "block_order": ["text_RfyLwW", "text_zwQD8w", "email_signup_tVjwMD"],
       "name": "t:names.email_signup",
       "settings": {
         "content_direction": "column",
@@ -1601,13 +1501,10 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "text_UzUQHz"
-          ]
+          "block_order": ["text_UzUQHz"]
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -1649,8 +1546,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -1667,26 +1563,16 @@
                 "border_opacity": 100,
                 "border_radius": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "collection_title_NmRXAp"
-          ]
+          "block_order": ["collection_title_NmRXAp"]
         }
       },
-      "block_order": [
-        "group_kd3WU8"
-      ],
+      "block_order": ["group_kd3WU8"],
       "name": "t:names.collections_carousel",
       "settings": {
-        "collection_list": [
-          "shirts",
-          "sweaters-jackets",
-          "tshirts",
-          "accessories"
-        ],
+        "collection_list": ["shirts", "sweaters-jackets", "tshirts", "accessories"],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "columns": 4,
@@ -1732,8 +1618,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "text_Ly73ft": {
           "type": "text",
@@ -1759,8 +1644,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "button_a94Qng": {
           "type": "button",
@@ -1775,15 +1659,10 @@
             "width_mobile": "fit-content",
             "custom_width_mobile": 100
           },
-          "blocks": {
-          }
+          "blocks": {}
         }
       },
-      "block_order": [
-        "text_9R3EGp",
-        "text_Ly73ft",
-        "button_a94Qng"
-      ],
+      "block_order": ["text_9R3EGp", "text_Ly73ft", "button_a94Qng"],
       "name": "t:names.rich_text_section",
       "settings": {
         "content_direction": "column",

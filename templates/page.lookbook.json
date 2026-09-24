@@ -97,11 +97,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "grid",
         "eyebrow": "Lookbook",
@@ -111,11 +107,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_details",
-    "editorial_secondary",
-    "page_cta"
-  ]
+  "order": ["main", "editorial_primary", "page_details", "editorial_secondary", "page_cta"]
 }

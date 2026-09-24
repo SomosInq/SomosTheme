@@ -10,7 +10,7 @@ class ProductRecommendations extends HTMLElement {
       observer.disconnect();
       this.#loadRecommendations();
     },
-    { rootMargin: '0px 0px 400px 0px' }
+    { rootMargin: '0px 0px 400px 0px' },
   );
 
   /**

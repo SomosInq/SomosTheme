@@ -2,11 +2,8 @@
   "sections": {
     "shoppable_look": {
       "type": "shop-the-look",
-      "blocks": {
-      },
-      "block_order": [
-
-      ],
+      "blocks": {},
+      "block_order": [],
       "settings": {
         "eyebrow": "Shop the edit",
         "heading": "Wear the full story",
@@ -105,11 +102,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "grid",
         "eyebrow": "Shop the look",
@@ -119,12 +112,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "shoppable_look",
-    "editorial_primary",
-    "page_details",
-    "editorial_secondary",
-    "page_cta"
-  ]
+  "order": ["main", "shoppable_look", "editorial_primary", "page_details", "editorial_secondary", "page_cta"]
 }

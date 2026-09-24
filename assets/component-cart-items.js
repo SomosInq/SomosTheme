@@ -149,7 +149,7 @@ class CartItemsComponent extends Component {
 
         const newSectionHTML = new DOMParser().parseFromString(
           parsedResponseText.sections[this.sectionId],
-          'text/html'
+          'text/html',
         );
 
         // Grab the new cart item count from a hidden element
@@ -164,7 +164,7 @@ class CartItemsComponent extends Component {
             itemCount: newCartItemCount,
             source: 'cart-items-component',
             sections: parsedResponseText.sections,
-          })
+          }),
         );
 
         morphSection(this.sectionId, parsedResponseText.sections[this.sectionId]);
@@ -260,7 +260,7 @@ class CartItemsComponent extends Component {
     for (const item of updatedCart.items) {
       const variantId = item.variant_id.toString();
       const selectors = document.querySelectorAll(
-        `quantity-selector-component[data-variant-id="${variantId}"], cart-quantity-selector-component[data-variant-id="${variantId}"]`
+        `quantity-selector-component[data-variant-id="${variantId}"], cart-quantity-selector-component[data-variant-id="${variantId}"]`,
       );
 
       for (const selector of selectors) {

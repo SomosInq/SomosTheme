@@ -3,38 +3,59 @@
   assign image_alt = section.settings.image_alt | default: section.settings.heading
 %}
 
-<section class="section section--page-width editorial-image-text editorial-image-text--{{ section.settings.image_position }} editorial-image-text--{{ section.settings.layout_style }} color-{{ section.settings.color_scheme }}">
-  <div class="editorial-image-text__inner page-width-content">
-    <div class="editorial-image-text__media">
+<section class='section section--page-width editorial-image-text editorial-image-text--{{ section.settings.image_position }} editorial-image-text--{{ section.settings.layout_style }} color-{{ section.settings.color_scheme }}'>
+  <div class='editorial-image-text__inner page-width-content'>
+    <div class='editorial-image-text__media'>
       {% if section.settings.image != blank %}
-        {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '480, 750, 1100, 1600', alt: image_alt }}
+        {{
+          section.settings.image
+          | image_url: width: 1600
+          | image_tag: loading: 'lazy', widths: '480, 750, 1100, 1600', alt: image_alt
+        }}
       {% elsif section.settings.asset_filename != blank %}
-        <img src="{{ section.settings.asset_filename | asset_url }}" alt="{{ image_alt | escape }}" loading="lazy" width="1200" height="1500">
+        <img
+          src='{{ section.settings.asset_filename | asset_url }}'
+          alt='{{ image_alt | escape }}'
+          loading='lazy'
+          width='1200'
+          height='1500'
+        >
       {% elsif section.settings.image_url != blank %}
-        <img src="{{ section.settings.image_url }}" alt="{{ image_alt | escape }}" loading="lazy" width="800" height="960">
+        <img
+          src='{{ section.settings.image_url }}'
+          alt='{{ image_alt | escape }}'
+          loading='lazy'
+          width='800'
+          height='960'
+        >
       {% else %}
         {{ 'lifestyle-1' | placeholder_svg_tag: 'editorial-image-text__placeholder' }}
       {% endif %}
     </div>
 
-    <div class="editorial-image-text__content">
+    <div class='editorial-image-text__content'>
       {% if section.settings.eyebrow != blank %}
-        <p class="editorial-image-text__eyebrow">{{ section.settings.eyebrow }}</p>
+        <p class='editorial-image-text__eyebrow'>{{ section.settings.eyebrow }}</p>
       {% endif %}
       <{{ heading_tag }}>{{ section.settings.heading }}</{{ heading_tag }}>
       {% if section.settings.body != blank %}
-        <div class="editorial-image-text__body rte">{{ section.settings.body }}</div>
+        <div class='editorial-image-text__body rte'>{{ section.settings.body }}</div>
       {% endif %}
-      {% assign items = section.settings.points | split: "\n" %}
+      {% assign items = section.settings.points | split: '\n' %}
       {% if section.settings.points != blank %}
-        <ul class="editorial-image-text__points">
+        <ul class='editorial-image-text__points'>
           {% for item in items %}
-            {% if item != blank %}<li>{{ item | strip }}</li>{% endif %}
+            {% if item != blank %}
+              <li>{{ item | strip }}</li>
+            {% endif %}
           {% endfor %}
         </ul>
       {% endif %}
       {% if section.settings.link_label != blank and section.settings.link_url != blank %}
-        <a class="editorial-image-text__link" href="{{ section.settings.link_url }}">{{ section.settings.link_label }} <span aria-hidden="true">&#8594;</span></a>
+        <a class='editorial-image-text__link' href='{{ section.settings.link_url }}'>
+          {{- section.settings.link_label }}
+          <span aria-hidden='true'>&#8594;</span></a
+        >
       {% endif %}
     </div>
   </div>
@@ -53,15 +74,19 @@
     gap: clamp(3rem, 8vw, 9rem);
   }
 
-  .editorial-image-text--right .editorial-image-text__media { order: 2; }
-  .editorial-image-text--right .editorial-image-text__content { order: 1; }
+  .editorial-image-text--right .editorial-image-text__media {
+    order: 2;
+  }
+  .editorial-image-text--right .editorial-image-text__content {
+    order: 1;
+  }
 
   .editorial-image-text--compact .editorial-image-text__inner {
-    grid-template-columns: minmax(18rem, .8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
   }
 
   .editorial-image-text--compact.editorial-image-text--right .editorial-image-text__inner {
-    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, .8fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
   }
 
   .editorial-image-text__media img,
@@ -127,13 +152,22 @@
   }
 
   @media screen and (max-width: 749px) {
-    .editorial-image-text__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .editorial-image-text__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
     .editorial-image-text--compact .editorial-image-text__inner,
-    .editorial-image-text--compact.editorial-image-text--right .editorial-image-text__inner { grid-template-columns: 1fr; }
+    .editorial-image-text--compact.editorial-image-text--right .editorial-image-text__inner {
+      grid-template-columns: 1fr;
+    }
     .editorial-image-text--right .editorial-image-text__media,
-    .editorial-image-text--right .editorial-image-text__content { order: initial; }
+    .editorial-image-text--right .editorial-image-text__content {
+      order: initial;
+    }
     .editorial-image-text__media img,
-    .editorial-image-text__placeholder { min-height: 25rem; }
+    .editorial-image-text__placeholder {
+      min-height: 25rem;
+    }
   }
 {% endstylesheet %}
 
@@ -141,16 +175,48 @@
 {
   "name": "Editorial image & text",
   "settings": [
-    { "type": "select", "id": "image_position", "label": "Image position", "options": [{ "value": "left", "label": "Left" }, { "value": "right", "label": "Right" }], "default": "left" },
-    { "type": "select", "id": "layout_style", "label": "Layout style", "options": [{ "value": "split", "label": "Large split" }, { "value": "compact", "label": "Compact editorial" }], "default": "split" },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout style",
+      "options": [
+        { "value": "split", "label": "Large split" },
+        { "value": "compact", "label": "Compact editorial" }
+      ],
+      "default": "split"
+    },
     { "type": "image_picker", "id": "image", "label": "Image" },
     { "type": "text", "id": "asset_filename", "label": "Theme asset filename" },
     { "type": "text", "id": "image_url", "label": "External image URL" },
     { "type": "text", "id": "image_alt", "label": "Image alt text" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Tell your story" },
-    { "type": "select", "id": "heading_level", "label": "Heading level", "options": [{ "value": "h2", "label": "H2" }, { "value": "h3", "label": "H3" }], "default": "h2" },
-    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Add useful supporting content for this page.</p>" },
+    {
+      "type": "select",
+      "id": "heading_level",
+      "label": "Heading level",
+      "options": [
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Add useful supporting content for this page.</p>"
+    },
     { "type": "textarea", "id": "points", "label": "Key points (one per line)" },
     { "type": "text", "id": "link_label", "label": "Link label" },
     { "type": "url", "id": "link_url", "label": "Link URL" },

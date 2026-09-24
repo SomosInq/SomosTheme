@@ -6,7 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */ {
   "sections": {
     "main": {
       "type": "main-404",
@@ -35,8 +35,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "text_Ua9XAW": {
           "type": "text",
@@ -62,8 +61,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "button_PAQMwR": {
           "type": "button",
@@ -78,15 +76,10 @@
             "width_mobile": "fit-content",
             "custom_width_mobile": 100
           },
-          "blocks": {
-          }
+          "blocks": {}
         }
       },
-      "block_order": [
-        "text_GqmVFf",
-        "text_Ua9XAW",
-        "button_PAQMwR"
-      ],
+      "block_order": ["text_GqmVFf", "text_Ua9XAW", "button_PAQMwR"],
       "settings": {
         "content_direction": "column",
         "section_width": "page-width",
@@ -159,13 +152,10 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "text_WJEa9Q"
-          ]
+          "block_order": ["text_WJEa9Q"]
         },
         "static-product-card": {
           "type": "_product-card",
@@ -199,8 +189,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "product_title_83YMDL": {
               "type": "product-title",
@@ -225,8 +214,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "price_A6DYPt": {
               "type": "price",
@@ -249,15 +237,10 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "product_card_gallery_wxYqE3",
-            "product_title_83YMDL",
-            "price_A6DYPt"
-          ]
+          "block_order": ["product_card_gallery_wxYqE3", "product_title_83YMDL", "price_A6DYPt"]
         }
       },
       "name": "Featured collection",
@@ -306,11 +289,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about 404",
         "intro": "Useful answers for this page, with a clear route to more help when you need it."
@@ -351,11 +330,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "product_list_iA96Tq",
-    "editorial_primary",
-    "page_faq",
-    "editorial_secondary"
-  ]
+  "order": ["main", "product_list_iA96Tq", "editorial_primary", "page_faq", "editorial_secondary"]
 }

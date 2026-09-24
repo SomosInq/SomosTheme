@@ -69,7 +69,7 @@ class CartIcon extends Component {
       JSON.stringify({
         value: String(this.currentCartCount),
         timestamp: Date.now(),
-      })
+      }),
     );
 
     if (!animate) return;

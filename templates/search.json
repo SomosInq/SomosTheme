@@ -6,7 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */ {
   "sections": {
     "search": {
       "type": "search-header",
@@ -32,8 +32,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "search": {
           "type": "_search-input",
@@ -44,8 +43,7 @@
             "inherit_color_scheme": true,
             "color_scheme": ""
           },
-          "blocks": {
-          }
+          "blocks": {}
         }
       },
       "settings": {
@@ -79,8 +77,7 @@
             "facets_margin_bottom": 8,
             "facets_margin_right": 20
           },
-          "blocks": {
-          }
+          "blocks": {}
         },
         "product-card": {
           "type": "_product-card",
@@ -113,8 +110,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "product_title_j7qXTx": {
               "type": "product-title",
@@ -139,8 +135,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             },
             "price_fYkUgG": {
               "type": "price",
@@ -163,15 +158,10 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-              }
+              "blocks": {}
             }
           },
-          "block_order": [
-            "product_card_gallery_cFExAi",
-            "product_title_j7qXTx",
-            "price_fYkUgG"
-          ]
+          "block_order": ["product_card_gallery_cFExAi", "product_title_j7qXTx", "price_fYkUgG"]
         }
       },
       "settings": {
@@ -214,11 +204,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about search",
         "intro": "Useful answers for this page, with a clear route to more help when you need it."
@@ -259,11 +245,5 @@
       }
     }
   },
-  "order": [
-    "search",
-    "main",
-    "editorial_primary",
-    "page_faq",
-    "editorial_secondary"
-  ]
+  "order": ["search", "main", "editorial_primary", "page_faq", "editorial_secondary"]
 }

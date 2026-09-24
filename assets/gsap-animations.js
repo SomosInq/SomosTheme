@@ -36,10 +36,10 @@ import { gsap, ScrollTrigger } from './gsap-loader.js';
   const animatedElements = new WeakSet();
 
   function animateSections(root = document) {
-    const selector = 'section:not([data-animate="none"]), [data-animate]:not([data-animate="none"])';
-    const elements = root.matches?.(selector)
-      ? [root, ...root.querySelectorAll(selector)]
-      : root.querySelectorAll(selector);
+    const selector = '#MainContent > .shopify-section';
+    const elements = (
+      root.matches?.(selector) ? [root, ...root.querySelectorAll(selector)] : [...root.querySelectorAll(selector)]
+    ).filter((el) => el.dataset.animate !== 'none' && !el.querySelector('[data-animate="none"]'));
 
     elements.forEach((el) => {
       if (animatedElements.has(el)) return;

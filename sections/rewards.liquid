@@ -1,20 +1,20 @@
-<section class="section section--page-width page-shell rewards-section">
-  <div class="page-width-content">
-    <div class="page-hero page-hero--split">
+<section class='section section--page-width page-shell rewards-section'>
+  <div class='page-width-content'>
+    <div class='page-hero page-hero--split'>
       <div>
-        <span class="page-pill page-pill--accent">Loyalty program</span>
+        <span class='page-pill page-pill--accent'>Loyalty program</span>
         <h2>{{ page.title }}</h2>
         <p>{{ section.settings.content }}</p>
         {% if section.settings.signup_url != blank %}
-          <div class="page-actions">
-            <a href="{{ section.settings.signup_url }}" class="button">Join rewards</a>
+          <div class='page-actions'>
+            <a href='{{ section.settings.signup_url }}' class='button'>Join rewards</a>
           </div>
         {% endif %}
       </div>
 
-      <div class="page-spotlight">
+      <div class='page-spotlight'>
         <h2>What members get</h2>
-        <ul class="page-list">
+        <ul class='page-list'>
           <li>Points on every purchase</li>
           <li>Member-only drops and early access</li>
           <li>Seasonal perks and birthday rewards</li>
@@ -24,13 +24,13 @@
   </div>
 
   {% schema %}
-  {
-    "name": "Rewards",
-    "settings": [
-      { "type": "textarea", "id": "content", "label": "Content", "default": "Describe your rewards program here." },
-      { "type": "url", "id": "signup_url", "label": "Signup URL" }
-    ],
-    "presets": [{ "name": "Rewards" }]
-  }
+{
+  "name": "Rewards",
+  "settings": [
+    { "type": "textarea", "id": "content", "label": "Content", "default": "Describe your rewards program here." },
+    { "type": "url", "id": "signup_url", "label": "Signup URL" }
+  ],
+  "presets": [{ "name": "Rewards" }]
+}
   {% endschema %}
 </section>

@@ -28,9 +28,9 @@ function queuePopoverToggleEventTask(element, oldState, newState) {
           cancelable: false,
           oldState,
           newState,
-        })
+        }),
       );
-    }, 0)
+    }, 0),
   );
 }
 
@@ -260,7 +260,7 @@ function showPopover(element) {
         cancelable: true,
         oldState: 'closed',
         newState: 'open',
-      })
+      }),
     )
   ) {
     return;
@@ -348,7 +348,7 @@ function hidePopover(element, focusPreviousElement = false, fireEvents = false) 
       new ToggleEvent('beforetoggle', {
         oldState: 'open',
         newState: 'closed',
-      })
+      }),
     );
     if (autoPopoverListContainsElement && lastSetElement(autoList) !== element) {
       hideAllPopoversUntil(element, focusPreviousElement, fireEvents);
@@ -427,7 +427,7 @@ function hideAllPopoversUntil(endpoint, focusPreviousElement, fireEvents) {
   closeAllOpenPopoversInList(
     hintPopoverList.get(document2) || /* @__PURE__ */ new Set(),
     focusPreviousElement,
-    fireEvents
+    fireEvents,
   );
   if (!((_b = autoPopoverList.get(document2)) == null ? void 0 : _b.has(endpoint))) {
     return;

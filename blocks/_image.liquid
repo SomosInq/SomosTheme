@@ -1,5 +1,3 @@
-
-
 {%- doc -%}
   Renders an image block.
 
@@ -21,13 +19,18 @@
 
 {% assign custom_height_style = '' %}
 {% if block.settings.custom_height and block.settings.custom_height > 0 %}
-  {% assign custom_height_style = 'height:' | append: block.settings.custom_height | append: 'px;max-height:' | append: block.settings.custom_height | append: 'px;' %}
+  {% assign custom_height_style = 'height:'
+    | append: block.settings.custom_height
+    | append: 'px;max-height:'
+    | append: block.settings.custom_height
+    | append: 'px;'
+  %}
 {% endif %}
 {% if image %}
   <image-block
-    ratio="{{ block_settings.ratio }}"
-    height="{{ block_settings.height }}"
-    style="--border-radius: {{ block_settings.border_radius }}px;"
+    ratio='{{ block_settings.ratio }}'
+    height='{{ block_settings.height }}'
+    style='--border-radius: {{ block_settings.border_radius }}px;'
     {{ block.shopify_attributes }}
   >
     {{
@@ -38,9 +41,9 @@
   </image-block>
 {% else %}
   <image-block
-    ratio="{{ block_settings.ratio }}"
-    height="{{ block_settings.height }}"
-    style="--border-radius: {{ block_settings.border_radius }}px;"
+    ratio='{{ block_settings.ratio }}'
+    height='{{ block_settings.height }}'
+    style='--border-radius: {{ block_settings.border_radius }}px;'
     {{ block.shopify_attributes }}
   >
     {{ placeholder | default: 'hero-apparel-2' | placeholder_svg_tag: 'hero__image', style: custom_height_style }}

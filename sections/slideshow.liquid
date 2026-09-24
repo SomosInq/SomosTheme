@@ -1,5 +1,5 @@
-
-
+{% comment %}Section offset utilities are defined in the global theme styles.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 {% if section.blocks.size > 1 %}
   {% capture controls %}
     {%- render 'slideshow-controls',
@@ -31,10 +31,10 @@
   endif
 %}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class="spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} disable-section-top-offset"
-  style="{% render 'spacing-padding', settings: section.settings %}"
+  class='spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} disable-section-top-offset'
+  style='{% render 'spacing-padding', settings: section.settings %}'
 >
   {% render 'slideshow',
     class: slideshow_class,

@@ -1,16 +1,14 @@
-
-
 {% assign block_settings = block.settings %}
 
 <div
-  class="
+  class='
     spacer-block
     spacer-block--size-{{ block_settings.size }}
     {% if block_settings.custom_mobile_size %}
       spacer-block--size-mobile-{{ block_settings.size_mobile }}
     {% endif %}
-  "
-  style="
+  '
+  style='
     {% if block_settings.size == 'percent' %}
       --spacer-size: {{ block_settings.percent_size | divided_by: 100.00 }};
     {% else %}
@@ -24,9 +22,9 @@
         --spacer-size-mobile: {{ block_settings.pixel_size_mobile }}px;
       {% endif %}
     {% endif %}
-  "
+  '
   {{ block.shopify_attributes }}
-  data-testid="spacer-block"
+  data-testid='spacer-block'
 ></div>
 
 {% stylesheet %}

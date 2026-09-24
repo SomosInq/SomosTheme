@@ -1,27 +1,25 @@
-
-
-<script type="application/ld+json">
+<script type='application/ld+json'>
   {{ section.settings.product | structured_data }}
 </script>
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class="
+  class='
     featured-product-section
     section
     section--full-width
     color-{{ section.settings.color_scheme }}
-  "
+  '
 >
   <div
-    class="section-content-wrapper spacing-style size-style border-style"
-    style="
+    class='section-content-wrapper spacing-style size-style border-style'
+    style='
       {% render 'spacing-style', settings: section.settings %}
       --media-height: 100%;
       {% if request.visual_preview_mode %}
         --visual-preview--height: 100%;
       {% endif %}
-    "
+    '
   >
     {% capture featured_product_media %}
       {% content_for 'block', type: '_media-without-appearance', id: 'media', closest.product: section.settings.product %}

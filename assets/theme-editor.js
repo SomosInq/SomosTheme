@@ -237,7 +237,7 @@ if (window.Shopify?.designMode && !isIOS) {
         isOpen: (el) => el.getAttribute('open') != null,
         open: (el, instanceId) => {
           const button = document.querySelector(
-            `product-form-component[data-product-id="${instanceId}"] .quick-add__button--choose`
+            `product-form-component[data-product-id="${instanceId}"] .quick-add__button--choose`,
           );
 
           // @ts-ignore

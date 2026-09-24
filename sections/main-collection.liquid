@@ -1,9 +1,7 @@
-
-
 <script
-  src="{{ 'results-list.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"
+  src='{{ 'results-list.js' | asset_url }}'
+  type='module'
+  fetchpriority='low'
 ></script>
 
 {% javascript %}
@@ -17,23 +15,23 @@
           card.scrollIntoView({ behavior: 'instant' });
         }
       },
-      { once: true }
+      { once: true },
     );
   }
 {% endjavascript %}
 
 {% comment %} We always render this full-width, as the child blocks have width: page/full settings {% endcomment %}
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <results-list
-  class="section product-grid-container color-{{ section.settings.color_scheme }}"
-  style="--padding-block-start: {{ section.settings.padding-block-start }}px; --padding-block-end: {{ section.settings.padding-block-end }}px;"
-  section-id="{{ section.id }}"
-  infinite-scroll="{{ section.settings.enable_infinite_scroll }}"
+  class='section product-grid-container color-{{ section.settings.color_scheme }}'
+  style='--padding-block-start: {{ section.settings.padding-block-start }}px; --padding-block-end: {{ section.settings.padding-block-end }}px;'
+  section-id='{{ section.id }}'
+  infinite-scroll='{{ section.settings.enable_infinite_scroll }}'
 >
   {% render 'skip-to-content-link', href: '#ResultsList', text: 'accessibility.skip_to_results_list' %}
 
   <div
-    class="collection-wrapper grid gap-style"
+    class='collection-wrapper grid gap-style'
   >
     {% content_for 'block',
       type: 'filters',

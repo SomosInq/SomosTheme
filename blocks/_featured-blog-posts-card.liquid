@@ -1,5 +1,3 @@
-
-
 {% assign block_settings = block.settings %}
 
 {% liquid
@@ -60,40 +58,40 @@
 {% endcapture %}
 
 <div
-  class="
+  class='
     featured-blog-posts-card spacing-style border-style
     {% if section.settings.layout_type == 'editorial' %}blog-post-card--flexible-aspect-ratio{% endif %}
     {% if block_settings.inherit_color_scheme == false %}color-{{ block_settings.color_scheme }}{% endif %}
-  "
-  data-block-id="{{ block.id }}"
-  data-testid="featured-blog-posts-card"
+  '
+  data-block-id='{{ block.id }}'
+  data-testid='featured-blog-posts-card'
   {% if onboarding %}
-    data-placeholder="true"
+    data-placeholder='true'
   {% endif %}
-  style="
+  style='
     {%- render 'spacing-style', settings: block_settings -%}
     {%- render 'border-override', settings: block_settings -%}
     --text-align: {{ block_settings.alignment }};
     --horizontal-alignment: {{ block_settings.alignment }};
     --gap: {{ block_settings.gap }}px;
-  "
+  '
   {{ block.shopify_attributes }}
 >
   <a
-    class="featured-blog-posts-card__link"
+    class='featured-blog-posts-card__link'
     {% unless onboarding %}
-      href="{{ article.url }}"
+      href='{{ article.url }}'
     {% endunless %}
   >
-    <span class="visually-hidden">{{ display_title }}</span>
+    <span class='visually-hidden'>{{ display_title }}</span>
   </a>
 
-  <div class="featured-blog-posts-card__inner">
+  <div class='featured-blog-posts-card__inner'>
     {% if onboarding or article.image %}
       {{ image }}
     {% endif %}
 
-    <div class="featured-blog-posts-card__content layout-panel-flex--column">
+    <div class='featured-blog-posts-card__content layout-panel-flex--column'>
       <h4>{{ title }}</h4>
       {{ details }}
       {{ description }}

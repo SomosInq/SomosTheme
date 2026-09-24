@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign media_count = 0
   assign media_count_mobile = 0
@@ -374,9 +372,9 @@
 {% endcapture %}
 
 <div
-  id="Hero-{{ section.id }}"
-  class="hero color-{{ section.settings.color_scheme }}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}"
-  style="
+  id='Hero-{{ section.id }}'
+  class='hero color-{{ section.settings.color_scheme }}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}'
+  style='
     --hero-border-style: {{ section.settings.border }};
     --hero-border-width: {{ section.settings.border_width }}px;
     --hero-border-opacity: {{ section.settings.border_opacity }}%;
@@ -388,27 +386,27 @@
     {% else %}
       --hero-min-height: var(--section-height-{{ section.settings.section_height }});
     {% endif %}
-  "
+  '
   {% if request.visual_preview_mode %}
     data-shopify-visual-preview
   {% endif %}
   {% if section.settings.blurred_reflection and has_only_video == false or has_only_video_mobile == false %}
-    data-blur-shadow="true"
+    data-blur-shadow='true'
   {% endif %}
 >
   {% if section.settings.blurred_reflection %}
     {% unless has_only_video %}
       <div
-        class="hero__blurred-image hero__blurred-image--desktop"
-        data-testid="hero-blurred-image-desktop"
+        class='hero__blurred-image hero__blurred-image--desktop'
+        data-testid='hero-blurred-image-desktop'
       >
         {{ media_blurred }}
       </div>
     {% endunless %}
     {% if show_mobile_blurred_reflection %}
       <div
-        class="hero__blurred-image hero__blurred-image--mobile"
-        data-testid="hero-blurred-image-mobile"
+        class='hero__blurred-image hero__blurred-image--mobile'
+        data-testid='hero-blurred-image-mobile'
       >
         {{ mobile_media_blurred }}
       </div>
@@ -421,26 +419,31 @@
   {% endcomment %}
 
   <div
-    class="hero__container spacing-style section section--full-width{% if section.settings.parallax_bg %} hero--parallax{% endif %}"
-    style="{% render 'spacing-style', settings: section.settings %}"
-    {% if section.settings.parallax_bg %}data-parallax="true"{% endif %}
+    class='hero__container spacing-style section section--full-width{% if section.settings.parallax_bg %} hero--parallax{% endif %}'
+    style='{% render 'spacing-style', settings: section.settings %}'
+    {% if section.settings.parallax_bg %}
+      data-parallax='true'
+    {% endif %}
   >
     {%- if section.settings.link != blank -%}
       <a
-        href="{{ section.settings.link }}"
-        class="hero__link"
+        href='{{ section.settings.link }}'
+        class='hero__link'
         {% if section.settings.open_in_new_tab %}
-          target="_blank" rel="noopener"
+          target='_blank' rel='noopener'
         {% endif %}
       ></a>
     {%- endif -%}
     <div
-      class="hero__media-wrapper"
-      style="--hero-media-count: {{ media_count }};--hero-media-count-mobile: {{ media_count_mobile }};{%- if section.settings.image_1 != blank -%} --hero-media-aspect-ratio: {{ section.settings.image_1.aspect_ratio }};{% endif %}"
-      data-testid="hero-media-wrapper"
+      class='hero__media-wrapper'
+      style='--hero-media-count: {{ media_count }};--hero-media-count-mobile: {{ media_count_mobile }};{%- if section.settings.image_1 != blank -%} --hero-media-aspect-ratio: {{ section.settings.image_1.aspect_ratio }};{% endif %}'
+      data-testid='hero-media-wrapper'
     >
       {% if section.settings.parallax_bg and section.settings.image_1 != blank %}
-        <div class="hero__parallax-bg" style="background-image:url('{{ section.settings.image_1 | image_url: width: 2000 }}');"></div>
+        <div
+          class='hero__parallax-bg'
+          style="background-image:url('{{ section.settings.image_1 | image_url: width: 2000 }}');"
+        ></div>
       {% endif %}
       {% liquid
         if section.settings.toggle_overlay
@@ -448,22 +451,21 @@
         endif
       %}
       {{ media }}
-    {% if section.settings.parallax_bg %}
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var parallax = document.querySelector('.hero--parallax .hero__parallax-bg');
-        if (!parallax) return;
-        window.addEventListener('scroll', function() {
-          var scrolled = window.scrollY;
-          parallax.style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
-        });
-      });
-    </script>
-    {% endif %}
-
+      {% if section.settings.parallax_bg %}
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var parallax = document.querySelector('.hero--parallax .hero__parallax-bg');
+            if (!parallax) return;
+            window.addEventListener('scroll', function () {
+              var scrolled = window.scrollY;
+              parallax.style.transform = 'translateY(' + scrolled * 0.3 + 'px)';
+            });
+          });
+        </script>
+      {% endif %}
     </div>
     <div
-      class="
+      class='
         hero__content-wrapper
         layout-panel-flex
         layout-panel-flex--{{ section.settings.content_direction }}
@@ -471,8 +473,8 @@
         section-content-wrapper
         {{section.settings.section_width}}
         {% if request.design_mode %}hero__content-wrapper--design-mode{% endif %}
-      "
-      style="{% render 'layout-panel-style', settings: section.settings %}"
+      '
+      style='{% render 'layout-panel-style', settings: section.settings %}'
     >
       {% content_for 'blocks' %}
     </div>
@@ -492,7 +494,7 @@
     background-position: center;
     background-repeat: no-repeat;
     will-change: transform;
-    transition: transform 0.2s cubic-bezier(.4,0,.2,1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
   }
 
@@ -1152,12 +1154,12 @@
       "default": "to top",
       "visible_if": "{{ section.settings.toggle_overlay and section.settings.overlay_style == 'gradient' }}"
     },
-      {
-        "type": "checkbox",
-        "id": "parallax_bg",
-        "label": "t:settings.parallax_background",
-        "default": false
-      },
+    {
+      "type": "checkbox",
+      "id": "parallax_bg",
+      "label": "t:settings.parallax_background",
+      "default": false
+    },
     {
       "type": "checkbox",
       "id": "blurred_reflection",

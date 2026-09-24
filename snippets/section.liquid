@@ -5,16 +5,16 @@
   @param {string} children - The children of the section
 {%- enddoc -%}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
-  data-testid="ui-test-section"
+  class='section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}'
+  data-testid='ui-test-section'
 
   {% if request.visual_preview_mode %}
     data-shopify-visual-preview
   {% endif %}
 
-  style="
+  style='
     {% if section.settings.section_height == 'custom' %}
       --section-min-height: {{ section.settings.section_height_custom }}svh;
     {% elsif section.settings.section_height == 'full-screen' %}
@@ -26,9 +26,9 @@
     {% if section.settings.section_height != '' %}
      --section-preview-height: 600px;
      {% endif %}
-  "
+  '
 >
-  <div class="custom-section-background">
+  <div class='custom-section-background'>
     {% render 'background-media',
       background_media: section.settings.background_media,
       background_video: section.settings.video,
@@ -39,26 +39,26 @@
   </div>
 
   <div
-    class="border-style custom-section-content"
-    style="{% render 'border-override', settings: section.settings %}"
+    class='border-style custom-section-content'
+    style='{% render 'border-override', settings: section.settings %}'
   >
     {% if section.settings.toggle_overlay %}
       {% render 'overlay', settings: section.settings, layer: '0' %}
     {% endif %}
 
     <div
-      class="
+      class='
         spacing-style
         layout-panel-flex
         layout-panel-flex--{{ section.settings.content_direction }}
         section-content-wrapper
         {% if section.settings.vertical_on_mobile %} mobile-column{% endif %}
-      "
-      style="
+      '
+      style='
         {% render 'layout-panel-style', settings: section.settings %}
         {% render 'spacing-style', settings: section.settings %}
-      "
-      data-testid="section-content"
+      '
+      data-testid='section-content'
     >
       {{ children }}
     </div>

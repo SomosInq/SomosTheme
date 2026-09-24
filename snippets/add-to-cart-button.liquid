@@ -18,41 +18,41 @@
 -%}
 
 <add-to-cart-component
-  ref="addToCartButtonContainer"
-  data-product-variant-media="{{ product_variant_media }}"
-  data-add-to-cart-animation="{{ settings.add_to_cart_animation }}"
+  ref='addToCartButtonContainer'
+  data-product-variant-media='{{ product_variant_media }}'
+  data-add-to-cart-animation='{{ settings.add_to_cart_animation }}'
 >
   <button
-    id="{{ id }}"
-    type="submit"
-    name="add"
-    ref="addToCartButton"
-    on:click="/handleClick"
-    class="button {{ class }}"
+    id='{{ id }}'
+    type='submit'
+    name='add'
+    ref='addToCartButton'
+    on:click='/handleClick'
+    class='button {{ class }}'
     {% unless can_add_to_cart %}
       disabled
     {% endunless %}
   >
     <span
-      class="add-to-cart-text"
+      class='add-to-cart-text'
     >
       {% if can_add_to_cart %}
-        <span class="svg-wrapper add-to-cart-icon">
+        <span class='svg-wrapper add-to-cart-icon'>
           {{- 'icon-add-to-cart.svg' | inline_asset_content -}}
         </span>
       {% endif %}
-      <span class="add-to-cart-text__content{% if icon_only_on_mobile %} is-visually-hidden-mobile{% endif %}">
+      <span class='add-to-cart-text__content{% if icon_only_on_mobile %} is-visually-hidden-mobile{% endif %}'>
         {{- add_to_cart_text | default: default_add_to_cart_text -}}
       </span>
     </span>
     <span
-      aria-hidden="true"
-      class="add-to-cart-text--added"
+      aria-hidden='true'
+      class='add-to-cart-text--added'
     >
-      <span class="svg-wrapper add-to-cart-icon--added">
+      <span class='svg-wrapper add-to-cart-icon--added'>
         {{- 'icon-checkmark.svg' | inline_asset_content -}}
       </span>
-      <span class="{% if icon_only_on_mobile %}is-visually-hidden-mobile{% endif %}">
+      <span class='{% if icon_only_on_mobile %}is-visually-hidden-mobile{% endif %}'>
         {{- 'actions.added' | t -}}
       </span>
     </span>
@@ -85,7 +85,8 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: width var(--animation-speed) var(--animation-easing),
+    transition:
+      width var(--animation-speed) var(--animation-easing),
       opacity var(--animation-speed) var(--animation-easing);
   }
 

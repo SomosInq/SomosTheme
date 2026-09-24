@@ -1,13 +1,11 @@
-
-
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
-<div class="section section--page-width color-{{ section.settings.color_scheme }}">
+<div class='section-background color-{{ section.settings.color_scheme }}'></div>
+<div class='section section--page-width color-{{ section.settings.color_scheme }}'>
   <div
-    class="spacing-style search-page__header"
-    style="
+    class='spacing-style search-page__header'
+    style='
       --horizontal-alignment: {{ section.settings.alignment }};
       {% render 'spacing-style', settings: section.settings %}
-    "
+    '
   >
     {% assign heading_text = 'content.search' | t %}
 

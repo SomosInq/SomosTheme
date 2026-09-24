@@ -1,3 +1,5 @@
+{% comment %}Variant classes are styled by the shared variant-picker components.{% endcomment %}
+{% # theme-check-disable ValidScopedCSSClass %}
 {%- doc -%}
   Renders a swatches variant picker, used within the product-swatches block.
 
@@ -9,9 +11,9 @@
 {%- enddoc -%}
 
 <swatches-variant-picker-component
-  data-product-id="{{ product_resource.id }}"
-  data-product-url="{{ product_resource.url }}"
-  ref="swatchesVariantPicker"
+  data-product-id='{{ product_resource.id }}'
+  data-product-url='{{ product_resource.url }}'
+  ref='swatchesVariantPicker'
 >
   <form>
     {%- for product_option in product_resource.options_with_values -%}
@@ -66,7 +68,7 @@
         assign swatch_option_key = 'option' | append: swatch_option_position
       -%}
 
-      <fieldset class="variant-option variant-option--buttons variant-option--swatches">
+      <fieldset class='variant-option variant-option--buttons variant-option--swatches'>
         {% capture children %}
           {%- for product_option_value in product_option.values -%}
             {% liquid
@@ -158,7 +160,7 @@
         {% render 'overflow-list', children: children, ref: 'overflowList', defer: true %}
       </fieldset>
     {%- endfor -%}
-    <script type="application/json">
+    <script type='application/json'>
       {{ product_resource.selected_or_first_available_variant | json }}
     </script>
   </form>

@@ -9,14 +9,14 @@
 
 {%- assign tag = tag | default: 'button' -%}
 <{{ tag }}
-  class="account-button header-actions__action"
-  aria-label="{{ 'accessibility.account' | t }}"
-  aria-haspopup="dialog"
+  class='account-button header-actions__action'
+  aria-label='{{ 'accessibility.account' | t }}'
+  aria-haspopup='dialog'
   {%- if popover_id -%}
-    popovertarget="{{ popover_id }}"
-    popovertargetaction="{{ popover_action | default: 'toggle' }}"
+    popovertarget='{{ popover_id }}'
+    popovertargetaction='{{ popover_action | default: 'toggle' }}'
   {%- endif -%}
-  ref="trigger"
+  ref='trigger'
   {{ attributes }}
 >
   {%- if customer.has_avatar? -%}
@@ -30,15 +30,15 @@
       endif
     -%}
     <span
-      class="account-button__avatar"
-      aria-hidden="true"
+      class='account-button__avatar'
+      aria-hidden='true'
     >
       {{- initial -}}
     </span>
   {%- else -%}
     <span
-      class="account-button__icon"
-      aria-hidden="true"
+      class='account-button__icon'
+      aria-hidden='true'
     >
       {{- 'icon-account.svg' | inline_asset_content -}}
     </span>

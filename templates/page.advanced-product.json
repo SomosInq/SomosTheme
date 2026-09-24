@@ -2,8 +2,7 @@
   "sections": {
     "main": {
       "type": "advanced-product-page",
-      "settings": {
-      }
+      "settings": {}
     },
     "page_faq": {
       "type": "faq",
@@ -30,11 +29,7 @@
           }
         }
       },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3"
-      ],
+      "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
         "heading": "Questions about product detail",
         "intro": "Practical answers specific to this page."
@@ -118,11 +113,7 @@
           }
         }
       },
-      "block_order": [
-        "detail_1",
-        "detail_2",
-        "detail_3"
-      ],
+      "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "grid",
         "eyebrow": "Product detail",
@@ -132,12 +123,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_details",
-    "editorial_secondary",
-    "page_faq",
-    "page_cta"
-  ]
+  "order": ["main", "editorial_primary", "page_details", "editorial_secondary", "page_faq", "page_cta"]
 }

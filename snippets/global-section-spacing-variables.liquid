@@ -1,7 +1,7 @@
 {%- comment -%}
-Exposes global section spacing settings as CSS variables for use in all sections.
+  Exposes global section spacing settings as CSS variables for use in all sections.
 {%- endcomment -%}
-<style id="global-section-spacing-variables">
+<style id='global-section-spacing-variables'>
   :root {
     --section-padding-top: {{ settings.section_padding_top | default: 40 }}px;
     --section-padding-bottom: {{ settings.section_padding_bottom | default: 40 }}px;

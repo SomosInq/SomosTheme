@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign block_settings = block.settings
   assign ratio = 1
@@ -62,17 +60,17 @@
 
 {% if block_settings.link == blank %}
   <div
-    class="{{ class }}"
-    style="{{ style }}"
+    class='{{ class }}'
+    style='{{ style }}'
     {{ block.shopify_attributes }}
   >
     {{ image }}
   </div>
 {% else %}
   <a
-    href="{{ block_settings.link }}"
-    class="{{ class }}"
-    style="{{ style }}"
+    href='{{ block_settings.link }}'
+    class='{{ class }}'
+    style='{{ style }}'
     {{ block.shopify_attributes }}
   >
     {{ image }}

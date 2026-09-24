@@ -181,5 +181,5 @@ document.addEventListener(
       }
     }
   },
-  { capture: true }
+  { capture: true },
 );
