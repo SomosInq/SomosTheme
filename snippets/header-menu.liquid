@@ -27,6 +27,10 @@
     {% liquid
       assign dropdown_type = block_settings.menu_style
       assign current_menu_content_type = block_settings.menu_style
+      assign link_url = link.url
+      if link.handle == 'support' and link_url == '#'
+        assign link_url = '/pages/support'
+      endif
       assign dropdown_overrides = block_settings.dropdown_overrides | split: ','
       for override in dropdown_overrides
         assign override_parts = override | split: '='
@@ -51,7 +55,7 @@
       on:pointerleave="/deactivate"
     >
       <a
-        href="{{ link.url }}"
+        href="{{ link_url }}"
         data-skip-node-update="true"
         class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}"
         {%- if link.links != blank -%}

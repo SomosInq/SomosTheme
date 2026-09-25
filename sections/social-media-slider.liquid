@@ -1,5 +1,5 @@
 <social-media-slider class='section section--page-width social-slider color-{{ section.settings.color_scheme }}'>
-  <div class='social-slider__inner page-width-content'>
+  <div class='social-slider__inner'>
     <div class='social-slider__header'>
       <div>
         {% if section.settings.eyebrow != blank %}
@@ -61,14 +61,12 @@
 
 {% stylesheet %}
   .social-slider {
-    display: block;
     padding-block: clamp(4rem, 8vw, 8rem);
     overflow: hidden;
   }
   .social-slider__inner {
     display: grid;
-    width: min(100%, var(--normal-content-width));
-    margin-inline: auto;
+    width: 100%;
     gap: clamp(2.5rem, 5vw, 4.5rem);
   }
   .social-slider__header {
