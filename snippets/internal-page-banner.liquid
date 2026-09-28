@@ -37,7 +37,7 @@
       if page.handle contains 'support'
         assign banner_description = 'A practical guide to products, orders, accounts, and every useful route through the store.'
         assign banner_label = 'Help center'
-        assign banner_asset = 'editorial-brand-studio.jpg'
+        assign banner_asset = 'editorial-customer-care.jpg'
         assign show_banner_search = true
       endif
 
@@ -46,7 +46,7 @@
         assign banner_asset = 'editorial-collection-look.jpg'
         assign banner_label = 'Sale edit'
       elsif page.handle contains 'quiz' or page.handle contains 'finder' or page.handle contains 'comparison' or page.handle contains 'size' or page.handle contains 'choose'
-        assign banner_asset = 'editorial-fit-guide.jpg'
+        assign banner_asset = 'editorial-comparison-rail.jpg'
         assign banner_label = 'Guided finder'
       elsif page.handle contains 'bundle' or page.handle contains 'look' or page.handle contains 'recipe'
         assign banner_asset = 'editorial-collection-look.jpg'
@@ -59,7 +59,7 @@
       elsif page.handle contains 'shop' or page.handle contains 'bundle' or page.handle contains 'collection'
         assign banner_asset = 'editorial-collection-look.jpg'
       elsif page.handle contains 'about' or page.handle contains 'story' or page.handle contains 'sustain'
-        assign banner_asset = 'editorial-brand-studio.jpg'
+        assign banner_asset = 'editorial-studio-craft.jpg'
       endif
     when 'search'
       assign banner_title = 'Search'

@@ -13,6 +13,9 @@ body {
 }
 
 :root {
+  --somos-section-space: clamp(3.5rem, 6vw, 6rem);
+  --somos-section-space-compact: clamp(2.5rem, 4vw, 4rem);
+  --somos-layout-gap: clamp(2.5rem, 5vw, 5rem);
   --hover-lift-amount: 4px;
   --hover-scale-amount: 1.03;
   --hover-subtle-zoom-amount: 1.015;
@@ -1095,17 +1098,17 @@ p:empty {
 
 /* Feature landing: flat editorial treatment with clearly separated areas. */
 .feature-landing-section {
-  padding-block: clamp(3.5rem, 7vw, 7rem);
+  padding-block: var(--somos-section-space);
 }
 
 .feature-landing-section .page-width-content {
   display: flex;
   flex-direction: column;
-  gap: clamp(4rem, 8vw, 8rem);
+  gap: var(--somos-section-space);
 }
 
 .feature-landing-section .page-hero--split {
-  gap: clamp(3rem, 7vw, 7rem);
+  gap: var(--somos-layout-gap);
   align-items: start;
 }
 
@@ -1148,12 +1151,12 @@ p:empty {
 }
 
 #MainContent:not([data-template^='index']) .page-shell {
-  padding-block: clamp(4rem, 8vw, 8rem);
+  padding-block: var(--somos-section-space);
 }
 
 #MainContent:not([data-template^='index']) .page-hero {
   gap: 1.25rem;
-  margin-block-end: clamp(2.5rem, 5vw, 5rem);
+  margin-block-end: var(--somos-section-space-compact);
 }
 
 .faq-section .page-width-content {
