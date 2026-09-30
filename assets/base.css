@@ -623,7 +623,7 @@ p:empty {
   transform: scale(1.02);
 }
 
-#MainContent:not([data-template^='index']) .content-grid__item > span {
+#MainContent:not([data-template^='index']) .content-grid--numbered .content-grid__item > span {
   display: inline-grid;
   width: 2.25rem;
   min-height: 2.25rem;
