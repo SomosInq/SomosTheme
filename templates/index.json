@@ -1492,7 +1492,7 @@
         "button_label": "Sign me up",
         "success_message": "Thanks — you’re on the list.",
         "small_print": "No clutter. Unsubscribe at any time.",
-        "delay_seconds": 10,
+        "delay_seconds": 2,
         "scroll_percent": 40,
         "frequency_days": 14,
         "color_scheme": "scheme-1"
