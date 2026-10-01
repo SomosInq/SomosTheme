@@ -1,20 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "feature-landing",
       "settings": {
         "eyebrow": "Rewards and loyalty",
-        "title": "Loyalty that keeps customers coming back",
-        "description": "Explain points, tiers, referrals, and member benefits in a dedicated loyalty landing page that feels rewarding and easy to understand.",
-        "highlight_heading": "Members can earn",
-        "bullets": "Points on purchases\nTier unlocks and perks\nReferral rewards and early access",
-        "cards": "Simple education | Help customers understand exactly how the program works. ||Strong retention | Encourage repeat purchases and deeper engagement. ||Useful for email and CRM | Pair with loyalty app flows and campaigns.",
-        "secondary_title": "Reward repeat visits",
-        "secondary_description": "A clear loyalty message makes customers feel recognized and gives them a reason to return again and again.",
-        "secondary_cta_label": "Join the club",
-        "secondary_cta_url": "/account/register",
+        "title": "Your loyalty, rewarded",
+        "description": "Join Somos Loyalty Points, earn points through eligible activity, and open your Smile account whenever you want to review available rewards.",
+        "highlight_heading": "How membership works",
+        "bullets": "Join with your store account\nEarn points through eligible activity\nOpen Smile to view and use rewards",
+        "cards": "Join | Create or sign in to your store account through Smile. ||Earn | Eligible purchases and activities add points to your balance. ||Use rewards | Open your rewards account to see the options currently available to you.",
+        "secondary_title": "Your rewards, in one place",
+        "secondary_description": "Smile keeps your points balance and available rewards together, so you can check your progress whenever you return.",
+        "secondary_cta_label": "Open rewards",
+        "secondary_cta_url": "/pages/loyalty#smile-home",
         "cta_label": "Join now",
-        "cta_url": "/account/register",
+        "cta_url": "/pages/loyalty#smile-home",
         "hero_asset_filename": "editorial-community.jpg",
         "secondary_asset_filename": "editorial-brand-studio.jpg"
       }
@@ -56,22 +65,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about join once?",
-            "answer": "Create an account to begin collecting eligible rewards."
+            "question": "How do I join Somos Loyalty Points?",
+            "answer": "Open the Smile rewards panel and create or sign in to your store account."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about earn naturally?",
-            "answer": "Qualifying purchases and activities add to your balance."
+            "question": "How do I earn points?",
+            "answer": "Eligible purchases and activities shown in Smile add points to your balance."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about use benefits clearly?",
-            "answer": "See available rewards and redemption details in your account."
+            "question": "Where can I see my rewards?",
+            "answer": "Sign in through the Smile panel to review your points and the rewards available to you."
           }
         }
       },
@@ -84,10 +93,10 @@
     "page_cta": {
       "type": "final-cta",
       "settings": {
-        "heading": "Continue exploring",
-        "text": "Discover products designed for everyday use.",
-        "link_label": "Shop the collection",
-        "link_url": "/collections/all",
+        "heading": "Ready to join?",
+        "text": "Open Smile to join the programme or sign in to your existing rewards account.",
+        "link_label": "Open rewards",
+        "link_url": "/pages/loyalty#smile-home",
         "color_scheme": "scheme-1"
       }
     },
@@ -97,12 +106,12 @@
         "image_position": "left",
         "image_alt": "Loyalty editorial detail",
         "eyebrow": "Membership",
-        "heading": "Join once",
+        "heading": "Join through Smile",
         "heading_level": "h2",
-        "body": "<p>Create an account to begin collecting eligible rewards.</p>",
-        "points": "Earn naturally\nUse benefits clearly",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
+        "body": "<p>Create or sign in to your store account through the Smile panel to take part.</p>",
+        "points": "Earn eligible points\nReview your rewards",
+        "link_label": "Join or sign in",
+        "link_url": "/pages/loyalty#smile-home",
         "color_scheme": "scheme-1",
         "asset_filename": "editorial-community.jpg",
         "layout_style": "split"
@@ -114,12 +123,12 @@
         "image_position": "right",
         "image_alt": "Loyalty editorial detail",
         "eyebrow": "Next step",
-        "heading": "Use benefits clearly",
+        "heading": "Keep track of your rewards",
         "heading_level": "h3",
-        "body": "<p>See available rewards and redemption details in your account.</p>",
-        "points": "Use benefits clearly\nEarn naturally\nJoin once",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
+        "body": "<p>Open Smile whenever you want to review your points balance and available rewards.</p>",
+        "points": "Review your balance\nSee available rewards\nReturn whenever you need",
+        "link_label": "Open rewards",
+        "link_url": "/pages/loyalty#smile-home",
         "color_scheme": "scheme-2",
         "asset_filename": "editorial-brand-studio.jpg",
         "layout_style": "compact"
@@ -132,30 +141,30 @@
           "type": "item",
           "settings": {
             "label": "Membership",
-            "heading": "Join once",
-            "text": "Create an account to begin collecting eligible rewards.",
-            "link_label": "",
-            "link_url": ""
+            "heading": "Join through Smile",
+            "text": "Create or sign in to your store account to take part.",
+            "link_label": "Join or sign in",
+            "link_url": "/pages/loyalty#smile-home"
           }
         },
         "detail_2": {
           "type": "item",
           "settings": {
             "label": "Membership",
-            "heading": "Earn naturally",
-            "text": "Qualifying purchases and activities add to your balance.",
-            "link_label": "",
-            "link_url": ""
+            "heading": "Earn points",
+            "text": "Eligible purchases and activities shown in Smile add to your balance.",
+            "link_label": "View the programme",
+            "link_url": "/pages/loyalty#smile-home"
           }
         },
         "detail_3": {
           "type": "item",
           "settings": {
             "label": "Membership",
-            "heading": "Use benefits clearly",
-            "text": "See available rewards and redemption details in your account.",
-            "link_label": "",
-            "link_url": ""
+            "heading": "Use your rewards",
+            "text": "Sign in to see your balance and the rewards currently available to you.",
+            "link_label": "Open Smile rewards",
+            "link_url": "/pages/loyalty#smile-home"
           }
         }
       },
@@ -163,8 +172,8 @@
       "settings": {
         "layout": "statement",
         "eyebrow": "Membership",
-        "heading": "Value that grows with every visit",
-        "intro": "<p>Earn useful benefits, see your progress, and access member experiences.</p>",
+        "heading": "Membership made clear",
+        "intro": "<p>Join, earn eligible points, and manage your rewards through Smile.</p>",
         "color_scheme": "scheme-1"
       }
     }

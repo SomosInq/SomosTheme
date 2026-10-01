@@ -1,10 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "rewards",
       "settings": {
-        "content": "Join our rewards program to earn points on every purchase, unlock exclusive offers, and get early access to new drops.",
-        "signup_url": "/account/register"
+        "content": "Join Somos Loyalty Points to earn through eligible purchases and activities, then sign in to see the rewards available to you.",
+        "signup_url": "/pages/rewards#smile-home"
       }
     },
     "page_testimonials": {
@@ -44,22 +53,22 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about earn points?",
-            "answer": "Eligible purchases and activities contribute to your balance."
+            "question": "How do I earn points?",
+            "answer": "Open Smile to see the earning activities currently available to you."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about see your progress?",
-            "answer": "Sign in to review points, status, and available benefits."
+            "question": "Where can I see my points balance?",
+            "answer": "Sign in through Smile to review your points balance and available rewards."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about redeem clearly?",
-            "answer": "Apply eligible rewards according to their terms."
+            "question": "How do I redeem points?",
+            "answer": "Open the redemption view in Smile to see the rewards you can use."
           }
         }
       },
@@ -72,10 +81,10 @@
     "page_cta": {
       "type": "final-cta",
       "settings": {
-        "heading": "Continue exploring",
-        "text": "Discover products designed for everyday use.",
-        "link_label": "Shop the collection",
-        "link_url": "/collections/all",
+        "heading": "Manage your rewards",
+        "text": "Open Smile to review your points balance and available rewards.",
+        "link_label": "Open Smile rewards",
+        "link_url": "/pages/rewards#smile-home",
         "color_scheme": "scheme-1"
       }
     },
@@ -87,10 +96,10 @@
         "eyebrow": "Rewards",
         "heading": "Earn points",
         "heading_level": "h2",
-        "body": "<p>Eligible purchases and activities contribute to your balance.</p>",
+        "body": "<p>Open Smile to see the purchases and activities that currently earn points.</p>",
         "points": "See your progress\nRedeem clearly",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
+        "link_label": "View ways to earn",
+        "link_url": "/pages/rewards#smile-home",
         "color_scheme": "scheme-1",
         "asset_filename": "editorial-community.jpg",
         "layout_style": "split"
@@ -104,10 +113,10 @@
         "eyebrow": "Next step",
         "heading": "Redeem clearly",
         "heading_level": "h3",
-        "body": "<p>Apply eligible rewards according to their terms.</p>",
+        "body": "<p>Sign in to see which rewards are available and how many points they require.</p>",
         "points": "Redeem clearly\nSee your progress\nEarn points",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
+        "link_label": "Open Smile rewards",
+        "link_url": "/pages/rewards#smile-home",
         "color_scheme": "scheme-2",
         "asset_filename": "editorial-brand-studio.jpg",
         "layout_style": "compact"
@@ -121,9 +130,9 @@
           "settings": {
             "label": "Rewards",
             "heading": "Earn points",
-            "text": "Eligible purchases and activities contribute to your balance.",
-            "link_label": "",
-            "link_url": ""
+            "text": "Open Smile to see the activities that currently earn points.",
+            "link_label": "View ways to earn",
+            "link_url": "/pages/rewards#smile-home"
           }
         },
         "detail_2": {
@@ -131,9 +140,9 @@
           "settings": {
             "label": "Rewards",
             "heading": "See your progress",
-            "text": "Sign in to review points, status, and available benefits.",
-            "link_label": "",
-            "link_url": ""
+            "text": "Sign in through Smile to review your points balance and available rewards.",
+            "link_label": "Open your rewards",
+            "link_url": "/pages/rewards#smile-home"
           }
         },
         "detail_3": {
@@ -141,9 +150,9 @@
           "settings": {
             "label": "Rewards",
             "heading": "Redeem clearly",
-            "text": "Apply eligible rewards according to their terms.",
-            "link_label": "",
-            "link_url": ""
+            "text": "See the rewards currently available and how many points they require.",
+            "link_label": "Open Smile rewards",
+            "link_url": "/pages/rewards#smile-home"
           }
         }
       },
