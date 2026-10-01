@@ -17,7 +17,7 @@
     class='newsletter-popup__dialog dialog-modal color-{{ section.settings.color_scheme }}'
     aria-labelledby='{{ popup_id }}-title'
     {% if section.settings.image != blank %}
-      style='height: min(20rem, calc(100dvh - 4rem)); max-height: calc(100dvh - 4rem);'
+      style='height: min(24rem, calc(100dvh - 4rem)); max-height: calc(100dvh - 4rem);'
     {% endif %}
   >
     <button class='newsletter-popup__close' type='button' data-newsletter-close aria-label='Close newsletter signup'>
@@ -103,6 +103,23 @@
     background: rgb(0 0 0 / 0.55);
   }
 
+  .newsletter-popup .newsletter-popup__dialog.dialog-modal[open] {
+    margin: auto;
+    animation: newsletter-popup-enter var(--animation-speed) var(--animation-easing) both;
+  }
+
+  @keyframes newsletter-popup-enter {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .newsletter-popup__close {
     position: absolute;
     z-index: 2;
@@ -125,7 +142,7 @@
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
     grid-template-rows: minmax(0, 1fr);
-    height: 20rem;
+    height: 24rem;
     max-height: calc(100vh - 4rem);
     max-height: calc(100dvh - 4rem);
   }
