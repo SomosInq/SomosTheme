@@ -16,6 +16,9 @@
   <dialog
     class='newsletter-popup__dialog dialog-modal color-{{ section.settings.color_scheme }}'
     aria-labelledby='{{ popup_id }}-title'
+    {% if section.settings.image != blank %}
+      style='height: min(20rem, calc(100dvh - 4rem)); max-height: calc(100dvh - 4rem);'
+    {% endif %}
   >
     <button class='newsletter-popup__close' type='button' data-newsletter-close aria-label='Close newsletter signup'>
       <span aria-hidden='true'>&times;</span>
@@ -210,7 +213,8 @@
 
     .newsletter-popup__dialog:has(.newsletter-popup__media) {
       display: block;
-      height: auto;
+      height: auto !important;
+      max-height: calc(100dvh - 2rem) !important;
     }
 
     .newsletter-popup__media img {
