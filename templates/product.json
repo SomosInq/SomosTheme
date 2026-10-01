@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */ {
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -66,11 +67,18 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "bundlesuite_byob_upsell_jgn7nb": {
+              "type": "shopify://apps/bundlesuite/blocks/byob_upsell/ec3fca7a-00ff-426d-ac7c-5f640fb4c8a4",
+              "settings": {
+                "heading_text": "Bundle And Save",
+                "title": "Bundle",
+                "button_text": "Buy as bundle"
+              }
+            },
             "group_icgrde": {
               "type": "group",
               "name": "Header",
               "settings": {
-                "open_in_new_tab": false,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
@@ -98,6 +106,9 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -153,7 +164,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["text_xrnftG", "price_tVjtKg"]
+              "block_order": [
+                "text_xrnftG",
+                "price_tVjtKg"
+              ]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -185,6 +199,7 @@
               "settings": {
                 "stacking": true,
                 "show_pickup_availability": false,
+                "gift_card_form": true,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -242,6 +257,7 @@
             }
           },
           "block_order": [
+            "bundlesuite_byob_upsell_jgn7nb",
             "group_icgrde",
             "divider_VJhene",
             "variant_picker_R3rGDr",
@@ -259,6 +275,12 @@
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
+      }
+    },
+    "frequently_bought_together": {
+      "type": "frequently-bought-together",
+      "settings": {
+        "heading": "Complete the set"
       }
     },
     "product_recommendations_qggXJq": {
@@ -372,10 +394,16 @@
               "blocks": {}
             }
           },
-          "block_order": ["product_card_gallery_DNizbJ", "product_title_M7MJkb", "price_gLWgA6"]
+          "block_order": [
+            "product_card_gallery_DNizbJ",
+            "product_title_M7MJkb",
+            "price_gLWgA6"
+          ]
         }
       },
-      "block_order": ["text_cbcgyb"],
+      "block_order": [
+        "text_cbcgyb"
+      ],
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -396,12 +424,22 @@
         "padding-block-end": 48
       }
     },
-    "frequently_bought_together": {
-      "type": "frequently-bought-together",
-      "blocks": {},
-      "block_order": [],
+    "editorial_primary": {
+      "type": "editorial-image-text",
       "settings": {
-        "heading": "Complete the set"
+        "image_position": "right",
+        "layout_style": "split",
+        "asset_filename": "editorial-collection-look.jpg",
+        "image_url": "",
+        "image_alt": "Our products editorial detail",
+        "eyebrow": "Our products",
+        "heading": "Explore Our products with confidence",
+        "heading_level": "h2",
+        "body": "<p>Discover considered pieces and the useful details that make choosing the right option easier.</p>",
+        "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-1"
       }
     },
     "page_usp": {
@@ -413,7 +451,26 @@
     "page_testimonials": {
       "type": "testimonials",
       "settings": {
+        "heading": "What our customers say",
         "color_scheme": "scheme-1"
+      }
+    },
+    "editorial_secondary": {
+      "type": "editorial-image-text",
+      "settings": {
+        "image_position": "left",
+        "layout_style": "compact",
+        "asset_filename": "editorial-brand-studio.jpg",
+        "image_url": "",
+        "image_alt": "Our products editorial detail",
+        "eyebrow": "Good to know",
+        "heading": "Made for more than one moment",
+        "heading_level": "h3",
+        "body": "<p>Build a wardrobe around pieces that work together and earn their place over time.</p>",
+        "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
+        "link_label": "Explore the collection",
+        "link_url": "/collections/all",
+        "color_scheme": "scheme-2"
       }
     },
     "page_faq": {
@@ -441,8 +498,13 @@
           }
         }
       },
-      "block_order": ["question_1", "question_2", "question_3"],
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3"
+      ],
       "settings": {
+        "heading_level": "h2",
         "heading": "Questions about products",
         "intro": "Useful answers for this page, with a clear route to more help when you need it."
       }
@@ -450,41 +512,11 @@
     "page_cta": {
       "type": "final-cta",
       "settings": {
+        "heading": "Ready to explore?",
+        "text": "",
+        "link_label": "Shop now",
+        "link_url": "shopify://collections/all",
         "color_scheme": "scheme-1"
-      }
-    },
-    "editorial_primary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "right",
-        "image_alt": "Our products editorial detail",
-        "eyebrow": "Our products",
-        "heading": "Explore Our products with confidence",
-        "heading_level": "h2",
-        "body": "<p>Discover considered pieces and the useful details that make choosing the right option easier.</p>",
-        "points": "Thoughtful design\nEveryday versatility\nQuality made to last",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-collection-look.jpg",
-        "layout_style": "split"
-      }
-    },
-    "editorial_secondary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "left",
-        "image_alt": "Our products editorial detail",
-        "eyebrow": "Good to know",
-        "heading": "Made for more than one moment",
-        "heading_level": "h3",
-        "body": "<p>Build a wardrobe around pieces that work together and earn their place over time.</p>",
-        "points": "Easy to combine\nComfort in daily wear\nA lasting point of view",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-brand-studio.jpg",
-        "layout_style": "compact"
       }
     }
   },
