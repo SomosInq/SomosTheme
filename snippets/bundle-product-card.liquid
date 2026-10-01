@@ -1,0 +1,45 @@
+{% comment %}
+  Renders a Shopify bundle product inside the Bundles page.
+
+  Accepts:
+  - product: {Product}
+  - block_attributes: {String}
+{% endcomment %}
+
+<article class='page-card page-card--product bundle-product-card' {{ block_attributes }}>
+  <a class='bundle-product-card__media' href='{{ product.url }}' aria-label='View {{ product.title | escape }}'>
+    {% if product.featured_image != blank %}
+      {{
+        product.featured_image
+        | image_url: width: 960
+        | image_tag:
+          loading: 'lazy',
+          widths: '360, 540, 720, 960',
+          sizes: '(min-width: 750px) 33vw, 100vw',
+          alt: product.featured_image.alt
+      }}
+    {% else %}
+      {{ 'editorial-collection-look.jpg' | asset_url | image_tag: loading: 'lazy', alt: 'Curated product bundle' }}
+    {% endif %}
+  </a>
+  <span class='page-card__eyebrow'>Fixed bundle</span>
+  <h2>
+    <a href='{{ product.url }}'>{{ product.title }}</a>
+  </h2>
+  {% if product.description != blank %}
+    <p>{{ product.description | strip_html | truncate: 140 }}</p>
+  {% else %}
+    <p>A curated set with component options and inventory managed by Shopify Bundles.</p>
+  {% endif %}
+  <div class='page-card__footer'>
+    <span class='page-price'>{{ product.price | money }}</span>
+    {% if product.has_only_default_variant and product.available %}
+      <form action='{{ routes.cart_add_url }}' method='post'>
+        <input type='hidden' name='id' value='{{ product.selected_or_first_available_variant.id }}'>
+        <button type='submit' class='button button-secondary'>Add bundle</button>
+      </form>
+    {% else %}
+      <a href='{{ product.url }}' class='button button-secondary'>Choose options</a>
+    {% endif %}
+  </div>
+</article>

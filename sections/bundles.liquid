@@ -6,29 +6,31 @@
       <p>Explore hand-picked bundles designed to make your next order feel effortless.</p>
     </div>
 
-    {% if section.settings.collection != blank %}
+    {% assign has_curated_bundles = false %}
+    {% for block in section.blocks %}
+      {% if block.settings.product != blank %}
+        {% assign has_curated_bundles = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if has_curated_bundles %}
+      <div class='page-grid'>
+        {% for block in section.blocks %}
+          {% if block.settings.product != blank %}
+            {% render 'bundle-product-card',
+              product: block.settings.product,
+              block_attributes: block.shopify_attributes
+            %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% elsif section.settings.collection != blank %}
       {% assign coll = collections[section.settings.collection] %}
       {% if coll.products.size > 0 %}
         <div class='page-grid'>
           {% for product in coll.products %}
-            <article class='page-card page-card--product'>
-              <span class='page-card__eyebrow'>Bundle</span>
-              <h2>
-                <a href='{{ product.url }}'>{{ product.title }}</a>
-              </h2>
-              <p>{{ product.description | strip_html | truncate: 120 }}</p>
-              <div class='page-card__footer'>
-                <span class='page-price'>{{ product.price | money }}</span>
-                {% if product.has_only_default_variant and product.available %}
-                  <form action='{{ routes.cart_add_url }}' method='post'>
-                    <input type='hidden' name='id' value='{{ product.selected_or_first_available_variant.id }}'
-                    ><button type='submit' class='button button-secondary'>Add bundle</button>
-                  </form>
-                {% else -%}
-                  <a href='{{ product.url }}' class='button button-secondary'>Choose options</a>
-                {%- endif %}
-              </div>
-            </article>
+            {% render 'bundle-product-card', product: product %}
           {% endfor %}
         </div>
       {% else %}
@@ -43,11 +45,39 @@
     {% endif %}
   </div>
 
+  {% stylesheet %}
+    .bundle-product-card__media {
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      margin: -1.5rem -1.5rem 1.5rem;
+      background: rgb(var(--color-foreground-rgb) / 0.05);
+    }
+
+    .bundle-product-card__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms cubic-bezier(0.2, 0.65, 0.3, 1);
+    }
+
+    .bundle-product-card:hover .bundle-product-card__media img {
+      transform: scale(1.02);
+    }
+  {% endstylesheet %}
+
   {% schema %}
 {
   "name": "Bundles",
   "settings": [{ "type": "collection", "id": "collection", "label": "Bundles collection" }],
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "bundle",
+      "name": "Bundle product",
+      "settings": [{ "type": "product", "id": "product", "label": "Bundle product" }]
+    }
+  ],
   "presets": [{ "name": "Bundles" }]
 }
   {% endschema %}
