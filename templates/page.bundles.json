@@ -3,7 +3,11 @@
     "main": {
       "type": "bundles",
       "settings": {
-        "collection": "frontpage"
+        "featured_bundle": "the-everyday-edit",
+        "collection": "frontpage",
+        "builder_product": "build-your-everyday-set",
+        "builder_heading": "Build Your Everyday Set",
+        "builder_text": "Mix and match the pieces you want, then see your bundle saving update as you build."
       }
     },
     "page_usp": {
@@ -50,28 +54,28 @@
           "type": "faq",
           "settings": {
             "question": "What should I know about purposeful combinations?",
-            "answer": "Each set brings together products with a clear shared use."
+            "answer": "Choose a ready-made bundle for a fixed combination, or open the bundle builder to mix and match your own set."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
             "question": "What should I know about one considered decision?",
-            "answer": "Spend less time matching individual items."
+            "answer": "The bundle builder keeps the eligible products and savings together in one guided experience."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
             "question": "What should I know about easy gifting?",
-            "answer": "A complete set makes a useful, confident gift."
+            "answer": "Build a set of two items to save 10%, or choose three items to save 15%."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "heading": "Questions about curated sets",
-        "intro": "Practical answers specific to this page."
+        "heading": "Questions about bundles",
+        "intro": "How ready-made sets and the mix-and-match bundle builder work."
       }
     },
     "page_cta": {
@@ -155,9 +159,9 @@
       "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "statement",
-        "eyebrow": "Curated sets",
-        "heading": "Better together",
-        "intro": "<p>Shop ready-made combinations designed to work together and offer a simpler way to choose.</p>",
+        "eyebrow": "Two ways to bundle",
+        "heading": "Ready-made or built by you",
+        "intro": "<p>Shop a fixed set for one simple choice, or use the bundle builder to create a mix-and-match combination.</p>",
         "color_scheme": "scheme-2"
       }
     }

@@ -41,7 +41,7 @@
       {% if section.settings.body != blank %}
         <div class='editorial-image-text__body rte'>{{ section.settings.body }}</div>
       {% endif %}
-      {% assign items = section.settings.points | split: '\n' %}
+      {% assign items = section.settings.points | newline_to_br | split: '<br />' %}
       {% if section.settings.points != blank %}
         <ul class='editorial-image-text__points'>
           {% for item in items %}

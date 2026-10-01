@@ -3,18 +3,18 @@
     "main": {
       "type": "feature-landing",
       "settings": {
-        "eyebrow": "Rewards and loyalty",
-        "title": "Loyalty that keeps customers coming back",
-        "description": "Explain points, tiers, referrals, and member benefits in a dedicated loyalty landing page that feels rewarding and easy to understand.",
-        "highlight_heading": "Members can earn",
-        "bullets": "Points on purchases\nTier unlocks and perks\nReferral rewards and early access",
-        "cards": "Simple education | Help customers understand exactly how the program works. ||Strong retention | Encourage repeat purchases and deeper engagement. ||Useful for email and CRM | Pair with loyalty app flows and campaigns.",
-        "secondary_title": "Reward repeat visits",
-        "secondary_description": "A clear loyalty message makes customers feel recognized and gives them a reason to return again and again.",
-        "secondary_cta_label": "Join the club",
-        "secondary_cta_url": "/account/register",
-        "cta_label": "Join now",
-        "cta_url": "/account/register",
+        "eyebrow": "Customer retention",
+        "title": "Grow customer loyalty",
+        "description": "Turn first-time shoppers into returning customers with a loyalty experience that makes points, progress and rewards easy to understand.",
+        "highlight_heading": "What merchants can demonstrate",
+        "bullets": "Reward purchases and engagement\nShow points and benefits clearly\nBring members back with visible progress",
+        "cards": "Encourage return visits | Give customers a clear reason to shop with you again. ||Make value visible | Explain how purchases turn into points and meaningful rewards. ||Connect retention tools | Pair branded theme content with Smile or another loyalty provider.",
+        "secondary_title": "A rewards membership that feels like your brand",
+        "secondary_description": "Use flexible theme sections to explain the programme, then let your connected loyalty app handle accounts, balances and redemption.",
+        "secondary_cta_label": "Preview Smile panel",
+        "secondary_cta_url": "/pages/loyalty#smile-home",
+        "cta_label": "See rewards example",
+        "cta_url": "/pages/loyalty#smile-home",
         "hero_asset_filename": "editorial-community.jpg",
         "secondary_asset_filename": "editorial-brand-studio.jpg"
       }
@@ -22,29 +22,29 @@
     "page_testimonials": {
       "type": "testimonials",
       "settings": {
-        "heading": "Why customers return",
+        "heading": "Designed to turn interest into retention",
         "color_scheme": "scheme-1"
       },
       "blocks": {
         "quote_1": {
           "type": "quote",
           "settings": {
-            "quote": "The details feel considered, and the product has become part of my everyday rotation.",
-            "author": "Verified customer"
+            "quote": "Introduce the benefit before asking a shopper to create an account.",
+            "author": "Attract"
           }
         },
         "quote_2": {
           "type": "quote",
           "settings": {
-            "quote": "Clear information made it easier to choose confidently.",
-            "author": "Somos customer"
+            "quote": "Keep earning, progress and reward value easy to understand.",
+            "author": "Engage"
           }
         },
         "quote_3": {
           "type": "quote",
           "settings": {
-            "quote": "Thoughtful service from browsing through to delivery.",
-            "author": "Returning customer"
+            "quote": "Build a recognisable membership experience that encourages the next visit.",
+            "author": "Retain"
           }
         }
       },
@@ -56,38 +56,38 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about join once?",
-            "answer": "Create an account to begin collecting eligible rewards."
+            "question": "Can I use Smile with this page?",
+            "answer": "Yes. The page can explain your loyalty proposition and link into Smile, while Smile manages member accounts, balances and rewards."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about earn naturally?",
-            "answer": "Qualifying purchases and activities add to your balance."
+            "question": "Can I show example points and rewards?",
+            "answer": "Yes. The companion rewards template includes editable examples. Keep them labelled as illustrative until they match the rules configured in your loyalty app."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about use benefits clearly?",
-            "answer": "See available rewards and redemption details in your account."
+            "question": "Can the programme match my brand?",
+            "answer": "Yes. The theme controls the story, imagery and page styling; your loyalty app provides the live member experience and its own appearance controls."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "heading": "Questions about membership",
-        "intro": "Practical answers specific to this page."
+        "heading": "Loyalty integration questions",
+        "intro": "A clear split between the storefront story and the live loyalty service."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
-        "heading": "Continue exploring",
-        "text": "Discover products designed for everyday use.",
-        "link_label": "Shop the collection",
-        "link_url": "/collections/all",
+        "heading": "Make every purchase the start of the next visit",
+        "text": "Preview the connected Smile experience, then customise the programme story for your store.",
+        "link_label": "Preview Smile panel",
+        "link_url": "/pages/loyalty#smile-home",
         "color_scheme": "scheme-1"
       }
     },
@@ -96,13 +96,13 @@
       "settings": {
         "image_position": "left",
         "image_alt": "Loyalty editorial detail",
-        "eyebrow": "Membership",
-        "heading": "Join once",
+        "eyebrow": "Build the proposition",
+        "heading": "Give membership a clear purpose",
         "heading_level": "h2",
-        "body": "<p>Create an account to begin collecting eligible rewards.</p>",
-        "points": "Earn naturally\nUse benefits clearly",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
+        "body": "<p>Explain why customers should join, what actions you reward and how the programme makes shopping with your brand more valuable over time.</p>",
+        "points": "Clear joining benefit\nVisible reward value",
+        "link_label": "See rewards example",
+        "link_url": "/pages/loyalty#smile-home",
         "color_scheme": "scheme-1",
         "asset_filename": "editorial-community.jpg",
         "layout_style": "split"
@@ -113,13 +113,13 @@
       "settings": {
         "image_position": "right",
         "image_alt": "Loyalty editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Use benefits clearly",
+        "eyebrow": "Connect the service",
+        "heading": "Let your loyalty app do the live work",
         "heading_level": "h3",
-        "body": "<p>See available rewards and redemption details in your account.</p>",
-        "points": "Use benefits clearly\nEarn naturally\nJoin once",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
+        "body": "<p>Connect Smile for sign-up, customer balances and redemption while the theme keeps the proposition clear and on brand.</p>",
+        "points": "Member accounts\nLive points balances\nReward redemption",
+        "link_label": "Preview Smile panel",
+        "link_url": "/pages/loyalty#smile-home",
         "color_scheme": "scheme-2",
         "asset_filename": "editorial-brand-studio.jpg",
         "layout_style": "compact"
@@ -131,40 +131,40 @@
         "detail_1": {
           "type": "item",
           "settings": {
-            "label": "Membership",
-            "heading": "Join once",
-            "text": "Create an account to begin collecting eligible rewards.",
-            "link_label": "",
-            "link_url": ""
+            "label": "Attract",
+            "heading": "Invite customers in",
+            "text": "Lead with a simple benefit that makes membership feel worthwhile.",
+            "link_label": "See the example",
+            "link_url": "/pages/loyalty#smile-home"
           }
         },
         "detail_2": {
           "type": "item",
           "settings": {
-            "label": "Membership",
-            "heading": "Earn naturally",
-            "text": "Qualifying purchases and activities add to your balance.",
-            "link_label": "",
-            "link_url": ""
+            "label": "Reward",
+            "heading": "Recognise valuable actions",
+            "text": "Demonstrate how purchases and engagement can build towards rewards.",
+            "link_label": "Explore rewards",
+            "link_url": "/pages/loyalty#smile-home"
           }
         },
         "detail_3": {
           "type": "item",
           "settings": {
-            "label": "Membership",
-            "heading": "Use benefits clearly",
-            "text": "See available rewards and redemption details in your account.",
-            "link_label": "",
-            "link_url": ""
+            "label": "Retain",
+            "heading": "Encourage the next visit",
+            "text": "Make progress visible and keep the next benefit within reach.",
+            "link_label": "Preview Smile",
+            "link_url": "/pages/loyalty#smile-home"
           }
         }
       },
       "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "statement",
-        "eyebrow": "Membership",
-        "heading": "Value that grows with every visit",
-        "intro": "<p>Earn useful benefits, see your progress, and access member experiences.</p>",
+        "eyebrow": "Rewards membership",
+        "heading": "From first purchase to loyal customer",
+        "intro": "<p>Show merchants how the theme can introduce, explain and connect a customer rewards programme.</p>",
         "color_scheme": "scheme-1"
       }
     }

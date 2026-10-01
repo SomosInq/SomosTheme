@@ -22,7 +22,7 @@
           <h3>{{ block.settings.heading }}</h3>
           <p>{{ block.settings.text }}</p>
           {% if block.settings.link_label != blank and block.settings.link_url != blank -%}
-            <a href='{{ block.settings.link_url }}'>{{ block.settings.link_label }} →</a>
+            <a href='{{ block.settings.link_url }}'>{{ block.settings.link_label }}</a>
           {%- endif %}
         </article>
       {% endfor %}

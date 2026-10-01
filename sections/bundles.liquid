@@ -1,53 +1,158 @@
 <section class='section section--page-width page-shell bundles-section'>
   <div class='page-width-content'>
     <div class='page-hero'>
-      <span class='page-pill'>Curated bundles</span>
+      <span class='page-pill'>Bundles</span>
       <h2>{{ page.title }}</h2>
-      <p>Explore hand-picked bundles designed to make your next order feel effortless.</p>
+      <p>Choose a ready-made set or use the bundle builder to create your own combination and unlock a saving.</p>
     </div>
 
-    {% if section.settings.collection != blank %}
-      {% assign coll = collections[section.settings.collection] %}
-      {% if coll.products.size > 0 %}
-        <div class='page-grid'>
+    <div class='page-grid bundles-section__options'>
+      {% if section.settings.featured_bundle != blank %}
+        {% render 'bundle-product-card', product: section.settings.featured_bundle %}
+      {% elsif section.settings.collection != blank %}
+        {% assign coll = collections[section.settings.collection] %}
+        {% if coll.products.size > 0 %}
           {% for product in coll.products %}
-            <article class='page-card page-card--product'>
-              <span class='page-card__eyebrow'>Bundle</span>
-              <h2>
-                <a href='{{ product.url }}'>{{ product.title }}</a>
-              </h2>
-              <p>{{ product.description | strip_html | truncate: 120 }}</p>
-              <div class='page-card__footer'>
-                <span class='page-price'>{{ product.price | money }}</span>
-                {% if product.has_only_default_variant and product.available %}
-                  <form action='{{ routes.cart_add_url }}' method='post'>
-                    <input type='hidden' name='id' value='{{ product.selected_or_first_available_variant.id }}'
-                    ><button type='submit' class='button button-secondary'>Add bundle</button>
-                  </form>
-                {% else -%}
-                  <a href='{{ product.url }}' class='button button-secondary'>Choose options</a>
-                {%- endif %}
-              </div>
-            </article>
+            {% render 'bundle-product-card', product: product %}
           {% endfor %}
-        </div>
+        {% else %}
+          <div class='page-card'>
+            <p>No products were found in this collection yet.</p>
+          </div>
+        {% endif %}
       {% else %}
         <div class='page-card'>
-          <p>No products were found in this collection yet.</p>
+          <p>Add a fixed bundle product or collection in the section settings.</p>
         </div>
       {% endif %}
-    {% else %}
-      <div class='page-card'>
-        <p>Add a collection of bundled products in the section settings.</p>
-      </div>
-    {% endif %}
+
+      <article class='page-card page-card--product bundles-builder-card'>
+        {% if section.settings.builder_product != blank and section.settings.builder_product.featured_image != blank %}
+          <a
+            class='bundle-product-card__media'
+            href='{{ section.settings.builder_product.url }}'
+            aria-label='Open {{ section.settings.builder_product.title | escape }}'
+          >
+            {{
+              section.settings.builder_product.featured_image
+              | image_url: width: 960
+              | image_tag:
+                loading: 'lazy',
+                widths: '360, 540, 720, 960',
+                sizes: '(min-width: 750px) 50vw, 100vw',
+                alt: section.settings.builder_product.featured_image.alt
+            }}
+          </a>
+        {% else %}
+          <div class='bundle-product-card__media bundles-builder-card__media' aria-hidden='true'>
+            <span>Build your set</span>
+          </div>
+        {% endif %}
+
+        <span class='page-card__eyebrow'>Bundle builder</span>
+        <h2>{{ section.settings.builder_heading }}</h2>
+        <p>{{ section.settings.builder_text }}</p>
+        <ol class='bundles-builder-card__steps'>
+          <li>Choose your everyday essentials</li>
+          <li>Build a set of two or three items</li>
+          <li>Save 10% on two or 15% on three</li>
+        </ol>
+        <div class='page-card__footer'>
+          {% if section.settings.builder_product != blank %}
+            <a href='{{ section.settings.builder_product.url }}' class='button'>Start building</a>
+          {% else %}
+            <a href='/products/build-your-everyday-set' class='button'>Start building</a>
+          {% endif %}
+        </div>
+      </article>
+    </div>
   </div>
+
+  {% stylesheet %}
+    .bundle-product-card__media {
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      margin: -1.5rem -1.5rem 1.5rem;
+      background: rgb(var(--color-foreground-rgb) / 0.05);
+    }
+
+    .bundle-product-card__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms cubic-bezier(0.2, 0.65, 0.3, 1);
+    }
+
+    .bundle-product-card:hover .bundle-product-card__media img {
+      transform: scale(1.02);
+    }
+
+    .bundles-section__options {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bundles-builder-card__media {
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, rgb(var(--color-foreground-rgb) / 0.04), rgb(var(--color-foreground-rgb) / 0.12)),
+        rgb(var(--color-background-rgb));
+    }
+
+    .bundles-builder-card__media span {
+      max-width: 8ch;
+      color: rgb(var(--color-foreground-rgb) / 0.8);
+      font-size: clamp(1.75rem, 4vw, 3.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-align: center;
+    }
+
+    .bundles-builder-card__steps {
+      display: grid;
+      gap: 0.65rem;
+      margin: 0;
+      padding-inline-start: 1.25rem;
+      color: rgb(var(--color-foreground-rgb) / 0.72);
+    }
+
+    @media screen and (max-width: 749px) {
+      .bundles-section__options {
+        grid-template-columns: 1fr;
+      }
+    }
+  {% endstylesheet %}
 
   {% schema %}
 {
   "name": "Bundles",
-  "settings": [{ "type": "collection", "id": "collection", "label": "Bundles collection" }],
-  "blocks": [],
+  "settings": [
+    {
+      "type": "product",
+      "id": "featured_bundle",
+      "label": "Featured bundle product"
+    },
+    { "type": "collection", "id": "collection", "label": "Fallback bundles collection" },
+    {
+      "type": "product",
+      "id": "builder_product",
+      "label": "Bundle builder product"
+    },
+    {
+      "type": "text",
+      "id": "builder_heading",
+      "label": "Bundle builder heading",
+      "default": "Build Your Everyday Set"
+    },
+    {
+      "type": "textarea",
+      "id": "builder_text",
+      "label": "Bundle builder description",
+      "default": "Mix and match the pieces you want, then see your bundle saving update as you build."
+    }
+  ],
   "presets": [{ "name": "Bundles" }]
 }
   {% endschema %}

@@ -66,6 +66,14 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "bundlesuite_byob_upsell_jgn7nb": {
+              "type": "shopify://apps/bundlesuite/blocks/byob_upsell/ec3fca7a-00ff-426d-ac7c-5f640fb4c8a4",
+              "settings": {
+                "heading_text": "Build your set",
+                "title": "Build Your Everyday Set",
+                "button_text": "Build this set"
+              }
+            },
             "group_icgrde": {
               "type": "group",
               "name": "Header",
@@ -246,6 +254,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "bundlesuite_byob_upsell_jgn7nb",
             "text_aEtTtq"
           ]
         }
