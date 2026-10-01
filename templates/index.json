@@ -1487,6 +1487,7 @@
         "eyebrow": "Stay in the loop",
         "heading": "Good things, occasionally",
         "text": "<p>Sign up for new arrivals, thoughtful stories and offers worth opening.</p>",
+        "image": "shopify://shop_images/pexels-olly-845457.jpg",
         "placeholder": "Email address",
         "button_label": "Sign me up",
         "success_message": "Thanks — you’re on the list.",

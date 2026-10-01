@@ -83,14 +83,15 @@
 </newsletter-popup>
 
 {% stylesheet %}
-  .newsletter-popup__dialog.dialog-modal {
-    width: min(56rem, calc(100vw - 2rem));
-    max-width: 56rem;
+  .newsletter-popup .newsletter-popup__dialog.dialog-modal {
+    width: min(62rem, calc(100vw - 6rem));
+    max-width: 62rem;
     height: auto;
-    max-height: calc(100dvh - 2rem);
+    min-height: 0;
+    max-height: calc(100dvh - 6rem);
     margin: auto;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
     color: var(--color-foreground);
     background: var(--color-background);
   }
@@ -119,7 +120,8 @@
 
   .newsletter-popup__dialog:has(.newsletter-popup__media) {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    height: min(34rem, calc(100dvh - 6rem));
   }
 
   .newsletter-popup__dialog:not(:has(.newsletter-popup__media)) {
@@ -127,6 +129,7 @@
   }
 
   .newsletter-popup__media {
+    overflow: hidden;
     min-height: 100%;
     background: rgb(var(--color-foreground-rgb) / 0.05);
   }
@@ -135,7 +138,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    min-height: 28rem;
+    min-height: 0;
     object-fit: cover;
   }
 
@@ -144,7 +147,9 @@
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    padding: clamp(2rem, 5vw, 4.5rem);
+    min-width: 0;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    overflow: auto;
   }
 
   .newsletter-popup__heading,
@@ -187,20 +192,22 @@
   }
 
   @media screen and (max-width: 749px) {
-    .newsletter-popup__dialog.dialog-modal {
-      width: calc(100vw - 1rem);
-      max-width: calc(100vw - 1rem);
-      max-height: calc(100dvh - 1rem);
+    .newsletter-popup .newsletter-popup__dialog.dialog-modal {
+      width: calc(100vw - 2rem);
+      max-width: 40rem;
+      height: auto;
+      max-height: calc(100dvh - 2rem);
+      overflow: auto;
     }
 
     .newsletter-popup__dialog:has(.newsletter-popup__media) {
       display: block;
+      height: auto;
     }
 
     .newsletter-popup__media img {
       min-height: 0;
-      max-height: 34dvh;
-      aspect-ratio: 16 / 9;
+      height: clamp(9rem, 28dvh, 14rem);
     }
 
     .newsletter-popup__content {
