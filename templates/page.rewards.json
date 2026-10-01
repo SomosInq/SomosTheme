@@ -12,36 +12,55 @@
     "main": {
       "type": "rewards",
       "settings": {
-        "content": "Join Somos Loyalty Points to earn through eligible purchases and activities, then sign in to see the rewards available to you.",
-        "signup_url": "/pages/rewards#smile-home"
-      }
+        "eyebrow": "Rewards demo",
+        "heading": "Show shoppers exactly what they can earn",
+        "content": "Demonstrate a clear points programme, make reward value easy to understand and connect shoppers to your loyalty provider.",
+        "cta_label": "Preview rewards panel",
+        "signup_url": "/pages/rewards#smile-home",
+        "example_heading": "Example rewards membership",
+        "example_note": "Illustrative values only. Configure your live earning and redemption rules in Smile or your chosen loyalty app.",
+        "color_scheme": "scheme-1"
+      },
+      "blocks": {
+        "earn": {
+          "type": "example",
+          "settings": { "title": "Earn on purchases", "text": "5 points for every £1 spent" }
+        },
+        "join": {
+          "type": "example",
+          "settings": { "title": "Welcome reward", "text": "100 points when a customer joins" }
+        },
+        "reward_small": { "type": "example", "settings": { "title": "First reward", "text": "500 points = £5 off" } },
+        "reward_large": { "type": "example", "settings": { "title": "Next reward", "text": "1,000 points = £10 off" } }
+      },
+      "block_order": ["earn", "join", "reward_small", "reward_large"]
     },
     "page_testimonials": {
       "type": "testimonials",
       "settings": {
-        "heading": "Why customers return",
+        "heading": "What a loyalty programme can support",
         "color_scheme": "scheme-1"
       },
       "blocks": {
         "quote_1": {
           "type": "quote",
           "settings": {
-            "quote": "The details feel considered, and the product has become part of my everyday rotation.",
-            "author": "Verified customer"
+            "quote": "Give shoppers a clear reason to return after their first order.",
+            "author": "Retention"
           }
         },
         "quote_2": {
           "type": "quote",
           "settings": {
-            "quote": "Clear information made it easier to choose confidently.",
-            "author": "Somos customer"
+            "quote": "Make points and reward value visible at the moment it matters.",
+            "author": "Clarity"
           }
         },
         "quote_3": {
           "type": "quote",
           "settings": {
-            "quote": "Thoughtful service from browsing through to delivery.",
-            "author": "Returning customer"
+            "quote": "Connect an established loyalty app while keeping the experience on brand.",
+            "author": "Integration"
           }
         }
       },
@@ -53,37 +72,37 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "How do I earn points?",
-            "answer": "Open Smile to see the earning activities currently available to you."
+            "question": "Can I change the example points and rewards?",
+            "answer": "Yes. Every example in the rewards section is editable in the theme editor. Set the real earning and redemption rules in your loyalty app."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "Where can I see my points balance?",
-            "answer": "Sign in through Smile to review your points balance and available rewards."
+            "question": "Can I connect a loyalty app?",
+            "answer": "Yes. The page is designed to introduce your programme, while an installed app such as Smile handles customer accounts, balances and redemption."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "How do I redeem points?",
-            "answer": "Open the redemption view in Smile to see the rewards you can use."
+            "question": "Do these demo values control Smile?",
+            "answer": "No. They are storefront examples for theme buyers. Configure the live values separately in Smile so the page and programme stay aligned."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "heading": "Questions about rewards",
-        "intro": "Practical answers specific to this page."
+        "heading": "How the rewards demo works",
+        "intro": "Use the theme for explanation and your loyalty app for live programme logic."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
-        "heading": "Manage your rewards",
-        "text": "Open Smile to review your points balance and available rewards.",
-        "link_label": "Open Smile rewards",
+        "heading": "Turn rewards into repeat visits",
+        "text": "Preview the connected Smile panel, then tailor the page and programme rules to your brand.",
+        "link_label": "Preview rewards panel",
         "link_url": "/pages/rewards#smile-home",
         "color_scheme": "scheme-1"
       }
@@ -93,12 +112,12 @@
       "settings": {
         "image_position": "right",
         "image_alt": "Rewards editorial detail",
-        "eyebrow": "Rewards",
-        "heading": "Earn points",
+        "eyebrow": "Explain the value",
+        "heading": "Make earning feel simple",
         "heading_level": "h2",
-        "body": "<p>Open Smile to see the purchases and activities that currently earn points.</p>",
-        "points": "See your progress\nRedeem clearly",
-        "link_label": "View ways to earn",
+        "body": "<p>Show customers how everyday purchases can build towards a useful reward. Clear examples help shoppers understand the benefit before joining.</p>",
+        "points": "Editable example values\nClear member benefits",
+        "link_label": "Preview the integration",
         "link_url": "/pages/rewards#smile-home",
         "color_scheme": "scheme-1",
         "asset_filename": "editorial-community.jpg",
@@ -110,12 +129,12 @@
       "settings": {
         "image_position": "left",
         "image_alt": "Rewards editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Redeem clearly",
+        "eyebrow": "Connect and customise",
+        "heading": "Keep the experience on brand",
         "heading_level": "h3",
-        "body": "<p>Sign in to see which rewards are available and how many points they require.</p>",
-        "points": "Redeem clearly\nSee your progress\nEarn points",
-        "link_label": "Open Smile rewards",
+        "body": "<p>Use the theme sections to explain your offer and let Smile manage live balances, customer accounts and reward redemption.</p>",
+        "points": "Branded programme story\nConnected customer account\nFlexible rewards",
+        "link_label": "Preview rewards panel",
         "link_url": "/pages/rewards#smile-home",
         "color_scheme": "scheme-2",
         "asset_filename": "editorial-brand-studio.jpg",
@@ -128,30 +147,30 @@
         "detail_1": {
           "type": "item",
           "settings": {
-            "label": "Rewards",
-            "heading": "Earn points",
-            "text": "Open Smile to see the activities that currently earn points.",
-            "link_label": "View ways to earn",
+            "label": "Attract",
+            "heading": "Make joining worthwhile",
+            "text": "Show the welcome benefit and explain how quickly customers can reach their first reward.",
+            "link_label": "Preview rewards",
             "link_url": "/pages/rewards#smile-home"
           }
         },
         "detail_2": {
           "type": "item",
           "settings": {
-            "label": "Rewards",
-            "heading": "See your progress",
-            "text": "Sign in through Smile to review your points balance and available rewards.",
-            "link_label": "Open your rewards",
+            "label": "Reward",
+            "heading": "Make value visible",
+            "text": "Use clear examples to connect purchases, points and meaningful benefits.",
+            "link_label": "See the example",
             "link_url": "/pages/rewards#smile-home"
           }
         },
         "detail_3": {
           "type": "item",
           "settings": {
-            "label": "Rewards",
-            "heading": "Redeem clearly",
-            "text": "See the rewards currently available and how many points they require.",
-            "link_label": "Open Smile rewards",
+            "label": "Retain",
+            "heading": "Give customers a reason to return",
+            "text": "Keep progress and available rewards easy to find through the connected loyalty panel.",
+            "link_label": "Preview the panel",
             "link_url": "/pages/rewards#smile-home"
           }
         }
@@ -159,9 +178,9 @@
       "block_order": ["detail_1", "detail_2", "detail_3"],
       "settings": {
         "layout": "statement",
-        "eyebrow": "Rewards",
-        "heading": "Make every interaction count",
-        "intro": "<p>Understand how to earn, track, and redeem available customer rewards.</p>",
+        "eyebrow": "Rewards membership",
+        "heading": "Grow customer loyalty",
+        "intro": "<p>Demonstrate how your store can attract members, reward purchases and encourage the next visit.</p>",
         "color_scheme": "scheme-2"
       }
     }

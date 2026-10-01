@@ -1481,6 +1481,22 @@
         "padding-block-end": 48
       }
     },
+    "newsletter_popup": {
+      "type": "newsletter-popup",
+      "settings": {
+        "eyebrow": "Stay in the loop",
+        "heading": "Good things, occasionally",
+        "text": "<p>Sign up for new arrivals, thoughtful stories and offers worth opening.</p>",
+        "placeholder": "Email address",
+        "button_label": "Sign me up",
+        "success_message": "Thanks — you’re on the list.",
+        "small_print": "No clutter. Unsubscribe at any time.",
+        "delay_seconds": 10,
+        "scroll_percent": 40,
+        "frequency_days": 14,
+        "color_scheme": "scheme-1"
+      }
+    },
     "section_fGdQmp": {
       "type": "section",
       "blocks": {
@@ -1594,6 +1610,7 @@
     "section_Lee4zh",
     "collection_list_kLbgKe",
     "instagram_slider",
+    "newsletter_popup",
     "section_fGdQmp"
   ]
 }
