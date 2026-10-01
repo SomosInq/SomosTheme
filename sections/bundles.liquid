@@ -6,24 +6,9 @@
       <p>Explore hand-picked bundles designed to make your next order feel effortless.</p>
     </div>
 
-    {% assign has_curated_bundles = false %}
-    {% for block in section.blocks %}
-      {% if block.settings.product != blank %}
-        {% assign has_curated_bundles = true %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-
-    {% if has_curated_bundles %}
+    {% if section.settings.featured_bundle != blank %}
       <div class='page-grid'>
-        {% for block in section.blocks %}
-          {% if block.settings.product != blank %}
-            {% render 'bundle-product-card',
-              product: block.settings.product,
-              block_attributes: block.shopify_attributes
-            %}
-          {% endif %}
-        {% endfor %}
+        {% render 'bundle-product-card', product: section.settings.featured_bundle %}
       </div>
     {% elsif section.settings.collection != blank %}
       {% assign coll = collections[section.settings.collection] %}
@@ -70,13 +55,13 @@
   {% schema %}
 {
   "name": "Bundles",
-  "settings": [{ "type": "collection", "id": "collection", "label": "Bundles collection" }],
-  "blocks": [
+  "settings": [
     {
-      "type": "bundle",
-      "name": "Bundle product",
-      "settings": [{ "type": "product", "id": "product", "label": "Bundle product" }]
-    }
+      "type": "product",
+      "id": "featured_bundle",
+      "label": "Featured bundle product"
+    },
+    { "type": "collection", "id": "collection", "label": "Fallback bundles collection" }
   ],
   "presets": [{ "name": "Bundles" }]
 }

@@ -11,16 +11,8 @@
   "sections": {
     "main": {
       "type": "bundles",
-      "blocks": {
-        "everyday_edit": {
-          "type": "bundle",
-          "settings": {
-            "product": "the-everyday-edit"
-          }
-        }
-      },
-      "block_order": ["everyday_edit"],
       "settings": {
+        "featured_bundle": "the-everyday-edit",
         "collection": "frontpage"
       }
     },
