@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "logo": "shopify://shop_images/somos.svg",
@@ -51,8 +60,6 @@
     "cart_price_font": "secondary",
     "show_cart_note": false,
     "show_add_discount_code": true,
-    "quick_add": true,
-    "mobile_quick_add": true,
     "enable_free_shipping_progress": true,
     "free_shipping_threshold": 50,
     "enable_cart_upsells": true,
@@ -66,6 +73,8 @@
     "currency_code_enabled_product_pages": false,
     "currency_code_enabled_product_cards": false,
     "currency_code_enabled_cart_items": false,
+    "quick_add": true,
+    "mobile_quick_add": true,
     "product_corner_radius": 0,
     "card_corner_radius": 4,
     "show_variant_image": false,
@@ -76,6 +85,23 @@
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
     "content_for_index": [],
+    "blocks": {
+      "7278694835107773449": {
+        "type": "shopify://apps/bundlesuite/blocks/bundle_components/ec3fca7a-00ff-426d-ac7c-5f640fb4c8a4",
+        "disabled": false,
+        "settings": {
+          "custom_section_class": "",
+          "custom_section_class_for_InPage": "",
+          "volume_discount_widget_selector": "",
+          "what_happens_on_add_to_cart": "redirect_to_cart",
+          "custom_loader_gif": "",
+          "show_loader": false,
+          "loader_size": 50,
+          "customcss": "",
+          "customjs": ""
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
