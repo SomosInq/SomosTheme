@@ -60,7 +60,11 @@
       data-product-transition='{{ settings.transition_to_main_product }}'
       data-template='{{ template }}'
     >
-      {% unless template.name == 'index' or template.name == 'password' or template.name == 'product' %}
+      {% unless template.name == 'index'
+        or template.name == 'password'
+        or template.name == 'product'
+        or template.suffix == 'style-guide'
+      %}
         {% render 'internal-page-banner' %}
       {% endunless %}
       {{ content_for_layout }}
