@@ -29,7 +29,7 @@
 {% endif %}
 
 {% if render_category_menu %}
-  <div class='mega-menu mega-menu--category section section--full-width-margin section--{{ section.settings.section_width }}'>
+  <div class='mega-menu mega-menu--category{% if parent_link.handle == 'features' %} mega-menu--features{% endif %} section section--full-width-margin section--{{ section.settings.section_width }}'>
     <div class='mega-menu__category-layout'>
       <aside class='mega-menu__category-sidebar' aria-label='{{ parent_link.title }}'>
         <p class='mega-menu__category-label'>{{ parent_link.title }}</p>
@@ -276,6 +276,24 @@
     width: 100%;
   }
 
+  .mega-menu--features .mega-menu__category-layout {
+    grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+
+  .mega-menu--features .mega-menu__category-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.75rem;
+  }
+
+  .mega-menu--features .mega-menu__category-more-label {
+    grid-column: 1 / -1;
+  }
+
+  .mega-menu--features .mega-menu__category-promotions {
+    grid-column: 2;
+  }
+
   .mega-menu__category-button,
   .mega-menu__category-shop-all {
     color: var(--color-foreground);
@@ -405,6 +423,11 @@
   @media screen and (max-width: 1199px) {
     .mega-menu__category-layout {
       grid-template-columns: minmax(140px, 180px) minmax(0, 1fr) minmax(230px, 30%);
+    }
+
+    .mega-menu--features .mega-menu__category-layout {
+      grid-template-columns: minmax(290px, 340px) minmax(0, 1fr);
+      gap: 2rem;
     }
   }
 
