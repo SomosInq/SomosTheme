@@ -4,25 +4,35 @@
   assign banner_title = page_title | default: shop.name
   assign banner_description = blank
   assign banner_label = 'Explore'
+  assign banner_image = blank
+  assign banner_asset = 'editorial-community.jpg'
   assign show_banner_search = false
   assign description_is_richtext = false
+  assign banner_image_position = image_position | default: 'center'
+  assign banner_overlay_opacity = overlay_opacity | default: 45
+  assign banner_text_color = text_color | default: 'light'
 
   case request.page_type
     when 'product'
       assign banner_title = product.title
       assign banner_description = product.description | strip_html | truncate: 150
+      assign banner_image = product.featured_image
       assign banner_label = 'Product'
     when 'collection'
       assign banner_title = collection.title
       assign banner_description = collection.description | strip_html | truncate: 150
+      assign banner_image = collection.featured_image
+      assign banner_asset = 'editorial-collection-look.jpg'
       assign banner_label = 'Collection'
     when 'article'
       assign banner_title = article.title
       assign banner_description = article.excerpt_or_content | strip_html | truncate: 150
+      assign banner_image = article.image
       assign banner_label = 'Journal'
     when 'blog'
       assign banner_title = blog.title
       assign banner_description = blog.description | strip_html | truncate: 150
+      assign banner_image = blog.image
       assign banner_label = 'Journal'
     when 'page'
       assign banner_title = page.title
@@ -32,20 +42,26 @@
       if page.handle contains 'support'
         assign banner_description = 'A practical guide to products, orders, accounts, and every useful route through the store.'
         assign banner_label = 'Help center'
+        assign banner_asset = 'editorial-customer-care.jpg'
         assign show_banner_search = true
       endif
 
       if page.handle contains 'sales' or page.handle contains 'sale'
         assign banner_description = 'Considered pieces, reduced for a limited time. Find useful layers and everyday essentials while availability lasts.'
         assign banner_label = 'Sale edit'
+        assign banner_asset = 'editorial-collection-look.jpg'
       elsif page.handle contains 'quiz' or page.handle contains 'finder' or page.handle contains 'comparison' or page.handle contains 'size' or page.handle contains 'choose'
         assign banner_label = 'Guided finder'
+        assign banner_asset = 'editorial-comparison-rail.jpg'
       elsif page.handle contains 'bundle' or page.handle contains 'look' or page.handle contains 'recipe'
         assign banner_label = 'Explore'
+        assign banner_asset = 'editorial-collection-look.jpg'
       elsif page.handle contains 'review' or page.handle contains 'refer' or page.handle contains 'loyalty' or page.handle contains 'reward'
         assign banner_label = 'Community'
+        assign banner_asset = 'editorial-community.jpg'
       elsif page.handle contains 'about' or page.handle contains 'story' or page.handle contains 'sustain'
         assign banner_label = 'Our story'
+        assign banner_asset = 'editorial-studio-craft.jpg'
       endif
     when 'search'
       assign banner_title = 'Search'
@@ -72,17 +88,32 @@
     assign banner_description = blank
   endif
 
+  if custom_image != blank
+    assign banner_image = custom_image
+  endif
+
   if show_support_search == false
     assign show_banner_search = false
   endif
 -%}
 
 <section
-  class='internal-page-banner color-{{ color_scheme | default: 'scheme-1' }}'
+  class='internal-page-banner internal-page-banner--{{ banner_text_color }}-text section section--page-width page-width-content color-{{ color_scheme | default: 'scheme-1' }}'
   aria-labelledby='InternalPageBannerTitle-{{ section.id }}'
-  style='--page-banner-padding-top: {{ padding_top | default: 112 }}px; --page-banner-padding-bottom: {{ padding_bottom | default: 72 }}px;'
+  style='--page-banner-padding-top: {{ padding_top | default: 112 }}px; --page-banner-padding-bottom: {{ padding_bottom | default: 72 }}px; --page-banner-overlay-opacity: {{ banner_overlay_opacity | divided_by: 100.0 }}; --page-banner-image-position: {{ banner_image_position }};'
 >
-  <div class='internal-page-banner__inner page-width-content'>
+  <div class='internal-page-banner__media' aria-hidden='true'>
+    {%- if banner_image != blank -%}
+      {{
+        banner_image
+        | image_url: width: 2400
+        | image_tag: loading: 'eager', widths: '750, 1100, 1500, 2000, 2400', sizes: '100vw', alt: ''
+      }}
+    {%- else -%}
+      <img src='{{ banner_asset | asset_url }}' alt='' width='1600' height='900' loading='eager'>
+    {%- endif -%}
+  </div>
+  <div class='internal-page-banner__inner'>
     <div class='internal-page-banner__title'>
       <p class='internal-page-banner__eyebrow'>{{ banner_label }}</p>
       <h1 id='InternalPageBannerTitle-{{ section.id }}'>{{ banner_title | escape }}</h1>

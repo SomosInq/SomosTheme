@@ -2,6 +2,10 @@
   custom_eyebrow: section.settings.eyebrow,
   custom_heading: section.settings.heading,
   custom_description: section.settings.description,
+  custom_image: section.settings.background_image,
+  image_position: section.settings.image_position,
+  overlay_opacity: section.settings.overlay_opacity,
+  text_color: section.settings.text_color,
   show_automatic_description: section.settings.show_automatic_description,
   show_support_search: section.settings.show_support_search,
   color_scheme: section.settings.color_scheme,
@@ -32,6 +36,58 @@
       "type": "richtext",
       "id": "description",
       "label": "Supporting text"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "info": "Leave blank to use the automatic image for this page type."
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Image overlay",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "default": 45
+    },
+    {
+      "type": "select",
+      "id": "text_color",
+      "label": "Text color",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
     },
     {
       "type": "checkbox",

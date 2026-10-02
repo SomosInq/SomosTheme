@@ -93,6 +93,10 @@
       custom_eyebrow: section.settings.bundle_banner_eyebrow,
       custom_heading: section.settings.bundle_banner_heading,
       custom_description: section.settings.bundle_banner_description,
+      custom_image: section.settings.bundle_banner_image,
+      image_position: section.settings.bundle_banner_image_position,
+      overlay_opacity: section.settings.bundle_banner_overlay_opacity,
+      text_color: section.settings.bundle_banner_text_color,
       show_automatic_description: false,
       show_support_search: false,
       color_scheme: section.settings.color_scheme,
@@ -410,6 +414,57 @@
       "id": "bundle_banner_description",
       "label": "Supporting text",
       "default": "<p>Choose your pieces, review your set, and add the complete bundle to your bag.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "bundle_banner_image",
+      "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "bundle_banner_image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "bundle_banner_overlay_opacity",
+      "label": "Image overlay",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "default": 45
+    },
+    {
+      "type": "select",
+      "id": "bundle_banner_text_color",
+      "label": "Text color",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
     },
     {
       "type": "range",
