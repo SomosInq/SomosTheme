@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -39,6 +48,8 @@
     "editorial": {
       "type": "editorial-image-text",
       "settings": {
+        "image_position": "right",
+        "layout_style": "split",
         "eyebrow": "Editorial",
         "heading": "Tell the story behind the product",
         "heading_level": "h2",
@@ -46,8 +57,6 @@
         "points": "Thoughtful materials\nConsidered details\nMade for everyday use",
         "link_label": "Discover more",
         "link_url": "/collections/all",
-        "layout_style": "split",
-        "image_position": "right",
         "color_scheme": "scheme-1"
       }
     },
@@ -79,7 +88,11 @@
           }
         }
       },
-      "block_order": ["grid_one", "grid_two", "grid_three"],
+      "block_order": [
+        "grid_one",
+        "grid_two",
+        "grid_three"
+      ],
       "settings": {
         "layout": "numbered",
         "eyebrow": "A simple journey",
@@ -88,23 +101,50 @@
         "color_scheme": "scheme-1"
       }
     },
-    "benefits": { "type": "benefits-grid", "settings": { "color_scheme": "scheme-2" } },
-    "comparison": { "type": "comparison-table", "settings": { "color_scheme": "scheme-1" } },
-    "usp": { "type": "mini-usp-strip", "settings": { "color_scheme": "scheme-2" } },
+    "benefits": {
+      "type": "benefits-grid",
+      "settings": {
+        "color_scheme": "scheme-2"
+      }
+    },
+    "comparison": {
+      "type": "comparison-table",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "usp": {
+      "type": "mini-usp-strip",
+      "settings": {
+        "color_scheme": "scheme-2"
+      }
+    },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
         "testimonial_one": {
           "type": "quote",
-          "settings": { "quote": "Beautifully considered and easy to live with.", "author": "A happy customer" }
+          "settings": {
+            "quote": "Beautifully considered and easy to live with.",
+            "author": "A happy customer"
+          }
         },
         "testimonial_two": {
           "type": "quote",
-          "settings": { "quote": "The details make the difference.", "author": "Verified customer" }
+          "settings": {
+            "quote": "The details make the difference.",
+            "author": "Verified customer"
+          }
         }
       },
-      "block_order": ["testimonial_one", "testimonial_two"],
-      "settings": { "heading": "Loved by our community", "color_scheme": "scheme-1" }
+      "block_order": [
+        "testimonial_one",
+        "testimonial_two"
+      ],
+      "settings": {
+        "heading": "Loved by our community",
+        "color_scheme": "scheme-1"
+      }
     },
     "faq": {
       "type": "faq",
@@ -131,8 +171,15 @@
           }
         }
       },
-      "block_order": ["faq_one", "faq_two", "faq_three"],
-      "settings": { "heading": "Common questions", "intro": "Helpful answers before you make a decision." }
+      "block_order": [
+        "faq_one",
+        "faq_two",
+        "faq_three"
+      ],
+      "settings": {
+        "heading": "Common questions",
+        "intro": "Helpful answers before you make a decision."
+      }
     },
     "email": {
       "type": "email-signup",
@@ -144,36 +191,91 @@
         "color_scheme": "scheme-2"
       }
     },
-    "marquee": { "type": "marquee", "settings": { "movement_direction": "left", "color_scheme": "scheme-1" } },
+    "marquee": {
+      "type": "marquee",
+      "settings": {
+        "movement_direction": "left",
+        "color_scheme": "scheme-1"
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
         "slide_one": {
           "type": "_slide",
           "settings": {},
-          "blocks": { "slide_text": { "type": "text", "settings": { "text": "<h2>Designed for daily life</h2>" } } },
-          "block_order": ["slide_text"]
+          "blocks": {
+            "slide_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h2>Designed for daily life</h2>"
+              }
+            }
+          },
+          "block_order": [
+            "slide_text"
+          ]
         },
         "slide_two": {
           "type": "_slide",
           "settings": {},
-          "blocks": { "slide_text": { "type": "text", "settings": { "text": "<h2>Find your next favourite</h2>" } } },
-          "block_order": ["slide_text"]
+          "blocks": {
+            "slide_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h2>Find your next favourite</h2>"
+              }
+            }
+          },
+          "block_order": [
+            "slide_text"
+          ]
         }
       },
-      "block_order": ["slide_one", "slide_two"],
-      "settings": { "autoplay": true, "color_scheme": "scheme-1" }
+      "block_order": [
+        "slide_one",
+        "slide_two"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "autoplay": true
+      }
     },
-    "social_proof": { "type": "social-proof", "settings": { "color_scheme": "scheme-2" } },
-    "intro": { "type": "intro-story", "settings": { "color_scheme": "scheme-1" } },
+    "social_proof": {
+      "type": "social-proof",
+      "settings": {
+        "color_scheme": "scheme-2"
+      }
+    },
+    "intro": {
+      "type": "intro-story",
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
     "collections": {
       "type": "collection-links",
       "blocks": {
-        "collection_one": { "type": "collection-link", "settings": { "collection": "all" } },
-        "collection_two": { "type": "collection-link", "settings": { "collection": "" } }
+        "collection_one": {
+          "type": "collection-link",
+          "settings": {
+            "collection": "all"
+          }
+        },
+        "collection_two": {
+          "type": "collection-link",
+          "settings": {
+            "collection": ""
+          }
+        }
       },
-      "block_order": ["collection_one", "collection_two"],
-      "settings": { "color_scheme": "scheme-2" }
+      "block_order": [
+        "collection_one",
+        "collection_two"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2"
+      }
     },
     "products": {
       "type": "product-list",
@@ -199,11 +301,28 @@
     "shop_look": {
       "type": "shop-the-look",
       "blocks": {
-        "look_product_one": { "type": "product", "settings": { "product": "", "x": 30, "y": 35 } },
-        "look_product_two": { "type": "product", "settings": { "product": "", "x": 68, "y": 65 } }
+        "look_product_one": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "look_product_two": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
       },
-      "block_order": ["look_product_one", "look_product_two"],
-      "settings": { "eyebrow": "Shop the look", "heading": "Build the complete picture", "color_scheme": "scheme-1" }
+      "block_order": [
+        "look_product_one",
+        "look_product_two"
+      ],
+      "settings": {
+        "eyebrow": "Shop the look",
+        "heading": "Build the complete picture",
+        "color_scheme": "scheme-1"
+      }
     },
     "functionality": {
       "type": "functionality-journey",
@@ -230,18 +349,22 @@
           }
         }
       },
-      "block_order": ["function_one", "function_two", "function_three"],
+      "block_order": [
+        "function_one",
+        "function_two",
+        "function_three"
+      ],
       "settings": {
+        "background_color": "#171718",
+        "text_color": "#f5f5f5",
+        "muted_text_color": "#a9a9aa",
+        "border_color": "rgba(255,255,255,0.16)",
         "eyebrow": "Functionality",
         "title": "Designed to do more",
         "description": "Explore the practical features that make the experience work.",
         "cta_label": "Learn more",
         "cta_link": "/pages/about",
-        "wordmark": "function",
-        "background_color": "#171718",
-        "text_color": "#f5f5f5",
-        "muted_text_color": "#a9a9aa",
-        "border_color": "rgba(255,255,255,0.16)"
+        "wordmark": "function"
       }
     },
     "support": {
@@ -262,7 +385,11 @@
           }
         }
       },
-      "block_order": ["support_one", "support_two"]
+      "block_order": [
+        "support_one",
+        "support_two"
+      ],
+      "settings": {}
     },
     "quiz": {
       "type": "quiz-flow",
@@ -282,8 +409,14 @@
           }
         }
       },
-      "block_order": ["quiz_one", "quiz_two"],
-      "settings": { "title": "Find your best fit", "description": "Answer two quick questions to get started." }
+      "block_order": [
+        "quiz_one",
+        "quiz_two"
+      ],
+      "settings": {
+        "title": "Find your best fit",
+        "description": "Answer two quick questions to get started."
+      }
     },
     "custom": {
       "type": "custom-liquid",

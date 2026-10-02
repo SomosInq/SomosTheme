@@ -9,69 +9,6 @@
  */
 {
   "sections": {
-    "instagram_slider": {
-      "type": "social-media-slider",
-      "blocks": {
-        "post_1": {
-          "type": "post",
-          "settings": {
-            "asset_filename": "editorial-collection-look.jpg",
-            "image_url": "",
-            "alt_text": "Curated clothing rail",
-            "caption": "New textures, considered layers, and pieces made for repeat wear.",
-            "post_url": ""
-          }
-        },
-        "post_2": {
-          "type": "post",
-          "settings": {
-            "asset_filename": "editorial-community.jpg",
-            "image_url": "",
-            "alt_text": "Street-style look",
-            "caption": "Everyday dressing, seen our way.",
-            "post_url": ""
-          }
-        },
-        "post_3": {
-          "type": "post",
-          "settings": {
-            "asset_filename": "editorial-brand-studio.jpg",
-            "image_url": "",
-            "alt_text": "Fashion studio details",
-            "caption": "Behind the details at Somos.",
-            "post_url": ""
-          }
-        },
-        "post_4": {
-          "type": "post",
-          "settings": {
-            "asset_filename": "editorial-fit-guide.jpg",
-            "image_url": "",
-            "alt_text": "Neutral everyday outfit",
-            "caption": "A closer look at this week’s edit.",
-            "post_url": ""
-          }
-        },
-        "post_5": {
-          "type": "post",
-          "settings": {
-            "asset_filename": "editorial-collection-look.jpg",
-            "image_url": "",
-            "alt_text": "Clothing collection",
-            "caption": "Fewer, better choices for the season ahead.",
-            "post_url": ""
-          }
-        }
-      },
-      "block_order": ["post_1", "post_2", "post_3", "post_4", "post_5"],
-      "settings": {
-        "eyebrow": "Follow along",
-        "heading": "Somos on Instagram",
-        "profile_label": "Follow @somos",
-        "profile_url": "https://www.instagram.com/",
-        "color_scheme": "scheme-1"
-      }
-    },
     "hero_DKPQWC": {
       "type": "hero",
       "blocks": {
@@ -208,7 +145,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["text_Gpw73B", "text_kmJ9AQ"]
+              "block_order": [
+                "text_Gpw73B",
+                "text_kmJ9AQ"
+              ]
             },
             "text_4EaGQt": {
               "type": "text",
@@ -237,10 +177,15 @@
               "blocks": {}
             }
           },
-          "block_order": ["group_DKLfyX", "text_4EaGQt"]
+          "block_order": [
+            "group_DKLfyX",
+            "text_4EaGQt"
+          ]
         }
       },
-      "block_order": ["group_cYwbDP"],
+      "block_order": [
+        "group_cYwbDP"
+      ],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
         "media_type_1": "image",
@@ -378,7 +323,11 @@
               "blocks": {}
             }
           },
-          "block_order": ["spacer_qQCMaD", "text_znMide", "button_yt3QW8"]
+          "block_order": [
+            "spacer_qQCMaD",
+            "text_znMide",
+            "button_yt3QW8"
+          ]
         },
         "group_XqPK97": {
           "type": "group",
@@ -473,7 +422,11 @@
               "blocks": {}
             }
           },
-          "block_order": ["spacer_AmYeyC", "text_AtreaK", "button_qkHGEA"]
+          "block_order": [
+            "spacer_AmYeyC",
+            "text_AtreaK",
+            "button_qkHGEA"
+          ]
         },
         "group_CPEDEc": {
           "type": "group",
@@ -568,10 +521,18 @@
               "blocks": {}
             }
           },
-          "block_order": ["spacer_PGr3eC", "text_y3Hd9t", "button_nNr4em"]
+          "block_order": [
+            "spacer_PGr3eC",
+            "text_y3Hd9t",
+            "button_nNr4em"
+          ]
         }
       },
-      "block_order": ["group_HCNR7i", "group_XqPK97", "group_CPEDEc"],
+      "block_order": [
+        "group_HCNR7i",
+        "group_XqPK97",
+        "group_CPEDEc"
+      ],
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -671,7 +632,9 @@
               "blocks": {}
             }
           },
-          "block_order": ["text_eAJcGU"]
+          "block_order": [
+            "text_eAJcGU"
+          ]
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -733,13 +696,22 @@
               "blocks": {}
             }
           },
-          "block_order": ["collection_title_Hnz3eH"]
+          "block_order": [
+            "collection_title_Hnz3eH"
+          ]
         }
       },
-      "block_order": ["group_CmMKtY"],
+      "block_order": [
+        "group_CmMKtY"
+      ],
       "name": "t:names.collections_carousel",
       "settings": {
-        "collection_list": ["shirts", "sweaters-jackets", "tshirts", "accessories"],
+        "collection_list": [
+          "shirts",
+          "sweaters-jackets",
+          "tshirts",
+          "accessories"
+        ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "columns": 4,
@@ -901,7 +873,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["text_WYrHDa", "text_wxbUBx"]
+              "block_order": [
+                "text_WYrHDa",
+                "text_wxbUBx"
+              ]
             },
             "button_7dCAeU": {
               "type": "button",
@@ -918,7 +893,11 @@
               "blocks": {}
             }
           },
-          "block_order": ["text_9dwBPJ", "group_YkhAe4", "button_7dCAeU"]
+          "block_order": [
+            "text_9dwBPJ",
+            "group_YkhAe4",
+            "button_7dCAeU"
+          ]
         }
       },
       "name": "t:names.editorial",
@@ -996,13 +975,19 @@
               "blocks": {}
             }
           },
-          "block_order": ["collection_title_weJtea"]
+          "block_order": [
+            "collection_title_weJtea"
+          ]
         }
       },
       "disabled": true,
       "name": "t:names.collections_bento",
       "settings": {
-        "collection_list": ["shirts", "sweaters-jackets", "tshirts"],
+        "collection_list": [
+          "shirts",
+          "sweaters-jackets",
+          "tshirts"
+        ],
         "layout_type": "bento",
         "carousel_on_mobile": false,
         "columns": 4,
@@ -1066,7 +1051,10 @@
           "blocks": {}
         }
       },
-      "block_order": ["text_YLPk4p", "button_H9gpTf"],
+      "block_order": [
+        "text_YLPk4p",
+        "button_H9gpTf"
+      ],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -1088,6 +1076,7 @@
         "gap": 24,
         "section_width": "page-width",
         "section_height": "medium",
+        "editorial_heading": false,
         "section_height_custom": 50,
         "color_scheme": "scheme-6",
         "toggle_overlay": true,
@@ -1197,7 +1186,11 @@
               "blocks": {}
             }
           },
-          "block_order": ["spacer_kgRkzK", "text_Y6bbDR", "button_BdKCFR"]
+          "block_order": [
+            "spacer_kgRkzK",
+            "text_Y6bbDR",
+            "button_BdKCFR"
+          ]
         },
         "group_iTyatk": {
           "type": "group",
@@ -1292,10 +1285,17 @@
               "blocks": {}
             }
           },
-          "block_order": ["spacer_bXPtQT", "text_tm8hwD", "button_THWtDN"]
+          "block_order": [
+            "spacer_bXPtQT",
+            "text_tm8hwD",
+            "button_THWtDN"
+          ]
         }
       },
-      "block_order": ["group_dW3w4c", "group_iTyatk"],
+      "block_order": [
+        "group_dW3w4c",
+        "group_iTyatk"
+      ],
       "name": "t:names.split_showcase",
       "settings": {
         "content_direction": "row",
@@ -1395,7 +1395,9 @@
               "blocks": {}
             }
           },
-          "block_order": ["text_UzUQHz"]
+          "block_order": [
+            "text_UzUQHz"
+          ]
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -1457,13 +1459,22 @@
               "blocks": {}
             }
           },
-          "block_order": ["collection_title_NmRXAp"]
+          "block_order": [
+            "collection_title_NmRXAp"
+          ]
         }
       },
-      "block_order": ["group_kd3WU8"],
+      "block_order": [
+        "group_kd3WU8"
+      ],
       "name": "t:names.collections_carousel",
       "settings": {
-        "collection_list": ["shirts", "sweaters-jackets", "tshirts", "accessories"],
+        "collection_list": [
+          "shirts",
+          "sweaters-jackets",
+          "tshirts",
+          "accessories"
+        ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "columns": 4,
@@ -1480,6 +1491,75 @@
         "color_scheme": "",
         "padding-block-start": 48,
         "padding-block-end": 48
+      }
+    },
+    "instagram_slider": {
+      "type": "social-media-slider",
+      "blocks": {
+        "post_1": {
+          "type": "post",
+          "settings": {
+            "asset_filename": "editorial-collection-look.jpg",
+            "image_url": "",
+            "alt_text": "Curated clothing rail",
+            "caption": "New textures, considered layers, and pieces made for repeat wear.",
+            "post_url": ""
+          }
+        },
+        "post_2": {
+          "type": "post",
+          "settings": {
+            "asset_filename": "editorial-community.jpg",
+            "image_url": "",
+            "alt_text": "Street-style look",
+            "caption": "Everyday dressing, seen our way.",
+            "post_url": ""
+          }
+        },
+        "post_3": {
+          "type": "post",
+          "settings": {
+            "asset_filename": "editorial-brand-studio.jpg",
+            "image_url": "",
+            "alt_text": "Fashion studio details",
+            "caption": "Behind the details at Somos.",
+            "post_url": ""
+          }
+        },
+        "post_4": {
+          "type": "post",
+          "settings": {
+            "asset_filename": "editorial-fit-guide.jpg",
+            "image_url": "",
+            "alt_text": "Neutral everyday outfit",
+            "caption": "A closer look at this week’s edit.",
+            "post_url": ""
+          }
+        },
+        "post_5": {
+          "type": "post",
+          "settings": {
+            "asset_filename": "editorial-collection-look.jpg",
+            "image_url": "",
+            "alt_text": "Clothing collection",
+            "caption": "Fewer, better choices for the season ahead.",
+            "post_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "post_1",
+        "post_2",
+        "post_3",
+        "post_4",
+        "post_5"
+      ],
+      "settings": {
+        "eyebrow": "Follow along",
+        "heading": "Somos on Instagram",
+        "profile_label": "Follow @somos",
+        "profile_url": "https://www.instagram.com/",
+        "color_scheme": "scheme-1"
       }
     },
     "newsletter_popup": {
@@ -1570,7 +1650,11 @@
           "blocks": {}
         }
       },
-      "block_order": ["text_9R3EGp", "text_Ly73ft", "button_a94Qng"],
+      "block_order": [
+        "text_9R3EGp",
+        "text_Ly73ft",
+        "button_a94Qng"
+      ],
       "name": "t:names.rich_text_section",
       "settings": {
         "content_direction": "column",
