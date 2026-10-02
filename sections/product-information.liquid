@@ -275,7 +275,7 @@
     max-width: var(--sidebar-width);
   }
 
-  /* BundleSuite's full-page builder needs the complete storefront canvas. */
+  /* Keep the BundleSuite builder aligned with the theme's standard page content. */
   .product-information--bundle-builder {
     width: 100%;
     max-width: none;
@@ -293,6 +293,11 @@
     width: 100%;
     max-width: none;
     margin-inline: 0;
+  }
+
+  body:has(.product-information--bundle-builder) #bundlesuiteContainer {
+    width: min(calc(100% - (var(--page-margin) * 2)), calc(var(--page-width) - (var(--page-margin) * 2)));
+    margin-inline: auto;
   }
 
   /* If the header is sticky, make product details content stick underneath the header */
