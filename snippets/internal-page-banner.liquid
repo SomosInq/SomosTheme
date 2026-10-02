@@ -102,7 +102,7 @@
 -%}
 
 <section
-  class='internal-page-banner internal-page-banner--{{ banner_text_color }}-text section section--page-width page-width-content color-{{ color_scheme | default: 'scheme-1' }}'
+  class='internal-page-banner internal-page-banner--{{ banner_text_color }}-text section section--page-width color-{{ color_scheme | default: 'scheme-1' }}'
   aria-labelledby='InternalPageBannerTitle-{{ section.id }}'
   style='--page-banner-padding-top: {{ padding_top | default: 112 }}px; --page-banner-padding-bottom: {{ padding_bottom | default: 72 }}px; --page-banner-overlay-opacity: {{ banner_overlay_opacity | divided_by: 100.0 }}; --page-banner-image-position: {{ banner_image_position }};'
 >
