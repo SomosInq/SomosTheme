@@ -360,6 +360,10 @@ p:empty {
   color: #fff;
 }
 
+.internal-page-banner--light-text :is(h1, p, .internal-page-banner__rte) {
+  color: inherit;
+}
+
 .internal-page-banner--dark-text {
   --page-banner-overlay-color: 255 255 255;
 
@@ -385,6 +389,9 @@ p:empty {
   font-size: clamp(3.25rem, 7vw, 7.5rem);
   line-height: 0.9;
   letter-spacing: -0.055em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
   text-wrap: balance;
 }
 
