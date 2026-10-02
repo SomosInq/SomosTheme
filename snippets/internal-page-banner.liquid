@@ -10,7 +10,11 @@
   assign description_is_richtext = false
   assign banner_image_position = image_position | default: 'center'
   assign banner_overlay_opacity = overlay_opacity | default: 45
-  assign banner_text_color = text_color | default: 'light'
+  assign banner_text_color = 'light'
+
+  if text_color == 'dark'
+    assign banner_text_color = 'dark'
+  endif
 
   case request.page_type
     when 'product'
