@@ -1,17 +1,167 @@
 {
   "sections": {
-    "main": {
-      "type": "feature-landing",
+    "page_banner": {
+      "type": "internal-page-banner",
       "settings": {
         "eyebrow": "Stockists",
-        "title": "Find a stockist near you",
-        "description": "Create a curated stockist page that complements your store locator and increases offline discovery.",
-        "highlight_heading": "Useful for",
-        "bullets": "Retail partners\nWholesale and omnichannel stores\nOffline discovery",
-        "cards": "Find a location | Help customers discover where your products are sold. ||Support local buying | Encourage in-person shopping. ||Pair with store locator | Connect online and offline experiences.",
-        "cta_label": "Find a store",
-        "cta_url": "/pages/store-locator",
-        "hero_asset_filename": "editorial-brand-studio.jpg"
+        "heading": "Find us in good company",
+        "description": "<p>Discover independent stores and considered spaces where you can experience the collection in person.</p>",
+        "image_position": "center",
+        "overlay_opacity": 45,
+        "text_color": "light"
+      }
+    },
+    "main": {
+      "type": "stockists-directory",
+      "blocks": {
+        "shoreditch": {
+          "type": "stockist",
+          "settings": {
+            "name": "Field & Form",
+            "type_label": "Independent retailer",
+            "address": "42 Redchurch Street",
+            "city": "Shoreditch, London",
+            "postcode": "E2 7DP",
+            "region": "London",
+            "hours": "Mon–Sat, 10–6 · Sun, 11–5",
+            "x_position": 56,
+            "y_position": 63
+          }
+        },
+        "kings_cross": {
+          "type": "stockist",
+          "settings": {
+            "name": "The Assembly",
+            "type_label": "Concept store",
+            "address": "18 Coal Drops Yard",
+            "city": "King's Cross, London",
+            "postcode": "N1C 4DQ",
+            "region": "London",
+            "hours": "Daily, 10–7",
+            "x_position": 48,
+            "y_position": 37
+          }
+        },
+        "brighton": {
+          "type": "stockist",
+          "settings": {
+            "name": "Common Ground",
+            "type_label": "Lifestyle store",
+            "address": "7 North Laine",
+            "city": "Brighton",
+            "postcode": "BN1 1YA",
+            "region": "South",
+            "hours": "Mon–Sat, 9:30–6",
+            "x_position": 63,
+            "y_position": 85
+          }
+        },
+        "soho": {
+          "type": "stockist",
+          "settings": {
+            "name": "Workshop No. 8",
+            "type_label": "Design store",
+            "address": "8 Beak Street",
+            "city": "Soho, London",
+            "postcode": "W1F 9RD",
+            "region": "London",
+            "hours": "Mon–Sat, 10–7 · Sun, 12–5",
+            "x_position": 38,
+            "y_position": 56
+          }
+        },
+        "manchester": {
+          "type": "stockist",
+          "settings": {
+            "name": "North & Kind",
+            "type_label": "Independent retailer",
+            "address": "24 Tib Street",
+            "city": "Manchester",
+            "postcode": "M4 1SH",
+            "region": "North",
+            "hours": "Tue–Sun, 10–6",
+            "x_position": 25,
+            "y_position": 20
+          }
+        },
+        "bristol": {
+          "type": "stockist",
+          "settings": {
+            "name": "Still Life Store",
+            "type_label": "Home and lifestyle",
+            "address": "11 Clifton Village",
+            "city": "Bristol",
+            "postcode": "BS8 4AA",
+            "region": "South",
+            "hours": "Mon–Sat, 10–5:30",
+            "x_position": 15,
+            "y_position": 74
+          }
+        },
+        "edinburgh": {
+          "type": "stockist",
+          "settings": {
+            "name": "The Good Room",
+            "type_label": "Concept store",
+            "address": "31 Stockbridge",
+            "city": "Edinburgh",
+            "postcode": "EH3 6AA",
+            "region": "Scotland",
+            "hours": "Daily, 10–6",
+            "x_position": 38,
+            "y_position": 10
+          }
+        },
+        "berlin": {
+          "type": "stockist",
+          "settings": {
+            "name": "Atelier Mitte",
+            "type_label": "Design collective",
+            "address": "Linienstraße 118",
+            "city": "Berlin",
+            "postcode": "10115",
+            "region": "Europe",
+            "hours": "Mon–Sat, 11–7",
+            "x_position": 86,
+            "y_position": 34
+          }
+        },
+        "brand_north": { "type": "brand", "settings": { "name": "NORTH / FORM", "style": "sans" } },
+        "brand_kindred": { "type": "brand", "settings": { "name": "Kindred", "style": "serif" } },
+        "brand_common": { "type": "brand", "settings": { "name": "COMMON OBJECTS", "style": "mono" } },
+        "brand_house": { "type": "brand", "settings": { "name": "House Eight", "style": "italic" } },
+        "brand_still": { "type": "brand", "settings": { "name": "STILL GOODS", "style": "sans" } },
+        "brand_atelier": { "type": "brand", "settings": { "name": "atelier 03", "style": "serif" } },
+        "brand_fold": { "type": "brand", "settings": { "name": "FOLD—STUDIO", "style": "mono" } },
+        "brand_object": { "type": "brand", "settings": { "name": "Everyday Object", "style": "italic" } }
+      },
+      "block_order": [
+        "shoreditch",
+        "kings_cross",
+        "brighton",
+        "soho",
+        "manchester",
+        "bristol",
+        "edinburgh",
+        "berlin",
+        "brand_north",
+        "brand_kindred",
+        "brand_common",
+        "brand_house",
+        "brand_still",
+        "brand_atelier",
+        "brand_fold",
+        "brand_object"
+      ],
+      "settings": {
+        "eyebrow": "Where to find us",
+        "heading": "Find Somos in person",
+        "intro": "<p>Explore our fictional directory of independent retailers. Search by place, browse by region or select a pin to find its shop card.</p>",
+        "map_label": "Stockist network",
+        "map_text": "8 demo destinations across the UK and Europe.",
+        "brands_eyebrow": "Good company",
+        "brands_heading": "Brands we sit alongside",
+        "color_scheme": "scheme-1"
       }
     },
     "page_faq": {
@@ -20,108 +170,38 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about search your area?",
-            "answer": "Use location information to find the nearest partner."
+            "question": "Do all stockists carry the full collection?",
+            "answer": "Ranges and sizes vary by retailer. Contact the store before travelling if you are looking for a particular item."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about check the range?",
-            "answer": "Individual stockists may carry different products and sizes."
+            "question": "Can I reserve an item in store?",
+            "answer": "Reservation policies are set by each retailer. Use the location details above to contact the shop directly."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about contact ahead?",
-            "answer": "Confirm opening times and live availability with the retailer."
+            "question": "How do I become a stockist?",
+            "answer": "Visit our wholesale page to learn about the collection, opening orders and how to apply."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
-      "settings": {
-        "heading": "Questions about stockists",
-        "intro": "Practical answers specific to this page."
-      }
+      "settings": { "heading": "Planning your visit", "intro": "A few useful details before you go." }
     },
-    "editorial_primary": {
-      "type": "editorial-image-text",
+    "page_cta": {
+      "type": "final-cta",
       "settings": {
-        "image_position": "left",
-        "image_alt": "Stockists editorial detail",
-        "eyebrow": "Stockists",
-        "heading": "Search your area",
-        "heading_level": "h2",
-        "body": "<p>Use location information to find the nearest partner.</p>",
-        "points": "Check the range\nContact ahead",
-        "link_label": "Contact our team",
-        "link_url": "/pages/contact",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-brand-studio.jpg",
-        "layout_style": "split"
-      }
-    },
-    "editorial_secondary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "right",
-        "image_alt": "Stockists editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Contact ahead",
-        "heading_level": "h3",
-        "body": "<p>Confirm opening times and live availability with the retailer.</p>",
-        "points": "Contact ahead\nCheck the range\nSearch your area",
-        "link_label": "Contact our team",
-        "link_url": "/pages/contact",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-community.jpg",
-        "layout_style": "compact"
-      }
-    },
-    "page_details": {
-      "type": "editorial-content-grid",
-      "blocks": {
-        "detail_1": {
-          "type": "item",
-          "settings": {
-            "label": "Stockists",
-            "heading": "Search your area",
-            "text": "Use location information to find the nearest partner.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_2": {
-          "type": "item",
-          "settings": {
-            "label": "Stockists",
-            "heading": "Check the range",
-            "text": "Individual stockists may carry different products and sizes.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_3": {
-          "type": "item",
-          "settings": {
-            "label": "Stockists",
-            "heading": "Contact ahead",
-            "text": "Confirm opening times and live availability with the retailer.",
-            "link_label": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": ["detail_1", "detail_2", "detail_3"],
-      "settings": {
-        "layout": "grid",
-        "eyebrow": "Stockists",
-        "heading": "Find Somos in person",
-        "intro": "<p>Discover selected retailers carrying the collection and confirm availability before travelling.</p>",
+        "heading": "Want to stock the collection?",
+        "text": "Discover wholesale terms, products and support for retail partners.",
+        "link_label": "Explore wholesale",
+        "link_url": "/pages/wholesale",
         "color_scheme": "scheme-1"
       }
     }
   },
-  "order": ["main", "editorial_primary", "page_faq", "page_details", "editorial_secondary"]
+  "order": ["page_banner", "main", "page_faq", "page_cta"]
 }

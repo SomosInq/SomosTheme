@@ -8,6 +8,10 @@
  * ------------------------------------------------------------
  */ {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {}
+    },
     "collection_list_Wfgh3m": {
       "type": "main-collection-list",
       "blocks": {
@@ -246,6 +250,7 @@
     }
   },
   "order": [
+    "page_banner",
     "collection_list_Wfgh3m",
     "editorial_primary",
     "page_usp",

@@ -1,74 +1,146 @@
-<section class='section section--page-width page-shell quiz-flow-section'>
-  <div class='page-width-content'>
-    <div class='page-hero'>
-      <span class='page-pill page-pill--accent'>Product finder</span>
-      <h2>{{ section.settings.title | default: page.title }}</h2>
-      <p>{{ section.settings.description }}</p>
-    </div>
+<section class='section section--page-width quiz-flow-section' data-quiz>
+  <div class='quiz-experience'>
+    <header class='quiz-experience__header'>
+      <div>
+        {% if section.settings.eyebrow != blank %}
+          <p class='quiz-experience__eyebrow'>{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h2>{{ section.settings.title | default: page.title }}</h2>
+      </div>
+      {% if section.settings.description != blank %}
+        <div class='quiz-experience__description rte'>{{ section.settings.description }}</div>
+      {% endif %}
+    </header>
 
     {% if section.blocks.size > 0 %}
-      <form class='page-card js-quiz-form' data-quiz-form>
-        <div class='page-stack'>
-          {% for block in section.blocks %}
-            <div class='page-card page-card--compact' {{ block.shopify_attributes }}>
-              <h2>{{ block.settings.question | default: 'Question' }}</h2>
-              <div class='page-form-grid'>
-                {% assign option_lines = block.settings.options | split: '||' %}
-                {% for option_line in option_lines %}
-                  {% assign parts = option_line | split: '|' %}
-                  {% assign option_label = parts[0] | strip %}
-                  {% assign option_title = parts[1] | strip %}
-                  {% assign option_body = parts[2] | strip %}
-                  {% assign option_link = parts[3] | strip %}
+      <div class='quiz-experience__panel'>
+        <div class='quiz-progress' aria-live='polite'>
+          <span data-quiz-progress-text>Question 1 of {{ section.blocks.size }}</span>
+          <span class='quiz-progress__value' data-quiz-progress-value>0% complete</span>
+          <div class='quiz-progress__track' aria-hidden='true'>
+            <span class='quiz-progress__bar' data-quiz-progress-bar></span>
+          </div>
+        </div>
 
-                  {% if option_label != blank %}
-                    <label class='page-choice'>
-                      <input
-                        type='radio'
-                        name='question-{{ forloop.parentloop.index0 }}'
-                        value='{{ option_label | escape }}'
-                        data-result-title='{{ option_title | escape }}'
-                        data-result-body='{{ option_body | escape }}'
-                        data-result-link='{{ option_link | escape }}'
-                      >
-                      <span>{{ option_label }}</span>
-                    </label>
+        <form class='js-quiz-form quiz-form' data-quiz-form novalidate>
+          <div class='quiz-viewport' data-quiz-viewport>
+            <div class='quiz-track'>
+              {% for block in section.blocks %}
+                <fieldset
+                  class='quiz-step{% if forloop.first %} is-active{% else %} is-after{% endif %}'
+                  data-quiz-step
+                  data-step-index='{{ forloop.index0 }}'
+                  data-multiple='{{ block.settings.allow_multiple }}'
+                  aria-hidden='{% if forloop.first %}false{% else %}true{% endif %}'
+                  {% unless forloop.first %}
+                    inert
+                  {% endunless %}
+                  {{ block.shopify_attributes }}
+                >
+                  <legend tabindex='-1'>{{ block.settings.question | default: 'Question' }}</legend>
+                  {% if block.settings.instruction != blank %}
+                    <p class='quiz-step__instruction'>{{ block.settings.instruction }}</p>
+                  {% elsif block.settings.allow_multiple %}
+                    <p class='quiz-step__instruction'>Choose all that apply, then continue.</p>
+                  {% else %}
+                    <p class='quiz-step__instruction'>Choose one answer.</p>
                   {% endif %}
-                {% endfor %}
-              </div>
-            </div>
-          {% endfor %}
-        </div>
 
-        <div class='page-actions'>
-          <button type='submit' class='button'>See recommendation</button>
+                  <div class='quiz-options'>
+                    {% assign option_lines = block.settings.options | split: '||' %}
+                    {% for option_line in option_lines %}
+                      {% assign parts = option_line | split: '|' %}
+                      {% assign option_label = parts[0] | strip %}
+                      {% assign option_title = parts[1] | strip %}
+                      {% assign option_body = parts[2] | strip %}
+                      {% assign option_link = parts[3] | strip %}
+
+                      {% if option_label != blank %}
+                        <label class='quiz-option'>
+                          <input
+                            type='{% if block.settings.allow_multiple %}checkbox{% else %}radio{% endif %}'
+                            name='question-{{ forloop.parentloop.index0 }}{% if block.settings.allow_multiple %}[]{% endif %}'
+                            value='{{ option_label | escape }}'
+                            data-result-title='{{ option_title | escape }}'
+                            data-result-body='{{ option_body | escape }}'
+                            data-result-link='{{ option_link | escape }}'
+                          >
+                          <span class='quiz-option__marker' aria-hidden='true'>
+                            {% if block.settings.allow_multiple %}
+                              <svg viewBox='0 0 16 16' fill='none'>
+                                <path d='m3 8 3 3 7-7' stroke='currentColor' stroke-width='1.5'/>
+                              </svg>
+                            {% else %}
+                              <span></span>
+                            {% endif %}
+                          </span>
+                          <span class='quiz-option__content'>
+                            <span class='quiz-option__number'>0{{ forloop.index }}</span>
+                            <span class='quiz-option__label'>{{ option_label }}</span>
+                          </span>
+                        </label>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </fieldset>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class='quiz-navigation'>
+            <button class='quiz-navigation__back' type='button' data-quiz-back disabled>
+              <span aria-hidden='true'>&larr;</span> Back
+            </button>
+            <p class='quiz-navigation__status' data-quiz-status>Select an answer to continue</p>
+            <button class='button quiz-navigation__next' type='button' data-quiz-next disabled>
+              <span data-quiz-next-label>{{ section.settings.next_label }}</span>
+              <span aria-hidden='true'>&rarr;</span>
+            </button>
+          </div>
+        </form>
+
+        <div class='quiz-result js-quiz-result' data-quiz-result hidden>
+          <p class='quiz-result__eyebrow'>{{ section.settings.result_eyebrow }}</p>
+          <h2 data-result-title>{{ section.settings.result_title }}</h2>
+          <p data-result-body>{{ section.settings.result_body }}</p>
+          <div class='quiz-result__actions'>
+            <a class='button' href='{{ routes.all_products_collection_url }}' data-result-link>Shop your edit</a>
+            <button class='button button-secondary' type='button' data-quiz-restart>Retake the quiz</button>
+          </div>
         </div>
-      </form>
+      </div>
     {% else %}
       <div class='page-card'>
         <p>Add quiz questions in the theme editor and define answer options with recommendation text and links.</p>
       </div>
     {% endif %}
-
-    <div class='page-card js-quiz-result' hidden>
-      <h2 data-result-title>Recommendation</h2>
-      <p data-result-body></p>
-      <a class='button button-secondary' href='{{ routes.all_products_collection_url }}' data-result-link
-        >Open the matching page</a
-      >
-    </div>
   </div>
 
   {% schema %}
 {
   "name": "Quiz flow",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Find the right product" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Find your edit" },
+    { "type": "text", "id": "title", "label": "Title", "default": "A few questions. One considered result." },
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "description",
       "label": "Description",
-      "default": "Answer a couple of quick questions and we will guide you to the right experience."
+      "default": "<p>Tell us what you need and we will create a focused edit for you.</p>"
+    },
+    { "type": "text", "id": "next_label", "label": "Next button label", "default": "Next question" },
+    { "type": "text", "id": "result_eyebrow", "label": "Result eyebrow", "default": "Your edit" },
+    {
+      "type": "text",
+      "id": "result_title",
+      "label": "Fallback result title",
+      "default": "Your recommendation is ready"
+    },
+    {
+      "type": "textarea",
+      "id": "result_body",
+      "label": "Fallback result text",
+      "default": "We have brought together the pieces that best match your answers."
     }
   ],
   "blocks": [
@@ -77,12 +149,19 @@
       "name": "Question",
       "settings": [
         { "type": "text", "id": "question", "label": "Question", "default": "What are you shopping for today?" },
+        { "type": "text", "id": "instruction", "label": "Instruction" },
+        {
+          "type": "checkbox",
+          "id": "allow_multiple",
+          "label": "Allow multiple answers",
+          "default": false
+        },
         {
           "type": "textarea",
           "id": "options",
           "label": "Answer options",
           "default": "Everyday layers | Everyday essentials | Pieces that work hard in your wardrobe. | /collections/all || A thoughtful gift | Giftable favourites | Useful pieces with an easy point of view. | /collections/accessories",
-          "info": "Separate options with ||. Format each option as: Option label | Recommendation title | Recommendation body | Recommendation URL"
+          "info": "Separate options with ||. Format each option as: Answer | Result title | Result text | Result URL"
         }
       ]
     }

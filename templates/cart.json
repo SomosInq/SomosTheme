@@ -8,6 +8,10 @@
  * ------------------------------------------------------------
  */ {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {}
+    },
     "cart-section": {
       "type": "main-cart",
       "blocks": {
@@ -335,6 +339,7 @@
     }
   },
   "order": [
+    "page_banner",
     "cart-section",
     "product_list_NNFgcy",
     "editorial_primary",

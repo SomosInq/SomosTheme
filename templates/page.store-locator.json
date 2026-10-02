@@ -1,5 +1,9 @@
 {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {}
+    },
     "main": {
       "type": "store-locator",
       "settings": {
@@ -115,5 +119,5 @@
       }
     }
   },
-  "order": ["main", "editorial_primary", "page_faq", "page_details", "editorial_secondary"]
+  "order": ["page_banner", "main", "editorial_primary", "page_faq", "page_details", "editorial_secondary"]
 }

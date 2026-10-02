@@ -1,34 +1,11 @@
 {
   "sections": {
     "hero": {
-      "type": "hero",
-      "blocks": {
-        "hero_text": {
-          "type": "text",
-          "settings": {
-            "text": "<h2>Explore every capability</h2>"
-          }
-        },
-        "hero_body": {
-          "type": "text",
-          "settings": {
-            "text": "<p>A live showcase of the sections and functions available in this theme.</p>"
-          }
-        },
-        "hero_button": {
-          "type": "button",
-          "settings": {
-            "label": "Shop the collection",
-            "link": "/collections/all"
-          }
-        }
-      },
-      "block_order": ["hero_text", "hero_body", "hero_button"],
+      "type": "internal-page-banner",
       "settings": {
-        "media_type_1": "image",
-        "image_1": "",
-        "overlay_color": "#000000",
-        "section_height": "medium"
+        "eyebrow": "Theme capabilities",
+        "heading": "Explore every capability",
+        "description": "<p>A live showcase of the sections and functions available in this theme.</p>"
       }
     },
     "features": {

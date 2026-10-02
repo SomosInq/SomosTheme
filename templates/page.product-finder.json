@@ -1,13 +1,25 @@
 {
   "sections": {
-    "main": {
-      "type": "quiz-flow",
+    "page_banner": {
+      "type": "internal-page-banner",
       "settings": {
-        "title": "Find the right product for you",
-        "description": "Answer a few practical questions and receive a more focused recommendation."
-      },
-      "blocks": {},
-      "block_order": []
+        "eyebrow": "Product finder",
+        "heading": "Find what fits",
+        "description": "<p>Search the catalogue and narrow the results around what you need, what is available and what you want to spend.</p>",
+        "image_position": "center center",
+        "overlay_opacity": 45,
+        "text_color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "product-finder",
+      "settings": {
+        "eyebrow": "Shop your way",
+        "heading": "The whole collection. Easier to explore.",
+        "intro": "<p>Start with a product name or browse using the filters. Results update instantly, so the right piece is never far away.</p>",
+        "search_placeholder": "Search products, categories or details",
+        "products_to_show": 48
+      }
     },
     "page_faq": {
       "type": "faq",
@@ -15,118 +27,41 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about tell us the use?",
-            "answer": "Begin with what you need the product to do."
+            "question": "What can I search for?",
+            "answer": "Search by product name, product type, brand or product detail. You can then combine your search with the filters."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about add your preferences?",
-            "answer": "Refine by fit, finish, routine, or priorities."
+            "question": "Can I only show products that are available?",
+            "answer": "Yes. Select the in-stock filter to remove products that are currently sold out."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about review the match?",
-            "answer": "Understand why each recommendation suits your answers."
+            "question": "How do I start again?",
+            "answer": "Choose Clear all to reset the search, filters, price and sorting in one step."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "heading": "Questions about product finder",
-        "intro": "Practical answers specific to this page."
+        "heading": "Finding the right product",
+        "intro": "A quicker route through the catalogue."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
-        "heading": "Continue exploring",
-        "text": "Discover products designed for everyday use.",
-        "link_label": "Shop the collection",
-        "link_url": "/collections/all",
+        "heading": "Not sure where to start?",
+        "text": "Take the guided quiz for a more personalised recommendation.",
+        "link_label": "Take the quiz",
+        "link_url": "/pages/quiz",
         "color_scheme": "scheme-1"
-      }
-    },
-    "editorial_primary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "right",
-        "image_alt": "Product Finder editorial detail",
-        "eyebrow": "Product finder",
-        "heading": "Tell us the use",
-        "heading_level": "h2",
-        "body": "<p>Begin with what you need the product to do.</p>",
-        "points": "Add your preferences\nReview the match",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-fit-guide.jpg",
-        "layout_style": "split"
-      }
-    },
-    "editorial_secondary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "left",
-        "image_alt": "Product Finder editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Review the match",
-        "heading_level": "h3",
-        "body": "<p>Understand why each recommendation suits your answers.</p>",
-        "points": "Review the match\nAdd your preferences\nTell us the use",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-collection-look.jpg",
-        "layout_style": "compact"
-      }
-    },
-    "page_details": {
-      "type": "editorial-content-grid",
-      "blocks": {
-        "detail_1": {
-          "type": "item",
-          "settings": {
-            "label": "Product finder",
-            "heading": "Tell us the use",
-            "text": "Begin with what you need the product to do.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_2": {
-          "type": "item",
-          "settings": {
-            "label": "Product finder",
-            "heading": "Add your preferences",
-            "text": "Refine by fit, finish, routine, or priorities.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_3": {
-          "type": "item",
-          "settings": {
-            "label": "Product finder",
-            "heading": "Review the match",
-            "text": "Understand why each recommendation suits your answers.",
-            "link_label": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": ["detail_1", "detail_2", "detail_3"],
-      "settings": {
-        "layout": "statement",
-        "eyebrow": "Product finder",
-        "heading": "A shorter path to the right choice",
-        "intro": "<p>Answer a few practical questions and narrow the collection around your needs.</p>",
-        "color_scheme": "scheme-2"
       }
     }
   },
-  "order": ["main", "editorial_primary", "page_details", "editorial_secondary", "page_faq", "page_cta"]
+  "order": ["page_banner", "main", "page_faq", "page_cta"]
 }

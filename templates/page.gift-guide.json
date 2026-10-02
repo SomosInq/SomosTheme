@@ -1,5 +1,9 @@
 {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {}
+    },
     "main": {
       "type": "feature-landing",
       "settings": {
@@ -107,5 +111,5 @@
       }
     }
   },
-  "order": ["main", "editorial_primary", "page_details", "editorial_secondary", "page_cta"]
+  "order": ["page_banner", "main", "editorial_primary", "page_details", "editorial_secondary", "page_cta"]
 }

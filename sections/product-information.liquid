@@ -42,7 +42,7 @@
 
 <div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class='product-information section section--{{ content_width }} spacing-style color-{{ section.settings.color_scheme }} relative'
+  class='product-information section section--{{ content_width }} spacing-style color-{{ section.settings.color_scheme }} relative{% if template.suffix == 'bundle-builder' %} product-information--bundle-builder{% endif %}'
   style='{% render 'spacing-style', settings: section.settings %} --gap: {{ section.settings.gap }}px;'
 >
   {% if section.settings.desktop_media_position == 'left' and product_has_media %}
@@ -86,6 +86,72 @@
 
   {% content_for 'blocks' %}
 </div>
+
+{% if template.suffix == 'bundle-builder' %}
+  {% capture bundle_builder_banner %}
+    {% render 'internal-page-banner',
+      custom_eyebrow: section.settings.bundle_banner_eyebrow,
+      custom_heading: section.settings.bundle_banner_heading,
+      custom_description: section.settings.bundle_banner_description,
+      custom_image: section.settings.bundle_banner_image,
+      image_position: section.settings.bundle_banner_image_position,
+      overlay_opacity: section.settings.bundle_banner_overlay_opacity,
+      text_color: section.settings.bundle_banner_text_color,
+      show_automatic_description: false,
+      show_support_search: false,
+      color_scheme: section.settings.color_scheme,
+      padding_top: section.settings.bundle_banner_padding_top,
+      padding_bottom: section.settings.bundle_banner_padding_bottom
+    %}
+  {% endcapture %}
+  <script>
+    (() => {
+      const bannerId = 'BundleBuilderBanner-{{ section.id }}';
+      const bannerHtml = {{ bundle_builder_banner | json }};
+      const bannerHeading = {{ section.settings.bundle_banner_heading | json }};
+      const appDescription = {{ closest.product.description | strip_html | strip | json }};
+
+      const hideDuplicateIntro = (builder) => {
+        const duplicateHeading = Array.from(builder.querySelectorAll('h1, h2, h3, [role="heading"]')).find(
+          (element) => element.textContent.trim() === bannerHeading
+        );
+        if (!duplicateHeading) return;
+
+        duplicateHeading.hidden = true;
+        const duplicateDescription = duplicateHeading.nextElementSibling;
+        if (duplicateDescription && !duplicateDescription.querySelector('button, input, img, picture')) {
+          duplicateDescription.hidden = true;
+        }
+
+        const matchingDescription = Array.from(builder.querySelectorAll('*'))
+          .reverse()
+          .find((element) => element.textContent.trim() === appDescription);
+        if (matchingDescription) matchingDescription.hidden = true;
+      };
+
+      const mountBanner = () => {
+        const builder = document.querySelector('#bundlesuiteContainer');
+        if (!builder) return;
+
+        hideDuplicateIntro(builder);
+        if (document.getElementById(bannerId)) return;
+
+        const banner = document.createElement('div');
+        banner.id = bannerId;
+        banner.dataset.bundleBuilderBanner = '';
+        banner.innerHTML = bannerHtml;
+        builder.before(banner);
+      };
+
+      mountBanner();
+
+      const observer = new MutationObserver(mountBanner);
+      observer.observe(document.body, { childList: true, subtree: true });
+      window.setTimeout(() => observer.disconnect(), 15000);
+      document.addEventListener('shopify:section:load', mountBanner);
+    })();
+  </script>
+{% endif %}
 
 {% stylesheet %}
   .product-information {
@@ -275,6 +341,40 @@
     max-width: var(--sidebar-width);
   }
 
+  /* Keep the BundleSuite builder aligned with the theme's standard page content. */
+  .product-information--bundle-builder {
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .product-information--bundle-builder .product-information__grid {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .product-information--bundle-builder .product-details,
+  .product-information--bundle-builder .product-details > .group-block {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  #bundlesuiteContainer {
+    width: min(calc(100% - (var(--page-margin) * 2)), calc(var(--page-width) - (var(--page-margin) * 2)));
+    margin-inline: auto;
+  }
+
+  [data-bundle-builder-banner] {
+    width: 100%;
+  }
+
+  body:has([data-bundle-builder-banner]) #bundlesuiteContainer > h2:first-child,
+  body:has([data-bundle-builder-banner]) #bundlesuiteContainer > h2:first-child + p {
+    display: none;
+  }
+
   /* If the header is sticky, make product details content stick underneath the header */
   body:has(#header-group #header-component[data-sticky-state='active']) .product-details.sticky-content--desktop {
     --sticky-header-offset: var(--header-height);
@@ -293,6 +393,99 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Bundle builder banner"
+    },
+    {
+      "type": "text",
+      "id": "bundle_banner_eyebrow",
+      "label": "Eyebrow",
+      "default": "Build your bundle"
+    },
+    {
+      "type": "text",
+      "id": "bundle_banner_heading",
+      "label": "Heading",
+      "default": "Build Your Everyday Set"
+    },
+    {
+      "type": "richtext",
+      "id": "bundle_banner_description",
+      "label": "Supporting text",
+      "default": "<p>Choose your pieces, review your set, and add the complete bundle to your bag.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "bundle_banner_image",
+      "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "bundle_banner_image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "bundle_banner_overlay_opacity",
+      "label": "Image overlay",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "default": 45
+    },
+    {
+      "type": "select",
+      "id": "bundle_banner_text_color",
+      "label": "Text color",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "range",
+      "id": "bundle_banner_padding_top",
+      "label": "Banner top padding",
+      "min": 32,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 112
+    },
+    {
+      "type": "range",
+      "id": "bundle_banner_padding_bottom",
+      "label": "Banner bottom padding",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 72
+    },
     {
       "type": "header",
       "content": "t:content.layout"

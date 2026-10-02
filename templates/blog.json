@@ -8,6 +8,10 @@
  * ------------------------------------------------------------
  */ {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {}
+    },
     "main": {
       "type": "main-blog",
       "blocks": {
@@ -127,5 +131,5 @@
       }
     }
   },
-  "order": ["main", "editorial_primary", "editorial_secondary", "page_testimonials", "page_cta"]
+  "order": ["page_banner", "main", "editorial_primary", "editorial_secondary", "page_testimonials", "page_cta"]
 }

@@ -262,6 +262,7 @@
         "gap": 16,
         "section_width": "page-width",
         "section_height": "large",
+        "editorial_heading": true,
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,

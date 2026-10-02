@@ -2,115 +2,52 @@
   "sections": {
     "shoppable_look": {
       "type": "shop-the-look",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "eyebrow": "Shop the edit",
-        "heading": "Wear the full story",
-        "color_scheme": "scheme-1"
-      }
-    },
-    "main": {
-      "type": "feature-landing",
-      "settings": {
-        "eyebrow": "Shop the look",
-        "title": "Style the full story",
-        "description": "Create shoppable lifestyle images with hotspots that connect visual inspiration to the products behind it.",
-        "highlight_heading": "Best for",
-        "bullets": "Fashion and home inspiration\nVisual merchandising stories\nHotspot-driven product discovery",
-        "cards": "Editorial storytelling | Turn lifestyle imagery into a clear shopping path. ||Fast product discovery | Highlight each featured item with a direct product link. ||Cross-sell naturally | Encourage customers to complete the entire look with related products.",
-        "cta_label": "Browse the collection",
-        "cta_url": "/collections/all",
-        "hero_asset_filename": "editorial-community.jpg"
-      }
-    },
-    "page_cta": {
-      "type": "final-cta",
-      "settings": {
-        "heading": "Continue exploring",
-        "text": "Discover products designed for everyday use.",
-        "link_label": "Shop the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
-      }
-    },
-    "editorial_primary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "right",
-        "image_alt": "Shop The Look editorial detail",
-        "eyebrow": "Shop the look",
-        "heading": "Open a hotspot",
-        "heading_level": "h2",
-        "body": "<p>Select a marker to reveal the featured product.</p>",
-        "points": "Explore the piece\nBuild your version",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-community.jpg",
-        "layout_style": "split"
-      }
-    },
-    "editorial_secondary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "left",
-        "image_alt": "Shop The Look editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Build your version",
-        "heading_level": "h3",
-        "body": "<p>Choose the parts of the look that work for you.</p>",
-        "points": "Build your version\nExplore the piece\nOpen a hotspot",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-collection-look.jpg",
-        "layout_style": "compact"
-      }
-    },
-    "page_details": {
-      "type": "editorial-content-grid",
       "blocks": {
-        "detail_1": {
-          "type": "item",
+        "look_product_1": {
+          "type": "product",
           "settings": {
-            "label": "Shop the look",
-            "heading": "Open a hotspot",
-            "text": "Select a marker to reveal the featured product.",
-            "link_label": "",
-            "link_url": ""
+            "product": "gertrude-cardigan",
+            "label": "Knit"
           }
         },
-        "detail_2": {
-          "type": "item",
+        "look_product_2": {
+          "type": "product",
           "settings": {
-            "label": "Shop the look",
-            "heading": "Explore the piece",
-            "text": "Review its price and full product information.",
-            "link_label": "",
-            "link_url": ""
+            "product": "long-sleeve-swing",
+            "label": "Base layer"
           }
         },
-        "detail_3": {
-          "type": "item",
+        "look_product_3": {
+          "type": "product",
           "settings": {
-            "label": "Shop the look",
-            "heading": "Build your version",
-            "text": "Choose the parts of the look that work for you.",
-            "link_label": "",
-            "link_url": ""
+            "product": "redwing-iron-ranger",
+            "label": "Footwear"
+          }
+        },
+        "look_product_4": {
+          "type": "product",
+          "settings": {
+            "product": "scout-backpack",
+            "label": "Accessory"
           }
         }
       },
-      "block_order": ["detail_1", "detail_2", "detail_3"],
+      "block_order": ["look_product_1", "look_product_2", "look_product_3", "look_product_4"],
       "settings": {
-        "layout": "grid",
-        "eyebrow": "Shop the look",
-        "heading": "From image to individual pieces",
-        "intro": "<p>Use interactive hotspots to identify and shop every product in the story.</p>",
-        "color_scheme": "scheme-2"
+        "eyebrow": "Shop the edit",
+        "heading": "Love the look? Make it yours.",
+        "intro": "<p>Choose individual pieces or add the complete set. Select your options before adding each item to the bag.</p>",
+        "image_alt": "Complete styled look",
+        "image_label": "The complete look",
+        "image_heading": "Everyday layers",
+        "products_eyebrow": "Get the look",
+        "products_heading": "Shop every piece",
+        "complete_heading": "Buy the complete look",
+        "complete_text": "Adds every available piece using the options selected above.",
+        "complete_button": "Add complete look",
+        "color_scheme": "scheme-1"
       }
     }
   },
-  "order": ["main", "shoppable_look", "editorial_primary", "page_details", "editorial_secondary", "page_cta"]
+  "order": ["shoppable_look"]
 }

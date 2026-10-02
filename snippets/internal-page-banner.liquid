@@ -3,10 +3,18 @@
 {%- liquid
   assign banner_title = page_title | default: shop.name
   assign banner_description = blank
+  assign banner_label = 'Explore'
   assign banner_image = blank
   assign banner_asset = 'editorial-community.jpg'
-  assign banner_label = 'Explore'
   assign show_banner_search = false
+  assign description_is_richtext = false
+  assign banner_image_position = image_position | default: 'center'
+  assign banner_overlay_opacity = overlay_opacity | default: 45
+  assign banner_text_color = 'light'
+
+  if text_color == 'dark'
+    assign banner_text_color = 'dark'
+  endif
 
   case request.page_type
     when 'product'
@@ -18,6 +26,7 @@
       assign banner_title = collection.title
       assign banner_description = collection.description | strip_html | truncate: 150
       assign banner_image = collection.featured_image
+      assign banner_asset = 'editorial-collection-look.jpg'
       assign banner_label = 'Collection'
     when 'article'
       assign banner_title = article.title
@@ -43,22 +52,27 @@
 
       if page.handle contains 'sales' or page.handle contains 'sale'
         assign banner_description = 'Considered pieces, reduced for a limited time. Find useful layers and everyday essentials while availability lasts.'
-        assign banner_asset = 'editorial-collection-look.jpg'
         assign banner_label = 'Sale edit'
+        assign banner_asset = 'editorial-collection-look.jpg'
       elsif page.handle contains 'quiz' or page.handle contains 'finder' or page.handle contains 'comparison' or page.handle contains 'size' or page.handle contains 'choose'
-        assign banner_asset = 'editorial-comparison-rail.jpg'
         assign banner_label = 'Guided finder'
+        assign banner_asset = 'editorial-comparison-rail.jpg'
       elsif page.handle contains 'bundle' or page.handle contains 'look' or page.handle contains 'recipe'
-        assign banner_asset = 'editorial-collection-look.jpg'
         assign banner_label = 'Explore'
-      elsif page.handle contains 'review' or page.handle contains 'refer' or page.handle contains 'loyalty' or page.handle contains 'reward'
-        assign banner_asset = 'editorial-community.jpg'
-        assign banner_label = 'Community'
-      elsif page.handle contains 'size' or page.handle contains 'fit'
-        assign banner_asset = 'editorial-fit-guide.jpg'
-      elsif page.handle contains 'shop' or page.handle contains 'bundle' or page.handle contains 'collection'
         assign banner_asset = 'editorial-collection-look.jpg'
+      elsif page.handle contains 'subscription' or page.handle contains 'subscribe'
+        assign banner_description = 'Choose a delivery rhythm, save on repeat orders, and stay in control of every subscription.'
+        assign banner_label = 'Subscribe and save'
+        assign banner_asset = 'editorial-community.jpg'
+      elsif page.handle contains 'review' or page.handle contains 'refer' or page.handle contains 'loyalty' or page.handle contains 'reward'
+        assign banner_label = 'Community'
+        assign banner_asset = 'editorial-community.jpg'
+      elsif page.handle contains 'wholesale' or page.handle contains 'trade'
+        assign banner_description = 'Stock thoughtful everyday products, access trade support, and build a lasting partnership with Somos.'
+        assign banner_label = 'Trade partners'
+        assign banner_asset = 'editorial-brand-studio.jpg'
       elsif page.handle contains 'about' or page.handle contains 'story' or page.handle contains 'sustain'
+        assign banner_label = 'Our story'
         assign banner_asset = 'editorial-studio-craft.jpg'
       endif
     when 'search'
@@ -70,46 +84,75 @@
     else
       assign banner_label = 'Somos'
   endcase
+
+  if custom_eyebrow != blank
+    assign banner_label = custom_eyebrow
+  endif
+
+  if custom_heading != blank
+    assign banner_title = custom_heading
+  endif
+
+  if custom_description != blank
+    assign banner_description = custom_description
+    assign description_is_richtext = true
+  elsif show_automatic_description == false
+    assign banner_description = blank
+  endif
+
+  if custom_image != blank
+    assign banner_image = custom_image
+  endif
+
+  if show_support_search == false
+    assign show_banner_search = false
+  endif
 -%}
 
-<section class='internal-page-banner' aria-labelledby='InternalPageBannerTitle'>
-  <div class='internal-page-banner__inner page-width'>
-    <div class='internal-page-banner__media'>
-      {%- if banner_image != blank -%}
-        {{
-          banner_image
-          | image_url: width: 2000
-          | image_tag: loading: 'eager', widths: '640, 960, 1280, 1600, 2000', sizes: '100vw', alt: banner_title
-        }}
-      {%- else -%}
-        <img
-          src='{{ banner_asset | asset_url }}'
-          alt=''
-          loading='eager'
-          width='1600'
-          height='900'
-        >
-      {%- endif -%}
+<section
+  class='internal-page-banner internal-page-banner--{{ banner_text_color }}-text section section--page-width color-{{ color_scheme | default: 'scheme-1' }}'
+  aria-labelledby='InternalPageBannerTitle-{{ section.id }}'
+  style='--page-banner-padding-top: {{ padding_top | default: 112 }}px; --page-banner-padding-bottom: {{ padding_bottom | default: 72 }}px; --page-banner-overlay-opacity: {{ banner_overlay_opacity | divided_by: 100.0 }}; --page-banner-image-position: {{ banner_image_position }};'
+>
+  <div class='internal-page-banner__media' aria-hidden='true'>
+    {%- if banner_image != blank -%}
+      {{
+        banner_image
+        | image_url: width: 2400
+        | image_tag: loading: 'eager', widths: '750, 1100, 1500, 2000, 2400', sizes: '100vw', alt: ''
+      }}
+    {%- else -%}
+      <img src='{{ banner_asset | asset_url }}' alt='' width='1600' height='900' loading='eager'>
+    {%- endif -%}
+  </div>
+  <div class='internal-page-banner__inner'>
+    <div class='internal-page-banner__title'>
+      <p class='internal-page-banner__eyebrow'>{{ banner_label }}</p>
+      <h1 id='InternalPageBannerTitle-{{ section.id }}'>{{ banner_title | escape }}</h1>
     </div>
-    <div class='internal-page-banner__content'>
-      <span class='page-pill'>{{ banner_label }}</span>
-      <h1 id='InternalPageBannerTitle'>{{ banner_title | escape }}</h1>
-      {%- if banner_description != blank -%}
-        <p>{{ banner_description | escape }}</p>
-      {%- endif -%}
-      {%- if show_banner_search -%}
-        <form class='internal-page-banner__search' data-support-search-form role='search'>
-          <label class='visually-hidden' for='SupportWikiSearch'>Search the help center</label>
-          <input
-            id='SupportWikiSearch'
-            type='search'
-            placeholder='Search the help center'
-            autocomplete='off'
-            data-support-search-input
-          >
-          <button type='submit' class='button'>Search</button>
-        </form>
-      {%- endif -%}
-    </div>
+    {%- if banner_description != blank or show_banner_search -%}
+      <div class='internal-page-banner__content'>
+        {%- if banner_description != blank -%}
+          {%- if description_is_richtext -%}
+            <div class='internal-page-banner__rte'>{{ banner_description }}</div>
+          {%- else -%}
+            <p>{{ banner_description | escape }}</p>
+          {%- endif -%}
+        {%- endif -%}
+        {%- if show_banner_search -%}
+          <form class='internal-page-banner__search' data-support-search-form role='search'>
+            <label class='visually-hidden' for='SupportWikiSearch'>Search the help center</label>
+            <input
+              id='SupportWikiSearch'
+              type='search'
+              placeholder='Search the help center'
+              autocomplete='off'
+              data-support-search-input
+            >
+            <button type='submit' class='button'>Search</button>
+          </form>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
   </div>
 </section>

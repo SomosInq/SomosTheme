@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {}
+    },
     "main": {
       "type": "rewards",
       "settings": {
@@ -186,6 +190,7 @@
     }
   },
   "order": [
+    "page_banner",
     "main",
     "editorial_primary",
     "page_testimonials",

@@ -60,7 +60,19 @@
       data-product-transition='{{ settings.transition_to_main_product }}'
       data-template='{{ template }}'
     >
-      {% unless template.name == 'index' or template.name == 'password' or template.name == 'product' %}
+      {% unless template.name == 'index'
+        or template.name == 'password'
+        or template.name == 'product'
+        or template.name == 'page'
+        or template.name == 'collection'
+        or template.name == 'list-collections'
+        or template.name == 'blog'
+        or template.name == 'article'
+        or template.name == 'cart'
+        or template.name == '404'
+        or template.suffix == 'style-guide'
+        or template.suffix == 'shop-the-look'
+      %}
         {% render 'internal-page-banner' %}
       {% endunless %}
       {{ content_for_layout }}

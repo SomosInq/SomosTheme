@@ -1,41 +1,239 @@
-{% assign subscription_product = section.settings.product %}
-<section class='section section--page-width subscription-landing-section page-width-content'>
-  <div class='page-hero page-hero--split'>
-    <div>
-      <span class='page-pill'>Subscribe & save</span>
-      <h2>{{ section.settings.title }}</h2>
-      <p>{{ section.settings.description }}</p>
+{%- liquid
+  assign subscription_product = section.settings.product
+  assign total_selling_plans = 0
+
+  if subscription_product != blank
+    for group in subscription_product.selling_plan_groups
+      assign total_selling_plans = total_selling_plans | plus: group.selling_plans.size
+    endfor
+  endif
+-%}
+
+<section class='subscription-landing section section--page-width color-{{ section.settings.color_scheme }}'>
+  <div class='subscription-landing__inner'>
+    <header class='subscription-landing__header'>
+      <div>
+        <p class='subscription-landing__eyebrow'>{{ section.settings.eyebrow }}</p>
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+      <div class='subscription-landing__intro'>
+        {{ section.settings.description }}
+        {%- if subscription_product != blank -%}
+          <a class='subscription-landing__product-link' href='{{ subscription_product.url }}'>
+            View {{ subscription_product.title }}
+            <span aria-hidden='true'>→</span>
+          </a>
+        {%- endif -%}
+      </div>
+    </header>
+
+    <div class='subscription-landing__plans'>
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign chosen_plan = blank
+          assign requested_index = block.settings.plan_position | plus: 0
+          assign current_index = 0
+
+          if subscription_product != blank
+            for group in subscription_product.selling_plan_groups
+              for plan in group.selling_plans
+                if current_index == requested_index
+                  assign chosen_plan = plan
+                endif
+                assign current_index = current_index | plus: 1
+              endfor
+            endfor
+          endif
+        -%}
+
+        <article
+          class='subscription-plan{% if block.settings.highlight %} subscription-plan--highlight{% endif %}'
+          {{ block.shopify_attributes }}
+        >
+          <div class='subscription-plan__topline'>
+            <p>{{ block.settings.label }}</p>
+            {%- if block.settings.badge != blank -%}
+              <span>{{ block.settings.badge }}</span>
+            {%- endif -%}
+          </div>
+          <h3>{{ block.settings.heading }}</h3>
+          <div class='subscription-plan__price'>
+            <strong>{{ block.settings.price_text }}</strong>
+            <span>{{ block.settings.frequency }}</span>
+          </div>
+          {%- if block.settings.saving != blank -%}
+            <p class='subscription-plan__saving'>{{ block.settings.saving }}</p>
+          {%- endif -%}
+          <p class='subscription-plan__description'>{{ block.settings.description }}</p>
+
+          {%- assign benefits = block.settings.benefits | newline_to_br | split: '<br />' -%}
+          <ul class='subscription-plan__benefits'>
+            {%- for benefit in benefits -%}
+              {%- assign clean_benefit = benefit | strip -%}
+              {%- if clean_benefit != blank -%}
+                <li><span aria-hidden='true'>✓</span>{{ clean_benefit }}</li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+
+          <div class='subscription-plan__action'>
+            {%- if subscription_product != blank and chosen_plan != blank -%}
+              {%- assign form_id = 'SubscriptionPlanForm-' | append: section.id | append: '-' | append: block.id -%}
+              {%- form 'product', subscription_product, id: form_id -%}
+                <input
+                  type='hidden'
+                  name='id'
+                  value='{{ subscription_product.selected_or_first_available_variant.id }}'
+                >
+                <input type='hidden' name='selling_plan' value='{{ chosen_plan.id }}'>
+                <button
+                  class='button{% unless block.settings.highlight %} button-secondary{% endunless %}'
+                  type='submit'
+                >
+                  {{- block.settings.button_label -}}
+                </button>
+                <p class='subscription-plan__connected-plan'>Connected to: {{ chosen_plan.name }}</p>
+              {%- endform -%}
+            {%- else -%}
+              <a
+                class='button{% unless block.settings.highlight %} button-secondary{% endunless %}'
+                href='{{ section.settings.fallback_link }}'
+              >
+                {{- block.settings.button_label -}}
+              </a>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
     </div>
-    <div class='page-card'>
-      {% if subscription_product != blank %}
-        {% form 'product', subscription_product %}
-          <input type='hidden' name='id' value='{{ subscription_product.selected_or_first_available_variant.id }}'
-          ><label class='page-form__label'
-            >Delivery plan<select class='page-field' name='selling_plan' required>
-              <option value=''>Choose a plan</option>
-              {% for group in subscription_product.selling_plan_groups -%}
-                {%- for plan in group.selling_plans %}
-                  <option value='{{ plan.id }}'>{{ plan.name }}</option>
-                {% endfor -%}
-              {%- endfor %}
-            </select></label
-          ><button
-            class='button'
-            type='submit'
-            {% if subscription_product.selling_plan_groups.size == 0 %}
-              disabled
-            {% endif %}
-          >
-            Start subscription
-          </button>
-        {% endform %}
-        {% if subscription_product.selling_plan_groups.size == 0 %}
-          <p>Add selling plans to this product in Shopify first.</p>
-        {% endif -%}
-      {%- else %}
-        <p>Select a subscription product in the theme editor.</p>
-      {% endif %}
+
+    <div class='subscription-landing__notice'>
+      <p>{{ section.settings.notice }}</p>
+      {%- if request.design_mode -%}
+        <p class='subscription-landing__editor-note'>
+          {%- if subscription_product == blank -%}
+            Select a subscription product in this section to connect these cards to Shopify selling plans.
+          {%- elsif total_selling_plans == 0 -%}
+            This product has no selling plans yet. Create them with a Shopify subscriptions app, then each card can
+            connect to a plan.
+          {%- else -%}
+            {{ total_selling_plans }} live selling plan{% unless total_selling_plans == 1 %}s{% endunless %} detected.
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class='subscription-landing__features'>
+      <article>
+        <span>01</span>
+        <h3>{{ section.settings.feature_one_heading }}</h3>
+        <p>{{ section.settings.feature_one_text }}</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>{{ section.settings.feature_two_heading }}</h3>
+        <p>{{ section.settings.feature_two_text }}</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>{{ section.settings.feature_three_heading }}</h3>
+        <p>{{ section.settings.feature_three_text }}</p>
+      </article>
     </div>
   </div>
 </section>
-{% schema %}{"name":"Subscription landing","settings":[{"type":"text","id":"title","label":"Title","default":"Subscribe and save"},{"type":"textarea","id":"description","label":"Description","default":"Choose a recurring delivery plan and manage it from your account."},{"type":"product","id":"product","label":"Subscription product"}],"presets":[{"name":"Subscription landing"}]}{% endschema %}
+
+{% schema %}
+{
+  "name": "Subscription plans",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Subscribe and save" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Choose the rhythm that works for you" },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Regular delivery, useful savings, and the flexibility to adjust your plan whenever life changes.</p>"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Subscription product",
+      "info": "Selling plans must be created by a Shopify subscriptions app."
+    },
+    { "type": "url", "id": "fallback_link", "label": "Fallback button link", "default": "/collections/all" },
+    {
+      "type": "textarea",
+      "id": "notice",
+      "label": "Plan note",
+      "default": "Plans renew automatically. You can skip, pause, or cancel eligible subscriptions from your customer account before the next billing date."
+    },
+    { "type": "header", "content": "Benefits" },
+    { "type": "text", "id": "feature_one_heading", "label": "Benefit one heading", "default": "Never run out" },
+    {
+      "type": "textarea",
+      "id": "feature_one_text",
+      "label": "Benefit one text",
+      "default": "Your favourites arrive on a schedule that suits the way you use them."
+    },
+    { "type": "text", "id": "feature_two_heading", "label": "Benefit two heading", "default": "Save every time" },
+    {
+      "type": "textarea",
+      "id": "feature_two_text",
+      "label": "Benefit two text",
+      "default": "Reward regular purchasing with a clear saving on every subscription order."
+    },
+    { "type": "text", "id": "feature_three_heading", "label": "Benefit three heading", "default": "Stay flexible" },
+    {
+      "type": "textarea",
+      "id": "feature_three_text",
+      "label": "Benefit three text",
+      "default": "Make changes, skip a delivery, or cancel according to the terms of your plan."
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Payment option",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Flexible plan" },
+        { "type": "text", "id": "badge", "label": "Badge" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Monthly delivery" },
+        { "type": "text", "id": "price_text", "label": "Price text", "default": "From £24" },
+        { "type": "text", "id": "frequency", "label": "Billing frequency", "default": "billed monthly" },
+        { "type": "text", "id": "saving", "label": "Saving", "default": "Save 10% on every order" },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "A regular monthly delivery for everyday essentials."
+        },
+        {
+          "type": "textarea",
+          "id": "benefits",
+          "label": "Benefits (one per line)",
+          "default": "Automatic recurring delivery\nEdit or skip upcoming orders\nManage from your account"
+        },
+        {
+          "type": "select",
+          "id": "plan_position",
+          "label": "Connected selling plan",
+          "options": [
+            { "value": "0", "label": "First selling plan" },
+            { "value": "1", "label": "Second selling plan" },
+            { "value": "2", "label": "Third selling plan" },
+            { "value": "3", "label": "Fourth selling plan" }
+          ],
+          "default": "0",
+          "info": "Uses this plan from the selected subscription product."
+        },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Choose this plan" },
+        { "type": "checkbox", "id": "highlight", "label": "Highlight this option", "default": false }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Subscription plans", "blocks": [{ "type": "plan" }, { "type": "plan" }, { "type": "plan" }] }]
+}
+{% endschema %}

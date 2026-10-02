@@ -1,5 +1,9 @@
 {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {}
+    },
     "main": {
       "type": "mega-menu",
       "settings": {
@@ -131,5 +135,14 @@
       }
     }
   },
-  "order": ["main", "editorial_primary", "page_usp", "page_details", "editorial_secondary", "page_faq", "page_cta"]
+  "order": [
+    "page_banner",
+    "main",
+    "editorial_primary",
+    "page_usp",
+    "page_details",
+    "editorial_secondary",
+    "page_faq",
+    "page_cta"
+  ]
 }

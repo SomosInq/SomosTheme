@@ -1,17 +1,114 @@
 {
   "sections": {
-    "main": {
-      "type": "feature-landing",
+    "page_banner": {
+      "type": "internal-page-banner",
       "settings": {
         "eyebrow": "Sustainability",
-        "title": "Sustainability and impact",
-        "description": "Share your sourcing practices, certifications, and sustainability commitments in a dedicated page.",
-        "highlight_heading": "Content ideas",
-        "bullets": "Materials and sourcing\nCertifications and standards\nImpact highlights and progress",
-        "cards": "Transparency | Show the story behind your materials and choices. ||Trust and credibility | Reinforce your values with proof points. ||Better conversion | Help values-led shoppers feel confident in their purchase.",
-        "cta_label": "Explore the collection",
-        "cta_url": "/collections/all",
-        "hero_asset_filename": "editorial-brand-studio.jpg"
+        "heading": "Products with a clearer story",
+        "description": "<p>Bring materials, care, packaging and end-of-life information closer to every purchase.</p>",
+        "image_position": "center",
+        "overlay_opacity": 50,
+        "text_color": "light"
+      }
+    },
+    "main": {
+      "type": "sustainability-page",
+      "blocks": {
+        "principle_materials": {
+          "type": "principle",
+          "settings": {
+            "icon": "leaf",
+            "heading": "Materials with context",
+            "text": "Explain what a product is made from, where those materials come from and why they were chosen."
+          }
+        },
+        "principle_longevity": {
+          "type": "principle",
+          "settings": {
+            "icon": "leaf",
+            "heading": "Designed to stay in use",
+            "text": "Make durability, care and repair part of the product story—not an afterthought."
+          }
+        },
+        "principle_circularity": {
+          "type": "principle",
+          "settings": {
+            "icon": "recycle",
+            "heading": "Plan what comes next",
+            "text": "Give customers practical guidance for reuse, packaging disposal, take-back or recycling."
+          }
+        },
+        "product_cap": {
+          "type": "product_story",
+          "settings": {
+            "product": "5-panel-hat",
+            "eyebrow": "Wear and care",
+            "leaf_label": "Material story",
+            "recycle_label": "Care guidance",
+            "impact_text": "Document the fabric choice, construction and care guidance that help this product stay in use for longer."
+          }
+        },
+        "product_shirt": {
+          "type": "product_story",
+          "settings": {
+            "product": "ayers-chambray",
+            "eyebrow": "Fibre to finish",
+            "leaf_label": "Fibre details",
+            "recycle_label": "Longevity",
+            "impact_text": "Show verified fibre content, sourcing standards and lower-impact care instructions alongside the product."
+          }
+        },
+        "product_bag": {
+          "type": "product_story",
+          "settings": {
+            "product": "canvas-lunch-bag",
+            "eyebrow": "Use and reuse",
+            "leaf_label": "Made to reuse",
+            "recycle_label": "Packaging",
+            "impact_text": "Explain construction, repeat-use benefits and packaging choices in clear, product-specific language."
+          }
+        },
+        "product_mug": {
+          "type": "product_story",
+          "settings": {
+            "product": "snow-peak-titanium-single-wall-cup",
+            "eyebrow": "Built for the routine",
+            "leaf_label": "Durability",
+            "recycle_label": "End of life",
+            "impact_text": "Share durability, care, reuse and end-of-life information at the moment a customer is considering the product."
+          }
+        }
+      },
+      "block_order": [
+        "principle_materials",
+        "principle_longevity",
+        "principle_circularity",
+        "product_cap",
+        "product_shirt",
+        "product_bag",
+        "product_mug"
+      ],
+      "settings": {
+        "intro_eyebrow": "Designed with responsibility",
+        "intro_heading": "Better choices belong beside the product.",
+        "intro_text": "<p>Bring materials, sourcing, care and end-of-life information into the shopping journey. Clear details help customers choose with confidence.</p>",
+        "products_eyebrow": "Product impact",
+        "products_heading": "The story behind each piece",
+        "products_text": "<p>Connect verified product information with the pieces customers are considering, from material choices to care and packaging.</p>",
+        "lifecycle_eyebrow": "Think in cycles",
+        "lifecycle_heading": "From first fibre to what comes next",
+        "lifecycle_text": "<p>A useful sustainability story covers how a product begins, how it is used and how its materials can stay in circulation.</p>",
+        "step_one_heading": "Source with evidence",
+        "step_one_text": "Share fibre content, suppliers and relevant certifications.",
+        "step_two_heading": "Keep it in use",
+        "step_two_text": "Give customers practical care, repair and longevity guidance.",
+        "step_three_heading": "Plan what comes next",
+        "step_three_text": "Explain reuse, take-back, recycling and packaging routes clearly.",
+        "note_eyebrow": "Clarity over claims",
+        "note_heading": "Make every statement specific, useful and provable.",
+        "note_text": "<p>Use this page to publish verified details, current targets and honest progress—not vague promises.</p>",
+        "note_link_label": "Explore the collection",
+        "note_link": "/collections/all"
       }
     },
     "page_faq": {
@@ -20,118 +117,31 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about design for longer use?",
-            "answer": "Durability and repeat wear reduce the need for constant replacement."
+            "question": "Where should product sustainability information come from?",
+            "answer": "Use verified supplier documentation, product specifications and recognised certification records. Keep the wording specific to the product."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about choose with evidence?",
-            "answer": "We prioritise traceable information over unsupported claims."
+            "question": "Can the featured products be changed?",
+            "answer": "Yes. Each product and its accompanying impact story can be selected and edited independently in the theme editor."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about improve continuously?",
-            "answer": "Targets and practices should develop as better options become available."
+            "question": "What should a good impact story include?",
+            "answer": "Cover the evidence that matters: materials, sourcing, production, care, durability, packaging and realistic end-of-life options."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "heading": "Questions about responsibility",
-        "intro": "Practical answers specific to this page."
-      }
-    },
-    "page_cta": {
-      "type": "final-cta",
-      "settings": {
-        "heading": "Explore the products behind the approach",
-        "text": "Choose considered pieces and care for them well.",
-        "link_label": "Shop the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
-      }
-    },
-    "editorial_primary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "left",
-        "image_alt": "Sustainability editorial detail",
-        "eyebrow": "Responsibility",
-        "heading": "Design for longer use",
-        "heading_level": "h2",
-        "body": "<p>Durability and repeat wear reduce the need for constant replacement.</p>",
-        "points": "Choose with evidence\nImprove continuously",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-brand-studio.jpg",
-        "layout_style": "split"
-      }
-    },
-    "editorial_secondary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "right",
-        "image_alt": "Sustainability editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Improve continuously",
-        "heading_level": "h3",
-        "body": "<p>Targets and practices should develop as better options become available.</p>",
-        "points": "Improve continuously\nChoose with evidence\nDesign for longer use",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-community.jpg",
-        "layout_style": "compact"
-      }
-    },
-    "page_details": {
-      "type": "editorial-content-grid",
-      "blocks": {
-        "detail_1": {
-          "type": "item",
-          "settings": {
-            "label": "Responsibility",
-            "heading": "Design for longer use",
-            "text": "Durability and repeat wear reduce the need for constant replacement.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_2": {
-          "type": "item",
-          "settings": {
-            "label": "Responsibility",
-            "heading": "Choose with evidence",
-            "text": "We prioritise traceable information over unsupported claims.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_3": {
-          "type": "item",
-          "settings": {
-            "label": "Responsibility",
-            "heading": "Improve continuously",
-            "text": "Targets and practices should develop as better options become available.",
-            "link_label": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": ["detail_1", "detail_2", "detail_3"],
-      "settings": {
-        "layout": "statement",
-        "eyebrow": "Responsibility",
-        "heading": "Progress over vague promises",
-        "intro": "<p>See how materials, production choices, packaging, and product longevity shape our approach.</p>",
-        "color_scheme": "scheme-1"
+        "heading": "Showing the evidence",
+        "intro": "Useful guidance for responsible product communication."
       }
     }
   },
-  "order": ["main", "editorial_primary", "page_details", "editorial_secondary", "page_faq", "page_cta"]
+  "order": ["page_banner", "main", "page_faq"]
 }
