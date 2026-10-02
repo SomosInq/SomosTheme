@@ -1,0 +1,736 @@
+<section class='sustainability-page section section--page-width'>
+  <div class='sustainability-page__inner'>
+    <header class='sustainability-page__intro'>
+      <div>
+        <p class='sustainability-page__eyebrow'>{{ section.settings.intro_eyebrow }}</p>
+        <h2>{{ section.settings.intro_heading }}</h2>
+      </div>
+      <div class='sustainability-page__lead rte'>{{ section.settings.intro_text }}</div>
+    </header>
+
+    <div class='sustainability-icon-field' aria-hidden='true'>
+      {% for icon_index in (1..16) %}
+        <span class='{% if icon_index == 3 or icon_index == 7 or icon_index == 10 or icon_index == 14 %}is-large{% endif %}'>
+          <svg viewBox='0 0 20 20'>
+            {% if icon_index == 2 or icon_index == 5 or icon_index == 8 or icon_index == 11 or icon_index == 15 %}
+              {% render 'icon', icon: 'recycle' %}
+            {% else %}
+              {% render 'icon', icon: 'leaf' %}
+            {% endif %}
+          </svg>
+        </span>
+      {% endfor %}
+    </div>
+
+    <div class='sustainability-principles' aria-label='Sustainability principles'>
+      {% for block in section.blocks %}
+        {% if block.type == 'principle' %}
+          <article class='sustainability-principle' {{ block.shopify_attributes }}>
+            <span class='sustainability-principle__icon' aria-hidden='true'>
+              <svg viewBox='0 0 20 20'>
+                {% render 'icon', icon: block.settings.icon %}
+              </svg>
+            </span>
+            <span class='sustainability-principle__number'>0{{ forloop.index }}</span>
+            <h3>{{ block.settings.heading }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class='sustainability-products'>
+      <header class='sustainability-page__section-heading'>
+        <div>
+          <p class='sustainability-page__eyebrow'>{{ section.settings.products_eyebrow }}</p>
+          <h2>{{ section.settings.products_heading }}</h2>
+        </div>
+        <div class='sustainability-page__section-copy rte'>{{ section.settings.products_text }}</div>
+      </header>
+
+      <div class='sustainability-product-grid'>
+        {% assign product_story_count = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'product_story' %}
+            {% assign product_story_count = product_story_count | plus: 1 %}
+            {% assign featured_product = block.settings.product %}
+            <article class='sustainability-product' {{ block.shopify_attributes }}>
+              <div class='sustainability-product__media'>
+                {% if featured_product != blank %}
+                  <a href='{{ featured_product.url }}'>
+                    {% if featured_product.featured_image != blank %}
+                      {{
+                        featured_product.featured_image
+                        | image_url: width: 1000
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '360, 540, 750, 1000',
+                          sizes: '(min-width: 990px) 25vw, (min-width: 750px) 50vw, 100vw',
+                          alt: featured_product.featured_image.alt
+                      }}
+                    {% else %}
+                      {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                  </a>
+                {% else %}
+                  {{ 'product-apparel-' | append: product_story_count | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+
+                <div class='sustainability-product__marks' aria-label='Product sustainability information available'>
+                  <span>
+                    <svg viewBox='0 0 20 20' aria-hidden='true'>
+                      {% render 'icon', icon: 'leaf' %}
+                    </svg>
+                    {{ block.settings.leaf_label }}
+                  </span>
+                  <span>
+                    <svg viewBox='0 0 20 20' aria-hidden='true'>
+                      {% render 'icon', icon: 'recycle' %}
+                    </svg>
+                    {{ block.settings.recycle_label }}
+                  </span>
+                </div>
+              </div>
+
+              <div class='sustainability-product__content'>
+                <div class='sustainability-product__title-row'>
+                  <div>
+                    <p class='sustainability-product__eyebrow'>{{ block.settings.eyebrow }}</p>
+                    <h3>
+                      {% if featured_product != blank %}
+                        <a href='{{ featured_product.url }}'>{{ featured_product.title }}</a>
+                      {% else %}
+                        Select a product
+                      {% endif %}
+                    </h3>
+                  </div>
+                  {% if featured_product != blank %}
+                    <p>{{ featured_product.price_min | money }}</p>
+                  {% endif %}
+                </div>
+                <p class='sustainability-product__story'>{{ block.settings.impact_text }}</p>
+                {% if featured_product != blank %}
+                  <a class='sustainability-product__link' href='{{ featured_product.url }}'>
+                    View product <span aria-hidden='true'>&rarr;</span>
+                  </a>
+                {% endif %}
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class='sustainability-lifecycle'>
+      <div class='sustainability-lifecycle__graphic' aria-hidden='true'>
+        {% for icon_index in (1..9) %}
+          <span>
+            <svg viewBox='0 0 20 20'>
+              {% if icon_index == 3 or icon_index == 6 or icon_index == 9 %}
+                {% render 'icon', icon: 'recycle' %}
+              {% else %}
+                {% render 'icon', icon: 'leaf' %}
+              {% endif %}
+            </svg>
+          </span>
+        {% endfor %}
+      </div>
+      <div class='sustainability-lifecycle__content'>
+        <p class='sustainability-page__eyebrow'>{{ section.settings.lifecycle_eyebrow }}</p>
+        <h2>{{ section.settings.lifecycle_heading }}</h2>
+        <div class='sustainability-lifecycle__intro rte'>{{ section.settings.lifecycle_text }}</div>
+        <ol class='sustainability-lifecycle__steps'>
+          <li>
+            <span>
+              <svg viewBox='0 0 20 20' aria-hidden='true'>
+                {% render 'icon', icon: 'leaf' %}
+              </svg>
+              01
+            </span>
+            <div>
+              <strong>{{ section.settings.step_one_heading }}</strong>
+              <p>{{ section.settings.step_one_text }}</p>
+            </div>
+          </li>
+          <li>
+            <span>
+              <svg viewBox='0 0 20 20' aria-hidden='true'>
+                {% render 'icon', icon: 'leaf' %}
+              </svg>
+              02
+            </span>
+            <div>
+              <strong>{{ section.settings.step_two_heading }}</strong>
+              <p>{{ section.settings.step_two_text }}</p>
+            </div>
+          </li>
+          <li>
+            <span>
+              <svg viewBox='0 0 20 20' aria-hidden='true'>
+                {% render 'icon', icon: 'recycle' %}
+              </svg>
+              03
+            </span>
+            <div>
+              <strong>{{ section.settings.step_three_heading }}</strong>
+              <p>{{ section.settings.step_three_text }}</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <footer class='sustainability-page__note'>
+      <span aria-hidden='true'>
+        <svg viewBox='0 0 20 20'>
+          {% render 'icon', icon: 'leaf' %}
+        </svg>
+      </span>
+      <div>
+        <p class='sustainability-page__eyebrow'>{{ section.settings.note_eyebrow }}</p>
+        <h2>{{ section.settings.note_heading }}</h2>
+        <div class='rte'>{{ section.settings.note_text }}</div>
+      </div>
+      <a class='button' href='{{ section.settings.note_link }}'>{{ section.settings.note_link_label }}</a>
+    </footer>
+  </div>
+
+  {% schema %}
+{
+  "name": "Sustainability page",
+  "settings": [
+    { "type": "text", "id": "intro_eyebrow", "label": "Intro eyebrow", "default": "Designed with responsibility" },
+    {
+      "type": "text",
+      "id": "intro_heading",
+      "label": "Intro heading",
+      "default": "Better choices belong beside the product."
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro text",
+      "default": "<p>Bring materials, sourcing, care and end-of-life information into the shopping journey. Clear details help customers choose with confidence.</p>"
+    },
+    { "type": "header", "content": "Products" },
+    { "type": "text", "id": "products_eyebrow", "label": "Products eyebrow", "default": "Product impact" },
+    { "type": "text", "id": "products_heading", "label": "Products heading", "default": "The story behind each piece" },
+    {
+      "type": "richtext",
+      "id": "products_text",
+      "label": "Products text",
+      "default": "<p>Connect verified product information with the pieces customers are considering, from material choices to care and packaging.</p>"
+    },
+    { "type": "header", "content": "Lifecycle" },
+    { "type": "text", "id": "lifecycle_eyebrow", "label": "Lifecycle eyebrow", "default": "Think in cycles" },
+    {
+      "type": "text",
+      "id": "lifecycle_heading",
+      "label": "Lifecycle heading",
+      "default": "From first fibre to what comes next"
+    },
+    {
+      "type": "richtext",
+      "id": "lifecycle_text",
+      "label": "Lifecycle text",
+      "default": "<p>A useful sustainability story covers how a product begins, how it is used and how its materials can stay in circulation.</p>"
+    },
+    { "type": "text", "id": "step_one_heading", "label": "Step one heading", "default": "Source with evidence" },
+    {
+      "type": "text",
+      "id": "step_one_text",
+      "label": "Step one text",
+      "default": "Share fibre content, suppliers and relevant certifications."
+    },
+    { "type": "text", "id": "step_two_heading", "label": "Step two heading", "default": "Keep it in use" },
+    {
+      "type": "text",
+      "id": "step_two_text",
+      "label": "Step two text",
+      "default": "Give customers practical care, repair and longevity guidance."
+    },
+    { "type": "text", "id": "step_three_heading", "label": "Step three heading", "default": "Plan what comes next" },
+    {
+      "type": "text",
+      "id": "step_three_text",
+      "label": "Step three text",
+      "default": "Explain reuse, take-back, recycling and packaging routes clearly."
+    },
+    { "type": "header", "content": "Closing note" },
+    { "type": "text", "id": "note_eyebrow", "label": "Note eyebrow", "default": "Clarity over claims" },
+    {
+      "type": "text",
+      "id": "note_heading",
+      "label": "Note heading",
+      "default": "Make every statement specific, useful and provable."
+    },
+    {
+      "type": "richtext",
+      "id": "note_text",
+      "label": "Note text",
+      "default": "<p>Use this page to publish verified details, current targets and honest progress—not vague promises.</p>"
+    },
+    { "type": "text", "id": "note_link_label", "label": "Link label", "default": "Explore the collection" },
+    { "type": "url", "id": "note_link", "label": "Link" }
+  ],
+  "blocks": [
+    {
+      "type": "principle",
+      "name": "Principle",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "recycle", "label": "Recycle" }
+          ],
+          "default": "leaf"
+        },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Materials with context" },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Explain what a product is made from and why those choices matter."
+        }
+      ]
+    },
+    {
+      "type": "product_story",
+      "name": "Product impact story",
+      "limit": 6,
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Product impact" },
+        { "type": "text", "id": "leaf_label", "label": "Leaf icon label", "default": "Materials" },
+        { "type": "text", "id": "recycle_label", "label": "Recycle icon label", "default": "End of life" },
+        {
+          "type": "textarea",
+          "id": "impact_text",
+          "label": "Verified product story",
+          "default": "Add verified material, sourcing, durability, care and end-of-life information for this product."
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Sustainability page" }]
+}
+  {% endschema %}
+</section>
+
+{% stylesheet %}
+  .sustainability-page {
+    --sustainability-green: #214d38;
+    --sustainability-light: #edf3e9;
+    --sustainability-bright: #d8ed75;
+
+    padding-block: clamp(4rem, 8vw, 8rem);
+  }
+
+  .sustainability-page__inner {
+    display: grid;
+    width: 100%;
+    max-width: 90rem;
+    gap: clamp(5rem, 10vw, 10rem);
+    margin-inline: auto;
+  }
+
+  .sustainability-page__intro,
+  .sustainability-page__section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
+    gap: clamp(2rem, 7vw, 8rem);
+    align-items: end;
+  }
+
+  .sustainability-page__eyebrow,
+  .sustainability-product__eyebrow {
+    margin: 0 0 0.8rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .sustainability-page h2 {
+    max-width: 14ch;
+    margin: 0;
+    font-size: clamp(2.8rem, 5.8vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+  }
+
+  .sustainability-page__lead,
+  .sustainability-page__section-copy {
+    max-width: 36rem;
+    font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+    line-height: 1.55;
+  }
+
+  .sustainability-icon-field {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 0;
+    margin-top: calc(clamp(2rem, 5vw, 5rem) * -1);
+    border: 1px solid var(--sustainability-green);
+    background: var(--sustainability-light);
+    color: var(--sustainability-green);
+  }
+
+  .sustainability-icon-field span {
+    display: grid;
+    min-height: clamp(5rem, 9vw, 9rem);
+    place-items: center;
+    border-right: 1px solid rgb(33 77 56 / 0.2);
+    border-bottom: 1px solid rgb(33 77 56 / 0.2);
+  }
+
+  .sustainability-icon-field span:nth-child(8n),
+  .sustainability-icon-field span:last-child {
+    border-right: 0;
+  }
+
+  .sustainability-icon-field svg {
+    width: clamp(1.6rem, 3vw, 3rem);
+    fill: currentColor;
+  }
+
+  .sustainability-icon-field .is-large {
+    background: var(--sustainability-green);
+    color: var(--sustainability-bright);
+  }
+
+  .sustainability-icon-field .is-large svg {
+    width: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .sustainability-principles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-block: 1px solid rgb(var(--color-foreground-rgb) / 0.18);
+  }
+
+  .sustainability-principle {
+    position: relative;
+    min-height: 23rem;
+    padding: clamp(1.5rem, 3.5vw, 3.5rem);
+    border-right: 1px solid rgb(var(--color-foreground-rgb) / 0.18);
+  }
+
+  .sustainability-principle:last-child {
+    border-right: 0;
+  }
+
+  .sustainability-principle__icon {
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    place-items: center;
+    margin-bottom: 4rem;
+    border-radius: 50%;
+    background: var(--sustainability-light);
+    color: var(--sustainability-green);
+  }
+
+  .sustainability-principle__icon svg {
+    width: 2rem;
+    fill: currentColor;
+  }
+
+  .sustainability-principle__number {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  .sustainability-principle h3 {
+    max-width: 12ch;
+    margin: 0 0 0.8rem;
+    font-size: clamp(1.5rem, 2.4vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .sustainability-principle p {
+    max-width: 30ch;
+    margin: 0;
+    line-height: 1.55;
+    opacity: 0.68;
+  }
+
+  .sustainability-products {
+    display: grid;
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  .sustainability-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2rem, 5vw, 5rem) clamp(1rem, 2vw, 2rem);
+  }
+
+  .sustainability-product__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--sustainability-light);
+  }
+
+  .sustainability-product__media > a,
+  .sustainability-product__media img,
+  .sustainability-product__media > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sustainability-product__media img,
+  .sustainability-product__media > svg {
+    object-fit: cover;
+    transition: transform 350ms ease;
+  }
+
+  .sustainability-product:hover .sustainability-product__media img {
+    transform: scale(1.025);
+  }
+
+  .sustainability-product__marks {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .sustainability-product__marks span {
+    display: inline-flex;
+    gap: 0.45rem;
+    align-items: center;
+    padding: 0.55rem 0.7rem;
+    background: rgb(255 255 255 / 0.94);
+    color: var(--sustainability-green);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .sustainability-product__marks svg,
+  .sustainability-lifecycle__steps svg {
+    width: 1rem;
+    fill: currentColor;
+  }
+
+  .sustainability-product__content {
+    padding-top: 1.2rem;
+  }
+
+  .sustainability-product__title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .sustainability-product__title-row > p {
+    flex: none;
+    margin: 1.4rem 0 0;
+  }
+
+  .sustainability-product h3 {
+    margin: 0;
+    font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  .sustainability-product h3 a,
+  .sustainability-product__link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .sustainability-product__story {
+    max-width: 48rem;
+    margin: 1.15rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.16);
+    line-height: 1.55;
+    opacity: 0.7;
+  }
+
+  .sustainability-product__link {
+    display: inline-flex;
+    gap: 0.5rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid currentColor;
+    font-size: 0.8rem;
+  }
+
+  .sustainability-lifecycle {
+    display: grid;
+    grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
+    min-height: 45rem;
+    background: var(--sustainability-green);
+    color: #fff;
+  }
+
+  .sustainability-lifecycle__graphic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-right: 1px solid rgb(255 255 255 / 0.22);
+  }
+
+  .sustainability-lifecycle__graphic span {
+    display: grid;
+    place-items: center;
+    border-right: 1px solid rgb(255 255 255 / 0.16);
+    border-bottom: 1px solid rgb(255 255 255 / 0.16);
+  }
+
+  .sustainability-lifecycle__graphic span:nth-child(2n) {
+    color: var(--sustainability-bright);
+  }
+
+  .sustainability-lifecycle__graphic svg {
+    width: clamp(2.5rem, 5vw, 5rem);
+    fill: currentColor;
+  }
+
+  .sustainability-lifecycle__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 6vw, 6rem);
+  }
+
+  .sustainability-lifecycle__content h2 {
+    font-size: clamp(2.8rem, 5vw, 5.8rem);
+  }
+
+  .sustainability-lifecycle__intro {
+    max-width: 40rem;
+    margin-top: 1.5rem;
+    color: rgb(255 255 255 / 0.72);
+    font-size: 1.1rem;
+  }
+
+  .sustainability-lifecycle__steps {
+    margin: 3rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sustainability-lifecycle__steps li {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 1rem;
+    padding-block: 1.25rem;
+    border-top: 1px solid rgb(255 255 255 / 0.22);
+  }
+
+  .sustainability-lifecycle__steps li > span {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    color: var(--sustainability-bright);
+    font-size: 0.72rem;
+  }
+
+  .sustainability-lifecycle__steps strong {
+    font-weight: 500;
+  }
+
+  .sustainability-lifecycle__steps p {
+    margin: 0.35rem 0 0;
+    color: rgb(255 255 255 / 0.68);
+  }
+
+  .sustainability-page__note {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: center;
+    padding: clamp(2rem, 4vw, 4rem);
+    border: 1px solid var(--sustainability-green);
+    background: var(--sustainability-light);
+    color: var(--sustainability-green);
+  }
+
+  .sustainability-page__note > span {
+    display: grid;
+    width: clamp(4rem, 8vw, 8rem);
+    height: clamp(4rem, 8vw, 8rem);
+    place-items: center;
+    border-radius: 50%;
+    background: var(--sustainability-green);
+    color: var(--sustainability-bright);
+  }
+
+  .sustainability-page__note svg {
+    width: 45%;
+    fill: currentColor;
+  }
+
+  .sustainability-page__note h2 {
+    max-width: 20ch;
+    font-size: clamp(2rem, 3.5vw, 4rem);
+  }
+
+  .sustainability-page__note .rte {
+    max-width: 42rem;
+    margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 989px) {
+    .sustainability-icon-field {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .sustainability-icon-field span:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .sustainability-lifecycle {
+      grid-template-columns: 1fr;
+    }
+
+    .sustainability-lifecycle__graphic {
+      min-height: 24rem;
+      border-right: 0;
+      border-bottom: 1px solid rgb(255 255 255 / 0.22);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .sustainability-page__intro,
+    .sustainability-page__section-heading,
+    .sustainability-principles,
+    .sustainability-product-grid,
+    .sustainability-page__note {
+      grid-template-columns: 1fr;
+    }
+
+    .sustainability-page__intro,
+    .sustainability-page__section-heading {
+      gap: 1.5rem;
+    }
+
+    .sustainability-principle {
+      min-height: 0;
+      border-right: 0;
+      border-bottom: 1px solid rgb(var(--color-foreground-rgb) / 0.18);
+    }
+
+    .sustainability-page__note .button {
+      justify-self: start;
+    }
+  }
+{% endstylesheet %}
