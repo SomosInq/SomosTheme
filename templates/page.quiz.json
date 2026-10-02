@@ -1,5 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {
+        "eyebrow": "Guided finder",
+        "heading": "Find your match",
+        "description": "<p>Answer a few quick questions and discover an edit shaped around the way you shop.</p>",
+        "image_position": "center center",
+        "overlay_opacity": 45,
+        "text_color": "#ffffff"
+      }
+    },
     "main": {
       "type": "quiz-flow",
       "blocks": {
@@ -7,28 +27,39 @@
           "type": "quiz_question",
           "settings": {
             "question": "What are you shopping for today?",
-            "options": "Everyday layers | Everyday essentials | Pieces that work hard in your wardrobe. | /collections/all || A thoughtful gift | Giftable favourites | Useful pieces with an easy point of view. | /collections/accessories || A considered detail | Accessories and extras | Small additions that make the everyday feel more intentional. | /collections/accessories"
+            "instruction": "Choose all that apply, then continue.",
+            "allow_multiple": true,
+            "options": "Everyday layers | Everyday essentials | Versatile pieces made for repeat wear and easy layering. | /collections/all || A thoughtful gift | Giftable favourites | Considered pieces that are easy to give and good to receive. | /collections/accessories || Finishing details | Accessories and extras | Small additions that bring the whole look together. | /collections/accessories || A complete look | Everyday essentials | A focused edit of pieces designed to work together. | /pages/shop-the-look"
           }
         },
         "question_2": {
           "type": "quiz_question",
           "settings": {
-            "question": "Which feeling matters most?",
-            "options": "Comfort and ease | Everyday essentials | Relaxed pieces for repeat wear. | /collections/all || A clear point of view | Signature layers | Distinctive pieces that still earn their place. | /collections/all || Practical versatility | Useful accessories | Details designed to go further. | /collections/accessories"
+            "question": "What matters most to you?",
+            "instruction": "Select as many priorities as you like.",
+            "allow_multiple": true,
+            "options": "Comfort and ease | Everyday essentials | Relaxed, dependable pieces made to move through the day. | /collections/all || A clear point of view | Signature layers | Distinctive pieces that still earn their place in your wardrobe. | /collections/all || Practical versatility | Everyday essentials | Useful styles that can be worn, paired and repeated in different ways. | /collections/all || The finishing touch | Accessories and extras | Thoughtful details that make an everyday outfit feel complete. | /collections/accessories"
           }
         },
         "question_3": {
           "type": "quiz_question",
           "settings": {
-            "question": "How do you prefer to shop?",
-            "options": "Start with a collection | Explore the collection | Browse a focused edit at your own pace. | /collections/all || Find one strong piece | Shop signature products | Begin with a considered favourite. | /collections/all || Compare the details | Compare products | Make the choice with useful information in view. | /pages/comparison-page"
+            "question": "How would you like to explore?",
+            "instruction": "Choose one and we will build your result.",
+            "allow_multiple": false,
+            "options": "Show me a focused collection | Explore the collection | Browse a considered collection based on what matters to you. | /collections/all || Help me build a complete set | Build your everyday set | Choose the pieces and create a set that works your way. | /pages/bundles || Let me shop a styled edit | Shop the look | Discover complete looks and shop every piece together. | /pages/shop-the-look"
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "title": "Find the right fit",
-        "description": "Answer a few quick questions to discover the best product experience for your needs."
+        "eyebrow": "Find your edit",
+        "title": "A few questions. One considered result.",
+        "description": "<p>Choose what feels most like you. Your answers create a more useful route through the collection.</p>",
+        "next_label": "Next question",
+        "result_eyebrow": "Your edit",
+        "result_title": "Your recommendation is ready",
+        "result_body": "We have brought together the pieces that best match your answers."
       }
     },
     "page_faq": {
@@ -37,118 +68,41 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about keep it honest?",
-            "answer": "Choose the answer closest to your actual routine."
+            "question": "Can I choose more than one answer?",
+            "answer": "Yes. Where you see square selection markers, choose as many answers as feel relevant before continuing."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about compare the result?",
-            "answer": "Review why the suggested option fits."
+            "question": "Can I change an earlier answer?",
+            "answer": "Use the back button at any point. Your selections are kept while you move between questions."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about adjust when needed?",
-            "answer": "Return to an earlier answer to explore another route."
+            "question": "How is my result chosen?",
+            "answer": "Each answer points towards the most relevant collection or shopping experience. Your strongest match becomes your result."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "heading": "Questions about guided finder",
-        "intro": "Practical answers specific to this page."
+        "heading": "A little more guidance",
+        "intro": "Everything you need to get a useful result."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
-        "heading": "Continue exploring",
-        "text": "Discover products designed for everyday use.",
+        "heading": "Prefer to browse for yourself?",
+        "text": "Explore the complete collection at your own pace.",
         "link_label": "Shop the collection",
         "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
-    },
-    "editorial_primary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "left",
-        "image_alt": "Quiz editorial detail",
-        "eyebrow": "Guided finder",
-        "heading": "Keep it honest",
-        "heading_level": "h2",
-        "body": "<p>Choose the answer closest to your actual routine.</p>",
-        "points": "Compare the result\nAdjust when needed",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-fit-guide.jpg",
-        "layout_style": "split"
-      }
-    },
-    "editorial_secondary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "right",
-        "image_alt": "Quiz editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Adjust when needed",
-        "heading_level": "h3",
-        "body": "<p>Return to an earlier answer to explore another route.</p>",
-        "points": "Adjust when needed\nCompare the result\nKeep it honest",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-collection-look.jpg",
-        "layout_style": "compact"
-      }
-    },
-    "page_details": {
-      "type": "editorial-content-grid",
-      "blocks": {
-        "detail_1": {
-          "type": "item",
-          "settings": {
-            "label": "Guided finder",
-            "heading": "Keep it honest",
-            "text": "Choose the answer closest to your actual routine.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_2": {
-          "type": "item",
-          "settings": {
-            "label": "Guided finder",
-            "heading": "Compare the result",
-            "text": "Review why the suggested option fits.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_3": {
-          "type": "item",
-          "settings": {
-            "label": "Guided finder",
-            "heading": "Adjust when needed",
-            "text": "Return to an earlier answer to explore another route.",
-            "link_label": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": ["detail_1", "detail_2", "detail_3"],
-      "settings": {
-        "layout": "numbered",
-        "eyebrow": "Guided finder",
-        "heading": "Find your match",
-        "intro": "<p>A short sequence of questions turns preferences into a focused recommendation.</p>",
-        "color_scheme": "scheme-1"
-      }
     }
   },
-  "order": ["main", "editorial_primary", "page_details", "editorial_secondary", "page_faq", "page_cta"]
+  "order": ["page_banner", "main", "page_faq", "page_cta"]
 }
