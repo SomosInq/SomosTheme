@@ -68,7 +68,14 @@
             </article>
           {%- endfor -%}
         {%- else -%}
-          {%- for product in collections.all.products limit: products_to_show -%}
+          {%- assign products_shown = 0 -%}
+          {%- for product in collections.all.products -%}
+            {%- if product.price_min <= 0 -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- if products_shown >= products_to_show -%}
+              {%- break -%}
+            {%- endif -%}
             <article class='wholesale-product-card'>
               <a class='wholesale-product-card__media' href='{{ product.url }}'>
                 {%- if product.featured_image != blank -%}
@@ -95,6 +102,7 @@
                 <p class='wholesale-product-card__price'>RRP from {{ product.price_min | money }}</p>
               </div>
             </article>
+            {%- assign products_shown = products_shown | plus: 1 -%}
           {%- else -%}
             {%- for index in (1..4) -%}
               <article class='wholesale-product-card'>
