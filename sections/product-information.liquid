@@ -42,7 +42,7 @@
 
 <div class='section-background color-{{ section.settings.color_scheme }}'></div>
 <div
-  class='product-information section section--{{ content_width }} spacing-style color-{{ section.settings.color_scheme }} relative'
+  class='product-information section section--{{ content_width }} spacing-style color-{{ section.settings.color_scheme }} relative{% if template.suffix == 'bundle-builder' %} product-information--bundle-builder{% endif %}'
   style='{% render 'spacing-style', settings: section.settings %} --gap: {{ section.settings.gap }}px;'
 >
   {% if section.settings.desktop_media_position == 'left' and product_has_media %}
@@ -273,6 +273,26 @@
 
   .product-information__grid--limit-details .product-details > .group-block {
     max-width: var(--sidebar-width);
+  }
+
+  /* BundleSuite's full-page builder needs the complete storefront canvas. */
+  .product-information--bundle-builder {
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .product-information--bundle-builder .product-information__grid {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .product-information--bundle-builder .product-details,
+  .product-information--bundle-builder .product-details > .group-block {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
   }
 
   /* If the header is sticky, make product details content stick underneath the header */
