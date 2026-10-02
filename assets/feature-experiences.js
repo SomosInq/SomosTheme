@@ -189,49 +189,145 @@ function initAnalytics() {
 }
 
 function initQuizFlow() {
-  const form = document.querySelector('.js-quiz-form');
-  const result = document.querySelector('.js-quiz-result');
-  const resultTitle = result?.querySelector('[data-result-title]');
-  const resultBody = result?.querySelector('[data-result-body]');
-  const resultLink = result?.querySelector('[data-result-link]');
+  document.querySelectorAll('[data-quiz]').forEach((quiz) => {
+    const form = quiz.querySelector('[data-quiz-form]');
+    const result = quiz.querySelector('[data-quiz-result]');
+    const steps = Array.from(quiz.querySelectorAll('[data-quiz-step]'));
+    const viewport = quiz.querySelector('[data-quiz-viewport]');
+    const backButton = quiz.querySelector('[data-quiz-back]');
+    const nextButton = quiz.querySelector('[data-quiz-next]');
+    const nextLabel = quiz.querySelector('[data-quiz-next-label]');
+    const status = quiz.querySelector('[data-quiz-status]');
+    const progressText = quiz.querySelector('[data-quiz-progress-text]');
+    const progressValue = quiz.querySelector('[data-quiz-progress-value]');
+    const progressBar = quiz.querySelector('[data-quiz-progress-bar]');
+    const restartButton = quiz.querySelector('[data-quiz-restart]');
+    const resultTitle = result?.querySelector('[data-result-title]');
+    const resultBody = result?.querySelector('[data-result-body]');
+    const resultLink = result?.querySelector('[data-result-link]');
+    const defaultNextLabel = nextLabel?.textContent || 'Next question';
+    let currentStep = 0;
+    let autoAdvanceTimer;
 
-  if (!form || !result) return;
+    if (!form || !result || !steps.length || !nextButton || !backButton) return;
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+    const activeHasAnswer = () => Boolean(steps[currentStep].querySelector('input:checked'));
 
-    const selections = Array.from(form.querySelectorAll('input[type="radio"]:checked'));
-    const score = selections.reduce((accumulator, input) => {
-      const key = input.dataset.resultTitle + '::' + input.dataset.resultBody + '::' + input.dataset.resultLink;
-      if (!accumulator[key]) {
-        accumulator[key] = {
-          title: input.dataset.resultTitle || 'Recommendation',
-          body: input.dataset.resultBody || 'We found the best fit for your needs.',
-          link: input.dataset.resultLink || '/collections/all',
-          count: 0,
-        };
-      }
-      accumulator[key].count += 1;
-      return accumulator;
-    }, {});
-
-    const topRecommendation = Object.values(score).sort((a, b) => b.count - a.count)[0] || {
-      title: 'Recommendation ready',
-      body: 'Add some answer options in the theme editor to create tailored recommendations.',
-      link: '/collections/all',
+    const sizeViewport = () => {
+      if (!viewport || result.hidden === false) return;
+      viewport.style.height = `${steps[currentStep].scrollHeight}px`;
     };
 
-    if (resultTitle) resultTitle.textContent = topRecommendation.title;
-    if (resultBody) resultBody.textContent = topRecommendation.body;
-    if (resultLink) {
-      const link = safeHref(topRecommendation.link) || '/collections/all';
-      resultLink.href = link;
-      const isCollectionLink = new URL(link, window.location.origin).pathname === '/collections/all';
-      resultLink.textContent = isCollectionLink ? 'Browse the collection' : 'Open the matching page';
-    }
+    const updateInterface = (focusQuestion = false) => {
+      steps.forEach((step, index) => {
+        const isActive = index === currentStep;
+        step.classList.toggle('is-active', isActive);
+        step.classList.toggle('is-before', index < currentStep);
+        step.classList.toggle('is-after', index > currentStep);
+        step.setAttribute('aria-hidden', String(!isActive));
+        step.toggleAttribute('inert', !isActive);
+      });
 
-    result.hidden = false;
-    result.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+      const answered = activeHasAnswer();
+      const percentage = Math.round((currentStep / steps.length) * 100);
+      backButton.disabled = currentStep === 0;
+      nextButton.disabled = !answered;
+      if (nextLabel) nextLabel.textContent = currentStep === steps.length - 1 ? 'See my result' : defaultNextLabel;
+      if (status) status.textContent = answered ? 'Answer selected' : 'Select an answer to continue';
+      if (progressText) progressText.textContent = `Question ${currentStep + 1} of ${steps.length}`;
+      if (progressValue) progressValue.textContent = `${percentage}% complete`;
+      if (progressBar) progressBar.style.width = `${percentage}%`;
+
+      window.requestAnimationFrame(() => {
+        sizeViewport();
+        if (focusQuestion) steps[currentStep].querySelector('legend')?.focus({ preventScroll: true });
+      });
+    };
+
+    const showResult = () => {
+      const selections = Array.from(form.querySelectorAll('input:checked'));
+      const scores = selections.reduce((accumulator, input, index) => {
+        const key = input.dataset.resultLink || input.dataset.resultTitle || `answer-${index}`;
+        if (!accumulator[key]) {
+          accumulator[key] = {
+            title: input.dataset.resultTitle || 'Recommendation',
+            body: input.dataset.resultBody || 'We found the best fit for your needs.',
+            link: input.dataset.resultLink || '/collections/all',
+            count: 0,
+            firstSelected: index,
+          };
+        }
+        accumulator[key].count += 1;
+        return accumulator;
+      }, {});
+
+      const recommendation = Object.values(scores).sort(
+        (first, second) => second.count - first.count || first.firstSelected - second.firstSelected,
+      )[0] || {
+        title: 'Your recommendation is ready',
+        body: 'Explore the collection selected for you.',
+        link: '/collections/all',
+      };
+
+      if (resultTitle) resultTitle.textContent = recommendation.title;
+      if (resultBody) resultBody.textContent = recommendation.body;
+      if (resultLink) resultLink.href = safeHref(recommendation.link) || '/collections/all';
+      if (progressText) progressText.textContent = 'Quiz complete';
+      if (progressValue) progressValue.textContent = '100% complete';
+      if (progressBar) progressBar.style.width = '100%';
+
+      form.hidden = true;
+      result.hidden = false;
+      result.focus?.({ preventScroll: true });
+      result.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'center' });
+      dispatchAnalyticsEvent('quiz_complete', { answers: selections.map((input) => input.value) });
+    };
+
+    const goForward = () => {
+      if (!activeHasAnswer()) return;
+      if (currentStep === steps.length - 1) {
+        showResult();
+        return;
+      }
+      currentStep += 1;
+      updateInterface(true);
+    };
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      goForward();
+    });
+
+    form.addEventListener('change', (event) => {
+      if (!event.target.matches('input')) return;
+      updateInterface();
+
+      const step = event.target.closest('[data-quiz-step]');
+      if (event.target.type === 'radio' && step?.dataset.multiple !== 'true') {
+        window.clearTimeout(autoAdvanceTimer);
+        autoAdvanceTimer = window.setTimeout(goForward, prefersReducedMotion() ? 0 : 320);
+      }
+    });
+
+    nextButton.addEventListener('click', goForward);
+    backButton.addEventListener('click', () => {
+      window.clearTimeout(autoAdvanceTimer);
+      if (currentStep === 0) return;
+      currentStep -= 1;
+      updateInterface(true);
+    });
+
+    restartButton?.addEventListener('click', () => {
+      form.reset();
+      currentStep = 0;
+      result.hidden = true;
+      form.hidden = false;
+      updateInterface(true);
+      quiz.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+    });
+
+    window.addEventListener('resize', sizeViewport);
+    updateInterface();
   });
 }
 
