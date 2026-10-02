@@ -11,25 +11,63 @@
   "sections": {
     "page_banner": {
       "type": "internal-page-banner",
-      "settings": {}
-    },
-    "main": {
-      "type": "feature-landing",
       "settings": {
         "eyebrow": "Before & after",
-        "title": "See the transformation",
-        "description": "Highlight before and after imagery for beauty, wellness, fitness, or home transformations in a proof-driven layout.",
-        "highlight_heading": "Ideal for",
-        "bullets": "Beauty and skincare\nWellness and supplements\nFitness and home transformations",
-        "cards": "Visual proof | Let customers see the impact clearly. ||Higher confidence | Improve trust before they buy. ||Great for conversion | Pair with product details and reviews.",
-        "secondary_title": "Build confidence with proof",
-        "secondary_description": "Customers trust what they can see, especially for products that promise visible results.",
-        "secondary_cta_label": "Explore results",
-        "secondary_cta_url": "/collections/all",
-        "cta_label": "Explore transformations",
-        "cta_url": "/collections/all",
-        "hero_asset_filename": "editorial-fit-guide.jpg",
-        "secondary_asset_filename": "editorial-collection-look.jpg"
+        "heading": "See the transformation",
+        "description": "<p>Compare the starting point with the finished result and make the difference immediately visible.</p>",
+        "image_position": "center",
+        "overlay_opacity": 45,
+        "text_color": "light"
+      }
+    },
+    "main": {
+      "type": "before-after-comparison",
+      "blocks": {
+        "proof_one": {
+          "type": "proof_point",
+          "settings": {
+            "heading": "Use matched imagery",
+            "text": "Photograph the same subject, angle, crop and lighting so the comparison is easy to understand."
+          }
+        },
+        "proof_two": {
+          "type": "proof_point",
+          "settings": {
+            "heading": "Explain what changed",
+            "text": "Connect the visible result to the product, service or process that created it."
+          }
+        },
+        "proof_three": {
+          "type": "proof_point",
+          "settings": {
+            "heading": "Keep the proof honest",
+            "text": "Use representative results, clear context and any qualifying information customers need."
+          }
+        }
+      },
+      "block_order": ["proof_one", "proof_two", "proof_three"],
+      "settings": {
+        "eyebrow": "Drag to compare",
+        "heading": "See the difference for yourself",
+        "intro": "<p>Move the slider across the image to compare the starting point with the finished result. It works with a mouse, touch or keyboard.</p>",
+        "before_asset_filename": "editorial-fit-guide.jpg",
+        "before_label": "Before",
+        "before_alt": "Garment preparation before the finished styled result",
+        "after_asset_filename": "editorial-collection-look.jpg",
+        "after_label": "After",
+        "after_alt": "The finished styled look after preparation",
+        "start_position": 50,
+        "story_eyebrow": "The transformation",
+        "story_heading": "From individual details to a complete look",
+        "story_text": "<p>The demonstration shows how merchants can turn two images into an interactive proof point. Replace these with a genuinely matched pair for beauty, wellness, interiors, styling or product restoration.</p>",
+        "detail_one_label": "Starting point",
+        "detail_one_value": "Preparation and product detail",
+        "detail_two_label": "What changed",
+        "detail_two_value": "Fit, styling and finish",
+        "detail_three_label": "The result",
+        "detail_three_value": "A complete considered look",
+        "link_label": "Shop the result",
+        "link_url": "/collections/all"
       }
     },
     "page_faq": {
@@ -38,118 +76,41 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about start with context?",
-            "answer": "See the original challenge before reviewing the outcome."
+            "question": "How does the comparison slider work?",
+            "answer": "Drag the circular handle horizontally, tap either Show button, or focus the slider and use the keyboard arrow keys."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about notice the details?",
-            "answer": "Small improvements in fit, material, or routine create the larger change."
+            "question": "Can I replace both images?",
+            "answer": "Yes. The before image, after image, labels, alt text and starting slider position are all editable in the theme editor."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about apply it yourself?",
-            "answer": "Use the supporting guidance to find the most relevant products."
+            "question": "What makes a strong before and after comparison?",
+            "answer": "Use the same subject, angle, crop and lighting. Explain what changed and avoid image treatments that exaggerate the result."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "heading": "Questions about the difference",
-        "intro": "Practical answers specific to this page."
+        "heading": "Building credible comparisons",
+        "intro": "A useful before and after is clear, accessible and honest."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
-        "heading": "Continue exploring",
-        "text": "Discover products designed for everyday use.",
+        "heading": "Ready to show the result?",
+        "text": "Choose the products behind the transformation.",
         "link_label": "Shop the collection",
         "link_url": "/collections/all",
         "color_scheme": "scheme-1"
       }
-    },
-    "editorial_primary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "right",
-        "image_alt": "Before After editorial detail",
-        "eyebrow": "The difference",
-        "heading": "Start with context",
-        "heading_level": "h2",
-        "body": "<p>See the original challenge before reviewing the outcome.</p>",
-        "points": "Notice the details\nApply it yourself",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-fit-guide.jpg",
-        "layout_style": "split"
-      }
-    },
-    "editorial_secondary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "left",
-        "image_alt": "Before After editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Apply it yourself",
-        "heading_level": "h3",
-        "body": "<p>Use the supporting guidance to find the most relevant products.</p>",
-        "points": "Apply it yourself\nNotice the details\nStart with context",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-collection-look.jpg",
-        "layout_style": "compact"
-      }
-    },
-    "page_details": {
-      "type": "editorial-content-grid",
-      "blocks": {
-        "detail_1": {
-          "type": "item",
-          "settings": {
-            "label": "The difference",
-            "heading": "Start with context",
-            "text": "See the original challenge before reviewing the outcome.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_2": {
-          "type": "item",
-          "settings": {
-            "label": "The difference",
-            "heading": "Notice the details",
-            "text": "Small improvements in fit, material, or routine create the larger change.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_3": {
-          "type": "item",
-          "settings": {
-            "label": "The difference",
-            "heading": "Apply it yourself",
-            "text": "Use the supporting guidance to find the most relevant products.",
-            "link_label": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": ["detail_1", "detail_2", "detail_3"],
-      "settings": {
-        "layout": "numbered",
-        "eyebrow": "The difference",
-        "heading": "See what thoughtful changes can do",
-        "intro": "<p>Compare the starting point with the finished result and understand the choices behind it.</p>",
-        "color_scheme": "scheme-2"
-      }
     }
   },
-  "order": ["page_banner", "main", "editorial_primary", "page_details", "editorial_secondary", "page_faq", "page_cta"]
+  "order": ["page_banner", "main", "page_faq", "page_cta"]
 }
