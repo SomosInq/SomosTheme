@@ -45,19 +45,6 @@
   class='product-information section section--{{ content_width }} spacing-style color-{{ section.settings.color_scheme }} relative{% if template.suffix == 'bundle-builder' %} product-information--bundle-builder{% endif %}'
   style='{% render 'spacing-style', settings: section.settings %} --gap: {{ section.settings.gap }}px;'
 >
-  {% if template.suffix == 'bundle-builder' %}
-    {% render 'internal-page-banner',
-      custom_eyebrow: section.settings.bundle_banner_eyebrow,
-      custom_heading: section.settings.bundle_banner_heading,
-      custom_description: section.settings.bundle_banner_description,
-      show_automatic_description: false,
-      show_support_search: false,
-      color_scheme: section.settings.color_scheme,
-      padding_top: section.settings.bundle_banner_padding_top,
-      padding_bottom: section.settings.bundle_banner_padding_bottom
-    %}
-  {% endif %}
-
   {% if section.settings.desktop_media_position == 'left' and product_has_media %}
     {% assign product_href = '#ProductInformation-' | append: section.id %}
     {% render 'skip-to-content-link', href: product_href, text: 'accessibility.skip_to_product_info' %}
@@ -99,6 +86,45 @@
 
   {% content_for 'blocks' %}
 </div>
+
+{% if template.suffix == 'bundle-builder' %}
+  {% capture bundle_builder_banner %}
+    {% render 'internal-page-banner',
+      custom_eyebrow: section.settings.bundle_banner_eyebrow,
+      custom_heading: section.settings.bundle_banner_heading,
+      custom_description: section.settings.bundle_banner_description,
+      show_automatic_description: false,
+      show_support_search: false,
+      color_scheme: section.settings.color_scheme,
+      padding_top: section.settings.bundle_banner_padding_top,
+      padding_bottom: section.settings.bundle_banner_padding_bottom
+    %}
+  {% endcapture %}
+  <script>
+    (() => {
+      const bannerId = 'BundleBuilderBanner-{{ section.id }}';
+      const bannerHtml = {{ bundle_builder_banner | json }};
+
+      const mountBanner = () => {
+        const builder = document.querySelector('#bundlesuiteContainer');
+        if (!builder || document.getElementById(bannerId)) return;
+
+        const banner = document.createElement('div');
+        banner.id = bannerId;
+        banner.dataset.bundleBuilderBanner = '';
+        banner.innerHTML = bannerHtml;
+        builder.before(banner);
+      };
+
+      mountBanner();
+
+      const observer = new MutationObserver(mountBanner);
+      observer.observe(document.body, { childList: true, subtree: true });
+      window.setTimeout(() => observer.disconnect(), 15000);
+      document.addEventListener('shopify:section:load', mountBanner);
+    })();
+  </script>
+{% endif %}
 
 {% stylesheet %}
   .product-information {
@@ -313,8 +339,12 @@
     margin-inline: auto;
   }
 
-  .product-information--bundle-builder #bundlesuiteContainer > h2:first-child,
-  .product-information--bundle-builder #bundlesuiteContainer > h2:first-child + p {
+  [data-bundle-builder-banner] {
+    width: 100%;
+  }
+
+  body:has([data-bundle-builder-banner]) #bundlesuiteContainer > h2:first-child,
+  body:has([data-bundle-builder-banner]) #bundlesuiteContainer > h2:first-child + p {
     display: none;
   }
 
