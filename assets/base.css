@@ -319,7 +319,7 @@ p:empty {
 }
 
 .internal-page-banner {
-  padding-block: clamp(3.5rem, 7vw, 8rem) clamp(2.5rem, 5vw, 5rem);
+  padding-block: var(--page-banner-padding-top, 7rem) var(--page-banner-padding-bottom, 4.5rem);
 }
 
 .internal-page-banner__inner {
@@ -359,8 +359,14 @@ p:empty {
   line-height: 1.55;
 }
 
-.internal-page-banner__content p {
+.internal-page-banner__content p,
+.internal-page-banner__rte > :first-child,
+.internal-page-banner__rte > :last-child {
   margin: 0;
+}
+
+.internal-page-banner__content p,
+.internal-page-banner__rte {
   color: rgb(var(--color-foreground-rgb) / 0.72);
 }
 
@@ -389,7 +395,7 @@ p:empty {
 
 @media screen and (max-width: 749px) {
   .internal-page-banner {
-    padding-block: 3rem 2.5rem;
+    padding-block: min(var(--page-banner-padding-top, 3rem), 4rem) min(var(--page-banner-padding-bottom, 2.5rem), 3rem);
   }
 
   .internal-page-banner__inner {

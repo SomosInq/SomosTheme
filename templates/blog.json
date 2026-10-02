@@ -6,8 +6,13 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */ {
+ */
+{
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {}
+    },
     "main": {
       "type": "main-blog",
       "blocks": {
@@ -73,7 +78,6 @@
           "block_order": []
         }
       },
-      "block_order": [],
       "settings": {
         "color_scheme": "",
         "padding-block-start": 0,
@@ -96,6 +100,8 @@
       "type": "editorial-image-text",
       "settings": {
         "image_position": "left",
+        "layout_style": "split",
+        "asset_filename": "editorial-community.jpg",
         "image_alt": "Journal editorial detail",
         "eyebrow": "Journal",
         "heading": "A closer look at Journal",
@@ -104,15 +110,15 @@
         "points": "Fresh perspective\nPractical inspiration\nEasy ways to shop the story",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-community.jpg",
-        "layout_style": "split"
+        "color_scheme": "scheme-1"
       }
     },
     "editorial_secondary": {
       "type": "editorial-image-text",
       "settings": {
         "image_position": "right",
+        "layout_style": "compact",
+        "asset_filename": "editorial-collection-look.jpg",
         "image_alt": "Journal editorial detail",
         "eyebrow": "Good to know",
         "heading": "From inspiration to everyday wear",
@@ -121,11 +127,16 @@
         "points": "Build the look\nFind complementary pieces\nReturn for new edits",
         "link_label": "Explore the collection",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-collection-look.jpg",
-        "layout_style": "compact"
+        "color_scheme": "scheme-2"
       }
     }
   },
-  "order": ["main", "editorial_primary", "editorial_secondary", "page_testimonials", "page_cta"]
+  "order": [
+    "page_banner",
+    "main",
+    "editorial_primary",
+    "editorial_secondary",
+    "page_testimonials",
+    "page_cta"
+  ]
 }

@@ -5,6 +5,7 @@
   assign banner_description = blank
   assign banner_label = 'Explore'
   assign show_banner_search = false
+  assign description_is_richtext = false
 
   case request.page_type
     when 'product'
@@ -55,18 +56,45 @@
     else
       assign banner_label = 'Somos'
   endcase
+
+  if custom_eyebrow != blank
+    assign banner_label = custom_eyebrow
+  endif
+
+  if custom_heading != blank
+    assign banner_title = custom_heading
+  endif
+
+  if custom_description != blank
+    assign banner_description = custom_description
+    assign description_is_richtext = true
+  elsif show_automatic_description == false
+    assign banner_description = blank
+  endif
+
+  if show_support_search == false
+    assign show_banner_search = false
+  endif
 -%}
 
-<section class='internal-page-banner' aria-labelledby='InternalPageBannerTitle'>
+<section
+  class='internal-page-banner color-{{ color_scheme | default: 'scheme-1' }}'
+  aria-labelledby='InternalPageBannerTitle-{{ section.id }}'
+  style='--page-banner-padding-top: {{ padding_top | default: 112 }}px; --page-banner-padding-bottom: {{ padding_bottom | default: 72 }}px;'
+>
   <div class='internal-page-banner__inner page-width-content'>
     <div class='internal-page-banner__title'>
       <p class='internal-page-banner__eyebrow'>{{ banner_label }}</p>
-      <h1 id='InternalPageBannerTitle'>{{ banner_title | escape }}</h1>
+      <h1 id='InternalPageBannerTitle-{{ section.id }}'>{{ banner_title | escape }}</h1>
     </div>
     {%- if banner_description != blank or show_banner_search -%}
       <div class='internal-page-banner__content'>
         {%- if banner_description != blank -%}
-          <p>{{ banner_description | escape }}</p>
+          {%- if description_is_richtext -%}
+            <div class='internal-page-banner__rte'>{{ banner_description }}</div>
+          {%- else -%}
+            <p>{{ banner_description | escape }}</p>
+          {%- endif -%}
         {%- endif -%}
         {%- if show_banner_search -%}
           <form class='internal-page-banner__search' data-support-search-form role='search'>
