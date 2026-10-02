@@ -1,39 +1,120 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {
+        "eyebrow": "Subscribe and save",
+        "heading": "Subscriptions",
+        "description": "<p>Choose a delivery rhythm, save on repeat orders, and stay in control of every subscription.</p>",
+        "image_position": "center",
+        "overlay_opacity": 45,
+        "text_color": "light"
+      }
+    },
     "main": {
       "type": "subscription-landing",
+      "blocks": {
+        "plan_monthly": {
+          "type": "plan",
+          "settings": {
+            "label": "Flexible plan",
+            "badge": "Most popular",
+            "heading": "Every month",
+            "price_text": "From £24",
+            "frequency": "billed monthly",
+            "saving": "Save 15% on every order",
+            "description": "Best for everyday essentials you use consistently.",
+            "benefits": "Automatic monthly delivery\nEdit or skip upcoming orders\nManage from your account",
+            "plan_position": "0",
+            "button_label": "Choose monthly",
+            "highlight": true
+          }
+        },
+        "plan_bimonthly": {
+          "type": "plan",
+          "settings": {
+            "label": "Balanced plan",
+            "badge": "",
+            "heading": "Every 2 months",
+            "price_text": "From £26",
+            "frequency": "every two months",
+            "saving": "Save 10% on every order",
+            "description": "A slower rhythm for products that last a little longer.",
+            "benefits": "Delivery every eight weeks\nChange your next delivery date\nNo long-term commitment",
+            "plan_position": "1",
+            "button_label": "Choose every 2 months",
+            "highlight": false
+          }
+        },
+        "plan_quarterly": {
+          "type": "plan",
+          "settings": {
+            "label": "Low-frequency plan",
+            "badge": "",
+            "heading": "Every 3 months",
+            "price_text": "From £28",
+            "frequency": "billed quarterly",
+            "saving": "Save 5% on every order",
+            "description": "Ideal for occasional-use products and seasonal replenishment.",
+            "benefits": "Four scheduled deliveries a year\nSkip when you have enough\nCancel according to plan terms",
+            "plan_position": "2",
+            "button_label": "Choose quarterly",
+            "highlight": false
+          }
+        }
+      },
+      "block_order": ["plan_monthly", "plan_bimonthly", "plan_quarterly"],
       "settings": {
-        "title": "Subscribe and save",
-        "description": "Select an eligible product and choose from the Shopify selling plans attached to it.",
-        "product": ""
+        "eyebrow": "Flexible deliveries",
+        "title": "Choose the rhythm that works for you",
+        "description": "<p>Regular delivery, useful savings, and the flexibility to adjust your plan whenever life changes.</p>",
+        "product": "",
+        "fallback_link": "/collections/all",
+        "notice": "Plans renew automatically. You can skip, pause, or cancel eligible subscriptions from your customer account before the next billing date.",
+        "feature_one_heading": "Never run out",
+        "feature_one_text": "Your favourites arrive on a schedule that suits the way you use them.",
+        "feature_two_heading": "Save every time",
+        "feature_two_text": "Reward regular purchasing with a clear saving on every subscription order.",
+        "feature_three_heading": "Stay flexible",
+        "feature_three_text": "Make changes, skip a delivery, or cancel according to the terms of your plan.",
+        "color_scheme": "scheme-1"
       }
     },
     "page_testimonials": {
       "type": "testimonials",
       "settings": {
-        "heading": "Why customers return",
+        "heading": "Why customers subscribe",
         "color_scheme": "scheme-1"
       },
       "blocks": {
         "quote_1": {
           "type": "quote",
           "settings": {
-            "quote": "The details feel considered, and the product has become part of my everyday rotation.",
-            "author": "Verified customer"
+            "quote": "My essentials arrive before I need to think about reordering.",
+            "author": "Monthly subscriber"
           }
         },
         "quote_2": {
           "type": "quote",
           "settings": {
-            "quote": "Clear information made it easier to choose confidently.",
-            "author": "Somos customer"
+            "quote": "Changing the next delivery is simple, and the saving makes sense.",
+            "author": "Returning customer"
           }
         },
         "quote_3": {
           "type": "quote",
           "settings": {
-            "quote": "Thoughtful service from browsing through to delivery.",
-            "author": "Returning customer"
+            "quote": "A useful routine without being locked into a rigid schedule.",
+            "author": "Quarterly subscriber"
           }
         }
       },
@@ -45,126 +126,41 @@
         "question_1": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about choose the product?",
-            "answer": "Select the exact variant you want to receive."
+            "question": "Can I change my delivery frequency?",
+            "answer": "Eligible subscription details can be managed from your customer account according to the terms of the active plan."
           }
         },
         "question_2": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about set the frequency?",
-            "answer": "Available delivery plans come directly from the product setup."
+            "question": "When will I be charged?",
+            "answer": "Your billing date and frequency are shown before checkout and in your subscription account after purchase."
           }
         },
         "question_3": {
           "type": "faq",
           "settings": {
-            "question": "What should I know about stay in control?",
-            "answer": "Manage eligible subscription details through your customer account."
+            "question": "Can I skip or cancel a delivery?",
+            "answer": "Skip, pause, and cancellation options depend on the selling-plan terms shown when you subscribe."
           }
         }
       },
       "block_order": ["question_1", "question_2", "question_3"],
       "settings": {
-        "heading": "Questions about subscribe & save",
-        "intro": "Practical answers specific to this page."
+        "heading": "Subscription questions",
+        "intro": "The practical details before you choose a plan."
       }
     },
     "page_cta": {
       "type": "final-cta",
       "settings": {
-        "heading": "Continue exploring",
-        "text": "Discover products designed for everyday use.",
-        "link_label": "Shop the collection",
+        "heading": "Find your everyday essentials",
+        "text": "Explore products that can be paired with a recurring delivery plan.",
+        "link_label": "Shop eligible products",
         "link_url": "/collections/all",
-        "color_scheme": "scheme-1"
-      }
-    },
-    "editorial_primary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "left",
-        "image_alt": "Subscription Landing editorial detail",
-        "eyebrow": "Subscribe & save",
-        "heading": "Choose the product",
-        "heading_level": "h2",
-        "body": "<p>Select the exact variant you want to receive.</p>",
-        "points": "Set the frequency\nStay in control",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-1",
-        "asset_filename": "editorial-community.jpg",
-        "layout_style": "split"
-      }
-    },
-    "editorial_secondary": {
-      "type": "editorial-image-text",
-      "settings": {
-        "image_position": "right",
-        "image_alt": "Subscription Landing editorial detail",
-        "eyebrow": "Next step",
-        "heading": "Stay in control",
-        "heading_level": "h3",
-        "body": "<p>Manage eligible subscription details through your customer account.</p>",
-        "points": "Stay in control\nSet the frequency\nChoose the product",
-        "link_label": "Explore the collection",
-        "link_url": "/collections/all",
-        "color_scheme": "scheme-2",
-        "asset_filename": "editorial-brand-studio.jpg",
-        "layout_style": "compact"
-      }
-    },
-    "page_details": {
-      "type": "editorial-content-grid",
-      "blocks": {
-        "detail_1": {
-          "type": "item",
-          "settings": {
-            "label": "Subscribe & save",
-            "heading": "Choose the product",
-            "text": "Select the exact variant you want to receive.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_2": {
-          "type": "item",
-          "settings": {
-            "label": "Subscribe & save",
-            "heading": "Set the frequency",
-            "text": "Available delivery plans come directly from the product setup.",
-            "link_label": "",
-            "link_url": ""
-          }
-        },
-        "detail_3": {
-          "type": "item",
-          "settings": {
-            "label": "Subscribe & save",
-            "heading": "Stay in control",
-            "text": "Manage eligible subscription details through your customer account.",
-            "link_label": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": ["detail_1", "detail_2", "detail_3"],
-      "settings": {
-        "layout": "numbered",
-        "eyebrow": "Subscribe & save",
-        "heading": "A simpler way to stay stocked",
-        "intro": "<p>Choose an eligible product and recurring delivery plan through Shopify selling plans.</p>",
         "color_scheme": "scheme-1"
       }
     }
   },
-  "order": [
-    "main",
-    "editorial_primary",
-    "page_testimonials",
-    "page_details",
-    "editorial_secondary",
-    "page_faq",
-    "page_cta"
-  ]
+  "order": ["page_banner", "main", "page_testimonials", "page_faq", "page_cta"]
 }
