@@ -104,10 +104,27 @@
     (() => {
       const bannerId = 'BundleBuilderBanner-{{ section.id }}';
       const bannerHtml = {{ bundle_builder_banner | json }};
+      const bannerHeading = {{ section.settings.bundle_banner_heading | json }};
+
+      const hideDuplicateIntro = (builder) => {
+        const duplicateHeading = Array.from(builder.querySelectorAll('h1, h2, h3, [role="heading"]')).find(
+          (element) => element.textContent.trim() === bannerHeading
+        );
+        if (!duplicateHeading) return;
+
+        duplicateHeading.hidden = true;
+        const duplicateDescription = duplicateHeading.nextElementSibling;
+        if (duplicateDescription && !duplicateDescription.querySelector('button, input, img, picture')) {
+          duplicateDescription.hidden = true;
+        }
+      };
 
       const mountBanner = () => {
         const builder = document.querySelector('#bundlesuiteContainer');
-        if (!builder || document.getElementById(bannerId)) return;
+        if (!builder) return;
+
+        hideDuplicateIntro(builder);
+        if (document.getElementById(bannerId)) return;
 
         const banner = document.createElement('div');
         banner.id = bannerId;
