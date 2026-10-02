@@ -9,6 +9,19 @@
  */
 {
   "sections": {
+    "page_banner": {
+      "type": "internal-page-banner",
+      "settings": {
+        "eyebrow": "Build your bundle",
+        "heading": "Build Your Everyday Set",
+        "description": "<p>Choose your pieces, review your set, and add the complete bundle to your bag.</p>",
+        "show_automatic_description": false,
+        "show_support_search": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 112,
+        "padding_bottom": 72
+      }
+    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -67,75 +80,6 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "group_bundle_header": {
-              "type": "group",
-              "name": "Bundle header",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "bundle_title": {
-                  "type": "text",
-                  "name": "Bundle title",
-                  "settings": {
-                    "text": "<h1>{{ closest.product.title }}</h1>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h2",
-                    "font": "var(--font-primary--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": ["bundle_title"]
-            },
             "variant_picker_bundle": {
               "type": "variant-picker",
               "settings": {
@@ -218,7 +162,6 @@
             }
           },
           "block_order": [
-            "group_bundle_header",
             "variant_picker_bundle",
             "buy_buttons_bundle",
             "bundlesuite_byob_upsell_bundle",
@@ -238,5 +181,5 @@
       }
     }
   },
-  "order": ["main"]
+  "order": ["page_banner", "main"]
 }
