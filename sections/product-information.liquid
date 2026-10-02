@@ -105,6 +105,7 @@
       const bannerId = 'BundleBuilderBanner-{{ section.id }}';
       const bannerHtml = {{ bundle_builder_banner | json }};
       const bannerHeading = {{ section.settings.bundle_banner_heading | json }};
+      const appDescription = {{ closest.product.description | strip_html | strip | json }};
 
       const hideDuplicateIntro = (builder) => {
         const duplicateHeading = Array.from(builder.querySelectorAll('h1, h2, h3, [role="heading"]')).find(
@@ -117,6 +118,11 @@
         if (duplicateDescription && !duplicateDescription.querySelector('button, input, img, picture')) {
           duplicateDescription.hidden = true;
         }
+
+        const matchingDescription = Array.from(builder.querySelectorAll('*'))
+          .reverse()
+          .find((element) => element.textContent.trim() === appDescription);
+        if (matchingDescription) matchingDescription.hidden = true;
       };
 
       const mountBanner = () => {
